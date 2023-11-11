@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Preparing for Paradigm CTF | Nikhil. R</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Preparing for Paradigm CTF" />
+<meta name="author" content="Nikhil" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Paradigm(the web3 VC fund) is organising a CTF competition on 20th Aug. The challenges would be set around exploiting weaknesses in smart contract security and basic cryptography. While I used to play these regularly back in 2016-17, I’ve totally lost touch and forgot almost everything." />
+<meta property="og:description" content="Paradigm(the web3 VC fund) is organising a CTF competition on 20th Aug. The challenges would be set around exploiting weaknesses in smart contract security and basic cryptography. While I used to play these regularly back in 2016-17, I’ve totally lost touch and forgot almost everything." />
+<link rel="canonical" href="http://localhost:4000/2022/08/14/paradigm-ctf-prep.html" />
+<meta property="og:url" content="http://localhost:4000/2022/08/14/paradigm-ctf-prep.html" />
+<meta property="og:site_name" content="Nikhil. R" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-08-14T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Preparing for Paradigm CTF" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nikhil"},"dateModified":"2022-08-14T00:00:00+05:30","datePublished":"2022-08-14T00:00:00+05:30","description":"Paradigm(the web3 VC fund) is organising a CTF competition on 20th Aug. The challenges would be set around exploiting weaknesses in smart contract security and basic cryptography. While I used to play these regularly back in 2016-17, I’ve totally lost touch and forgot almost everything.","headline":"Preparing for Paradigm CTF","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2022/08/14/paradigm-ctf-prep.html"},"url":"http://localhost:4000/2022/08/14/paradigm-ctf-prep.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Nikhil. R" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Nikhil. R</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/work/">Work</a><a class="page-link" href="/">Blog</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Preparing for Paradigm CTF</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2022-08-14T00:00:00+05:30" itemprop="datePublished">
+        Aug 14, 2022
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Paradigm(the web3 VC fund) is organising a <a href="https://ctftime.org/ctf-wtf/">CTF</a> competition on 20th Aug. The challenges would be set around exploiting weaknesses in smart contract security and basic cryptography. While I used to play these regularly back in 2016-17, I’ve totally lost touch and forgot almost everything.</p>
+
+<p><a href="https://ctf.paradigm.xyz/">Link to register for the CTF</a></p>
+
+<p>In preparation, I decided to brush up my basic crypto skills and attempt the famous <a href="https://cryptopals.com/">cryptopals</a> challenges again. The Matasano crypto challenges are a set of 48 practical programming exercises that <a href="https://twitter.com/tqbf">Thomas Ptacek</a> and his team at Matasano Security have developed as a kind of teaching tool.</p>
+
+<p>This post discuss possible solutions for the first set of problems
+These are my solution to the first set of 3 problems which are:</p>
+
+<ul>
+  <li>Convert hex to base64</li>
+  <li>Fixed XOR</li>
+  <li>Single-byte XOR cipher</li>
+</ul>
+
+<p>I have linked the problem’s actual page in the headings. Read them before going to the solution which can found on my Github. I also suggest that you solve these on your own first before looking at solutions.</p>
+
+<p>1) <a href="https://cryptopals.com/sets/1/challenges/1">Convert hex to base64</a></p>
+
+<p>What we are initially given is a hexadecimal representation of the binary data which can be converted to raw bytes using the binascii module’s unhexlify function. Now that we have the raw bytes, we just need to use base64 encoding to represent them and then convert to string for comparing with the solution.</p>
+
+<p>2) <a href="https://cryptopals.com/sets/1/challenges/2">Fixed XOR</a></p>
+
+<p>Strings in Python 3 are unicode objects. Converting the strings to base 16 integers, XORing them, then converting back gives us the solution</p>
+
+<p>3) <a href="https://cryptopals.com/sets/1/challenges/3">Single-byte XOR cipher</a></p>
+
+<p>We are again given an hex encoded string but this time, it has already been XOR’d against a single character. The Goal is to find the key and decrypt the message.</p>
+
+<p>The first challenges were mainly warm ups and this one actually involves breaking a (simple) cipher. We could brute force it but as suggested in the challenges page, let’s use character frequency as a metric to break this. I found  a statistical distribution for English text <a href="http://www.data-compression.com/english.html">here</a>. Since this XOR operation modifies modifies each byte by the same amount, the frequency distribution won’t change.</p>
+
+<p>I got some errors while decodes bytes objects into ‘utf-8’ but when I set it to ignore, I nevertheless got the answer. I should look into this again.</p>
+
+<hr />
+
+<p>I am working on launching PLO (my favourite poker variant) at my day job and its getting hard to find time to work on these. Will update this post with more solutions as and when I have time to attempt them.</p>
+
+<p>EDIT: I got sick and didn’t play the CTF.</p>
+
+  </div><a class="u-url" href="/2022/08/14/paradigm-ctf-prep.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>RSS</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">Nikhil</li>
+          <li><a class="u-email" href="mailto:contact@rnikhil.com">contact@rnikhil.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Hi! Welcome to my corner on the internet. 
+</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://www.linkedin.com/in/rnikhilcom" target="_blank" title="rnikhilcom"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/rnikhilcom" target="_blank" title="rnikhilcom"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+<p style="font-size: 10px">rnikhil.com is best viewed with Netscape Navigator 4.0 or below on a Pentium 3±1 emulated in Javascript on an Apple IIGS
+at a screen resolution of 1024x1. Please enable your ad blockers, disable high-heat drying, and remove your device
+from Airplane Mode and set it to Boat Mode. For security reasons, please leave caps lock on while browsing.</p>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

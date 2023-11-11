@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Luasec - Lua HTTPS Library | Nikhil. R</title>
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Luasec - Lua HTTPS Library" />
+<meta name="author" content="Nikhil" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I was working on the Luasec library over the summer mainly on fixing the HTTPS redirects, the CONNECT proxy implementation (for redirecting requests over the HTTP CONNECT tunnel) and adding support for HTTP/2(Client)." />
+<meta property="og:description" content="I was working on the Luasec library over the summer mainly on fixing the HTTPS redirects, the CONNECT proxy implementation (for redirecting requests over the HTTP CONNECT tunnel) and adding support for HTTP/2(Client)." />
+<link rel="canonical" href="http://localhost:4000/2017/08/23/luasec-https-library.html" />
+<meta property="og:url" content="http://localhost:4000/2017/08/23/luasec-https-library.html" />
+<meta property="og:site_name" content="Nikhil. R" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-08-23T00:00:00+05:30" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Luasec - Lua HTTPS Library" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Nikhil"},"dateModified":"2017-08-23T00:00:00+05:30","datePublished":"2017-08-23T00:00:00+05:30","description":"I was working on the Luasec library over the summer mainly on fixing the HTTPS redirects, the CONNECT proxy implementation (for redirecting requests over the HTTP CONNECT tunnel) and adding support for HTTP/2(Client).","headline":"Luasec - Lua HTTPS Library","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2017/08/23/luasec-https-library.html"},"url":"http://localhost:4000/2017/08/23/luasec-https-library.html"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Nikhil. R" />
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Nikhil. R</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/work/">Work</a><a class="page-link" href="/">Blog</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Luasec - Lua HTTPS Library</h1>
+    <p class="post-meta"><time class="dt-published" datetime="2017-08-23T00:00:00+05:30" itemprop="datePublished">
+        Aug 23, 2017
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>I was working on the Luasec library over the summer mainly on fixing the HTTPS redirects, the CONNECT proxy implementation (for redirecting requests over the HTTP CONNECT tunnel) and adding support for HTTP/2(Client).</p>
+
+<p>My fork of Luasec(dev branch) can be found <a href="https://github.com/whoami-nr/luasec/tree/dev">here</a> which has all the recent updates as part of GSoC and all the relevant commits.</p>
+
+<h1 id="work-done-till-now">Work done till now</h1>
+
+<p><strong>HTTPS Module</strong></p>
+
+<p>I was working to add features for the HTTPS module during the first part of GSoC. It now supports the ability to talk HTTPS with a proxy, redirects through or without the proxy for HTTPS URLs, certain low level HTTP API functions are exposed and also supports SNI now. Work done in this section are relevant to this <a href="https://github.com/whoami-nr/luasec/blob/dev/src/https.lua">file</a>.</p>
+
+<ul>
+  <li>
+    <p>CONNECT proxy support for HTTPS. Now Luasec can be used to initiate a CONNECT tunnel to a HTTP
+proxy which enables the proxy to relay encrypted packets between Luasec and the final destination. This also works when redirects are enabled. While redirecting HTTPS-&gt;HTTPS or HTTP-&gt;HTTPS or HTTPS-&gt;HTTP(if the unsaferedirect paramter is set) it creates a new tunnel with the proxy for the new redirected destination.</p>
+  </li>
+  <li>
+    <p>Support for HTTPS redirects with an additional safeguard for preventing unsafe redirects from HTTPS-&gt;HTTP. This involves usage of the <code class="language-plaintext highlighter-rouge">unsaferedirect</code> paramter.</p>
+  </li>
+  <li>
+    <p>Merge and refactor the HTTP module from luasocket into luasec thus unifying the HTTPS module. All the HTTP low level functions have been imported into luasec now. This was done to increase code reuse within the library.</p>
+  </li>
+  <li>
+    <p>Test server name indication so that it conforms to section 3.1 of RFC 3546 which can found <a href="https://www.ietf.org/rfc/rfc3546.txt">here</a>.</p>
+  </li>
+</ul>
+
+<p>More details on how to use it and references for the functions can be found on the wiki page of my fork <a href="https://github.com/whoami-nr/luasec/wiki/Luasec-HTTPS-Module">here</a>.</p>
+
+<p><strong>HTTP/2 Module</strong></p>
+
+<p>This portion of the module was worked on during the second part of GSoC. I went by implementing RFC’s sequentially while also trying to make sure that I had a basic implementation for sending and receving frames working all along. Work done in this section are relevant to these files.</p>
+
+<p><a href="https://github.com/whoami-nr/luasec/blob/dev/src/http2_error.lua">1) Error Module</a></p>
+
+<p><a href="https://github.com/whoami-nr/luasec/blob/dev/src/http2_stream.lua">2) Stream Module</a></p>
+
+<p><a href="https://github.com/whoami-nr/luasec/blob/dev/src/codec.lua">3) Codec Module</a></p>
+
+<p><a href="https://github.com/whoami-nr/luasec/blob/dev/src/bit.lua">4) Bit Operation Module</a></p>
+
+<p>The Codec Module is used for string packing and unpacking. It provides a unified interface for various modes in <code class="language-plaintext highlighter-rouge">string.pack</code> and <code class="language-plaintext highlighter-rouge">string.unpack</code> functions. The Bit operation module smoothens out all the various lua bit libraries and versions. The <code class="language-plaintext highlighter-rouge">bit</code> libary with luajit, <code class="language-plaintext highlighter-rouge">bit32</code> libary with lua 5.2 and lua 5.3 built in bit operators are wrapped in a unified function.</p>
+
+<p>The RFC I used can be found <a href="http://httpwg.org/specs/rfc7540.html">here</a>. I also used the lua-http module for lot of reference code. The module can be found <a href="https://github.com/daurnimator/lua-http/">here</a>. The Bit operation module, error module was taken from lua-http and modified to work with luasec. The stream module has certain functions which are taken from lua-http with the cqueue dependency removed and modified to work with luasocket.</p>
+
+<p>The first two sections in the RFC are just an introduction and a generic protcol overview.</p>
+
+<p>1) <a href="http://httpwg.org/specs/rfc7540.html#rfc.section.3">Section 3</a></p>
+
+<ul>
+  <li>
+    <p>It deals with starting a HTTP/2 connection.</p>
+  </li>
+  <li>
+    <p>Starting HTTP/2 for HTTP url’s (No TLS) involved implementing a upgrade mechanism which informs the server of the upgrade request. For TLS connections the socket is just wrapped with luasec.</p>
+  </li>
+  <li>
+    <p>The connection preface is sent after both the client and server have decided to use HTTP/2.</p>
+  </li>
+  <li>
+    <p>This section has been completely implemented.</p>
+  </li>
+</ul>
+
+<p>2) <a href="http://httpwg.org/specs/rfc7540.html#rfc.section.4">Section 4</a></p>
+
+<ul>
+  <li>
+    <p>It deals with support for all the relevant frame types.</p>
+  </li>
+  <li>
+    <p>The HTTP/2 connection module implementing ( send and receive frame functions) the support for sending basic frames like SETTINGS, HEADERS etc has been finished. It supports</p>
+  </li>
+  <li>
+    <p>Add a HTTP -&gt; HTTP/2 negotiation scheme so that upgrade requests can be sent from Luasec.</p>
+  </li>
+  <li>
+    <p>Maintain a Header table on the client side for implementation of HPACK later on.</p>
+  </li>
+  <li>
+    <p>Recieve a process a SETTINGS frame and then also send back a SETTINGS ACK frame thus establishing the stream parameters.</p>
+  </li>
+  <li>
+    <p>Implemented functions for writing priority(which specifies the sender advised priority of the stream), rst_stream (which allows for immediate termination of stream), ping(which helps measure the minimal roundtrip from the sender as well as for determining whether an idle connection is functional), data(which sends http data), headers(which sends http headers), window_update frames(which is used for implementing flow control), settings( stream session settings), push_promise(which notifies the peer endpoint in advance of stream the sender intends to initiate) etc. to the socket. All these functions are documented in the wiki.</p>
+  </li>
+</ul>
+
+<p>3) <a href="http://httpwg.org/specs/rfc7540.html#rfc.section.5">Section 5</a></p>
+
+<ul>
+  <li>
+    <p>This section deals with Streams and multiplexing them over the same TCP connection or socket.</p>
+  </li>
+  <li>
+    <p>This portion has been partially implemented. I tried making a non blocking version using copas for dispatching and creating a queue. It presently works with the <code class="language-plaintext highlighter-rouge">socket.select()</code> function from luasocket which it uses to wait on the socket to find out if it’s ready to be read or written to. There are basic definition for send and receive functions.</p>
+  </li>
+  <li>
+    <p>There is a simple implementation of a priority queue. I set a priority flag and if it’s set I send up that stream first.</p>
+  </li>
+  <li>
+    <p>Feature implementing the monitoring of stream states is also done which enables the module to be aware of the stream state and respond accordingly.</p>
+  </li>
+</ul>
+
+<p>4) <a href="http://httpwg.org/specs/rfc7540.html#rfc.section.6">Section 6</a></p>
+
+<ul>
+  <li>
+    <p>This section deals with the different frame types and their definition.</p>
+  </li>
+  <li>
+    <p>This portion has been completely implemented. The <code class="language-plaintext highlighter-rouge">send_frame</code> function in the module supports all the 10 types of frames.</p>
+  </li>
+</ul>
+
+<p><em>Section 7</em> deals with the error module for which I have added a basic module which can be found <a href="https://github.com/whoami-nr/luasec/blob/dev/src/http2_error.lua">here</a>.</p>
+
+<p><em>Section 8</em> deals with HTTP/2 connection management and deals just with specifying which frames have been used for what kind of requests and what to do when we receive a response. I used this section as a reference for implementing my HTTP/2 connection module. Other sections in the RFC are also just considerations and references for a good implementation.</p>
+
+<p>One of the most important part of this was reading RFC’s and learning to adhere to the specs. Also learnt a lot about debugging a network protocol implementation while getting to know the internals. More details about the implementation and references can be found in the <a href="https://github.com/whoami-nr/luasec/wiki/Luasec-HTTP-2-Module">wiki</a>.</p>
+
+<hr />
+
+<h1 id="work-to-be-done">Work to be done</h1>
+
+<ul>
+  <li>
+    <p>Remove the fake connection object from the HTTPS module which become pointless after the integration.</p>
+  </li>
+  <li>
+    <p>Make the connection module non blocking.</p>
+  </li>
+  <li>
+    <p>Try to merge the existing PR supporting the ALPN negotiation scheme.</p>
+  </li>
+</ul>
+
+<h1 id="roadmap-for-the-http2-implementation-and-future-work">Roadmap for the HTTP/2 implementation and future work</h1>
+
+<p>I have been implementing HTTP/2 based on the RFC going through it one by one. I took a lot of template code from the lua-http module which can be found <a href="https://github.com/daurnimator/lua-http/">here</a>. Certain modules from lua-http were imported without much changes but have been modified to work with luasec. The <code class="language-plaintext highlighter-rouge">connection:methods</code> and <code class="language-plaintext highlighter-rouge">stream:methods</code> are mostly based on lua-http module which I have worked on to work with luasocket.</p>
+
+<p><a href="http://httpwg.org/specs/rfc7540.html#rfc.section.7">Section 7</a> deals with HTTP/2 error codes for which we have to implement a module specifying the same. Based on this module it also has to be linked with the existing implementation so that all the error’s (essentially error messages) get redirected to it and we receive proper error messages for debugging effectively.</p>
+
+<p><a href="http://httpwg.org/specs/rfc7540.html#rfc.section.9">Section 9</a> deals with Additional HTTP/2 requirements like connection management, setting up and following a priority tree and connection reuse.</p>
+
+  </div><a class="u-url" href="/2017/08/23/luasec-https-library.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>RSS</span>
+          </a>
+        </p>
+        <ul class="contact-list">
+          <li class="p-name">Nikhil</li>
+          <li><a class="u-email" href="mailto:contact@rnikhil.com">contact@rnikhil.com</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p>Hi! Welcome to my corner on the internet. 
+</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://www.linkedin.com/in/rnikhilcom" target="_blank" title="rnikhilcom"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#linkedin"></use></svg></a></li><li><a rel="me" href="https://twitter.com/rnikhilcom" target="_blank" title="rnikhilcom"><svg class="svg-icon grey"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+<p style="font-size: 10px">rnikhil.com is best viewed with Netscape Navigator 4.0 or below on a Pentium 3±1 emulated in Javascript on an Apple IIGS
+at a screen resolution of 1024x1. Please enable your ad blockers, disable high-heat drying, and remove your device
+from Airplane Mode and set it to Boat Mode. For security reasons, please leave caps lock on while browsing.</p>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
