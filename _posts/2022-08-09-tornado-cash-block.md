@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: We should all have something to hide - Tornado cash takedown
+title: ⭐️ We should all have something to hide - Tornado cash takedown
 
 ---
 
