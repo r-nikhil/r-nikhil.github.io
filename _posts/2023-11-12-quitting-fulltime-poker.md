@@ -2,6 +2,8 @@
 layout: post
 title: Farewell to the felt - Quitting the full-time Poker scene
 ---
+[HN discussion](https://news.ycombinator.com/item?id=38262425)
+
 
 I used to play Poker for a living from 2018-2021. These days whenever I recount my past with new people, everyone inevitably asks me why I stopped playing the game (full time) if it was profitable to do so. Its understandably hard to comprehend why anybody would stop pursuing a money making endeavour. So, I want to write this post to summarily answer most questions around this topic and mostly because I am tired of repeating myself again and again. 
 
