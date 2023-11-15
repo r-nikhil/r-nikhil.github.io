@@ -11,6 +11,9 @@ permalink: /work/
 - <a href="https://twitter.com/rnikhilcom">Twitter </a>
 - <a href="https://www.linkedin.com/in/rnikhilcom/">Linkedin </a>
 - <a href= "https://rnikhil.com/assets/files/resume.pdf"> Resume </a>
+- <a href= "https://news.ycombinator.com/user?id=whoami_nr"> HN Profile </a>
+- <a href= "https://github.com/r-nikhil"> Github </a>
+
 
 
 #### Work experience
