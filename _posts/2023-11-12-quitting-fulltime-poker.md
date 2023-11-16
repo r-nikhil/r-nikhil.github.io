@@ -43,3 +43,4 @@ In conclusion, I was extremely short sighted about Poker as a career. Didn't thi
 If you liked this, checkout my other post on building a small business in Poker: 
 
 - [GTO Inspector - My attempt at building an online study tool](https://rnikhil.com/2022/06/15/gtoinspector-startup.html)
+- [Do multi gaming apps make sense?](https://rnikhil.com/2023/04/09/multi-vs-single-gaming.html)
