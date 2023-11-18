@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: ⭐️ GTO Inspector - My attempt at building an online business
+title: ✨ GTO Inspector - My attempt at building an online business
 youtubeId: VdmHds-lylY
 
 
