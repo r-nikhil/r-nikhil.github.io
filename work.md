@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Work
+title: About
 permalink: /work/
 ---
 
@@ -13,12 +13,13 @@ permalink: /work/
 - <a href= "https://rnikhil.com/assets/files/resume.pdf"> Resume </a>
 - <a href= "https://news.ycombinator.com/user?id=whoami_nr"> HN Profile </a>
 - <a href= "https://github.com/r-nikhil"> Github </a>
+- <a href="mailto:contact@rnikhil.com">Send email</a>
 
 
 
 #### Work experience
 
-* **Senior Product Manager - Paytm First Games (present)** 
+* **Senior Product Manager - Paytm First Games** 
 
 1. Built and scaled Poker to $7Mn/year  CM1 and top 5 platform by liquidity in the country. Responsible for the entire product roadmap, strategy and GTM. Launched new Poker formats, tournaments and the desktop platform
 2. Launched the entire task center suite enabling growth teams to run segmented engagement and retention campaigns thereby improving core revenue KPIs by 10%
@@ -28,8 +29,7 @@ permalink: /work/
 
 * **Founder - GTO Inspector** 
 
-1. Post game hand analysis: Built and launched an interactive dashboard globally to help poker players identify and fix
-their weak points by uploading hand histories to be compared against game theory optimal(GTO) solutions
+1. Post game hand analysis: Built and launched an interactive dashboard globally to help poker players identify and fix their weak points by uploading hand histories to be compared against game theory optimal(GTO) solutions
 2. Consulted and helped built products for leading poker websites to combat fraud (multi-accounting, chip dumping, bonus abuse, collusion detection) and improve matchmaking efficiency
 3. Reached a peak MRR ≈ 4000USD with close to 100MAU. Product was used actively by every PLO poker professional in India and Poker stables for teaching advanced strategies
 4. My experience running this business can be found [here](/2022/06/15/gtoinspector-startup.html) 
