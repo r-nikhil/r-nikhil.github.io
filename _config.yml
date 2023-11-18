@@ -47,8 +47,8 @@ minima:
 
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
-inclclude:
-- _pages
+# inclclude:
+# - _pages
 
 header_pages:
 - work.md
