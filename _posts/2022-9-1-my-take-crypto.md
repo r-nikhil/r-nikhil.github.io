@@ -26,7 +26,7 @@ So, what do I think will come out of web3/DeFi mania?
 - It may solve for some specific use cases in the future like remittances (cross border payments, a $5 billion use case ) or market making/infra for trading which is again maybe a $30 Billion business. 
 
 
-I hope in the future, we can solve legitimate problems with this tech. Luckily since this space basically speed runs through everything, the cycle length to actual mass products may not be as long as the internet. 
+I hope in the future, we can solve legitimate problems with this tech. Luckily since this space basically speed runs through everything, the cycle length to actual mass products may not be as long as the internet. Honestly though, these brand of "web3" applications have been coolest new tech(paradigm) in a while and us being technologists, its just a lot of fun to investigate them and play around.
 
 Checkout my other related posts too: 
 

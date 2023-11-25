@@ -53,10 +53,6 @@ As a product manager working in gaming, its impossible to miss the recent rise o
 
 - In the previous blog, we discussed about how two games interact with each other and in this post, we looked at some ways to evaluate and pick a game for our bundle. Do remember that the games you pick initially and the dimension you focus on to evaluate them would determine your product and strategy. For example, if the game has high power user population, your game discovery should be more towards satisfying their core need/game, skill vs Luck factor of the game would determine your FTUE and how you will deal with the learning curve and cultural significance of the game would determine your GTM etc. Ultimately, your selection of games should determine the product and discovery and not the other way around. I would like to end this post with a rap written by GPT4 summarizing this post.  
 
-> Gaming startup, gotta evaluate, it's no fluke,<br>
-> Check market size, learnin' curve, and legal rebuke.<br>
->Popularity and money, see them in distribution,<br>
->High reward variance brings the player's contribution.
 
 If you liked reading this, checkout my other posts too:
 

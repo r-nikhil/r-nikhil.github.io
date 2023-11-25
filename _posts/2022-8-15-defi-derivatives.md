@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: Option protocols in DeFi
+title: Derivative protocols in DeFi
 
 
 
@@ -12,7 +12,7 @@ This post is a summary of all the options products available in the DeFi space. 
 
 Before going ahead, it helps the reader to have  a basic understanding of what options/futures are. You can read a basic primer [here](https://zerodha.com/varsity/module/option-theory/) from [Zerodha](https://zerodha.com/) which elaborates on the fundamentals of an options contract in TradFi. 
 
-One of the main differences between TradFi options and DeFi options is the additional component of a liquidity pool. Since we can't have orderbooks (due to limited TPS, available block space etc) in DeFi, liquidity providers come together to provide liquidity to the pool in return for earning some yield. You can think of these LP's as the equivalent of market makers(banks/hedge funds/prop trading shops) in TradFi.
+One of the main differences between TradFi options and DeFi options is the additional component of a liquidity pool. Since we can't have order books (due to limited TPS, available block space etc) in DeFi, liquidity providers come together to provide liquidity to the pool in return for earning some yield. You can think of these LP's as the equivalent of market makers(banks/hedge funds/prop trading shops) in TradFi.
 
 Most of these product are inspired from the equivalent TradFi products and follow along closely in terms of their equivalent implementation. 
 
@@ -99,6 +99,7 @@ Let's look at how these products are structured in the DeFi space:
 
 There are a lot more derivate platforms which further build on top of yield aggregators, DOVs etc. We shall have a look at them in the next post. 
 
+Disclosere: I use the above platforms and don't endorse any of them. 
 
 If you like it, check out my other posts too: 
 
