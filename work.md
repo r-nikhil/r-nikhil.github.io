@@ -4,25 +4,29 @@ title: About
 permalink: /work/
 ---
 
+<a href="https://twitter.com/rnikhilcom">Twitter </a> / <a href="https://www.linkedin.com/in/rnikhilcom/">Linkedin </a>/ <a href= "https://rnikhil.com/assets/files/resume.pdf"> Resume </a>
 
+<a href= "https://news.ycombinator.com/user?id=whoami_nr"> HN Profile </a> / <a href= "https://github.com/r-nikhil"> Github </a> / <a href="mailto:contact@rnikhil.com">Send email</a>
+- Present
+  - Hacking around with AI. Prompt injection, inference on edge devices and quantisation are my current interests. Looking for interesting opportunities in associated domains. 
+- 2020-2023
+    - Led the product and business for the Poker app in Paytm and scaled it to a $10m biz
+    - Built an poker analytics tool startup and ran a coaching operation with 15 players
+    - Trading and yeild farming across all DeFi protocols 
+    - Played professional poker at the highest stakes (all.in adj 11bb/100)
+- 2018-2020
+  - Joined Flipkart as a PM to build their data platform ingestion pipelines and BNPL product
+- 2014-2018
+    - Only focus was on learning how computers work. Self taught programmer. Started with web dev but spent majority time on OS, computer security and network protocols. Contributed a ton to FOSS projects
+    - Exploited a zero day in a local Cisco switch in my hostel to adjust bandwidth limitations for me and my friends
+    - Did [some](https://summerofcode.withgoogle.com/) [cool](https://owasp.org/www-community/initiatives/code_sprint/) [internships](https://education.wolfram.com/summer-school) with low acceptance rates
 
-<u>Quick Links </u>
-
-- <a href="https://twitter.com/rnikhilcom">Twitter </a>
-- <a href="https://www.linkedin.com/in/rnikhilcom/">Linkedin </a>
-- <a href= "https://rnikhil.com/assets/files/resume.pdf"> Resume </a>
-- <a href= "https://news.ycombinator.com/user?id=whoami_nr"> HN Profile </a>
-- <a href= "https://github.com/r-nikhil"> Github </a>
-- <a href="mailto:contact@rnikhil.com">Send email</a>
-
-
-
-#### Work experience
+#### Detailed Work experience
 
 * **Senior Product Manager - Paytm First Games** 
 
 1. Built and scaled Poker to $7Mn/year  CM1 and top 5 platform by liquidity in the country. Responsible for the entire product roadmap, strategy and GTM. Launched new Poker formats, tournaments and the desktop platform
-2. Launched the entire task center suite enabling growth teams to run segmented engagement and retention campaigns thereby improving core revenue KPIs by 10%
+2. Built products for growth teams to run segmented engagement and retention campaigns thereby improving core revenue KPIs by 10%
 3. Researched and launched short form poker variants to widen TAM and reduce CAC, an automated tutorial bot (FTUE) for new users and industry first features like Pot of Gold to improve our D7 conversion  
 
 
@@ -37,17 +41,10 @@ permalink: /work/
 
 * **Associate Product Manager 2 - Flipkart** 
 
-1. Fraud prevention: Built a rule based fraud prevention framework successfully identifying and preventing RTO frauds
-and account takeovers leading to 15% reductions in CX escalations
-2. Data ingestion Platform: Worked on the central data platform building ingestion pipelines and analytics products
-3.  Fintech: Researched and launched a late payment fee structure after A/B testing for the BNPL product leading to 2.5%
-increase in revenue without increase in NPA
-4.  Access control: Defined and implemented an authentication and authorisation layer for the data platform and defined
-access controls for the PII data of 100M users increasing security and reliability
-5.  Interactive PnL dashboard: Built an internal dashboard for business teams to help identify the profitability of
-shipments and optimize at a pin-code * product category * user demographic level
-6.  Worked on the Insurance platform building the motor insurance product for both 4wheelers and 2 wheelers
-
+1. Fraud prevention: Built a rule based fraud prevention framework successfully identifying and preventing RTO frauds and account takeovers leading to 15% reductions in CX escalations
+2. Data ingestion Platform: Worked on the central data platform building ingestion pipelines and analytics products and the Insurance platform building the motor insurance product for both 4wheelers and 2 wheelers
+3.  Fintech: Researched and launched a late payment fee structure after A/B testing for the BNPL product leading to 2.5% increase in revenue without increase in NPA
+4.  Interactive PnL dashboard: Built an internal dashboard for business teams to help identify the profitability of shipments and optimize at a pin-code * product category * user demographic level
 
 * **Software Developer -OWASP Code Sprint `17 -  ZSC Tool Project(Summer 2017)** 
 
@@ -67,23 +64,18 @@ Notebook can be found [here](https://education.wolfram.com/summer/school/alumni/
 _Technologies Used_: C++, Wolfram Mathematica
 
 
-* **Google Summer of Code 2017 with LabLua - HTTS network module**
-
-Worked with multiple mentors to add support for HTTPS CONNECT Tunnel, HTTPS Redirects, SNI tests and HTTP/2 support for Luasec HTTP networking library bringing it to release. 
-
-_Technologies Used_: Lua and a lot of networking concepts
-
-* **Google Summer of Code 2016 with LabLua - Sailor Web Framework**
+* **Google Summer of Code with LabLua - Sailor Web Framework**
 
 1. Integrated Elasticsearch with Sailor so that ES indexes can now be stored/searched as Sailor models, developed a config editor to change configuration without downtime greatly easing the development workflow.
 2. Worked on the centralised plugin system to integrate third party extensions into Sailor growing the community multifold.
+3. Worked with multiple mentors to add support for HTTPS CONNECT Tunnel, HTTPS Redirects, SNI tests and HTTP/2 support for Luasec HTTP networking library
 Proposal can be found <a href="/assets/files/LabLua GSoc 2016 Proposal - Nikhil. R.pdf">here</a>
 
-_Technologies Used_: Lua, Elasticsearch REST API
+_Technologies Used_: Lua, Elasticsearch REST API and a lot of networking concepts
 
 * **Vedanta Resources Ltd. (Summer 2015)**
 
-1. Analysed and automated the data reporting and logging system at the Jharsuguda Plant.Written in Python, Python-excel packages like openpyxl and xlutils.
+1. Analysed and automated the data reporting and logging system at the Jharsuguda Plant. Written in Python, Python-excel packages like openpyxl and xlutils.
 2. Conducted company wide surveys to identify bottlenecks in operation, implemented automated solutions and saved around 70 hours of manual labor monthly.
 
 _Technologies Used_: Python, Python-excel packages like openpyxl, xlutils etc
@@ -97,7 +89,7 @@ _Technologies Used_ : LAMP stack
 
 * **Technical Lead - DoctorsNow(now https://getvisitapp.com/)(Oct 2014 - Mar 2015)**
 
-1. Led the backend team of 3 to build the MVP for a patient doctor appointment booking system and other products for a healthcare startup.
+1. Built the MVP for a patient doctor appointment booking system and other products for a healthcare startup.
 2. We developed 1 MVP and 2 products in the duration of 2 months and hit a MRR of 500$ on our MVP itself.
 
 _Technologies Used_: PHP, Slim Framework, WebRTC for the video calls
@@ -138,10 +130,6 @@ _Technologies Used_: C
 
 #### Publications
 
-* CSMS/CA layer for a generic protocol stack
-
-Implemented a Carrier Sense Multiple access with collision avoidance (CSMS/CA) layer for a generic protocol stack which was presented at APOGEE 2015.
-
 * Economic Analysis of Data Breaches
 
 Collected data about recent data breaches in the last one year to build a regression model for prediction and prevention of data breaches. Research thesis indicated that lack of policy understanding and low expenditure to be major factors for breaches. Successfully presented it as my undergraduate thesis for the M.Sc Economics Degree.
@@ -164,7 +152,7 @@ Collected data about recent data breaches in the last one year to build a regres
 * Web Frameworks: Sailor, Django, Flask, Slim, Laravel
 * Databases: MySQL, MongoDB, Redis, Elasticsearch
 * Operating Systems: Linux, Windows
-* DevOps: AWS, Git, Ansible, Docker, Heroku
+* DevOps: AWS, Git, Docker, Heroku
 * Reversing Tools: OllyDBG, GDB, Bless(hex editor), Hopper Disassembler
 
 #### Talks
@@ -180,14 +168,6 @@ Collected data about recent data breaches in the last one year to build a regres
 * Member of Team Inspired Karters which builds an off-road vehicle for participating in BAJA-SAE(ATV Racing) around the globe.
 * Member of National Service Scheme, Pilani, Incharge of the Computer Literacy Programme for under privileged kids in and around Pilani.
 
-
-#### Awards and Achievements
-
-* Top 0.1% in JEE Mains 2013
-* Best outgoing student award in secondary school for scoring a perfect 10 in CBSE exams.
-
 #### Education
 
-* M.Sc Economics and B.E Manufacturing at Birla Institute of Technology and Science Pilani, Pilani Campus graduating May 2018
-* Higher Secondary School: Narayana Junior College (M.P & E.V English Medium School), Visakapattinam
-* Secondary School: The Hindu Colony Chellammal Vidyalaya Senior Secondary School, Chennai
+* M.Sc Economics and B.E Manufacturing at Birla Institute of Technology and Science Pilani, Pilani Campus graduated 2018
