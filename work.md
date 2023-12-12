@@ -8,7 +8,7 @@ permalink: /work/
 
 <a href= "https://news.ycombinator.com/user?id=whoami_nr"> HN Profile </a> / <a href= "https://github.com/r-nikhil"> Github </a> / <a href="mailto:contact@rnikhil.com">Send email</a>
 - Present
-  - Hacking around with AI. Prompt injection, inference on edge devices and quantisation are my current interests. Looking for interesting opportunities in associated domains. 
+  - Hacking around with AI. Prompt injection, inference on edge devices and AI agents are my current interests. Looking for interesting opportunities in associated domains. 
 - 2020-2023
     - Led the product and business for the Poker app in Paytm and scaled it to a $10m biz
     - Built an poker analytics tool startup and ran a coaching operation with 15 players
