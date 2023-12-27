@@ -65,6 +65,7 @@ In the next blog post, we will look at various defensive measures.
 
 ##### More resources and reading
 
+- [OWASP Top 10 LLM apps](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf)
 - [Latent space article on Reverse prompt engineering](https://www.latent.space/p/reverse-prompt-eng)
 - [Preamble walkthough of a command injections](https://www.preamble.com/prompt-injection-a-critical-vulnerability-in-the-gpt-3-transformer-and-how-we-can-begin-to-solve-it?ref=hn)
 - [Exploring Prompt Injection Attacks by NCC Group](https://research.nccgroup.com/2022/12/05/exploring-prompt-injection-attacks/)
