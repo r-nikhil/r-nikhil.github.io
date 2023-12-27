@@ -49,7 +49,7 @@ There is a lot of content online about various prompt hacking methods. In this s
 - Obfuscation strategies
     - Its a simple technique designed to evade hard coded filters. Companies like to monitor user input (using another AI sometimes) for malicious tokens and actively prevent them from even hitting the LLM. Common methods here include: 
         - Base64 encoding the message
-        - Use virtual functions to smuggle illegal tokens
+        - [Use virtual functions to smuggle illegal tokens](https://www.reddit.com/r/ChatGPT/comments/10urbdj/new_jailbreak_based_on_virtual_functions_smuggl)
             - We know that OpenAI uses a content moderation system in tandem with a GPT-based autoregressive model. Further, RLHF-based learning has made it less prone to output inflammatory content. 
 
 <div align = "center">
