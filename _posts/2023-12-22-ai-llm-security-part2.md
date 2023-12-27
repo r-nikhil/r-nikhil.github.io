@@ -45,6 +45,7 @@ src="https://www.youtube.com/embed/PIY5ZVktiGs">
 <img  src="/assets/files/cheatcode.png">
 </div>
 
+In the next blog post, we will look at various defensive measures. 
 
 ###### CTF games to practice prompt injection
 
@@ -56,7 +57,9 @@ src="https://www.youtube.com/embed/PIY5ZVktiGs">
 - [AI crowd challenge](https://www.aicrowd.com/challenges/hackaprompt-2023)
     - This was the hardest one I played and I still haven't crack level 6 and 10 in this one. Figuring out the prompt injection vector is not enough to win the challenge but you are also scored on the number of token used in your prompt. 
 - [Double speak chat](https://doublespeak.chat/)
-    - Didn't enjoy playing this due to the high latency of the responses. They also have a handbook on LLM security which you should check out. 
+    - Didn't enjoy playing this due to the high latency of the responses. They also have a handbook on LLM security which you should check out.
+
+ 
 
 ##### More resources and reading
 
