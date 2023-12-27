@@ -37,13 +37,15 @@ src="https://www.youtube.com/embed/PIY5ZVktiGs">
 
 - [Universal cheatcodes](https://llm-attacks.org/zou2023universal.pdf). This is by far the most interesting and research oriented method. The approach is to find suffix(the cheat code) that, when attached to a wide range of queries for an LLM to produce objectionable content, aims to maximize the probability that the model produces an affirmative response (rather than refusing to answer). However, instead of relying on manual engineering, the idea is to automatically produces these adversarial suffixes by a combination of greedy and gradient-based search techniques, and also improves over past automatic prompt generation methods. The code can be found [here](https://github.com/llm-attacks/llm-attacks)
 
+<div align = "center">
+<img  src="/assets/files/cheatcode.png">
+</div>
+
+
 - Use a second LLM to jailbreak the main LLM. The University of Pennsylvania folks came up with a system called PAIR - (Prompt Automatic Iterative Refinement). PAIR uses a separate attacker language model to generate jailbreaks on any target model. The attacker model receives a detailed system prompt, instructing it to operate as a red teaming assistant. PAIR utilizes in-context learning to iteratively refine the candidate prompt until a successful jailbreak by accumulating previous attempts and responses in the chat history. The attacker model also reflects upon the both prior prompt and target model's response to generate an "improvement" as a form of chain-of-thought reasoning, allowing the attacker model to explain its approach, as a form of model interpretablility. You can find more details about this [here](https://jailbreaking-llms.github.io/)
 
 
 
-<div align = "center">
-<img  src="/assets/files/cheatcode.png">
-</div>
 
 In the next blog post, we will look at various defensive measures. 
 
