@@ -8,7 +8,8 @@ permalink: /work/
 
 <a href= "https://news.ycombinator.com/user?id=whoami_nr"> HN Profile </a> / <a href= "https://github.com/r-nikhil"> Github </a> / <a href="mailto:contact@rnikhil.com">Send email</a>
 
-<a rel="me" href="https://mastodon.social/@rnikhil">Mastodon</a>
+<a rel="me" href="https://mastodon.social/@rnikhil" style="color:white; visibility:hidden;">Mastodon</a>
+
 - Present
   - Hacking around with AI. Prompt injection, inference on edge devices and AI agents are my current interests. Looking for interesting opportunities in associated domains. 
 - 2020-2023
