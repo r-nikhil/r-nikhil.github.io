@@ -75,5 +75,7 @@ There is a lot of content online about various prompt hacking methods. In this s
 <div align = "center">
 <img  src="/assets/files/outres.png">
 </div>
+- Code injection is an exploit where the attacker is able to get the LLM to run arbitrary code. This can occur in tool-augmented LLMs, where the LLM is able to send code to an interpreter, but it can also occur when the LLM itself is used to evaluate code. If you check this [example](https://atlas.mitre.org/studies/AML.CS0016/), people were able to extract the OpenAPI keys from a startup called MathGPT but just asking for it.  
+
 
 We will investigate other methods of prompt injections in the next blog post. 
