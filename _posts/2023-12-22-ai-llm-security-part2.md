@@ -60,8 +60,10 @@ In the next blog post, we will look at various defensive measures.
     - This was the hardest one I played and I still haven't crack level 6 and 10 in this one. Figuring out the prompt injection vector is not enough to win the challenge but you are also scored on the number of token used in your prompt. 
 - [Double speak chat](https://doublespeak.chat/)
     - Didn't enjoy playing this due to the high latency of the responses. They also have a handbook on LLM security which you should check out.
-
- 
+- [Automorphic Aegis challenge](https://automorphic.ai/challenge)
+    - You get $50 for cracking this. It says $100 on the website but somebody has cracked it already once. Their defense is a self learning classifier model running on both ingress and egress
+- [Tensortrust.ai](https://tensortrust.ai/)
+    - You play both offense and defense crafting appropriate prompts
 
 ##### More resources and reading
 
