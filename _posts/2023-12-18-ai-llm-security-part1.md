@@ -5,6 +5,10 @@ title: LLM security - Introduction
 
 Since I quit my job couple months back, I've been tinkering around with various emerging technologies. I have been pretty obsessed with the current AI evolution of large language models (LLMs) and their surprising text generation capabilities. Whether you are surprised or not, people have started integrating them into just about every software we interact with and after spending countless hours asking it to generate song lyrics, I eventually wanted to understand what was happening behind the scenes. I am no AI engineer and I barely remember the Machine learning/ Neural network courses I took in college, but given my computer security background, what better way to learn how these LLM's work than by trying to break them? In this post, we look at the basics of AI security, current "known" attacks, common defenses and some CTF challenges. I've been meaning to write this post for a while but this field was moving so fast that keeping up latest publications is a full time job. Now that NeurIPS is over and things have calmed down, I finally got time to work on this.
 
+<div align = "center">
+<img  src="/assets/files/attacks.png">
+</div>
+
 This is going to be a multipart series given the sheer amount of available content in this field despite it being barely 2 years old. Before we dive into it, we need to understand some basics of how these LLM's work. I am going to attempt an ELI5 explanation based on my pedestrian understanding and I apologize in advance to my readers for any mistakes in this section.
 
 ###### Text generation
