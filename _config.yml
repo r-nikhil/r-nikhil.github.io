@@ -1,7 +1,7 @@
 title: Nikhil. R
 author:
-  # name: Nikhil
-  # email: contact@rnikhil.com
+  name: Nikhil
+  email: contact@rnikhil.com
 description: > # this means to ignore newlines until "show_excerpts:"
 google_analytics: G-TBX7XEEFQ2
 show_excerpts: false # set to true to show excerpts on the homepage
@@ -10,18 +10,18 @@ show_excerpts: false # set to true to show excerpts on the homepage
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
   date_format: "%b %-d, %Y"
-  skin: dark
+  skin: classic
 
   # generate social links in footer
   social_links:
-    # twitter: rnikhilcom
-    # github:  r-nikhil
+    twitter: rnikhilcom
+    github:  r-nikhil
     # devto: jekyll
     # dribbble: jekyll
     # facebook: jekyll
     # flickr:   jekyll
     # instagram: jekyll
-    # linkedin: rnikhilcom
+    linkedin: rnikhilcom
     # pinterest: jekyll
     # youtube: jekyll
     # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g

@@ -4,11 +4,23 @@ title: About
 permalink: /work/
 ---
 
-<a href="https://twitter.com/rnikhilcom">Twitter </a> / <a href="https://www.linkedin.com/in/rnikhilcom/">Linkedin </a>/ <a href= "https://rnikhil.com/assets/files/resume.pdf"> Resume </a>
+<a href="https://twitter.com/rnikhilcom">
+<img  src="/assets/files/x.png" style="width: 25px; height: 25px; float:left; margin-right:10px;"> </a>
 
-<a href= "https://news.ycombinator.com/user?id=whoami_nr"> HN Profile </a> / <a href= "https://github.com/r-nikhil"> Github </a> / <a href="mailto:contact@rnikhil.com">Send email</a>
+<a href="https://www.linkedin.com/in/rnikhilcom/">
+<img  src="/assets/files/linkedin.png" style="width: 27px; height: 27px; float:left; margin-right:10px;"> </a>
 
-<a rel="me" href="https://mastodon.social/@rnikhil" style="color:white; visibility:hidden;">Mastodon</a>
+
+<a href="https://news.ycombinator.com/user?id=whoami_nr">
+<img  src="/assets/files/y18.svg" style="width: 27px; height: 27px; float:left; margin-right:10px;"> </a>
+
+<a href="https://github.com/r-nikhil">
+<img  src="/assets/files/github.png" style="width: 30px; height: 30px; "> </a>
+
+<a href= "https://rnikhil.com/assets/files/resume.pdf"> Resume </a>
+
+
+<!-- <a rel="me" href="https://mastodon.social/@rnikhil" style="color:white; visibility:hidden;">Mastodon</a> -->
 
 - Present
   - Hacking around with AI. Prompt injection, inference on edge devices and AI agents are my current interests. Looking for interesting opportunities in associated domains. 
