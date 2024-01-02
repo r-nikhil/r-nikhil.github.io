@@ -2,7 +2,7 @@
 layout: post
 title: Sailor - A MVC framework in Lua
 ---
-I will be working with Lablua this summer as part of the . I shall be extending the Sailor framework by adding an centralized configuration editor and adding integrations to facilitate Elasticsearch indexes to be stored as Sailor Models. Sailor is a Web Framework. View the proposal [here](\assets\files\LabLua GSoc 2016 Proposal - Nikhil. R.pdf)
+I will be working with Lablua this summer as part of Google Summer of Code (GSoC). I shall be extending the Sailor framework by adding an centralized configuration editor and adding integrations to facilitate Elasticsearch indexes to be stored as Sailor Models. Sailor is a Web Framework. View the proposal [here](\assets\files\LabLua GSoc 2016 Proposal - Nikhil. R.pdf)
 
 
 ## What is a [Web Framework]() ?

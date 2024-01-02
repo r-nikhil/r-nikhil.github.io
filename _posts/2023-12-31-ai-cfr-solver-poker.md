@@ -2,6 +2,7 @@
 layout: post
 title:  Counterfactual Regret Minimization or How I won any money in Poker?
 ---
+[HN Discussion](https://news.ycombinator.com/item?id=38823240)
 
 As most readers of my blog would know by now, I used to play Poker for a couple years as a full time endeavour. One of the main tools we used for learning the game were called "solvers". This blog post is about these programs and how they work? An introductory understanding of Poker terminologies, betting sequences and basic conditional probability is required for this post. 
 
