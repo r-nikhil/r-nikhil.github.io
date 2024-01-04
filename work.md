@@ -184,3 +184,4 @@ Collected data about recent data breaches in the last one year to build a regres
 #### Education
 
 * M.Sc Economics and B.E Manufacturing at Birla Institute of Technology and Science Pilani, Pilani Campus graduated 2018
+* Chellamal Vidyalaya, Nanganallur, Chennai
