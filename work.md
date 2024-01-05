@@ -48,8 +48,7 @@ permalink: /work/
 
 1. Post game hand analysis: Built and launched an interactive dashboard globally to help poker players identify and fix their weak points by uploading hand histories to be compared against game theory optimal(GTO) solutions
 2. Consulted and helped built products for leading poker websites to combat fraud (multi-accounting, chip dumping, bonus abuse, collusion detection) and improve matchmaking efficiency
-3. Reached a peak MRR ≈ 4000USD with close to 100MAU. Product was used actively by every PLO poker professional in India and Poker stables for teaching advanced strategies
-4. My experience running this business can be found [here](/2022/06/15/gtoinspector-startup.html) 
+3. My experience running this business can be found [here](/2022/06/15/gtoinspector-startup.html) 
 
 
 * **Associate Product Manager 2 - Flipkart** 
