@@ -32,7 +32,7 @@ permalink: /work/
 - 2014-2018
     - Only focus was on learning how computers work. Self taught programmer. Started with web dev but spent majority time on OS, computer security and network protocols. Contributed a ton to FOSS projects
     - Exploited a zero day in a local Cisco switch in my hostel to adjust bandwidth limitations for me and my friends
-    - Did [some](https://summerofcode.withgoogle.com/) [cool](https://owasp.org/www-community/initiatives/code_sprint/) [internships](https://education.wolfram.com/summer-school) with low acceptance rates
+    - Did <ins>[some](https://summerofcode.withgoogle.com/)</ins> <ins>[cool](https://owasp.org/www-community/initiatives/code_sprint/)</ins> <ins>[internships](https://education.wolfram.com/summer-school)</ins> with low acceptance rates
 
 #### Detailed Work experience
 
