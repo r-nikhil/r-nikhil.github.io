@@ -28,7 +28,7 @@ permalink: /work/
     - Led the product and business for the Poker app in Paytm and scaled it to a $10m biz
     - Built an poker analytics tool startup and ran a coaching operation with 15 players
     - Trading and yeild farming across all DeFi protocols 
-    - Played professional poker at the highest stakes (all.in adj 11bb/100)
+    <!-- - Played professional poker at the highest stakes (all.in adj 11bb/100) -->
 - 2018-2020
   - Joined Flipkart as a PM to build their data platform ingestion pipelines and BNPL product
 - 2014-2018
