@@ -3,6 +3,8 @@ layout: post
 title: Attacks on machine learning models
 ---
 
+[HN discussion](https://news.ycombinator.com/item?id=38904963)
+
 With all the hype surrounding machine learning whether its with self driving cars or LLMs, there is a big elephant in the room which not a lot of people are talking about. Its not the danger of ChatGPT taking your jobs or deepfakes or the singularity. Its instead about how neural networks can be attacked. This blog post is my attempt to throw some light on the topic. By the end of the post, you would have understood that neural network attacks are not just limited to adversarial examples and that they are just as susceptible to attacks like other systems. If you are deploying machine learning systems in production, I think its worth paying attention to this topic. 
 
 ###### Adversarial attacks
