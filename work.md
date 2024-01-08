@@ -12,8 +12,10 @@ permalink: /work/
 <img  src="/assets/files/y18.svg" style="width: 27px; height: 27px; float:left; margin-right:10px;"> </a>
 <a href="https://github.com/r-nikhil">
 <img  src="/assets/files/github.png" style="width: 30px; height: 30px; "> </a>
-<a href="mailto:contact@rnikhil.com">
-<img  src="/assets/files/mail.png" style="width: 30px; height: 30px; "> </a>
+
+
+<a href="mailto:contact@rnikhil.com"> Email </a>
+<!-- <img  src="/assets/files/mail.png" style="width: 30px; height: 30px; "> </a> -->
 
 <a href= "https://rnikhil.com/assets/files/resume.pdf"> Resume </a>
 
