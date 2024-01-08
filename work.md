@@ -36,7 +36,7 @@ permalink: /work/
     - Exploited a zero day in a local Cisco switch in my hostel to adjust bandwidth limitations for me and my friends
     - Did <ins>[some](https://summerofcode.withgoogle.com/)</ins> <ins>[cool](https://owasp.org/www-community/initiatives/code_sprint/)</ins> <ins>[internships](https://education.wolfram.com/summer-school)</ins> with low acceptance rates
 
-#### Detailed Work experience
+#### Detailed Work experience(outdated)
 
 * **Senior Product Manager - Paytm First Games** 
 
