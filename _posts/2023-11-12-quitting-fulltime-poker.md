@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ✨ Farewell to the felt - Quitting the full-time Poker scene
+title: 🟢 Farewell to the felt - Quitting the full-time Poker scene
 ---
 [HN discussion](https://news.ycombinator.com/item?id=38262425)
 

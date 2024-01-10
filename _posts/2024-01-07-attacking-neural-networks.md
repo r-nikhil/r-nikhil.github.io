@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Attacks on machine learning models
+title: 🟢 Attacks on machine learning models
 ---
 
 [HN discussion](https://news.ycombinator.com/item?id=38904963)

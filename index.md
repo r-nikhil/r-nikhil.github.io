@@ -25,6 +25,6 @@ float: right;
 </div> -->
 An engineer turned product manager with a strong passion for building impactful and helpful products. Love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang text we don’t have a better place for. 
 
-**Some popular posts are marked with a ✨.**
+**The top 5 posts are marked with a 🟢.**
 
 
