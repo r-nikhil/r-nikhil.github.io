@@ -1,6 +1,7 @@
 ---
 layout: post
 title: LLM security - Introduction
+tags: ai llm security prompt 
 ---
 
 Since I quit my job couple months back, I've been tinkering around with various emerging technologies. I have been pretty obsessed with the current AI evolution of large language models (LLMs) and their surprising text generation capabilities. Whether you are surprised or not, people have started integrating them into just about every software we interact with and after spending countless hours asking it to generate song lyrics, I eventually wanted to understand what was happening behind the scenes. I am no AI engineer and I barely remember the Machine learning/ Neural network courses I took in college, but given my computer security background, what better way to learn how these LLM's work than by trying to break them? In this post, we look at the basics of AI security, current "known" attacks, common defenses and some CTF challenges. I've been meaning to write this post for a while but this field was moving so fast that keeping up latest publications is a full time job. Now that NeurIPS is over and things have calmed down, I finally got time to work on this.
@@ -11,7 +12,7 @@ Since I quit my job couple months back, I've been tinkering around with various 
 
 This is going to be a multipart series given the sheer amount of available content in this field despite it being barely 2 years old. Before we dive into it, we need to understand some basics of how these LLM's work. I am going to attempt an ELI5 explanation based on my pedestrian understanding and I apologize in advance to my readers for any mistakes in this section.
 
-###### Text generation
+#### Text generation
 
 At an ultra high level, language models generate text one word at a time by predicting the probability distribution of the next word in the sentence given the previous context and sampling this distribution. You can visualize it using the GIF from the Lena Volita [NLP course](https://lena-voita.github.io/nlp_course/language_modeling.html) below
 
@@ -23,7 +24,7 @@ As you see above, every time you want to predict the next word, you have to feed
 
 But how are they calculating the best word probability distribution real time?
 
-###### Neural networks
+#### Neural networks
 
 OpenAI for example has trained a massive neural network (around 130B words for GPT3) where you can pass your text and it will tell you what is the most likely word which will follow that.
 
@@ -34,7 +35,7 @@ OpenAI for example has trained a massive neural network (around 130B words for G
 But why do we have to know about these neural networks to do prompt injection? As we will see later in the post, some of the attacks are modeled based on how LLMs process text and corresponding neuron values. Some neurons track the [length](https://arxiv.org/abs/1506.02078) of the line(to predict when the model should start a new line in its response), some neurons track opening closing brackets/quotes, some of them track [sentiment](https://openai.com/research/unsupervised-sentiment-neuron) etc and understanding how they activate is crucial in designing some of the advanced attacks against these LLMs. Since we don't exactly know what happens inside the neural network, there might be some clever input which might affect the internal neuron state to do something malicious. 
 
 
-###### What is prompt injection and why does it matter?
+#### What is prompt injection and why does it matter?
 
 *Injection* is a popular term in computer security where it usually means an attacker’s attempt to send data to an application in a way that will change the meaning of commands being sent. There are many kind of [injection attacks](https://www.acunetix.com/blog/articles/injection-attacks/) with SQL injection being one of the widely exploited ones. Here, attacker tries to get malicious SQL statements to execute (through some input field) to bypass authentication, steal data, denial of service or even a full system compromise. Prompts these days are nothing but instructions to the AI. Given that these prompts are user generated, how do you make sure there are no hidden malicious commands also smuggled in? In our case with SQL databases, its very straightforward to write a parser to determine what is "data" vs "instructions" but with AI, this doesn't really work. Everything is just one big blob of text.
 
@@ -44,11 +45,11 @@ What is the thread model? Well, the LLMs works with a text prompt. If the user i
 - Convincing your food delivery CX bot to give you a refund
 These scenarios will be more exacerbated as these LLMs get integrated everywhere.  
 
-##### Different types of prompt injection
+#### Different types of prompt injection
 
 There is a lot of content online about various prompt hacking methods. In this section, we try to first categorize these methods and look at the research behind them. Prompt leaking and jailbreaking are effectively subsets of prompt hacking: Prompt leaking involves extracting sensitive or confidential information from the LLM's responses, while jailbreaking involves bypassing safety and moderation features. We will also discuss specific offensive techniques as well as defensive techniques. 
 
-##### Attacking LLMs
+#### Attacking LLMs
 
 - Obfuscation strategies
     - Its a simple technique designed to evade hard coded filters. Companies like to monitor user input (using another AI sometimes) for malicious tokens and actively prevent them from even hitting the LLM. Common methods here include: 

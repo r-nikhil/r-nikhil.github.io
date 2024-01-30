@@ -1,20 +1,20 @@
 ---
 layout: post
 title: Luasec - Lua HTTPS Library
+tags: coding lua GSoC network linux internship
 ---
 
 I was working on the Luasec library over the summer mainly on fixing the HTTPS redirects, the CONNECT proxy implementation (for redirecting requests over the HTTP CONNECT tunnel) and adding support for HTTP/2(Client). 
 
 My fork of Luasec(dev branch) can be found <a href="https://github.com/whoami-nr/luasec/tree/dev">here</a> which has all the recent updates as part of GSoC and all the relevant commits.
 
-# Work done till now
+### Work done till now
 
 <strong>HTTPS Module</strong>
 
-I was working to add features for the HTTPS module during the first part of GSoC. It now supports the ability to talk HTTPS with a proxy, redirects through or without the proxy for HTTPS URLs, certain low level HTTP API functions are exposed and also supports SNI now. Work done in this section are relevant to this [file](https://github.com/whoami-nr/luasec/blob/dev/src/https.lua).
+I was working to add features for the HTTPS module during the first part of GSoC. It now supports the ability to talk HTTPS with a proxy, redirects through or without the proxy for HTTPS URLs, certain low level HTTP API functions are exposed and also supports SNI now. Work done in this section are relevant to this [file](https://github.com/whoami-nr/luasec/blob/dev/src/https.lua).   
 
-
-- CONNECT proxy support for HTTPS. Now Luasec can be used to initiate a CONNECT tunnel to a HTTP
+  - CONNECT proxy support for HTTPS. Now Luasec can be used to initiate a CONNECT tunnel to a HTTP
 proxy which enables the proxy to relay encrypted packets between Luasec and the final destination. This also works when redirects are enabled. While redirecting HTTPS->HTTPS or HTTP->HTTPS or HTTPS->HTTP(if the unsaferedirect paramter is set) it creates a new tunnel with the proxy for the new redirected destination. 
 
 - Support for HTTPS redirects with an additional safeguard for preventing unsafe redirects from HTTPS->HTTP. This involves usage of the `unsaferedirect` paramter. 
@@ -93,7 +93,7 @@ One of the most important part of this was reading RFC's and learning to adhere 
 
 ---
 
-# Work to be done
+### Work to be done
 
 - Remove the fake connection object from the HTTPS module which become pointless after the integration. 
 
@@ -102,7 +102,7 @@ One of the most important part of this was reading RFC's and learning to adhere 
 - Try to merge the existing PR supporting the ALPN negotiation scheme. 
 
 
-# Roadmap for the HTTP/2 implementation and future work
+### Roadmap for the HTTP/2 implementation and future work
 
 I have been implementing HTTP/2 based on the RFC going through it one by one. I took a lot of template code from the lua-http module which can be found [here](https://github.com/daurnimator/lua-http/). Certain modules from lua-http were imported without much changes but have been modified to work with luasec. The `connection:methods` and `stream:methods` are mostly based on lua-http module which I have worked on to work with luasocket. 
 

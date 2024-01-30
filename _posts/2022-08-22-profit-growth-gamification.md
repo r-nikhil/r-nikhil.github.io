@@ -2,7 +2,7 @@
 
 layout: post
 title: Make Poker fun again
-
+tags: poker Octalysis gamification gaming
 
 ---
 
@@ -43,7 +43,7 @@ This article focuses on bring elements of games into poker to make it more fun a
 8. Loss avoidance
 
 
-##### A bigger narrative/meaning
+#### A bigger narrative/meaning
 
 - It is the Core Drive where a player believes that he is doing something greater than himself or he was “chosen” to do something. Attaching meaning to playing the game becomes an intrinsic motivating factor for the player
 
@@ -54,7 +54,7 @@ This article focuses on bring elements of games into poker to make it more fun a
 - Currently poker is also viewed mainly as gambling in India. Maybe organising Poker as an India wide talent competition under the assumption that people view winning the competition as a prestigious thing helps. It also creates social influence among your peers too.  This is definitely the case with WSOP. Also  creating content around the skill aspect of poker and popularising it would help change the narrative on how poker is viewed in our Tier-2 or Tier-3 cities. 
 
 
-##### Feeling of progress and accomplishments
+#### Feeling of progress and accomplishments
 
 - Development & Accomplishment is the internal drive of making progress, developing skills, and eventually overcoming challenges.
 
@@ -70,7 +70,7 @@ This article focuses on bring elements of games into poker to make it more fun a
         - Special custom effects for winning pots/losing pots which can be  customised for a particular players
 
 
-##### Creative user participation
+#### Creative user participation
 
 - Empowerment of Creativity & Feedback is when users are engaged in a creative process where they have to repeatedly figure things out and try different combinations. People not only need ways to express their creativity, but they need to be able to see the results of their creativity, receive feedback, and respond in turn. 
 
@@ -85,7 +85,7 @@ This article focuses on bring elements of games into poker to make it more fun a
 - Waze (the traffic app) intelligently uses user generated content where the platform users feel a sense of ownership in keeping the data accurate and up to date.
         
 
-##### Sense of ownership
+#### Sense of ownership
 
 - This is the drive where users are motivated because they feel like they own something. When a player feels ownership, she innately wants to make what she owns better and own even more. 
 
@@ -103,7 +103,7 @@ This article focuses on bring elements of games into poker to make it more fun a
 
 
 
-##### Social influence
+#### Social influence
 
 - This drive incorporates all the social elements that drive people, including: mentorship, acceptance, social responses, companionship, as well as competition and envy.
 
@@ -111,7 +111,7 @@ This article focuses on bring elements of games into poker to make it more fun a
     - When you see your friend winning big in a poker competition, you automatically feel like playing the game too.  
 
 
-##### FOMO
+#### FOMO
 
 - Scarcity, impatience or basically the drive of wanting something because you can’t have it.
 
@@ -121,7 +121,7 @@ This article focuses on bring elements of games into poker to make it more fun a
     - Even basic tournament prize structure which pays out only top 5 players and tapes out super fast. TLB with limited winners  
 
 
-##### Unpredictability
+#### Unpredictability
 
 - Generally, this is a harmless drive of wanting to find out what will happen next. If you don’t know what’s going to happen, your brain is engaged and you think about it often. Many people watch movies or read novels because of this drive. **However, this drive is also the primary factor behind gambling addiction**.
 
@@ -130,7 +130,7 @@ This article focuses on bring elements of games into poker to make it more fun a
     - Random splash pots where pots are randomly boosted sometimes 
 
 
-##### Loss avoidance
+#### Loss avoidance
 
 - This core drive is based upon the avoidance of something negative happening. 
 

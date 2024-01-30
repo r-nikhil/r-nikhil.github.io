@@ -1,9 +1,7 @@
 ---
 layout: page
 title: About
-permalink: /work/
 ---
-
 <a href="https://twitter.com/rnikhilcom">
 <img  src="/assets/files/x.png" style="width: 25px; height: 25px; float:left; margin-right:10px;"> </a>
 <a href="https://www.linkedin.com/in/rnikhilcom/">
@@ -11,16 +9,24 @@ permalink: /work/
 <a href="https://news.ycombinator.com/user?id=whoami_nr">
 <img  src="/assets/files/y18.svg" style="width: 27px; height: 27px; float:left; margin-right:10px;"> </a>
 <a href="https://github.com/r-nikhil">
-<img  src="/assets/files/github.png" style="width: 30px; height: 30px; "> </a>
+<img  src="/assets/files/github.png" style="width: 30px; height: 30px;"></a>
+<a href="mailto:contact@rnikhil.com"> 
+<img  src="/assets/files/mail.png" style="width: 30px; height: 30px;"></a>
+
+An engineer turned product manager with a strong passion for building impactful and helpful products. Love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang text we don’t have a better place for.
+
+Top 5 posts by views: 
+- <a href = "https://rnikhil.com/2024/01/07/attacking-neural-networks.html">Attacks on machine learning models</a>
+- <a href = "https://rnikhil.com/2023/12/31/ai-cfr-solver-poker.html">Counterfactual Regret Minimization or How I won any money in Poker?</a>
+- <a href = "https://rnikhil.com/2023/11/12/quitting-fulltime-poker.html">Farewell to the felt - Quitting the full-time Poker scene</a>
+- <a href = "https://rnikhil.com/2023/04/09/multi-vs-single-gaming.html">How to bundle different games?</a>
+- <a href = "https://rnikhil.com/2022/08/09/tornado-cash-block.html">We should all have something to hide - Tornado cash takedown</a>
 
 
-<a href="mailto:contact@rnikhil.com"> Email </a>
-<!-- <img  src="/assets/files/mail.png" style="width: 30px; height: 30px; "> </a> -->
-
-<a href= "https://rnikhil.com/assets/files/resume.pdf"> Resume </a>
+<!-- <a href= "https://rnikhil.com/assets/files/resume.pdf"> Resume </a> -->
 
 
-<!-- <a rel="me" href="https://mastodon.social/@rnikhil" style="color:white; visibility:hidden;">Mastodon</a> -->
+#### Short summary
 
 - Present
   - Hacking around with AI. Prompt injection, inference on edge devices and AI agents are my current interests. Looking for interesting opportunities in associated domains. 
@@ -36,7 +42,10 @@ permalink: /work/
     - Exploited a zero day in a local Cisco switch in my hostel to adjust bandwidth limitations for me and my friends
     - Did <ins>[some](https://summerofcode.withgoogle.com/)</ins> <ins>[cool](https://owasp.org/www-community/initiatives/code_sprint/)</ins> <ins>[internships](https://education.wolfram.com/summer-school)</ins> with low acceptance rates
 
-#### Detailed Work experience(outdated)
+You can download my resume by clicking <a href= "https://rnikhil.com/assets/files/resume.pdf"> here. </a>
+
+
+<!-- #### Detailed Work experience(outdated)
 
 * **Senior Product Manager - Paytm First Games** 
 
@@ -185,4 +194,4 @@ Collected data about recent data breaches in the last one year to build a regres
 #### Education
 
 * M.Sc Economics and B.E Manufacturing at Birla Institute of Technology and Science Pilani, Pilani Campus graduated 2018
-* Chellamal Vidyalaya, Nanganallur, Chennai
+* Chellamal Vidyalaya, Nanganallur, Chennai -->

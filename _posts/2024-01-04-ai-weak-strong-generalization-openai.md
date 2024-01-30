@@ -1,6 +1,7 @@
 ---
 layout: post
 title: AI Alignment - Weak-to-strong generalization (W2SG) explained
+tags: ai alignment llm openai
 ---
 
 
@@ -8,7 +9,7 @@ AI alignment is a broad topic of research to basically ponder over the question 
 
 Before going further, lets first understand the setups used: 
 
-##### Weak supervisor
+#### Weak supervisor
 
 This is nothing but a base GPT-2 model fine tuned on certain ground truth labels like the Ethics datasets, Hellswag etc to create a fine tuned version of it. This fine tuned version(the weak supervisor) is then used to predict on a held-out set of examples on the ground truth dataset. This weak supervisor will then predict the labels and they are called "weak labels". 
 
@@ -26,7 +27,7 @@ Now, we train a strong model (base GPT-4 which is not fine tuned) with these wea
 
 
 
-##### Strong Ceiling - The baseline for comparison
+#### Strong Ceiling - The baseline for comparison
 
 The above process is described further in the [code](https://github.com/openai/weak-to-strong/blob/main/train_weak_to_strong.py) they open sourced. They essentially do the following: 
 - Train a weak model on the first half of the dataset
@@ -38,11 +39,11 @@ The above process is described further in the [code](https://github.com/openai/w
 <img  src="/assets/files/strongceiling.png">
 </div>
 
-##### The new method - Auxillary confidence loss
+#### The new method - Auxillary confidence loss
 
 The new method proposed in the paper is basically a way to encourage the strong model(created in the weak supervisor step) to be more confident - including confidently disagreeing with the weak supervisor if necessary. When they supervise GPT-4 with a GPT-2 level model using this method on NLP tasks, they find that the resultant model performs somewhere between GPT-3 and GPT-3.5. They were also able to recover much of the GPT-4 capabilities with much weaker supervision. They do this by having some auxillary confidence loss which forces the model to be more confident. Check section A.4 of the paper for a detailed description of the method used. I have left out the exact description due to its slightly more mathematical nature. 
 
-##### Can small models supervise larger models? 
+#### Can small models supervise larger models? 
 
 The answer is a mixed yes and a no. They were able to eke out GPT-3/3.5 level performance on NLP tasks as we see in the below graph but not so much on other tasks. 
 
@@ -54,7 +55,7 @@ NLP benchmark using 4 different models (weak supervisor, naive fine tuning, thei
 <div align = "center">
 <img  src="/assets/files/allperf.png">
 </div>
-##### Bootstrapping for chess puzzles
+#### Bootstrapping for chess puzzles
 
 In the paper, they use the above methods and do the comparison on three different tasks. First is the NLP benchmarks which we discussed above, second is chess puzzles and finally ChatGPT Reward modeling. This section details the bootstrapping used for chess puzzles. 
 
@@ -66,7 +67,7 @@ However, they found out that naive fine tuning doesn't really work well for ches
 <img  src="/assets/files/bootstrap.png">
 </div>
 
-##### ChatGPT Reward Modeling
+#### ChatGPT Reward Modeling
 
 The standard approach to aligning models today is [reinforcement learning from human feedback (RLHF)](https://en.wikipedia.org/wiki/Reinforcement_learning_from_human_feedback). A critical step of RLHF is to train a reward model (RM) to predict human preferences between model responses. Specifically, a reward model is trained on a dataset consisting of dialogs between a human and an assistant model. For each query, the humans compare multiple possible responses (completions) from the assistant, providing human preference data. Then, a reward model is trained to predict the results of pairwise comparisons between completions. Finally, the assistant model(the chatbot like ChatGPT) is trained by optimizing against the reward model with reinforcement learning (RL). 
 
@@ -74,7 +75,7 @@ As we saw in the previous section, our strong ceiling model still outperforms ou
 
 However, this poses an interesting question. Isn't it cheating to use the ChatGPT comparison data instead of using a new supervision dataset? However, since they compare performance to the strong ceiling model which was also generatively fine tuned using the same dataset(ChatGPT comparison) its fine to do this. GPT-4 was first fine tuned with ChatGPT comparison data without human preferences and then was fine tuned with the dataset of human preferences. So, even comparing to this strong ceiling they were to able to recover the performance gap by about 10-20%. 
 
-###### Conclusion
+#### Conclusion
 
 As we see above, they used three techniques to achieve some sort of weak-to-strong generalization. 
 - Auxillary confidence loss

@@ -2,9 +2,9 @@
 
 layout: post
 title: New website theme, job and hobbies
-
+tags: blog gaming job product crypto
 ---
-
+  
 - Its been a while since I updated the website. While trying to setup a Jekyll environment, I ended up in dependency hell and decided to just boot the entire ruby installation instead of fixing the circular configs. This time, I am using a theme called [Minima](https://github.com/jekyll/minima) in its dark mode version. You may notice some parts of the website still broken or unfinished. Apologies!
 
 - I would also be uploading posts/notes which I've wanted to share earlier while I was building my startup in poker (spoiler alert: It didn't work out). It was a post game study tool for PLO professionals. 

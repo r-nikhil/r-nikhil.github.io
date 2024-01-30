@@ -2,8 +2,7 @@
 
 layout: post
 title: Derivative protocols in DeFi
-
-
+tags: defi derivatives protocols web3
 
 ---
 
@@ -60,7 +59,7 @@ If the funding rate is positive, you can short perps and buy ETH on the spot mar
 
 While the above platforms mostly work on fundamental primitives, there are also a lot of companies providing pre-made option strategies for retail participants to invest in. These are particularly attractive to the less-complicated user who wants a quicker investing/gambling experience. 
 
-##### Distributed Option Vaults (DOVs)
+### Distributed Option Vaults (DOVs)
 
 - DOVs are a new form of structured product which are mostly a collection of pre-defined option strategies. DOV's are pretty important because they are able to democratize access to options without the user needing to understand complex jargon, choosing strikes/expiry or the risk of losing a lot.
 

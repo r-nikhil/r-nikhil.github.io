@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Chinchilla Paper explained
+tags: scaling ai chinchilla llm openai
 ---
 
 Whenever I see a discussion online about the current generation of LLMs, there is an inherent assumption and extrapolation that these technologies will keep improving with time. Why do we think that? The approximate answer is because of **scaling laws** which suggest indefinite improvement for the current style of transformers with additional pre-training data and parameters. This blog post delves into the intricacies of these scaling laws and examines how they guide the development of more powerful and efficient LLMs. I will be as comprehensive as I can (with the math knowledge I have) including parts about the scaling law origins, recent finding and their implications. 
@@ -33,7 +34,7 @@ So in around late 2021, the Deepmind team went on to train about 400 models rang
 <img  src="/assets/files/chinchilla.png">
 </div>
 
-##### How did they find this? 
+#### How did they find this? 
 
 The fundamental question they were trying to answer was *"Given a fixed FLOPs budget, how should one trade-off model size and the number of training tokens?"* . Its basically an optimization problem where you fix one variable (FLOPs) and try to find the optimal values for parameters and tokens. However, every time they have to test a value for parameters/tokens they have to train a model which costs millions of dollars. For the paper, they trained over 400 models with varying values of parameters and tokens taking certain approaches. Lets look at them below: 
 
@@ -69,7 +70,7 @@ This approach was slightly mathematical in nature and I shall skip directly to t
 
 Throughout the three approaches, the paper keeps referencing the Gopher model (which was earlier trained by Deepmind only) to try to demonstrate the optimal values for parameters and tokens given the compute size that was historically used. They find that the optimal model size given the Gopher budget to be a 67B model instead of the 280B they actually trained. 
 
-##### Conclusions
+#### Conclusions
 
 Modern large language models have been oversized unnecessarily. With no added performance, companies have been training massive models wasting resources. Here is a table showing optimal training FLOPs and training token for different model sizes. 
 

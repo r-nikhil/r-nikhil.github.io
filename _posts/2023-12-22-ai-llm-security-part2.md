@@ -1,6 +1,8 @@
 ---
 layout: post
 title: LLM security - Part 2 
+tags: ai llm security prompt 
+
 ---
 
 In the previous blog post, we gave an introduction to how LLMs work and started looking at various offensive measures that we use to break them. In this post, we will explore more offensive strategies, look at examples from the wild and also briefly touch upon the common defenses used by AI companies.
@@ -49,7 +51,7 @@ src="https://www.youtube.com/embed/PIY5ZVktiGs">
 
 In the next blog post, we will look at various defensive measures. 
 
-###### CTF games to practice prompt injection
+#### CTF games to practice prompt injection
 
 - [Gandalf by Lakera AI](https://gandalf.lakera.ai/)
     - *Hint: The same prompt works for both Level 7 and the last level*
@@ -65,7 +67,7 @@ In the next blog post, we will look at various defensive measures.
 - [Tensortrust.ai](https://tensortrust.ai/)
     - You play both offense and defense crafting appropriate prompts
 
-##### More resources and reading
+#### More resources and reading
 
 - [OWASP Top 10 LLM apps](https://owasp.org/www-project-top-10-for-large-language-model-applications/assets/PDF/OWASP-Top-10-for-LLMs-2023-v1_1.pdf)
 - [Latent space article on Reverse prompt engineering](https://www.latent.space/p/reverse-prompt-eng)

@@ -1,13 +1,14 @@
 ---
 layout: post
 title: Gaming - Pre and Post launch checklist
+tags: gaming product checklist metrics
 ---
 
 This post is a checklist for game developers and product managers to use during the pre-launch period and some important metrics to track immediately post launch. We are assuming that the game has been developed(and tested) and is in the final stages of going live in a single country. 
 
 I made this list originally about 8 months back as part of launching PLO at Paytm First Games and have edited it minimally for this blog post.  
 
-#### Pre launch checklist
+### Pre launch checklist
 
 Imagine you are launching a game on Google Play Store. This document gives you a high level checklist to run through to make sure you don't miss any pre-requisites before your deployment. This is a very generic checklist not specific to a platform or region and this is why you wont see any mention of build file types or translation. Also this is for the final launch not for soft launch and experiments before worldwide publishing. At every step of the checklist ensure that you have a "Final approver" who owns the individual items.
 
@@ -22,7 +23,7 @@ Imagine you are launching a game on Google Play Store. This document gives you a
 - Copy/content for keywords, short/long description of the game, emailers (prelaunch and launch), PR, social posts should be ready as well
 
 
-#### Post launch tracking
+### Post launch tracking
 
 This section of the document deals with some important stuff you should be tracking after your game is launched.
 

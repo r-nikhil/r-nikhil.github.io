@@ -3,13 +3,13 @@
 layout: post
 title: GTO Inspector - My attempt at building an online business
 youtubeId: VdmHds-lylY
-
+tags: gaming startup product poker
 
 ---
 
 This document explores the hypothesis and my experience running an online business in the Indian poker ecosystem. 
 
-- Quick rundown of events
+- Quick rundown of events:
 
     - It is 2019 and I've been playing poker for about a year (it all started after I won a big tournament through a satellite right out of college). I then went and joined [Indian Poker Pros](https://www.indianpokerpros.com/) (now defunct) to be staked and coached by them. Although I was crushing mid stakes MTTs comfortably; most of my shot taking didn't work out because I was severely let down by my inability to put in volume partly due to my day job at Flipkart. Grinding a 9hr day job and 10hrs of poker takes a toll on body and mind as well. 
 
@@ -39,7 +39,7 @@ This document explores the hypothesis and my experience running an online busine
 
 #### How? 
 
-##### Validation approach
+Validation approach
 
 1. Distribute the crude version among the poker stable members (About 10 folks)
 
@@ -47,7 +47,7 @@ This document explores the hypothesis and my experience running an online busine
 
 2. Given the positive feedback from my circle (read: bubble), and the market potential, I went ahead building a MVP of the tool. The idea was to first launch the PLO version and then eventually expand into more popular game formats like NLHE/Tournaments. 
 
-##### GTM
+GTM
 
 - I ended up building a small internet business around the product selling to PLO professionals in India, Europe and Mexico. My early acquisition costs were high but I didn't pay heed due to high premiums I was charging in the early days (mostly high stakes regs)
 
@@ -66,7 +66,7 @@ This document explores the hypothesis and my experience running an online busine
 
 I had a couple paths forward after reaching monopoly in the Indian PLO market. I could continue scaling the PLO tool or build newer poker tools for bigger audiences. 
 
-- ###### Sell the PLO tool to more players (India and abroad)
+- Sell the PLO tool to more players (India and abroad)
 
     -  Recreational players found it expensive and hard to learn the terminologies
 
@@ -74,7 +74,7 @@ I had a couple paths forward after reaching monopoly in the Indian PLO market. I
 
             - I could also take in interested players, coach them using my tools, in return for their future profits. I eventually ended up starting a poker stable (a staking operation. Same concept as prop trading firms) structured around this tool and other such proprietary tools to monetize the new-to-poker-theory players and PLO regulars wanting to improve/get staked. 
 
-            - This ended up working out super well and still does to some extent. At it peak we had 15 students playing for us. 
+            - <b>This ended up working out super well and still does to some extent. At its peak we had 15 students playing for us. </b>
 
     -  Professionals abroad found it basic
 
@@ -88,26 +88,25 @@ I had a couple paths forward after reaching monopoly in the Indian PLO market. I
 
 
 
-- ###### Build more poker tools for popular variants like NLHE and tournaments
+- Build more poker tools for popular variants like NLHE and tournaments
 
     - My experience trying to scale the PLO business made me understand how small the entire market is. Definitely wasn't worth the time and effort. I was no longer naively optimistic.
 
     - I was asked super often to build a version of the tool for MTTs by my poker friends. Glad I didn't blindly follow my customers.   
 
-- ###### Start monetising other proprietary tools (custom built for my staking operation) by selling it to poker websites
+- Start monetising other proprietary tools (custom built for my staking operation) by selling it to poker websites
 
     - We had built some chip dumping and collusion detection tools to help our stable players identify profitable tables. On the flip side, there was demand from poker companies willing to use this to find multi-accounters, colluders, bonus chip abusers, RTA users etc. 
 
-        - I ended up personally consulting and working with leading poker sites in India to build their anti-fraud systems.
+        - <b>I ended up personally consulting and working with leading poker sites in India to build their anti-fraud systems.</b>
 
-- ###### Continue selling it to stables and professionals and figure different opportunities
+- Continue selling it to stables and professionals and figure different opportunities
 
     - I ended up doing the above two.
 
     - While I was exploring options, I was reached out by a recruiter looking to hire somebody to build their poker business at Paytm. I found this to be decent opportunity to learn the ropes of building a scalable business and joined them at the start of 2022
 
-    
-    
+
 #### Afterthought
 
 - If I have to do it all over again, I would:

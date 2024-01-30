@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A Secure Portknocking Implementation - Portsmith
+tags: coding python network security linux
 ---
 
 [Source](https://github.com/r-nikhil/Portsmith)
@@ -8,7 +9,7 @@ title: A Secure Portknocking Implementation - Portsmith
 
 <a href="https://en.wikipedia.org/wiki/Port_knocking">Port Knocking</a> is a concept where the ports on a particular computer appear to be closed until a special packet/port knock sequence is established. It is a method of externally opening ports in a system by doing a sequence of connection attempts on a set of pre-specified closed ports. Once a correct sequence of connection attempts is made, the firewall rules are dynamically modified to allow the external system to connect to a specified port. This concept has been around for a long time and you can check out some implementations <a href = "http://www.portknocking.org/view/implementations">here.</a> 
 
-# Why ?
+### Why?
 
 I had a server on Digital Ocean(DO) which kept getting pwned and used for DDosing some poor soul. DO used to shut down networking for my node every four days or so. At least I think this was the case since I had some unauthenticated services running on it. I was using the server as a proxy with an open port on the server at all times. Maybe a botnet was spreading by scanning the network for vulnerable hosts and then exploiting them ? I am not sure. DO has to figure that out. 
 
@@ -16,11 +17,11 @@ Anyway, I decided to do something about it and when searching for a method to ob
 
 The purpose of this was to prevent port scanners from scanning target systems for exploitable services. The ports appear closed unless the attacker sends the correct knock sequence/packet to the machine. Initially, it was supposed to be a series of connection attempts or knocks on a series of ports but this kind of mechanism was vulnerable to replay attacks. A person watching the network could easily figure out which ports are knocking before a connection is established. 
 
-# Implementation
+### Implementation
 
 Warning: This project is not ready to be used in production. This is version 0.1(alpha). There are still bugs to be fixed and edge cases to be handled. I would continue working on this in my free time.
 
-## Server side:
+#### Server side:
 
 Requirements:
 
@@ -44,7 +45,7 @@ After this, the server can start listening for knocks.
 	sudo python3 server.py
 
 
-## Client side:
+#### Client side:
 
 The Knocker:
 
@@ -55,12 +56,12 @@ I use hping3 to craft TCP packets. The knock packet is encrypted using the key t
 
 As you can see above, there is hardly any complex logic involved in PortKnocking. There are implementations ranging from simple bash scripts to fully featured C servers which inspect all incoming packets using libpcap. I didn't want an another extra network service running since this is against the whole point of PortKnocking in the first place. 
 
-# TODO
+### TODO
 
 1) It currently uses <a href = "https://cryptography.io/en/latest/fernet/"> Fernet </a> Symmetric Encryption Library from the cryptography package. It's source and spec can be found [here](https://cryptography.io/en/latest/_modules/cryptography/fernet/) and [here](https://github.com/fernet/spec/blob/master/Spec.md) respectively. It uses:
 
-*	AES in CBC mode with a 128 bit key for encryption; using PKCS7 for padding
-* 	HMAC using SHA256 for authentication
+- AES in CBC mode with a 128 bit key for encryption; using PKCS7 for padding
+- HMAC using SHA256 for authentication
 
 This is a high level library. I would like to rewrite the cryptomethods using cryptographic.primitives instead. Maybe try out AES in CTR mode ? Either way, the crypto methods are going to be rewritten using low level (hazmat :P) functions. I think this would be good learning experience. 
 

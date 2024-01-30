@@ -1,12 +1,13 @@
 ---
 layout: post
 title: Problem statements to solve for a retail investor in DeFi
+tags: defi crypto web3 user 
 ---
 
 
 The first section of the article inspects the various user personas interacting with DeFi protocols and their individual requirements. The second section  identifies various products which solve for these use cases. We mostly look for on-chain use cases which already have a reasonable amount of adoption. This post simply surfaces the various participants across the value chain and identifies open problems. Some cutting-edge novel cases with nascent adoption might get overlooked. Nevertheless, we keep an eye out for unsolved/potential growth segments and see what we can build there. 
 
-##### User Personas
+#### User Personas
 
 Broad retail requirements for interacting with financial services and products can be classified as:
 
@@ -71,7 +72,7 @@ Profit pools are nothing but the total profit earned at all points along the val
 
 In this section, we attempt to dig deeper into some open problem statements and propose possible solutions. In the next article, we shall investigate these participants from a profit/operating margin PoV to understand which problem statement is worth solving financially. 
 
-##### User Journey
+#### User Journey
 
 Lets pick an **average retail DeFI investor** and look at their user journey.
 
@@ -300,7 +301,7 @@ As an user, my primary requirements would be:
 For the next wave of Defi products to be bigger than the previous/current state we need an influx of new set of users who have never used these products before. Making these investment Dapp retail-newbie friendly is paramount. 
  
 
-##### Summary
+#### Summary
 
 As we look across the value chain of a **retail investor**, we notice that major value transacts across these players: 
 

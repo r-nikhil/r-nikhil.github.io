@@ -1,6 +1,7 @@
 ---
 layout: post
-title: 🟢 Farewell to the felt - Quitting the full-time Poker scene
+title: Farewell to the felt - Quitting the full-time Poker scene
+tags: poker gaming opinion startup
 ---
 [HN discussion](https://news.ycombinator.com/item?id=38262425)
 

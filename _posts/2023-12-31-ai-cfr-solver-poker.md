@@ -1,6 +1,7 @@
 ---
 layout: post
-title: 🟢 Counterfactual Regret Minimization or How I won any money in Poker?
+title: Counterfactual Regret Minimization or How I won any money in Poker?
+tags: ai cfr poker solver
 ---
 [HN Discussion](https://news.ycombinator.com/item?id=38823240)
 
@@ -10,13 +11,13 @@ As most readers of my blog would know by now, I used to play Poker for a couple 
 <img  src="/assets/files/gametree.png">
 </div>
 
-##### Background
+#### Background
 
 A lot of games have been used in the AI domain like chess, checkers, Go and Poker. Games like Poker are special because of the key element of imperfect information. Unlike Chess and Go where you have the entire board in front of you, in Poker you don't know your opponent hole cards. Its harder to come up with an optimal strategy of play when you don't have the entire information and its more interesting because its similar to a lot of real world decision making settings. We will not get into the details of Poker but rather try to understand how this game is "solved", the methodologies used and real world implications. 
 
 University of Alberta has a [Poker research group](https://poker.cs.ualberta.ca/) and they have been working on solving the game before anybody else as far as I know. They were one of the earliest folks to build a Poker bot(called [Loki](https://poker.cs.ualberta.ca/publications/papp.msc.pdf)) which could fold/call/raise based on effective hand strength. However, the earliest research in the field I could trace back was to this seminal paper by John Von Neumann called "[Theory of Games and Economic Behavior](https://en.wikipedia.org/wiki/Theory_of_Games_and_Economic_Behavior#)" where they discuss the concept of expected utility linking it to rational decision making. 
 
-##### Game theory in Poker
+#### Game theory in Poker
 
 What does it mean to “solve” a poker game? When you find a [Nash Equilibrium](https://en.wikipedia.org/wiki/Nash_equilibrium) strategy (aka GTO strategy) for the game it means that the game is "solved". By definition, if both players are playing this strategy, then neither would want to change to a different strategy since neither could do better with any other strategy (assuming that the opponent’s strategy stays fixed). However, GTO strategy is not always the best way to play the game. While GTO ensures that you are un-exploitable, this doesn't mean you will be winning the maximum money. The best response strategy is the one that maximally exploits the opponent by always performing the highest [expected value](https://upswingpoker.com/expected-value-ev-poker/) play against their fixed strategy. In general, an exploitative strategy is one that exploits an opponent’s non-equilibrium play.
 
@@ -24,7 +25,7 @@ However, solvers have no idea what "Nash equilibrium" even means. So, how do the
 
 Before we proceed further, we need to define, what is regret in Poker? 
 
-##### Regret
+#### Regret
 
 When you think of Regret in Poker, what is the first thing that comes to mind? Its usually us regretting calls or folds or bluffs which we did that didn't work out (being results oriented here to explain the concept). On a very high level regret is defined as: 
 
@@ -42,7 +43,7 @@ This reinforcement learning problem is related to Poker when played in the parti
 
 Before we proceed further, we need to understand the concept called "Game Tree". 
 
-##### What is a game tree? 
+#### What is a game tree? 
 
 In the concept of sequential games, a game tree is nothing but a pictorial representation of every possible game state. This can be used to measure the complexity of a game, as it represents how dense and massive a game can play out over the long run. Below is an image of a game tree for ONLY the first two actions of the Tic tac toe game. The first player has three choices of move: in the center, at the edge, or in the corner. The second player has two choices for the reply if the first player played in the center, otherwise five choices. And so on. The number of leaf nodes in the complete game tree is the number of possible different ways the game can be played. 
 
@@ -54,7 +55,7 @@ For example, the game tree for tic-tac-toe has 255,168 leaf nodes. In comparison
 
 Apart from the Poker game tree being infinitely large, we have another problem. Poker is an imperfect information game but games like chess/tic tac toe are perfect information games. With perfect information, each player knows exactly what node/state he is in in the game tree. With imperfect information, there is uncertainty about the state of the game because the other player’s cards are unknown. 
 
-##### How to solve the game? 
+#### How to solve the game? 
 
 We have already defined what a "correct" strategy looks like and the game tree. At its core, we need to find the parts of the game tree which when played out gives us the maximum utility. I don't want to make the post technical by talking about equities, probabilities and EV of every node but rather will keep things abstract for easier consumption. 
 
@@ -85,7 +86,7 @@ We have already defined what a "correct" strategy looks like and the game tree. 
 
 That's it!. Almost all GTO solvers do the above 4 steps. They are aided with complex algorithms to simplify game trees, calculate regret faster, identifying which part of game tree is relevant. To ensure we aren't stuck in a local maxima of the game tree, most solvers use a process called [Counterfactual Regret Minimization (CFR)](https://poker.cs.ualberta.ca/publications/NIPS07-cfr.pdf). This algorithm was first published in a 2007 paper from the University of Alberta and it proves that the CFR algorithm will not get stuck at some local maximum, and given enough time, will reach equilibrium.
 
-##### What is [Counterfactual Regret Minimization (CFR)](http://modelai.gettysburg.edu/2013/cfr/index.html)? 
+#### What is [Counterfactual Regret Minimization (CFR)](http://modelai.gettysburg.edu/2013/cfr/index.html)? 
 
 Counterfactual means “relating to or expressing what has not happened or is not the case”. For example, if in reality I drank 4 red bulls and couldn't sleep in the night, I could say counterfactually, “If I hadn't drank red bulls, I would have slept well in the night". Regret we previously touched on is a way to assign a value to the difference between a made decision and an optimal decision. Minimization refers to minimizing the difference between the made decision and the optimal decision.
 
@@ -107,7 +108,7 @@ Reinforcement learning involves agents learning actions in an environment by con
 
 If CFR was invented long time back what was the breakthrough in 2019 which led to the building of Pluribus and the $1M prize game? They did Libratus first which was a 2 player version but a year later followed up with Pluribus which was a 6 player AI(exponentially harder to solve). The big breakthrough was the depth-limited search algorithm. This allowed them to shift a lot of the load from the blueprint computation to the online search algorithm, and the online search algorithm is relatively much more efficient. There were also advances in the blueprint computation itself, such as the use of linear CFR, but advances in the search algorithm were the biggest factor.
 
-##### Where else is CFR useful? 
+#### Where else is CFR useful? 
 
 Assuming Poker bots take over the online scene, where else can poker players and people building poker solvers get a job 🤣 ? 
 

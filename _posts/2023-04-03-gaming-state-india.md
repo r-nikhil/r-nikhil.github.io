@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Some notes on Real Money Gaming (RMG) in India
+tags: gaming market rmg research
 ---
 
 
@@ -17,9 +18,9 @@ The gaming industry in India has been growing exponentially in recent years, wit
 3. Where is the market opportunity?
   - Differentiator for RMG companies starting today and path forward for building a RMG business
 
-#### 1. Why India?
+### 1. Why India?
 
-##### Bull case for gaming in India
+#### Bull case for gaming in India
 
 - About $3Bn market size but having consistent growth. RMG dominates about 55% of this
 - Cheap data/ digital payment penetration
@@ -58,7 +59,7 @@ The gaming industry in India has been growing exponentially in recent years, wit
 - Multi gaming platforms (MGP's) still haven't exactly cracked the unit economics for hyper casual games but they at least bring in DAU
 - Rising consumer trust in online platforms and digital payments
 
-##### Bull case for building outside India?
+#### Bull case for building outside India?
 
 - ARPU is much higher outside India. While you can argue that the core power user ARPU is comparable, the number of them playing these games for a living/seriously is very little. Check out [this post](/2022/06/15/gtoinspector-startup.html) for more about this set of these power users in India
 - Conversion % for casual is ridiculously low in India. About 60% of non-RMG is ad supported
@@ -67,13 +68,13 @@ The gaming industry in India has been growing exponentially in recent years, wit
 - Certain companies have advertising monopolies. Acquisition is expensive compared to the LTV that 80% of the customers offer
 - Changing perspective about skill games and their money making potential. People no longer view them as gambling but rather as legitimate career options. Money making potential for certain games like poker in Indian rivals an executive salary at FAANG.
 
-#### 2. Indian Gaming Market
+### 2. Indian Gaming Market
 
-##### Revenue Split
+#### Revenue Split
 
 RMG dominates the market account for about 55-60% of the overall revenue. While casual games attract the largest number of users and have been crucial in growing the mobile gaming culture in India, while real money gaming attracts the highest paying users in mobile gaming. As a result, real money games have been the largest revenue source for India’s gaming sector. This segment is expected to grow at 30% CAGR with growing expectation of regulatory clarity. 
 
-###### RMG vs Non-RMG
+#### RMG vs Non-RMG
 
 <div align = "center">
 
@@ -93,7 +94,7 @@ Rummy is currently the largest segment and is expected to dominate the RMG marke
 
 Poker has the least penetration when compared to rummy and fantasy, indicating a very high potential for growth in the coming years. Poker has the highest user retention rate and highest revenue per user among the two games considered here. Poker market is expected to grow from $150Mn in FY2022 to $450Mn in FY2026.
 
-###### Inside Non-RMG, where is the money coming from?
+#### Inside Non-RMG, where is the money coming from?
 
 
 <div align = "center">
@@ -114,7 +115,7 @@ RMG witnesses a MACU of 12-13 Mn of the total 26-30 Mn real money gamers and it 
 
 Everything else like e-sports, desktop, platforms are rounding off errors at the moment. E-sports grew about 5x on a small base but has plateaued since.
 
-##### Multi Gaming vs Single Gaming platforms
+#### Multi Gaming vs Single Gaming platforms
 
 While Single Game Platforms (SGP) currently dominate the market with (~90%) market share; the upcoming format of Multi-game platforms (MGP) may get popular in the future. MGPs offer a wider variety of games to users; and are therefore able to attract gamers from a wider set of interests and abilities. It should conceptually also be able retain them more by keeping them entertained and engaged for a longer time due to the wide array of game offerings (in reality however, this is harder than it looks).
 
@@ -124,7 +125,7 @@ MGP's have also really lowered customer acquisition costs by spreading it and av
 
 
 
-#### 3. Some perspective on RMG/gaming and way forward
+### 3. Some perspective on RMG/gaming and way forward
 
 <b>How are these RMG businesses differentiated? </b>
 

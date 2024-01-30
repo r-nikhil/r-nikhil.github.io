@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A take on web3/DeFi
+tags: opinion crypto web3 defi
 ---
 
 
