@@ -30,6 +30,7 @@ Top 5 posts by views:
 
 - Present
   - Hacking around with AI. Prompt injection, inference on edge devices and AI agents are my current interests. Looking for interesting opportunities in associated domains. 
+  - EDIT: I currently work at an AI security/privacy startup called [DynamoFL](https://www.dynamofl.com)
 - 2020-2023
     - Led the product and business for the Poker app in Paytm and scaled it to a $10m biz
     - Built an poker analytics tool startup and ran a coaching operation with 15 players
