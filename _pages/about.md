@@ -43,7 +43,7 @@ Top 5 posts by views:
     - Exploited a zero day in a local Cisco switch in my hostel to adjust bandwidth limitations for me and my friends
     - Did <ins>[some](https://summerofcode.withgoogle.com/)</ins> <ins>[cool](https://owasp.org/www-community/initiatives/code_sprint/)</ins> <ins>[internships](https://education.wolfram.com/summer-school)</ins> with low acceptance rates
 
-You can download my resume by clicking <a href= "https://rnikhil.com/assets/files/resume.pdf"> here. </a>
+
 
 
 <!-- #### Detailed Work experience(outdated)
