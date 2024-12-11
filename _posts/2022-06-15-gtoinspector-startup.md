@@ -29,7 +29,7 @@ This document explores the hypothesis and my experience running an online busine
 
 - There was no such tool available in the market to help professional poker players. Serious players will pay real money for this because of the direct impact on their bottom line. 
 
-- I had already built a crude version for my own personal use. Other professionals wanted it and it was easy for me to start a poker business starting from this PLO tool.  
+- We had already built a crude version for my own personal use. Other professionals wanted it and it was easy for me to start a poker business starting from this PLO tool.  
 
 - **Market potential**
 
@@ -45,22 +45,22 @@ Validation approach
 
     - Everybody loved the tool and wanted a full fledged dashboard. Coaches were willing to pay me to work on this full time (apart from my coaching fees on newer players)
 
-2. Given the positive feedback from my circle (read: bubble), and the market potential, I went ahead building a MVP of the tool. The idea was to first launch the PLO version and then eventually expand into more popular game formats like NLHE/Tournaments. 
+2. Given the positive feedback from my circle (read: bubble), and the market potential, we went ahead building a MVP of the tool. The idea was to first launch the PLO version and then eventually expand into more popular game formats like NLHE/Tournaments. 
 
 GTM
 
-- I ended up building a small internet business around the product selling to PLO professionals in India, Europe and Mexico. My early acquisition costs were high but I didn't pay heed due to high premiums I was charging in the early days (mostly high stakes regs)
+- We ended up building a small internet business around the product selling to PLO professionals in India, Europe and Mexico. Our early acquisition costs were high but we didn't pay heed due to high premiums we were charging in the early days (mostly high stakes regs)
 
     - *Lesson* : Keep a close eye on the acquisition channels and their corresponding costs from early on. A simple forecast would have helped us avoid some expensive mistakes (Lot of paid marketing)
 
-- Within the first month, I had almost every professional PLO player in India as a customer. Initial customers loved it. 
+- Within the first month, we had almost every professional PLO player in India as a customer. Initial customers loved it. 
 
     - Notable Anecdotes:
         - *"A  PLO professional"*: I found out I was leaking close to 25bb/100 cold calling 2bets which I didn't realize before. Made me tighten up and study by calling ranges again. 
 
         - *"A seasoned recreational PLO player"*: After you made me upload my Adda52 hand history of 3L hands, I understood that playing GTO makes money in the long run. Knowing that I am not skilled to deviate profitably from GTO has been eye opening. 
 
-- When I tried to scale the business, the obvious issues started showing up. They included high acquisition costs, bad retention rates for foreign players and the general lack of a sizable market for such a product. 
+- When we tried to scale the business, the obvious issues started showing up. They included high acquisition costs, bad retention rates for foreign players and the general lack of a sizable market for such a product. 
 
 #### Conclusion
 
