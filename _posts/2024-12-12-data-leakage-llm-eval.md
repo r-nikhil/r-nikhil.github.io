@@ -5,6 +5,9 @@ title:  Testing LLMs for Data Leakage Vulnerabilities
 tags: ai llms eval data leakage memorization 
 
 ---
+------------------------
+
+This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/testing-llms-for-data-leakage-vulnerabilities-with-dynamoeval).
 
 <div align = "center">
 <img  src="/assets/files/dataleak1.png">
@@ -95,6 +98,3 @@ As LLMs become increasingly powerful and widely adopted, the risk of exposing se
 
 We also offer a range of AI privacy and security solutions tailored to build trustworthy and responsible AI systems. For more information about how Dynamo AI can help you evaluate and improve your RAG models, or to explore our AI privacy and security offerings, please reach out to us to  [schedule a demo.](https://dynamo.ai/request-a-demo)
 
-------------------------
-
-This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/testing-llms-for-data-leakage-vulnerabilities-with-dynamoeval).

@@ -6,6 +6,11 @@ tags: ai llms pii differential privacy pii security
 
 ---
 
+------------------------
+
+This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/unlocking-differential-privacy-for-llms).
+
+
 <div align = "center">
 <img  src="/assets/files/dpmain.png">
 </div>
@@ -94,6 +99,3 @@ As LLMs become more powerful and prevalent, the risk of exposing sensitive infor
 
 We also offer a range of AI privacy and security solutions to help you build trustworthy and responsible AI systems. To learn more about Dynamo AI and to explore our privacy and security offerings,  [request a demo today.](https://dynamo.ai/request-a-demo)
 
-------------------------
-
-This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/unlocking-differential-privacy-for-llms).

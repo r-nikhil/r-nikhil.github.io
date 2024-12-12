@@ -6,6 +6,11 @@ tags: ai llms eval rag tabular hallucination
 
 ---
 
+------------------------
+
+This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/rag-evals-on-embedded-tables).
+
+
 <div align = "center">
 <img  src="/assets/files/raga1.png">
 </div>
@@ -141,6 +146,3 @@ At Dynamo AI, we're committed to helping organizations measure and mitigate RAG 
 
 We also offer a range of AI privacy and security solutions to help you build trustworthy and responsible AI systems. To learn more about how Dynamo AI can help you evaluate and improve your RAG pipelines, or to explore our AI privacy and security offerings, please request a demo  [here](https://dynamo.ai/platform/dynamoeval).
 
-------------------------
-
-This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/rag-evals-on-embedded-tables).

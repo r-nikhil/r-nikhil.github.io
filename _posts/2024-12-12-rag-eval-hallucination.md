@@ -6,6 +6,12 @@ tags: ai llms rag hallucination eval
 
 ---
 
+------------------------
+
+This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/tackling-the-explainability-gap-in-open-source-hallucination-evals).
+
+
+
 <div align = "center">
 <img  src="/assets/files/rag1.png">
 </div>
@@ -145,6 +151,3 @@ At Dynamo AI, we are committed to helping organizations measure and mitigate RAG
 
 We also offer a range of AI privacy and security solutions to help you build trustworthy and responsible AI systems. To learn more about how Dynamo AI can help you evaluate and improve your RAG models, or to explore our AI privacy and security offerings,  [please request a demo](https://dynamo.ai/platform/dynamoeval).
 
-------------------------
-
-This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/tackling-the-explainability-gap-in-open-source-hallucination-evals).

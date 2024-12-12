@@ -5,6 +5,9 @@ title:  Integrating Explainable LLM Data Leakage Testing into your CI/CD Pipelin
 tags: ai llms pii data leakge membership security
 
 ---
+---------------------
+
+This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/integrate-explainable-llm-data-leakage-testing-into-your-ci-cd-pipeline-with-dynamoeval).
 
 <div align = "center">
 <img  src="/assets/files/piimain.png">
@@ -297,6 +300,3 @@ As LLMs become more powerful and prevalent, the risk of exposing sensitive infor
 **Learn more about Dynamo AI and our AI privacy and security solutions by** [**scheduling a demo.**](https://dynamo.ai/request-a-demo)
 
 
----------------------
-
-This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/integrate-explainable-llm-data-leakage-testing-into-your-ci-cd-pipeline-with-dynamoeval).
