@@ -1,5 +1,5 @@
 site: Nikhil R
-url: rnikhil.com
+url: https://rnikhil.com
 title: Nikhil R
 description: Personal Website
 twitter:
@@ -11,7 +11,7 @@ author:
   name: 
   avatar:
   email: #youremail
-  url: https://rnikhil.com
+  url: 
 permalink: pretty
 
 baseurl: ""
