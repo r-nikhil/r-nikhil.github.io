@@ -5,6 +5,14 @@ tags: prediction markets trading finance
 
 ---
 
+>
+Prediction markets, despite their theoretical promise and success in sports ($330B US betting volume) and elections ($40B in 2024), are unlikely to become mainstream for all future events due to fundamental demand and liquidity constraints. The core issue isn't regulation or technology - it's that none of the three key market participants find prediction markets appealing: gamblers want quick resolutions (42% of 2020 election volume traded in final week), long-term investors prefer growing wealth in traditional assets, and market makers can't operate without consistent retail flow (there is no demand for betting on topics except elections and sports).
+
+>
+This creates a structural chicken-and-egg problem where lack of demand and participations prevents reliable pricing, which in turn discourages serious folks. Due to these unfortunate structural issues, these markets only work in certain niches
+and in events with high public interest and pre-existing communities, immediate resolutions and natural gambling appeal. 
+
+
 I've been using prediction markets for various purposes over the last couple years, from speculating on sports to more recently the US elections and the F1 season. These products are pretty popular. Americans legally bet over $330 billion on sports in 2023, while the 2024 US presidential elections saw about $40 billion in wagers.   Polymarket alone saw over $2 billion in volume just in October 2024.   Looking at this explosive growth, it's easy to get excited about the future of prediction markets.
 
 <div align = "center">
