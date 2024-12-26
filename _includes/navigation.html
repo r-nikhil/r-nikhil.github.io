@@ -1,15 +1,6 @@
 <header aria-hidden="true" class="no-print">
       <!--<h1 class="logo">{{ site.title }}</h1>-->
       <nav role="navigation" aria-hidden="true">
-<div class="theme-switch-wrapper">
-  <label class="theme-switch" for="checkbox">
-    <input type="checkbox" id="checkbox" />
-    <div class="slider round">
-      <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zM11 3V1h2v2h-2zm0 19v-2h2v2h-2zM3.515 6.343L4.93 4.93l1.414 1.414L4.93 7.757 3.515 6.343zm14.142 14.142l-1.414-1.414 1.414-1.414 1.414 1.414-1.414 1.414zM1 13h2v-2H1v2zm19 0h2v-2h-2v2zM3.515 17.657l1.414-1.414 1.414 1.414-1.414 1.414-1.414-1.414zm14.142-14.142l-1.414 1.414 1.414 1.414 1.414-1.414-1.414-1.414z"/></svg>
-      <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
-    </div>
-  </label>
-</div>
 <ul>
    {% for item in site.data.navigation.links %}
       <li><a href="{{ item.url }}" {% if item.url == page.url %} class="active"{% endif %}>{{ item.title }}</a></li>
