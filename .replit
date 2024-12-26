@@ -1,0 +1,9 @@
+modules = ["web", "ruby-3.2"]
+
+[nix]
+channel = "stable-24_05"
+
+[[ports]]
+localPort = 4000
+externalPort = 80
+exposeLocalhost = true
