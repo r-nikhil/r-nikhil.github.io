@@ -158,11 +158,16 @@ strong, b {
 }
 
 .theme-switch-wrapper {
-  position: absolute;
+  position: fixed;
   right: 1rem;
   top: 1rem;
   display: flex;
   align-items: center;
+  z-index: 1000;
+}
+
+nav ul {
+  padding-right: 60px; /* Make space for the theme switch */
 }
 
 .theme-switch {
