@@ -14,6 +14,21 @@ Send your prompt to multiple models and then ask a judge model to synthesize the
 <img  src="/assets/files/consortium.png">
 </div>
 
+
+#### [**Twitter Meme Bot**](https://github.com/r-nikhil/twitterMEMEbot)
+
+Pulls the latest tweets for a set of accounts, ranks them based on engagement potential and then creates a meme to be posted as a reply. Works with your twitter cookies. Uses [IMGFlip AI meme API](https://imgflip.com/ai-meme) and supermeme. GPT-4o rewrites/summarises the tweet into a prompt for the imagegen pipeline. 
+
+#### [**Resume writing crew**](https://github.com/r-nikhil/Resume-Agent-Crew)
+
+Resume optimization project that uses AI agents(CrewAI) to enhance resumes based on company data and job descriptions. The system has four agents working collaboratively - a Resume Analyzer that examines the uploaded resume for key details, a Job Analyzer that scrapes and understands job requirements and company details from provided URLs or  web search, a Resume Writer that optimizes the resume while maintaining authenticity, and a Quality Controller that oversees the entire process(can trigger rewrites, more web searches etc). 
+
+
+#### [**BAYC Clone bot**](https://github.com/r-nikhil/BAYCBOT)
+
+An autonomous AI Twitter agent that engages in contextual conversations using OpenAI for text and Replicate (image model fine-tuned on BAYC art) for image generation. It maintains conversation history of recent interactions and intelligently decides between text and image responses when replying to mentions and threads.
+
+
 #### [**LLM Backroom Simulator**](https://simulator.rnikhil.com/)
 
 Simulate backroom conversations with LLMs. Give each LLM a character or persona and watch them talk in a group chat. Fun for simulating rap battles between random personalities. Endless entertainment value if you know how to prompt the LLMs and give character definitions. 
