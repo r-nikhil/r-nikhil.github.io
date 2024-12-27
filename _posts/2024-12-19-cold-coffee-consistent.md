@@ -13,7 +13,7 @@ Success criteria for my coffee:
 - Thick, creamy texture throughout and shouldn't turn watery like cold brew after sitting on my table for 10min
 - Should take less than 1 min to make 
 
-Here is what I’ve learnt from my super scientific and rigorous experimentation:
+Here is what I’ve learnt from my super scientific and rigorous experimentation 😂 :
 
 - *Shake it, don't stir it*
     - Stirring is useless. What takes 15 seconds of shaking needs like 2 minutes of violent stirring to achieve the same results
