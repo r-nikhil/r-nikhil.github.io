@@ -1,9 +1,8 @@
 ---
 layout: page
-title: Projects
+title: Selected assortment of Projects
 ---
 
-Assortment of projects I have worked on.
 
 
 #### [**LLM Consortium**](https://llm-consortium.rnikhil.com/)
