@@ -13,6 +13,35 @@ title: About
 <a href="mailto:contact@rnikhil.com"> 
 <img  src="/assets/files/mail.png" style="width: 30px; height: 30px;"></a>
 
+
+<div class="image-container">
+    <img src="/assets/files/nik1.jpeg" class="hover-image" width="94" height="94">
+</div>
+
+<style>
+.image-container {
+    border-radius: 8px;
+    overflow: hidden;
+    width: 94px;
+    height: 94px;
+}
+
+.hover-image {
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hover-image:hover {
+    transform: rotate(-4deg);
+    content: url('/assets/files/nik2.jpeg');
+}
+</style>
+
+
 I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang text we don’t have a better place for.
 
 Top 5 posts by views: 
@@ -33,7 +62,7 @@ Top 5 posts by views:
   - Jan-Nov 2024: Leading product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations and other security issues.
 - 2020-2023
     - Led the product and business for the Poker app in Paytm and scaled it to a $10m biz
-    - Built an poker analytics tool startup and ran a coaching operation with 15 players
+    - Built a poker analytics tool startup and ran a coaching operation with 15 players
     - Trading and yeild farming across all DeFi protocols 
     - Played professional poker at the highest stakes (all.in adj 11bb/100)
 - 2018-2020
