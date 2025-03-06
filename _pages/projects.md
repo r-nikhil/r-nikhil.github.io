@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Selected assortment of Projects
+title: Random assortment of side projects
 ---
 
 
