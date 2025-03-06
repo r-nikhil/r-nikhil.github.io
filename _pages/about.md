@@ -42,7 +42,7 @@ title: About
 </style>
 
 
-I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang text we don’t have a better place for.
+I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang random text.
 
 Top 5 posts by views: 
 - <a href = "https://rnikhil.com/2024/01/07/attacking-neural-networks.html">Attacks on machine learning models</a>
