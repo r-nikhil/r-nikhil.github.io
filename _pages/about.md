@@ -55,21 +55,18 @@ Top 5 posts by views:
 <!-- <a href= "https://rnikhil.com/assets/files/resume.pdf"> Resume </a> -->
 
 
-#### Short summary
+#### Short resume
 
-- Present
-  - Hacking around with AI. Prompt injection, inference on edge devices and AI agents are my current interests. Looking for interesting opportunities in associated domains. 
-  - Jan-Nov 2024: Leading product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations and other security issues.
-- 2020-2023
+- These days(2024-)
+  - Jan-Nov 2024: Leading product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations, compliance/goverance issues and other security vulnerabilities.
+- 2018-2023
     - Led the product and business for the Poker app in Paytm and scaled it to a $10m biz
-    - Built a poker analytics tool startup and ran a coaching operation with 15 players
     - Trading and yeild farming across all DeFi protocols 
-    - Played professional poker at the highest stakes (all.in adj 11bb/100)
-- 2018-2020
-  - Joined Flipkart as a PM to build their data platform ingestion pipelines and BNPL product
+    - Played professional poker (all.in adj 11bb/100), built a poker analytics tool startup and ran a coaching and staking operation
+    - Started at Flipkart as a PM to build their data platform ingestion pipelines and BNPL product
 - 2014-2018
-    - Only focus was on learning how computers work. Self taught programmer. Started with web dev but spent majority time on OS, computer security and network protocols. Contributed a ton to FOSS projects
-    - Exploited a zero day in a local Cisco switch in my hostel to adjust bandwidth limitations for me and my friends
+    - Focus was on learning how computers work. Self taught programmer. Started with web dev but spent majority time on OS, computer security and network protocols. Contributed a ton to FOSS projects
+    - Wrote malware shellcode obfuscators for OWASP and added packaet sniffing suport for Mathematica
     - Did <ins>[some](https://summerofcode.withgoogle.com/)</ins> <ins>[cool](https://owasp.org/www-community/initiatives/code_sprint/)</ins> <ins>[internships](https://education.wolfram.com/summer-school)</ins> with low acceptance rates
 
 
