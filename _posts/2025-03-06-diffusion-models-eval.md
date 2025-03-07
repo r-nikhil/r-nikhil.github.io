@@ -16,7 +16,7 @@ I stumbled across [this](https://x.com/InceptionAILabs/status/189484791962446279
 
 After spending the better part of the last 2 years reading, writing, and working in LLM evaluation, I see some obvious first-hand benefits for this paradigm:
 
-**Traditional LLMs hallucinate.** It's like they are confidently spitballing text while actually making up facts on the go. This is why they start sentences super confidently sometimes only to suggest something retarded in the end. dLLMs can generate certain important portions first, validate it, and then continue the rest of the generation.
+**Traditional LLMs hallucinate.** It's like they are confidently spitballing text while actually making up facts on the go. This is why they start sentences super confidently sometimes only to suggest something stupid in the end. dLLMs can generate certain important portions first, validate it, and then continue the rest of the generation.
 
 - Ex: A CX chatbot would first generate the policy version number, validate it before advising a customer about a potentially hallucinated policy.
 
