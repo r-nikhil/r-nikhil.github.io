@@ -3,6 +3,7 @@ layout: post
 title: Diffusion models are interesting
 tags: Diffusion evals dLLMs agents hallucination
 ---
+> [HN Discussion](https://news.ycombinator.com/item?id=43285726)
 
 I stumbled across [this](https://x.com/InceptionAILabs/status/1894847919624462794) tweet a week or so back where this company called Inception Labs released a Diffusion LLM (dLLM). Instead of being autoregressive and predicting tokens left to right, here you start all at once and then gradually come up with sensible words simultaneously (start/finish/middle etc. all at once). Something which worked historically for image and video models is now outperforming similar-sized LLMs in code generation.
 
