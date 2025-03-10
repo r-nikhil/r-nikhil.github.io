@@ -1,7 +1,7 @@
 <header aria-hidden="true" class="no-print">
       <!--<h1 class="logo">{{ site.title }}</h1>-->
       <nav role="navigation" aria-hidden="true">
-<div class="theme-switch-wrapper">
+<!-- <div class="theme-switch-wrapper">
   <label class="theme-switch" for="checkbox">
     <input type="checkbox" id="checkbox" />
     <div class="slider round">
@@ -9,7 +9,7 @@
       <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"/></svg>
     </div>
   </label>
-</div>
+</div> -->
 <ul>
    {% for item in site.data.navigation.links %}
       <li><a href="{{ item.url }}" {% if item.url == page.url %} class="active"{% endif %}>{{ item.title }}</a></li>

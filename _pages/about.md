@@ -2,7 +2,7 @@
 layout: page
 title: About
 ---
-<a href="https://twitter.com/rnikhilcom">
+<!-- <a href="https://twitter.com/rnikhilcom">
 <img  src="/assets/files/x.png" style="width: 25px; height: 25px; float:left; margin-right:10px;"> </a>
 <a href="https://www.linkedin.com/in/rnikhilcom/">
 <img  src="/assets/files/linkedin.png" style="width: 27px; height: 27px; float:left; margin-right:10px;"> </a>
@@ -11,10 +11,50 @@ title: About
 <a href="https://github.com/r-nikhil">
 <img  src="/assets/files/github.png" style="width: 30px; height: 30px;"></a>
 <a href="mailto:contact@rnikhil.com"> 
-<img  src="/assets/files/mail.png" style="width: 30px; height: 30px;"></a>
+<img  src="/assets/files/mail.png" style="width: 30px; height: 30px;"></a> -->
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  table, td {
+    border: 1px solid #ccc;
+  }
+  
+  td {
+    padding: 15px;
+    text-align: center;
+    width: 20%;
+  }
+  
+  a {
+    /* text-decoration: underline; */
+    /* color: #000; */
+    /* font-family: Arial, sans-serif; */
+    /* font-size: 18px; */
+  }
+  
+  a:hover {
+    /* text-decoration: underline; */
+  }
+</style>
+
+  <table>
+    <tr>
+      <td><a href="https://twitter.com/rnikhilcom">Twitter</a></td>
+      <td><a href="https://www.linkedin.com/in/rnikhilcom/">LinkedIn</a></td>
+      <td><a href="https://news.ycombinator.com/user?id=whoami_nr">Hacker News</a></td>
+      <td><a href="https://github.com/r-nikhil">GitHub</a></td>
+      <td><a href="mailto:contact@rnikhil.com">Email</a></td>
+    </tr>
+  </table>
 
 
-<div class="image-container">
+
+<!-- <div class="image-container">
     <img src="/assets/files/nik1.jpeg" class="hover-image" width="94" height="94">
 </div>
 
@@ -39,7 +79,7 @@ title: About
     transform: rotate(-4deg);
     content: url('/assets/files/nik2.jpeg');
 }
-</style>
+</style> -->
 
 
 I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang random text.
