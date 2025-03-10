@@ -15,9 +15,9 @@ title: About
 
 <style>
   table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 10px 0;
   }
   
   table, td {
@@ -25,9 +25,9 @@ title: About
   }
   
   td {
-    padding: 15px;
+    padding: 5px;
     text-align: center;
-    width: 20%;
+    width: 10%;
   }
   
   a {
@@ -46,7 +46,7 @@ title: About
     <tr>
       <td><a href="https://twitter.com/rnikhilcom">Twitter</a></td>
       <td><a href="https://www.linkedin.com/in/rnikhilcom/">LinkedIn</a></td>
-      <td><a href="https://news.ycombinator.com/user?id=whoami_nr">Hacker News</a></td>
+      <td><a href="https://news.ycombinator.com/user?id=whoami_nr">HN</a></td>
       <td><a href="https://github.com/r-nikhil">GitHub</a></td>
       <td><a href="mailto:contact@rnikhil.com">Email</a></td>
     </tr>
