@@ -47,7 +47,7 @@ I love to learn and hack around with new technologies. This site is a partial co
 Top 5 posts by views: 
 - <a href = "https://rnikhil.com/2024/01/07/attacking-neural-networks.html">Attacks on machine learning models</a>
 - <a href = "https://rnikhil.com/2023/12/31/ai-cfr-solver-poker.html">Counterfactual Regret Minimization or How I won any money in Poker?</a>
-- <a href = "https://rnikhil.com/2023/11/12/quitting-fulltime-poker.html">Farewell to the felt - Quitting the full-time Poker scene</a>
+- <a href = "https://rnikhil.com/2025/03/06/diffusion-models-eval">Diffusion models are interesting</a>
 - <a href = "https://rnikhil.com/2023/04/09/multi-vs-single-gaming.html">How to bundle different games?</a>
 - <a href = "https://rnikhil.com/2022/08/09/tornado-cash-block.html">We should all have something to hide - Tornado cash takedown</a>
 
