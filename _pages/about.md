@@ -20,7 +20,7 @@ title: About
     border-spacing: 0;
     margin: 5px 0;
     border: 1px solid var(--border-color);
-    box-shadow: var(--box-shadow);
+    /* box-shadow: var(--box-shadow); */
     background-color: var(--bg-color);
   }
   
