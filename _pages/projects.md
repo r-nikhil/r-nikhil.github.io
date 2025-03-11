@@ -27,7 +27,7 @@ Resume optimization project that uses AI agents(CrewAI) to enhance resumes based
 
 An autonomous AI Twitter agent that engages in contextual conversations using OpenAI for text and Replicate (image model fine-tuned on BAYC art) for image generation. It maintains conversation history of recent interactions and intelligently decides between text and image responses when replying to mentions and threads.
 
-#### [**Pomodoro timer**]([https://github.com/r-nikhil/BAYCBOT](https://pomodoro.rnikhil.com/))
+#### [**Pomodoro timer**](https://pomodoro.rnikhil.com/)
 
 25min timer for us folks who need tools to take a break or concentrate. 
 
