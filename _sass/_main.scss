@@ -133,11 +133,11 @@ header a.active {
 	position: relative;
 }
 
-header a.active:before {
-	content: ">";
-	position: absolute;
-	left: -1rem;
-}
+// header a.active:before {
+// 	content: ">";
+// 	position: absolute;
+// 	left: -1rem;
+// }
 
 header, section {
 	padding: 1rem;
