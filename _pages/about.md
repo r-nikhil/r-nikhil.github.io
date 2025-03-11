@@ -16,29 +16,38 @@ title: About
 <style>
   table {
     width: 80%;
-    border-collapse: collapse;
-    margin: 10px 0;
-  }
-  
-  table, td {
-    border: 1px solid #ccc;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--box-shadow);
+    background-color: var(--bg-color);
   }
   
   td {
-    padding: 5px;
+    padding: 12px;
     text-align: center;
-    width: 10%;
+    border: 2px solid var(--border-color);
+    transition: all 0.1s ease;
   }
   
-  a {
-    /* text-decoration: underline; */
-    /* color: #000; */
-    /* font-family: Arial, sans-serif; */
-    /* font-size: 18px; */
+  td:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+    background-color: rgba(0, 102, 204, 0.05);
   }
   
-  a:hover {
-    /* text-decoration: underline; */
+  table a {
+    display: block;
+    font-weight: 700;
+    padding: 5px;
+    border-bottom: none;
+    transition: all 0.2s ease;
+  }
+  
+  table a:hover {
+    color: var(--link-hover-color);
+    transform: scale(1.05);
   }
 </style>
 
