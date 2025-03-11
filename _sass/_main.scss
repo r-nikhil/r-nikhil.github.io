@@ -1,4 +1,3 @@
-
 :root {
   --bg-color: #FFFAFA;
   --text-color: #000000;
@@ -186,9 +185,18 @@ strong, b {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 1rem;
-	border-bottom: 1px solid rgba(0,0,0,0.1);
-	padding-bottom: 1rem;
+	margin-bottom: 0.75rem;
+	padding: 0.75rem;
+	border-radius: 6px;
+	transition: all 0.2s ease;
+	border: 1px solid transparent;
+}
+
+.posts li:hover {
+	background-color: rgba(0, 102, 204, 0.05);
+	transform: translateX(3px);
+	border: 1px solid var(--border-color);
+	box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.2);
 }
 
 .posts li a, .posts li div, .projects li a {
@@ -197,6 +205,7 @@ strong, b {
 	text-decoration: none;
 	font-weight: 600;
 	border-bottom: none;
+	transition: color 0.2s ease;
 }
 
 @media screen and (min-width: 45rem) {
@@ -207,7 +216,7 @@ strong, b {
 
 .posts li a:hover {
 	background: none;
-	text-decoration: underline;
+	color: var(--link-hover-color);
 }
 
 .posts li time, .projects li time {
@@ -215,9 +224,21 @@ strong, b {
 	white-space: nowrap;
 	font-variant-numeric: tabular-nums;
 	color: #555;
+	font-size: 0.9rem;
 }
 
-.post ul, .project ul, .post ol {
+@media screen and (max-width: 45rem) {
+	.posts li {
+		padding: 0.6rem;
+		margin-bottom: 0.6rem;
+	}
+
+	.posts li time {
+		font-size: 0.85rem;
+	}
+}
+
+.post ul, .post ol, .project ul {
 	margin-left: 2rem;
 	margin-bottom: 1rem;
 }
@@ -281,22 +302,22 @@ figcaption {
 		width: calc(100% - 1rem);
 		border-width: 1px;
 	}
-	
+
 	header li {
 		display: inline;
 		margin-right: 1rem;
 	}
-	
+
 	.logo {
 		padding-bottom: 1rem;
 	}
-	
+
 	header ul {
 		border-bottom: 2px solid var(--border-color);
 		padding-bottom: 1rem;
 		margin-bottom: 1rem;
 	}
-	
+
 	nav ul {
 		border-right: 0px;
 	}
@@ -304,12 +325,12 @@ figcaption {
 	.photos ul {
 		margin-top: 0.5rem;
 	}
-	
+
 	.posts li {
 		flex-direction: column;
 		align-items: flex-start;
 	}
-	
+
 	.posts li time {
 		padding-left: 0;
 		margin-top: 0.25rem;
@@ -322,11 +343,11 @@ figcaption {
 		border-radius: 4px;
 		box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
 	}
-	
+
 	:root {
 		--box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
 	}
-	
+
 	header, section {
 		padding: 0.75rem;
 	}
