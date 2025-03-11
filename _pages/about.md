@@ -15,17 +15,17 @@ title: About
 
 <style>
   table {
-    width: 80%;
+    width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    margin: 20px 0;
-    border: 2px solid var(--border-color);
+    margin: 5px 0;
+    border: 1px solid var(--border-color);
     box-shadow: var(--box-shadow);
     background-color: var(--bg-color);
   }
   
   td {
-    padding: 12px;
+    padding: 1px;
     text-align: center;
     border: 2px solid var(--border-color);
     transition: all 0.1s ease;
