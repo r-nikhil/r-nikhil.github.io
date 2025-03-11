@@ -27,7 +27,7 @@ title: About
   td {
     padding: 1px;
     text-align: center;
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     transition: all 0.1s ease;
   }
   
