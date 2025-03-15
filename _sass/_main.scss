@@ -2,7 +2,7 @@
   --bg-color: #FFFFFF;
   --text-color: #1A1A1A;
   --link-color: #2962FF;
-  --link-hover-color: #0039CB;
+  // --link-hover-color: #0039CB;
   --code-bg: #F0F0F0;
   --border-color: #1A1A1A;
   --blockquote-bg: #F5F5F5;
@@ -193,7 +193,9 @@ strong, b {
 
 .posts li:hover {
 	background-color: rgba(0, 102, 204, 0.05);
+	transform: translateX(3px);
 	border: 1px solid var(--border-color);
+	box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.2);
 }
 
 .posts li a, .posts li div, .projects li a {
