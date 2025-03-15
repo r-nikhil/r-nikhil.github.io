@@ -3,188 +3,357 @@
 <html>
 <head>
     <meta charset='utf8'>
-    <title>Neo River Cross</title>
+    <title>Animated River Cross</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/18.6.4/tween.umd.js"></script>
     <style>
         body {
             margin: 0;
-            background: #111;
-            color: #0ff;
-            font-family: 'Courier New', monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        #game {
             background: #000;
-            border: 2px solid #0ff;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+        #gameContainer {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        #ui {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 100;
+            padding: 20px;
+            background: rgba(0,0,0,0.7);
+            border-radius: 10px;
+        }
+        #instructions {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.9);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 20px #0ff;
+            text-align: center;
+            z-index: 200;
         }
-        .bank {
-            display: flex;
-            gap: 10px;
-            margin: 10px 0;
-        }
-        .river {
-            height: 100px;
-            background: linear-gradient(90deg, #004, #006);
-            margin: 20px 0;
-            position: relative;
-        }
-        .boat {
-            position: absolute;
-            background: #444;
-            border: 1px solid #0ff;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: left 0.5s;
-        }
-        .item {
-            padding: 10px;
-            border: 1px solid #0ff;
-            cursor: pointer;
-            border-radius: 5px;
-            background: #222;
-        }
-        .item:hover, .boat:hover {
-            background: #333;
-        }
-        #message {
-            color: #0f0;
-            margin: 10px 0;
-            height: 20px;
+        .hidden {
+            display: none;
         }
         button {
-            background: #222;
-            color: #0ff;
-            border: 1px solid #0ff;
-            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
             cursor: pointer;
             border-radius: 5px;
-            margin: 10px;
         }
         button:hover {
-            background: #333;
+            background: #45a049;
+        }
+        #footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            z-index: 100;
+        }
+        #footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        #footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div id="game">
-        <h2>Neo River Cross</h2>
-        <div id="leftBank" class="bank"></div>
-        <div class="river">
-            <div id="boat" class="boat">🚣</div>
+    <div id="gameContainer">
+        <div id="ui">
+            <h2>River Cross Puzzle</h2>
+            <div id="moves">Moves: 0</div>
+            <button onclick="startGame()" id="startBtn">Start Game</button>
+            <button onclick="showInstructions()">Instructions</button>
+            <button onclick="resetGame()">Reset</button>
         </div>
-        <div id="rightBank" class="bank"></div>
-        <div id="message"></div>
-        <button onclick="moveBoat()">Cross River</button>
-        <button onclick="resetGame()">Reset Game</button>
+        <div id="instructions" class="hidden">
+            <h2>How to Play</h2>
+            <p>Help the farmer transport all items across the river:</p>
+            <ul>
+                <li>The farmer must be in the boat to cross</li>
+                <li>The boat can carry only two items (including the farmer)</li>
+                <li>Don't leave the wolf with the goat</li>
+                <li>Don't leave the goat with the cabbage</li>
+            </ul>
+            <button onclick="hideInstructions()">Got it!</button>
+        </div>
+        <div id="footer">
+            <a href="https://rnikhil.com">Go back to home</a>
+        </div>
     </div>
 
     <script>
-        const items = [
-            { id: 'farmer', emoji: '👨‍🌾', name: 'Farmer' },
-            { id: 'wolf', emoji: '🐺', name: 'Wolf' },
-            { id: 'goat', emoji: '🐐', name: 'Goat' },
-            { id: 'cabbage', emoji: '🥬', name: 'Cabbage' }
-        ];
+        let scene, camera, renderer, boat, farmer, wolf, goat, cabbage;
+        let moveCount = 0;
+        let selectedItem = null;
+        let gameStarted = false;
         
-        let state = {
-            leftBank: ['farmer', 'wolf', 'goat', 'cabbage'],
-            rightBank: [],
-            boat: [],
-            boatPosition: 'left'
+        const BANK_LEFT = -5;
+        const BANK_RIGHT = 5;
+        const ITEMS_STATE = {
+            farmer: { pos: 'left', obj: null },
+            wolf: { pos: 'left', obj: null },
+            goat: { pos: 'left', obj: null },
+            cabbage: { pos: 'left', obj: null }
         };
 
-        function renderGame() {
-            document.getElementById('leftBank').innerHTML = state.leftBank
-                .map(id => createItem(id))
-                .join('');
-            document.getElementById('rightBank').innerHTML = state.rightBank
-                .map(id => createItem(id))
-                .join('');
-            document.getElementById('boat').innerHTML = '🚣 ' + state.boat
-                .map(id => items.find(i => i.id === id).emoji)
-                .join(' ');
-            document.getElementById('boat').style.left = 
-                state.boatPosition === 'left' ? '10%' : '70%';
+        function init() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById('gameContainer').appendChild(renderer.domElement);
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            directionalLight.position.set(0, 10, 10);
+            scene.add(directionalLight);
+
+            // Water
+            const waterGeometry = new THREE.PlaneGeometry(20, 4);
+            const waterMaterial = new THREE.MeshPhongMaterial({ 
+                color: 0x0077be,
+                transparent: true,
+                opacity: 0.8
+            });
+            const water = new THREE.Mesh(waterGeometry, waterMaterial);
+            water.rotation.x = -Math.PI / 2;
+            scene.add(water);
+
+            // Banks
+            const bankGeometry = new THREE.BoxGeometry(5, 0.5, 4);
+            const bankMaterial = new THREE.MeshPhongMaterial({ color: 0x795548 });
+            
+            const leftBank = new THREE.Mesh(bankGeometry, bankMaterial);
+            leftBank.position.set(BANK_LEFT, 0, 0);
+            scene.add(leftBank);
+            
+            const rightBank = new THREE.Mesh(bankGeometry, bankMaterial);
+            rightBank.position.set(BANK_RIGHT, 0, 0);
+            scene.add(rightBank);
+
+            // Create characters
+            createCharacters();
+
+            camera.position.set(0, 8, 12);
+            camera.lookAt(0, 0, 0);
+
+            // Add click handling
+            renderer.domElement.addEventListener('click', onMouseClick, false);
+
+            animate();
         }
 
-        function createItem(id) {
-            const item = items.find(i => i.id === id);
-            return `<div class="item" onclick="handleItemClick('${id}')">${item.emoji} ${item.name}</div>`;
+        function createCharacters() {
+            // Boat
+            const boatGeometry = new THREE.BoxGeometry(2, 0.3, 1);
+            const boatMaterial = new THREE.MeshPhongMaterial({ color: 0x8b4513 });
+            boat = new THREE.Mesh(boatGeometry, boatMaterial);
+            boat.position.set(BANK_LEFT, 0.2, 0);
+            scene.add(boat);
+
+            // Characters
+            farmer = createCharacterMesh(0xff0000, 'farmer', -4);
+            wolf = createCharacterMesh(0x808080, 'wolf', -3);
+            goat = createCharacterMesh(0xffffff, 'goat', -2);
+            cabbage = createCharacterMesh(0x00ff00, 'cabbage', -1);
         }
 
-        function handleItemClick(id) {
-            const currentBank = state.boatPosition === 'left' ? 'leftBank' : 'rightBank';
-            if (state.boat.includes(id)) {
-                state.boat = state.boat.filter(i => i !== id);
-                state[currentBank].push(id);
-            } else if (state[currentBank].includes(id) && state.boat.length < 2) {
-                state[currentBank] = state[currentBank].filter(i => i !== id);
-                state.boat.push(id);
+        function createCharacterMesh(color, type, zPos) {
+            const geometry = new THREE.BoxGeometry(0.5, 0.5, 0.5);
+            const material = new THREE.MeshPhongMaterial({ color: color });
+            const mesh = new THREE.Mesh(geometry, material);
+            mesh.position.set(BANK_LEFT, 0.5, zPos);
+            mesh.userData.type = type;
+            scene.add(mesh);
+            ITEMS_STATE[type].obj = mesh;
+            return mesh;
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            TWEEN.update();
+            renderer.render(scene, camera);
+        }
+
+        function onMouseClick(event) {
+            if (!gameStarted) return;
+
+            const raycaster = new THREE.Raycaster();
+            const mouse = new THREE.Vector2();
+            
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObjects(scene.children);
+
+            if (intersects.length > 0) {
+                const clickedObject = intersects[0].object;
+                if (clickedObject.userData.type) {
+                    handleItemClick(clickedObject);
+                }
             }
-            renderGame();
-            checkState();
         }
 
-        function moveBoat() {
-            if (state.boat.length === 0) {
-                setMessage("The boat needs at least the farmer to move!");
-                return;
-            }
-            if (!state.boat.includes('farmer')) {
-                setMessage("Only the farmer can operate the boat!");
-                return;
+        function handleItemClick(item) {
+            const itemType = item.userData.type;
+            const itemState = ITEMS_STATE[itemType];
+            
+            if (itemState.pos === boat.position.x > 0 ? 'right' : 'left') {
+                moveToBoat(itemType);
+            } else if (itemState.pos === 'boat') {
+                moveToBank(itemType);
             }
             
-            state.boatPosition = state.boatPosition === 'left' ? 'right' : 'left';
-            checkState();
-            renderGame();
+            checkWinCondition();
         }
 
-        function checkState() {
-            const message = document.getElementById('message');
-            if (state.rightBank.length === 4) {
-                setMessage("Congratulations! You've won! 🎉");
+        function moveToBoat(itemType) {
+            const itemsInBoat = Object.values(ITEMS_STATE).filter(item => item.pos === 'boat').length;
+            if (itemsInBoat >= 2) return;
+            
+            if (!ITEMS_STATE.farmer.obj || (itemsInBoat === 0 && itemType !== 'farmer')) {
+                alert("The farmer must be in the boat!");
                 return;
             }
 
-            let leftAlone = state.leftBank.filter(id => !state.boat.includes(id));
-            let rightAlone = state.rightBank.filter(id => !state.boat.includes(id));
+            const item = ITEMS_STATE[itemType];
+            const targetPos = new THREE.Vector3(
+                boat.position.x,
+                0.5,
+                boat.position.z + (itemsInBoat === 0 ? -0.5 : 0.5)
+            );
 
-            if (isUnsafe(leftAlone) || isUnsafe(rightAlone)) {
-                setMessage("Warning: Someone might get eaten! 🚫");
-            } else {
-                setMessage("");
+            animateMove(item.obj, targetPos);
+            item.pos = 'boat';
+            moveCount++;
+            document.getElementById('moves').textContent = `Moves: ${moveCount}`;
+        }
+
+        function moveToBank(itemType) {
+            const bank = boat.position.x > 0 ? 'right' : 'left';
+            const item = ITEMS_STATE[itemType];
+            const targetPos = new THREE.Vector3(
+                bank === 'left' ? BANK_LEFT : BANK_RIGHT,
+                0.5,
+                item.obj.position.z
+            );
+
+            animateMove(item.obj, targetPos);
+            item.pos = bank;
+            checkGameState();
+        }
+
+        function animateMove(object, targetPos) {
+            new TWEEN.Tween(object.position)
+                .to(targetPos, 500)
+                .easing(TWEEN.Easing.Quadratic.Out)
+                .start();
+        }
+
+        function crossRiver() {
+            if (!gameStarted) return;
+            
+            const itemsInBoat = Object.values(ITEMS_STATE).filter(item => item.pos === 'boat');
+            if (!itemsInBoat.includes(ITEMS_STATE.farmer)) {
+                alert("The farmer must be in the boat to cross!");
+                return;
             }
+
+            const targetX = boat.position.x > 0 ? BANK_LEFT : BANK_RIGHT;
+            new TWEEN.Tween(boat.position)
+                .to({ x: targetX }, 1000)
+                .easing(TWEEN.Easing.Quadratic.InOut)
+                .start();
+
+            moveCount++;
+            document.getElementById('moves').textContent = `Moves: ${moveCount}`;
+            checkGameState();
         }
 
-        function isUnsafe(items) {
-            return (items.includes('wolf') && items.includes('goat') && !items.includes('farmer')) ||
-                   (items.includes('goat') && items.includes('cabbage') && !items.includes('farmer'));
+        function checkGameState() {
+            const leftItems = Object.entries(ITEMS_STATE).filter(([_, item]) => item.pos === 'left');
+            const rightItems = Object.entries(ITEMS_STATE).filter(([_, item]) => item.pos === 'right');
+            
+            const checkDanger = (items) => {
+                const types = items.map(([type, _]) => type);
+                if (types.includes('wolf') && types.includes('goat') && !types.includes('farmer')) {
+                    alert("The wolf ate the goat!");
+                    resetGame();
+                    return;
+                }
+                if (types.includes('goat') && types.includes('cabbage') && !types.includes('farmer')) {
+                    alert("The goat ate the cabbage!");
+                    resetGame();
+                    return;
+                }
+            };
+
+            checkDanger(leftItems);
+            checkDanger(rightItems);
         }
 
-        function setMessage(msg) {
-            document.getElementById('message').textContent = msg;
+        function checkWinCondition() {
+            const allOnRight = Object.values(ITEMS_STATE).every(item => item.pos === 'right');
+            if (allOnRight) {
+                alert(`Congratulations! You won in ${moveCount} moves!`);
+                resetGame();
+            }
         }
 
         function resetGame() {
-            state = {
-                leftBank: ['farmer', 'wolf', 'goat', 'cabbage'],
-                rightBank: [],
-                boat: [],
-                boatPosition: 'left'
-            };
-            setMessage("");
-            renderGame();
+            moveCount = 0;
+            document.getElementById('moves').textContent = 'Moves: 0';
+            
+            Object.entries(ITEMS_STATE).forEach(([type, item]) => {
+                item.pos = 'left';
+                if (item.obj) {
+                    item.obj.position.set(BANK_LEFT, 0.5, item.obj.position.z);
+                }
+            });
+            
+            boat.position.set(BANK_LEFT, 0.2, 0);
+            gameStarted = false;
+            document.getElementById('startBtn').textContent = 'Start Game';
         }
 
-        // Initial render
-        renderGame();
+        function startGame() {
+            gameStarted = true;
+            document.getElementById('startBtn').textContent = 'Cross River';
+            document.getElementById('startBtn').onclick = crossRiver;
+            hideInstructions();
+        }
+
+        function showInstructions() {
+            document.getElementById('instructions').classList.remove('hidden');
+        }
+
+        function hideInstructions() {
+            document.getElementById('instructions').classList.add('hidden');
+        }
+
+        window.onload = init;
+        window.onresize = function() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        };
     </script>
 </body>
 </html>
