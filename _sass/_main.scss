@@ -10,20 +10,6 @@
   --box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #1a1a1a;
-    --text-color: #e0e0e0;
-    --link-color: #66b3ff;
-    --link-hover-color: #99ccff;
-    --code-bg: #2d2d2d;
-    --border-color: #404040;
-    --blockquote-bg: #2d2d2d;
-    --button-color: #FF6B6B;
-    --box-shadow: 4px 4px 0px 0px rgba(255,255,255,0.2);
-  }
-}
-
 *,:after,:before {
 	box-sizing: border-box;
 	background-color: inherit;
