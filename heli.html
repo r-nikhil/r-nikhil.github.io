@@ -1,190 +1,128 @@
-
-<style>
-canvas {
-    border: 1px solid #333;
-    background: black;
-    margin: 20px auto;
-    display: block;
-    max-width: 100%;
-}
-</style>
-
-<div style="text-align: center;">
-    <h1>Helicopter Game</h1>
-    <canvas id="gameCanvas" width="800" height="400"></canvas>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body { margin: 0; }
+        #gameContainer {
+            position: relative;
+            width: 800px;
+            margin: 20px auto;
+        }
+        canvas {
+            background: linear-gradient(to bottom, #000033, #000066);
+            border: 2px solid #00ff88;
+            box-shadow: 0 0 20px #00ff8855;
+        }
+        #startScreen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #00ff88;
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            text-shadow: 0 0 10px #00ff88;
+            cursor: pointer;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+        }
+        .footer a {
+            color: #00ff88;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-shadow: 0 0 10px #00ff88;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <div id="startScreen">CLICK TO START</div>
+    </div>
+    <div class="footer">
+        <a href="https://rnikhil.com">Go back to home</a>
+    </div>
 
 <script>
-const canvas = document.getElementById('gameCanvas');
-const ctx = canvas.getContext('2d');
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, 800/400, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('gameCanvas'), alpha: true });
 
-const helicopter = {
-    x: 100,
-    y: 200,
-    width: 40,
-    height: 20,
-    velocity: 0,
-    lift: -4.5,  // Made lift stronger
-    gravity: 2.0, // Made gravity stronger for snappier feel
-    frame: 0,
-    frameCount: 2
-};
+const ufoGeometry = new THREE.Group();
+const diskGeometry = new THREE.CylinderGeometry(1, 1.2, 0.3, 32);
+const diskMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff88, shininess: 100 });
+const disk = new THREE.Mesh(diskGeometry, diskMaterial);
+ufoGeometry.add(disk);
 
-// Create helicopter sprite with a more visible design
-function createHelicopterSprite() {
-    const canvas = document.createElement('canvas');
-    canvas.width = 80;
-    canvas.height = 20;
-    const ctx = canvas.getContext('2d');
-    
-    // Frame 1
-    ctx.fillStyle = '#3498db';
-    ctx.fillRect(0, 5, 30, 10);
-    ctx.fillRect(30, 0, 10, 20);
-    ctx.fillRect(15, 0, 5, 5);
-    
-    // Frame 2
-    ctx.fillStyle = '#3498db';
-    ctx.fillRect(40, 5, 30, 10);
-    ctx.fillRect(70, 0, 10, 20);
-    ctx.fillRect(55, 0, 5, 5);
-    
-    return canvas;
-}
+const domeMaterial = new THREE.MeshPhongMaterial({ color: 0x444444, transparent: true, opacity: 0.8 });
+const domeGeometry = new THREE.SphereGeometry(0.7, 32, 32, 0, Math.PI * 2, 0, Math.PI / 2);
+const dome = new THREE.Mesh(domeGeometry, domeMaterial);
+dome.position.y = 0.15;
+ufoGeometry.add(dome);
 
-const heliSprite = createHelicopterSprite();
+const light = new THREE.PointLight(0x00ff88, 1, 100);
+light.position.set(0, 5, 5);
+scene.add(light);
+scene.add(new THREE.AmbientLight(0x444444));
 
+camera.position.z = 5;
+scene.add(ufoGeometry);
+
+let gameStarted = false;
 let isFlying = false;
-let gameOver = false;
-let score = 0;
-let obstacles = [];
-let animationFrame = 0;
-const gap = 150;
-const obstacleWidth = 50;
+let velocity = 0;
+const gravity = 0.02;
+const lift = -0.04;
 
-function createObstacle() {
-    const minHeight = 50;
-    const maxHeight = canvas.height - gap - minHeight;
-    const height = Math.random() * (maxHeight - minHeight) + minHeight;
-    
-    obstacles.push({
-        x: canvas.width,
-        y: 0,
-        width: obstacleWidth,
-        height: height,
-        passed: false
-    });
-    
-    obstacles.push({
-        x: canvas.width,
-        y: height + gap,
-        width: obstacleWidth,
-        height: canvas.height - height - gap,
-        passed: false
-    });
-}
+function animate() {
+    requestAnimationFrame(animate);
 
-function drawHelicopter() {
-    if (animationFrame % 4 === 0) {
-        helicopter.frame = (helicopter.frame + 1) % helicopter.frameCount;
-    }
-    ctx.drawImage(heliSprite, 
-                 helicopter.frame * helicopter.width, 0, 
-                 helicopter.width, helicopter.height,
-                 helicopter.x, helicopter.y,
-                 helicopter.width, helicopter.height);
-}
+    if (gameStarted) {
+        if (isFlying) {
+            velocity = lift;
+        } else {
+            velocity += gravity;
+        }
 
-function drawObstacles() {
-    ctx.fillStyle = '#2ecc71';
-    obstacles.forEach(obstacle => {
-        ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
-    });
-}
+        ufoGeometry.position.y += velocity;
+        ufoGeometry.rotation.z = velocity * 2;
 
-function checkCollision(rect1, rect2) {
-    return rect1.x < rect2.x + rect2.width &&
-           rect1.x + rect1.width > rect2.x &&
-           rect1.y < rect2.y + rect2.height &&
-           rect1.y + rect1.height > rect2.y;
-}
+        // Hover animation
+        ufoGeometry.position.x = Math.sin(Date.now() * 0.003) * 0.1;
 
-function update() {
-    animationFrame++;
-    
-    if (gameOver) {
-        ctx.fillStyle = 'white';
-        ctx.font = '32px Arial';
-        ctx.fillText('Game Over!', canvas.width/2 - 80, canvas.height/2);
-        ctx.font = '20px Arial';
-        ctx.fillText('Score: ' + score, canvas.width/2 - 40, canvas.height/2 + 30);
-        ctx.fillText('Click to restart', canvas.width/2 - 60, canvas.height/2 + 60);
-        return;
-    }
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Snappier physics
-    if (isFlying) {
-        helicopter.velocity = helicopter.lift;
+        if (ufoGeometry.position.y < -2 || ufoGeometry.position.y > 2) {
+            gameStarted = false;
+            document.getElementById('startScreen').style.display = 'block';
+            ufoGeometry.position.y = 0;
+            velocity = 0;
+        }
     } else {
-        helicopter.velocity += helicopter.gravity;
-    }
-    helicopter.y += helicopter.velocity;
-
-    if (obstacles.length === 0 || obstacles[obstacles.length-1].x < canvas.width - 300) {
-        createObstacle();
+        ufoGeometry.rotation.y += 0.02;
     }
 
-    obstacles.forEach(obstacle => {
-        obstacle.x -= 4; // Slightly faster obstacles
-        if (checkCollision(helicopter, obstacle)) {
-            gameOver = true;
-        }
-    });
-
-    for (let i = 0; i < obstacles.length; i += 2) {
-        if (!obstacles[i].passed && obstacles[i].x + obstacleWidth < helicopter.x) {
-            obstacles[i].passed = true;
-            score++;
-        }
-    }
-
-    obstacles = obstacles.filter(obstacle => obstacle.x + obstacle.width > 0);
-
-    if (helicopter.y < 0 || helicopter.y + helicopter.height > canvas.height) {
-        gameOver = true;
-    }
-
-    drawHelicopter();
-    drawObstacles();
-    
-    ctx.fillStyle = 'white';
-    ctx.font = '20px Arial';
-    ctx.fillText('Score: ' + score, 10, 30);
-
-    requestAnimationFrame(update);
+    renderer.render(scene, camera);
 }
 
-canvas.addEventListener('mousedown', () => {
-    if (gameOver) {
-        helicopter.y = 200;
-        helicopter.velocity = 0;
-        obstacles = [];
-        score = 0;
-        gameOver = false;
-        update();
-    }
-    isFlying = true;
+document.getElementById('startScreen').addEventListener('click', () => {
+    gameStarted = true;
+    document.getElementById('startScreen').style.display = 'none';
 });
 
-canvas.addEventListener('mouseup', () => {
-    isFlying = false;
+document.addEventListener('mousedown', () => {
+    if (gameStarted) isFlying = true;
 });
 
-// Start the game when page loads
-window.addEventListener('load', () => {
-    update();
+document.addEventListener('mouseup', () => {
+    if (gameStarted) isFlying = false;
 });
+
+animate();
 </script>
-</div>
+</body>
+</html>
