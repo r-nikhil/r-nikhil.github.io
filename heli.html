@@ -121,36 +121,57 @@ let gameStarted = false;
 let isFlying = false;
 let velocity = 0;
 let score = 0;
+let level = 1;
 const gravity = 0.015;
 const lift = -0.03;
 
 const obstacles = [];
 let obstacleTimer = 0;
 
+function getObstacleConfig() {
+    const configs = {
+        1: { gap: 4, speed: 0.05, interval: 100 },
+        2: { gap: 3.5, speed: 0.06, interval: 90 },
+        3: { gap: 3, speed: 0.07, interval: 80 },
+        4: { gap: 2.5, speed: 0.08, interval: 70 },
+        5: { gap: 2, speed: 0.09, interval: 60 }
+    };
+    return configs[Math.min(level, 5)];
+}
+
 function createObstacle() {
-    const gap = 4;
+    const config = getObstacleConfig();
     const topHeight = Math.random() * 3 + 2;
     
-    const top = new THREE.Mesh(obstacleGeometry, obstacleMaterial);
-    top.position.set(10, topHeight + gap/2, 0);
+    // Create glowing material for obstacles
+    const obstacleMat = new THREE.MeshPhongMaterial({ 
+        color: 0x00ff88,
+        emissive: 0x003322,
+        emissiveIntensity: 0.5 + Math.sin(Date.now() * 0.001) * 0.2
+    });
     
-    const bottom = new THREE.Mesh(obstacleGeometry, obstacleMaterial);
-    bottom.position.set(10, topHeight - gap/2 - 8, 0);
+    const top = new THREE.Mesh(obstacleGeometry, obstacleMat);
+    top.position.set(10, topHeight + config.gap/2, 0);
+    
+    const bottom = new THREE.Mesh(obstacleGeometry, obstacleMat);
+    bottom.position.set(10, topHeight - config.gap/2 - 8, 0);
     
     scene.add(top);
     scene.add(bottom);
-    obstacles.push({ top, bottom, passed: false });
+    obstacles.push({ top, bottom, passed: false, speed: config.speed });
 }
 
 function updateObstacles() {
+    const config = getObstacleConfig();
     for(let i = obstacles.length - 1; i >= 0; i--) {
         const obstacle = obstacles[i];
-        obstacle.top.position.x -= 0.05;
-        obstacle.bottom.position.x -= 0.05;
+        obstacle.top.position.x -= obstacle.speed;
+        obstacle.bottom.position.x -= obstacle.speed;
         
         if(!obstacle.passed && obstacle.top.position.x < ufoGeometry.position.x) {
             score++;
-            document.getElementById('score').textContent = `Score: ${score}`;
+            level = Math.floor(score / 5) + 1;
+            document.getElementById('score').textContent = `Score: ${score} | Level: ${level}`;
             obstacle.passed = true;
         }
         
