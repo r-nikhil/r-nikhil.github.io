@@ -1,164 +1,195 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Helicopter Game</title>
-    <style>
-        canvas {
-            border: 1px solid black;
-            background: black;
-            margin: 20px auto;
-            display: block;
+---
+layout: default
+title: Helicopter Game
+---
+
+<style>
+canvas {
+    border: 1px solid #333;
+    background: black;
+    margin: 20px auto;
+    display: block;
+    max-width: 100%;
+}
+</style>
+
+<div style="text-align: center;">
+    <h1>Helicopter Game</h1>
+    <canvas id="gameCanvas" width="800" height="400"></canvas>
+</div>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+const helicopter = {
+    x: 100,
+    y: 200,
+    width: 40,
+    height: 20,
+    velocity: 0,
+    lift: -4.5,  // Made lift stronger
+    gravity: 2.0, // Made gravity stronger for snappier feel
+    frame: 0,
+    frameCount: 2
+};
+
+// Create helicopter sprite with a more visible design
+function createHelicopterSprite() {
+    const canvas = document.createElement('canvas');
+    canvas.width = 80;
+    canvas.height = 20;
+    const ctx = canvas.getContext('2d');
+    
+    // Frame 1
+    ctx.fillStyle = '#3498db';
+    ctx.fillRect(0, 5, 30, 10);
+    ctx.fillRect(30, 0, 10, 20);
+    ctx.fillRect(15, 0, 5, 5);
+    
+    // Frame 2
+    ctx.fillStyle = '#3498db';
+    ctx.fillRect(40, 5, 30, 10);
+    ctx.fillRect(70, 0, 10, 20);
+    ctx.fillRect(55, 0, 5, 5);
+    
+    return canvas;
+}
+
+const heliSprite = createHelicopterSprite();
+
+let isFlying = false;
+let gameOver = false;
+let score = 0;
+let obstacles = [];
+let animationFrame = 0;
+const gap = 150;
+const obstacleWidth = 50;
+
+function createObstacle() {
+    const minHeight = 50;
+    const maxHeight = canvas.height - gap - minHeight;
+    const height = Math.random() * (maxHeight - minHeight) + minHeight;
+    
+    obstacles.push({
+        x: canvas.width,
+        y: 0,
+        width: obstacleWidth,
+        height: height,
+        passed: false
+    });
+    
+    obstacles.push({
+        x: canvas.width,
+        y: height + gap,
+        width: obstacleWidth,
+        height: canvas.height - height - gap,
+        passed: false
+    });
+}
+
+function drawHelicopter() {
+    if (animationFrame % 4 === 0) {
+        helicopter.frame = (helicopter.frame + 1) % helicopter.frameCount;
+    }
+    ctx.drawImage(heliSprite, 
+                 helicopter.frame * helicopter.width, 0, 
+                 helicopter.width, helicopter.height,
+                 helicopter.x, helicopter.y,
+                 helicopter.width, helicopter.height);
+}
+
+function drawObstacles() {
+    ctx.fillStyle = '#2ecc71';
+    obstacles.forEach(obstacle => {
+        ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+    });
+}
+
+function checkCollision(rect1, rect2) {
+    return rect1.x < rect2.x + rect2.width &&
+           rect1.x + rect1.width > rect2.x &&
+           rect1.y < rect2.y + rect2.height &&
+           rect1.y + rect1.height > rect2.y;
+}
+
+function update() {
+    animationFrame++;
+    
+    if (gameOver) {
+        ctx.fillStyle = 'white';
+        ctx.font = '32px Arial';
+        ctx.fillText('Game Over!', canvas.width/2 - 80, canvas.height/2);
+        ctx.font = '20px Arial';
+        ctx.fillText('Score: ' + score, canvas.width/2 - 40, canvas.height/2 + 30);
+        ctx.fillText('Click to restart', canvas.width/2 - 60, canvas.height/2 + 60);
+        return;
+    }
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Snappier physics
+    if (isFlying) {
+        helicopter.velocity = helicopter.lift;
+    } else {
+        helicopter.velocity += helicopter.gravity;
+    }
+    helicopter.y += helicopter.velocity;
+
+    if (obstacles.length === 0 || obstacles[obstacles.length-1].x < canvas.width - 300) {
+        createObstacle();
+    }
+
+    obstacles.forEach(obstacle => {
+        obstacle.x -= 4; // Slightly faster obstacles
+        if (checkCollision(helicopter, obstacle)) {
+            gameOver = true;
         }
-    </style>
-</head>
-<body>
-    <canvas id="gameCanvas" width="600" height="300"></canvas>
-    <script>
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-        
-        const helicopter = {
-            x: 100,
-            y: 200,
-            width: 40,
-            height: 20,
-            velocity: 0,
-            lift: -2.5,
-            gravity: 1.2,
-            frame: 0,
-            frameCount: 2
-        };
+    });
 
-        const heliSprite = new Image();
-        heliSprite.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAAAUCAYAAAAa2LrXAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjY5NDk5RTg3OTgxOTExRTNCODRBRjZFOTY5NUY5RjRGIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjY5NDk5RTg4OTgxOTExRTNCODRBRjZFOTY5NUY5RjRGIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6Njk0OTlFODU5ODE5MTFFM0I4NEFGNkU5Njk1RjlGNEYiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Njk0OTlFODY5ODE5MTFFM0I4NEFGNkU5Njk1RjlGNEYiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4INJk3AAABz0lEQVR42uSYz0sCQRTHd9e1/BWoh0oI6hBFl4JunXuJwEOH/oG6dvDWqUNRdO3SqUtBt/6AoEOHpIJAD0IdCpQi0jR1t/edvhc7yYq7q3bs9uDL7LzZ2f3sezPvzawkSRJLQjSwBOUvALVaDXPo9XosFAqxRqPBut0uyxhD7CaTiUWjUZbP51m73ZZ9VquVxeNxFg6HWbPZ/KpnNBqZz+dj6XSa9ft92Wez2Vg8kUjIfsPh8Ns8kUiEpdNpNhgMfvRZrVaWTCaZ1+uVYxB7qB0MQZAXCoX8CpimGFEU2WQyYbIsM1mSpPsHr4/WFEWBPxwOv80zn8/ZbDZj8/mcDYdDuX02m7HpdKrqGwwGbDQaMUVRwDcej+U+eLEHwJRkyRhGcEgCYAB8wUc0k8kkRLvdZm63G6IFgBJE4MJ7q9WCiEWj0cB/6RBcLhdE/NDwB3tDoRDEI+wHAoF34HQ6nRBPcEcikQhEK/h4YwwM4uF4v9/PotEoxJ3D4YBogfvD3W43xAh8r9d7hS+dTkOsgw/XiURCLhQK7+Xn83k5l8u9VSqV90ql8lapdCqVSrlcLsv/Rq1We63X6+WnYvEFx6dKpfJSq9VKxc3ma/ktwABMn1g4uopLjgAAAABJRU5ErkJggg==';
-
-        let isFlying = false;
-        let gameOver = false;
-        let score = 0;
-        let obstacles = [];
-        let animationFrame = 0;
-        const gap = 120;
-        const obstacleWidth = 50;
-        
-        function createObstacle() {
-            const minHeight = 50;
-            const maxHeight = canvas.height - gap - minHeight;
-            const height = Math.random() * (maxHeight - minHeight) + minHeight;
-            
-            obstacles.push({
-                x: canvas.width,
-                y: 0,
-                width: obstacleWidth,
-                height: height,
-                passed: false
-            });
-            
-            obstacles.push({
-                x: canvas.width,
-                y: height + gap,
-                width: obstacleWidth,
-                height: canvas.height - height - gap,
-                passed: false
-            });
+    for (let i = 0; i < obstacles.length; i += 2) {
+        if (!obstacles[i].passed && obstacles[i].x + obstacleWidth < helicopter.x) {
+            obstacles[i].passed = true;
+            score++;
         }
+    }
 
-        function drawHelicopter() {
-            if (animationFrame % 4 === 0) {
-                helicopter.frame = (helicopter.frame + 1) % helicopter.frameCount;
-            }
-            ctx.drawImage(heliSprite, helicopter.frame * helicopter.width, 0, helicopter.width, helicopter.height, 
-                         helicopter.x, helicopter.y, helicopter.width, helicopter.height);
-        }
+    obstacles = obstacles.filter(obstacle => obstacle.x + obstacle.width > 0);
 
-        function drawObstacles() {
-            ctx.fillStyle = '#2ecc71';
-            obstacles.forEach(obstacle => {
-                ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
-            });
-        }
+    if (helicopter.y < 0 || helicopter.y + helicopter.height > canvas.height) {
+        gameOver = true;
+    }
 
-        function checkCollision(rect1, rect2) {
-            return rect1.x < rect2.x + rect2.width &&
-                   rect1.x + rect1.width > rect2.x &&
-                   rect1.y < rect2.y + rect2.height &&
-                   rect1.y + rect1.height > rect2.y;
-        }
+    drawHelicopter();
+    drawObstacles();
+    
+    ctx.fillStyle = 'white';
+    ctx.font = '20px Arial';
+    ctx.fillText('Score: ' + score, 10, 30);
 
-        function update() {
-            animationFrame++;
-            
-            if (gameOver) {
-                ctx.fillStyle = 'white';
-                ctx.font = '32px Arial';
-                ctx.fillText('Game Over!', canvas.width/2 - 80, canvas.height/2);
-                ctx.font = '20px Arial';
-                ctx.fillText('Score: ' + score, canvas.width/2 - 40, canvas.height/2 + 30);
-                ctx.fillText('Click to restart', canvas.width/2 - 60, canvas.height/2 + 60);
-                return;
-            }
+    requestAnimationFrame(update);
+}
 
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Snappier physics
-            if (isFlying) {
-                helicopter.velocity = helicopter.lift;
-            } else {
-                helicopter.velocity += helicopter.gravity;
-            }
-            helicopter.y += helicopter.velocity;
-
-            if (obstacles.length === 0 || obstacles[obstacles.length-1].x < canvas.width - 300) {
-                createObstacle();
-            }
-
-            obstacles.forEach(obstacle => {
-                obstacle.x -= 3;
-                if (checkCollision(helicopter, obstacle)) {
-                    gameOver = true;
-                }
-            });
-
-            for (let i = 0; i < obstacles.length; i += 2) {
-                if (!obstacles[i].passed && obstacles[i].x + obstacleWidth < helicopter.x) {
-                    obstacles[i].passed = true;
-                    score++;
-                }
-            }
-
-            obstacles = obstacles.filter(obstacle => obstacle.x + obstacle.width > 0);
-
-            if (helicopter.y < 0 || helicopter.y + helicopter.height > canvas.height) {
-                gameOver = true;
-            }
-
-            drawHelicopter();
-            drawObstacles();
-            
-            ctx.fillStyle = 'white';
-            ctx.font = '20px Arial';
-            ctx.fillText('Score: ' + score, 10, 30);
-
-            requestAnimationFrame(update);
-        }
-
-        canvas.addEventListener('mousedown', () => {
-            if (gameOver) {
-                helicopter.y = 200;
-                helicopter.velocity = 0;
-                obstacles = [];
-                score = 0;
-                gameOver = false;
-                update();
-            }
-            isFlying = true;
-        });
-
-        canvas.addEventListener('mouseup', () => {
-            isFlying = false;
-        });
-
+canvas.addEventListener('mousedown', () => {
+    if (gameOver) {
+        helicopter.y = 200;
+        helicopter.velocity = 0;
+        obstacles = [];
+        score = 0;
+        gameOver = false;
         update();
-    </script>
-</body>
-</html>
+    }
+    isFlying = true;
+});
+
+canvas.addEventListener('mouseup', () => {
+    isFlying = false;
+});
+
+// Start the game when page loads
+window.addEventListener('load', () => {
+    update();
+});
+</script>
+</div>
