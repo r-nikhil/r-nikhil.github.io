@@ -59,8 +59,11 @@ let gameState = {
     lastObstacleTime: 0,
     obstacleInterval: 2000,
     velocity: 0,
-    gravity: 0.0015,
-    lift: -0.03
+    maxVelocity: 0.3,
+    minVelocity: -0.3,
+    gravity: 0.003,
+    lift: -0.006,
+    dampening: 0.98
 };
 
 // Create helicopter
@@ -193,16 +196,25 @@ function animate() {
     requestAnimationFrame(animate);
 
     if (gameState.isPlaying) {
-        // Update helicopter physics
+        // Update helicopter physics with smooth acceleration
         if (isFlying) {
             gameState.velocity += gameState.lift;
         }
         gameState.velocity += gameState.gravity;
+        
+        // Apply velocity limits and dampening
+        gameState.velocity = Math.max(Math.min(gameState.velocity, gameState.maxVelocity), gameState.minVelocity);
+        gameState.velocity *= gameState.dampening;
+        
+        // Update position with smoothing
         helicopter.position.y += gameState.velocity;
-
-        // Rotate helicopter based on velocity
-        helicopter.rotation.z = gameState.velocity * 2;
-        rotor.rotation.y += 0.5;
+        
+        // Improved helicopter tilt based on movement
+        const targetRotation = gameState.velocity * 3;
+        helicopter.rotation.z += (targetRotation - helicopter.rotation.z) * 0.1;
+        
+        // Faster rotor spin for better visual feedback
+        rotor.rotation.y += 0.8;
 
         // Boundary checking
         if (helicopter.position.y > 8 || helicopter.position.y < -8) {
