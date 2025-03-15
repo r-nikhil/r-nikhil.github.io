@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html>
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
-        body { margin: 0; }
+        body { margin: 0; background: #000033; }
         #gameContainer {
             position: relative;
             width: 800px;
@@ -13,6 +14,15 @@
             background: linear-gradient(to bottom, #000033, #000066);
             border: 2px solid #00ff88;
             box-shadow: 0 0 20px #00ff8855;
+        }
+        #score {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #00ff88;
+            font-family: 'Courier New', monospace;
+            font-size: 24px;
+            text-shadow: 0 0 10px #00ff88;
         }
         #startScreen {
             position: absolute;
@@ -43,6 +53,7 @@
 <body>
     <div id="gameContainer">
         <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <div id="score">Score: 0</div>
         <div id="startScreen">CLICK TO START</div>
     </div>
     <div class="footer">
@@ -52,24 +63,56 @@
 <script>
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, 800/400, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('gameCanvas'), alpha: true });
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('gameCanvas'), antialias: true });
 
+// Create UFO
 const ufoGeometry = new THREE.Group();
+
+// Main disk
 const diskGeometry = new THREE.CylinderGeometry(1, 1.2, 0.3, 32);
-const diskMaterial = new THREE.MeshPhongMaterial({ color: 0x00ff88, shininess: 100 });
+const diskMaterial = new THREE.MeshPhongMaterial({ 
+    color: 0x00ff88,
+    shininess: 100,
+    emissive: 0x005522
+});
 const disk = new THREE.Mesh(diskGeometry, diskMaterial);
 ufoGeometry.add(disk);
 
-const domeMaterial = new THREE.MeshPhongMaterial({ color: 0x444444, transparent: true, opacity: 0.8 });
+// Dome
+const domeMaterial = new THREE.MeshPhongMaterial({ 
+    color: 0x444444,
+    transparent: true,
+    opacity: 0.8,
+    shininess: 90
+});
 const domeGeometry = new THREE.SphereGeometry(0.7, 32, 32, 0, Math.PI * 2, 0, Math.PI / 2);
 const dome = new THREE.Mesh(domeGeometry, domeMaterial);
 dome.position.y = 0.15;
 ufoGeometry.add(dome);
 
+// Add engine glow
+const glowGeometry = new THREE.RingGeometry(0.8, 1.3, 32);
+const glowMaterial = new THREE.MeshBasicMaterial({ 
+    color: 0x00ff88,
+    transparent: true,
+    opacity: 0.5
+});
+const glow = new THREE.Mesh(glowGeometry, glowMaterial);
+glow.rotation.x = -Math.PI / 2;
+glow.position.y = -0.15;
+ufoGeometry.add(glow);
+
+// Lighting
 const light = new THREE.PointLight(0x00ff88, 1, 100);
 light.position.set(0, 5, 5);
 scene.add(light);
 scene.add(new THREE.AmbientLight(0x444444));
+
+const obstacleGeometry = new THREE.BoxGeometry(1, 8, 1);
+const obstacleMaterial = new THREE.MeshPhongMaterial({ 
+    color: 0x00ff88,
+    emissive: 0x003322
+});
 
 camera.position.z = 5;
 scene.add(ufoGeometry);
@@ -77,14 +120,80 @@ scene.add(ufoGeometry);
 let gameStarted = false;
 let isFlying = false;
 let velocity = 0;
-const gravity = 0.02;
-const lift = -0.04;
+let score = 0;
+const gravity = 0.015;
+const lift = -0.03;
+
+const obstacles = [];
+let obstacleTimer = 0;
+
+function createObstacle() {
+    const gap = 4;
+    const topHeight = Math.random() * 3 + 2;
+    
+    const top = new THREE.Mesh(obstacleGeometry, obstacleMaterial);
+    top.position.set(10, topHeight + gap/2, 0);
+    
+    const bottom = new THREE.Mesh(obstacleGeometry, obstacleMaterial);
+    bottom.position.set(10, topHeight - gap/2 - 8, 0);
+    
+    scene.add(top);
+    scene.add(bottom);
+    obstacles.push({ top, bottom, passed: false });
+}
+
+function updateObstacles() {
+    for(let i = obstacles.length - 1; i >= 0; i--) {
+        const obstacle = obstacles[i];
+        obstacle.top.position.x -= 0.05;
+        obstacle.bottom.position.x -= 0.05;
+        
+        if(!obstacle.passed && obstacle.top.position.x < ufoGeometry.position.x) {
+            score++;
+            document.getElementById('score').textContent = `Score: ${score}`;
+            obstacle.passed = true;
+        }
+        
+        if(obstacle.top.position.x < -10) {
+            scene.remove(obstacle.top);
+            scene.remove(obstacle.bottom);
+            obstacles.splice(i, 1);
+        }
+        
+        // Collision detection
+        if(Math.abs(obstacle.top.position.x - ufoGeometry.position.x) < 1) {
+            if(ufoGeometry.position.y > obstacle.top.position.y - 4 || 
+               ufoGeometry.position.y < obstacle.bottom.position.y + 4) {
+                gameOver();
+            }
+        }
+    }
+}
+
+function gameOver() {
+    gameStarted = false;
+    document.getElementById('startScreen').style.display = 'block';
+    document.getElementById('startScreen').textContent = `GAME OVER! Score: ${score}\nClick to restart`;
+    
+    // Reset game state
+    ufoGeometry.position.set(0, 0, 0);
+    velocity = 0;
+    score = 0;
+    document.getElementById('score').textContent = "Score: 0";
+    
+    // Remove obstacles
+    obstacles.forEach(obstacle => {
+        scene.remove(obstacle.top);
+        scene.remove(obstacle.bottom);
+    });
+    obstacles.length = 0;
+}
 
 function animate() {
     requestAnimationFrame(animate);
 
-    if (gameStarted) {
-        if (isFlying) {
+    if(gameStarted) {
+        if(isFlying) {
             velocity = lift;
         } else {
             velocity += gravity;
@@ -94,13 +203,20 @@ function animate() {
         ufoGeometry.rotation.z = velocity * 2;
 
         // Hover animation
-        ufoGeometry.position.x = Math.sin(Date.now() * 0.003) * 0.1;
+        ufoGeometry.position.x = Math.sin(Date.now() * 0.001) * 0.1;
+        glow.scale.set(1 + Math.sin(Date.now() * 0.01) * 0.1, 
+                      1 + Math.sin(Date.now() * 0.01) * 0.1, 1);
+        
+        obstacleTimer++;
+        if(obstacleTimer > 100) {
+            createObstacle();
+            obstacleTimer = 0;
+        }
+        
+        updateObstacles();
 
-        if (ufoGeometry.position.y < -2 || ufoGeometry.position.y > 2) {
-            gameStarted = false;
-            document.getElementById('startScreen').style.display = 'block';
-            ufoGeometry.position.y = 0;
-            velocity = 0;
+        if(ufoGeometry.position.y < -2 || ufoGeometry.position.y > 2) {
+            gameOver();
         }
     } else {
         ufoGeometry.rotation.y += 0.02;
@@ -115,11 +231,11 @@ document.getElementById('startScreen').addEventListener('click', () => {
 });
 
 document.addEventListener('mousedown', () => {
-    if (gameStarted) isFlying = true;
+    if(gameStarted) isFlying = true;
 });
 
 document.addEventListener('mouseup', () => {
-    if (gameStarted) isFlying = false;
+    if(gameStarted) isFlying = false;
 });
 
 animate();
