@@ -1,27 +1,190 @@
+
 <!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset='utf8'>
-    </head>
-    <body>
-        <div id='ruffle'></div>
-        <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+<head>
+    <meta charset='utf8'>
+    <title>Neo River Cross</title>
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            color: #0ff;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        #game {
+            background: #000;
+            border: 2px solid #0ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #0ff;
+        }
+        .bank {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .river {
+            height: 100px;
+            background: linear-gradient(90deg, #004, #006);
+            margin: 20px 0;
+            position: relative;
+        }
+        .boat {
+            position: absolute;
+            background: #444;
+            border: 1px solid #0ff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: left 0.5s;
+        }
+        .item {
+            padding: 10px;
+            border: 1px solid #0ff;
+            cursor: pointer;
+            border-radius: 5px;
+            background: #222;
+        }
+        .item:hover, .boat:hover {
+            background: #333;
+        }
+        #message {
+            color: #0f0;
+            margin: 10px 0;
+            height: 20px;
+        }
+        button {
+            background: #222;
+            color: #0ff;
+            border: 1px solid #0ff;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        button:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <h2>Neo River Cross</h2>
+        <div id="leftBank" class="bank"></div>
+        <div class="river">
+            <div id="boat" class="boat">🚣</div>
+        </div>
+        <div id="rightBank" class="bank"></div>
+        <div id="message"></div>
+        <button onclick="moveBoat()">Cross River</button>
+        <button onclick="resetGame()">Reset Game</button>
+    </div>
 
-        <script>
-var swfobject = {};
+    <script>
+        const items = [
+            { id: 'farmer', emoji: '👨‍🌾', name: 'Farmer' },
+            { id: 'wolf', emoji: '🐺', name: 'Wolf' },
+            { id: 'goat', emoji: '🐐', name: 'Goat' },
+            { id: 'cabbage', emoji: '🥬', name: 'Cabbage' }
+        ];
+        
+        let state = {
+            leftBank: ['farmer', 'wolf', 'goat', 'cabbage'],
+            rightBank: [],
+            boat: [],
+            boatPosition: 'left'
+        };
 
-swfobject.embedSWF = function(url, cont, width, height){
-    var ruffle = window.RufflePlayer.newest(),
-        player = Object.assign(document.getElementById(cont).appendChild(ruffle.createPlayer()), {
-            width: width,
-            height: height,
-            style: 'width: ' + width + 'px; height: ' + height + 'px',
-        });
-    
-    player.load({ url: url });
-}
+        function renderGame() {
+            document.getElementById('leftBank').innerHTML = state.leftBank
+                .map(id => createItem(id))
+                .join('');
+            document.getElementById('rightBank').innerHTML = state.rightBank
+                .map(id => createItem(id))
+                .join('');
+            document.getElementById('boat').innerHTML = '🚣 ' + state.boat
+                .map(id => items.find(i => i.id === id).emoji)
+                .join(' ');
+            document.getElementById('boat').style.left = 
+                state.boatPosition === 'left' ? '10%' : '70%';
+        }
 
-swfobject.embedSWF('/assets/rivercross.swf', 'ruffle', 500, 500);
-        </script>
-    </body>
+        function createItem(id) {
+            const item = items.find(i => i.id === id);
+            return `<div class="item" onclick="handleItemClick('${id}')">${item.emoji} ${item.name}</div>`;
+        }
+
+        function handleItemClick(id) {
+            const currentBank = state.boatPosition === 'left' ? 'leftBank' : 'rightBank';
+            if (state.boat.includes(id)) {
+                state.boat = state.boat.filter(i => i !== id);
+                state[currentBank].push(id);
+            } else if (state[currentBank].includes(id) && state.boat.length < 2) {
+                state[currentBank] = state[currentBank].filter(i => i !== id);
+                state.boat.push(id);
+            }
+            renderGame();
+            checkState();
+        }
+
+        function moveBoat() {
+            if (state.boat.length === 0) {
+                setMessage("The boat needs at least the farmer to move!");
+                return;
+            }
+            if (!state.boat.includes('farmer')) {
+                setMessage("Only the farmer can operate the boat!");
+                return;
+            }
+            
+            state.boatPosition = state.boatPosition === 'left' ? 'right' : 'left';
+            checkState();
+            renderGame();
+        }
+
+        function checkState() {
+            const message = document.getElementById('message');
+            if (state.rightBank.length === 4) {
+                setMessage("Congratulations! You've won! 🎉");
+                return;
+            }
+
+            let leftAlone = state.leftBank.filter(id => !state.boat.includes(id));
+            let rightAlone = state.rightBank.filter(id => !state.boat.includes(id));
+
+            if (isUnsafe(leftAlone) || isUnsafe(rightAlone)) {
+                setMessage("Warning: Someone might get eaten! 🚫");
+            } else {
+                setMessage("");
+            }
+        }
+
+        function isUnsafe(items) {
+            return (items.includes('wolf') && items.includes('goat') && !items.includes('farmer')) ||
+                   (items.includes('goat') && items.includes('cabbage') && !items.includes('farmer'));
+        }
+
+        function setMessage(msg) {
+            document.getElementById('message').textContent = msg;
+        }
+
+        function resetGame() {
+            state = {
+                leftBank: ['farmer', 'wolf', 'goat', 'cabbage'],
+                rightBank: [],
+                boat: [],
+                boatPosition: 'left'
+            };
+            setMessage("");
+            renderGame();
+        }
+
+        // Initial render
+        renderGame();
+    </script>
+</body>
 </html>
