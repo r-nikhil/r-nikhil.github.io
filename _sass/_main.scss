@@ -192,8 +192,7 @@ strong, b {
 }
 
 .posts li:hover {
-	background-color: rgba(0, 102, 204, 0.05);
-	border: 1px solid var(--border-color);
+	border: 1px solid transparent;
 }
 
 .posts li a, .posts li div, .projects li a {
