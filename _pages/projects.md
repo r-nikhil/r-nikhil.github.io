@@ -13,6 +13,14 @@ Send your prompt to multiple models and then ask a judge model to synthesize the
 <img  src="/assets/files/consortium.png">
 </div>
 
+#### [**GTOInspector** ](https://www.youtube.com/watch?v=rv5AEZbo-XA)
+
+A hand analysis software for poker professionals. Fix your weak points by uploading hand histories to be compared against game theory optimal(GTO) solutions. While building this, I also consulted and helpedpoker websites to combat fraud (multi-accounting, chip dumping, bonus abuse, collusion detection) and improve matchmaking efficiency. 
+
+<div align = "center">
+<img  src="/assets/files/gtoinspect.png">
+</div>
+
 
 #### [**Twitter Meme Bot**](https://github.com/r-nikhil/twitterMEMEbot)
 
@@ -61,15 +69,6 @@ Browser based habit tracker. All data is stored locally and perists across refre
 
 
 Browser based todo app. All data is stored locally and perists across refresh. No login or sign up needed. A small tool which I use every day to track my todos.
-
-
-#### [**GTOInspector** ](https://www.youtube.com/watch?v=rv5AEZbo-XA)
-
-A hand analysis software for poker professionals. Fix your weak points by uploading hand histories to be compared against game theory optimal(GTO) solutions. While building this, I also consulted and helpedpoker websites to combat fraud (multi-accounting, chip dumping, bonus abuse, collusion detection) and improve matchmaking efficiency. 
-
-<div align = "center">
-<img  src="/assets/files/gtoinspect.png">
-</div>
 
 
 #### [**Wolfram Mathematica** ](https://github.com/r-nikhil/wolfram-2017)
