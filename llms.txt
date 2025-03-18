@@ -1,1 +1,25 @@
-hello
+
+# Nikhil R's Blog
+
+> Personal blog of Nikhil R covering topics in AI, LLM security, gaming, and technology.
+
+The blog covers in-depth technical analysis and tutorials on:
+- AI and Large Language Models, particularly their security implications
+- Game development and analysis
+- Personal projects and experiences
+
+## AI & LLM Posts
+
+- [LLM Security Introduction](/posts/2023-12-18-ai-llm-security-part1.md): Introduction to LLM security and common attack vectors
+- [LLM Security Part 2](/posts/2023-12-22-ai-llm-security-part2.md): Advanced offensive strategies and defenses in LLM security
+- [LLM Scaling](/posts/2023-11-28-llm-scaling.md): Analysis of scaling laws in large language models
+
+## Gaming & Tech
+
+- [Gaming State in India](/posts/2023-04-03-gaming-state-india.md): Overview of the gaming industry in India
+- [Evaluating Games](/posts/2023-05-14-evaluating-games.md): Framework for evaluating game projects
+
+## Optional
+
+- [Data Leakage in LLMs](/posts/2024-07-31-data-leakage-llm-eval.md): Evaluation techniques for data leakage in LLMs
+- [Neural Network Attacks](/posts/2024-01-07-attacking-neural-networks.md): Overview of attack vectors on neural networks
