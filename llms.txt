@@ -1,25 +1,51 @@
 
 # Nikhil R's Blog
 
-> Personal blog of Nikhil R covering topics in AI, LLM security, gaming, and technology.
+> Personal technical blog covering AI, LLM security, gaming, cryptocurrency, and technology.
 
-The blog covers in-depth technical analysis and tutorials on:
-- AI and Large Language Models, particularly their security implications
-- Game development and analysis
-- Personal projects and experiences
+## Recent Posts
 
-## AI & LLM Posts
+- [Differential Privacy in LLMs](/posts/2024-09-22-differential-privacy-llm.md): Analysis of differential privacy techniques in language models
+- [RAG Evaluation for Hallucination](/posts/2024-09-22-rag-eval-hallucination.md): Methods to evaluate hallucination in RAG systems
+- [RAG Evaluation for Tabular Data](/posts/2024-09-22-rag-eval-tabular-data.md): Evaluation techniques for RAG with structured data
+- [LLM Evaluation: PII & Membership Inference](/posts/2024-08-30-llm-eval-pii-membership-inference.md): Privacy concerns in LLM evaluation
+- [Data Leakage in LLMs](/posts/2024-07-31-data-leakage-llm-eval.md): Methods to detect and prevent data leakage
 
-- [LLM Security Introduction](/posts/2023-12-18-ai-llm-security-part1.md): Introduction to LLM security and common attack vectors
-- [LLM Security Part 2](/posts/2023-12-22-ai-llm-security-part2.md): Advanced offensive strategies and defenses in LLM security
-- [LLM Scaling](/posts/2023-11-28-llm-scaling.md): Analysis of scaling laws in large language models
+## AI & Machine Learning
 
-## Gaming & Tech
+- [Attacking Neural Networks](/posts/2024-01-07-attacking-neural-networks.md): Overview of attack vectors on neural networks
+- [AI: Weak vs Strong Generalization](/posts/2024-01-04-ai-weak-strong-generalization-openai.md): Analysis of generalization in AI systems
+- [AI CFR Solver for Poker](/posts/2023-12-31-ai-cfr-solver-poker.md): Counterfactual Regret Minimization in Poker
+- [LLM Security Part 2](/posts/2023-12-22-ai-llm-security-part2.md): Advanced LLM security strategies
+- [LLM Security Introduction](/posts/2023-12-18-ai-llm-security-part1.md): Introduction to LLM security
+- [AI in Coding](/posts/2023-11-30-ai-coding.md): Impact of AI on software development
+- [LLM Scaling](/posts/2023-11-28-llm-scaling.md): Analysis of scaling laws in LLMs
 
-- [Gaming State in India](/posts/2023-04-03-gaming-state-india.md): Overview of the gaming industry in India
-- [Evaluating Games](/posts/2023-05-14-evaluating-games.md): Framework for evaluating game projects
+## Gaming & Product
+
+- [Evaluating AI Agents](/posts/2025-02-27-short-note-evaluating-agents.md): Framework for AI agent evaluation
+- [Game Metrics Checklist](/posts/2023-07-06-game-metrics-checklist.md): Essential metrics for game analytics
+- [Evaluating Games](/posts/2023-05-14-evaluating-games.md): Framework for game project evaluation
+- [Multi vs Single Gaming](/posts/2023-04-09-multi-vs-single-gaming.md): Analysis of gaming platforms
+- [Gaming State in India](/posts/2023-04-03-gaming-state-india.md): Overview of Indian gaming industry
+- [Web3 Gaming](/posts/2022-06-27-web3-gaming.md): Analysis of blockchain gaming
+
+## Cryptocurrency & DeFi
+
+- [Prediction Markets in Crypto](/posts/2024-12-18-prediction-market-crypto.md): Analysis of crypto prediction markets
+- [DeFi User Journey](/posts/2022-08-28-defi-user-journey.md): Understanding DeFi user experience
+- [DeFi Derivatives](/posts/2022-8-15-defi-derivatives.md): Overview of DeFi derivative products
+- [Tornado Cash Analysis](/posts/2022-08-09-tornado-cash-block.md): Privacy implications in cryptocurrency
+
+## Technical Posts
+
+- [Port Knocking Python](/posts/2016-12-12-port-knocking-python.md): Implementation of port knocking in Python
+- [LuaSec HTTPS Library](/posts/2017-08-23-luasec-https-library.md): Guide to using LuaSec for HTTPS
+- [Sailor Lua Framework](/posts/2016-05-03-sailor-lua-elasticsearch-admincenter.md): MVC framework in Lua
 
 ## Optional
 
-- [Data Leakage in LLMs](/posts/2024-07-31-data-leakage-llm-eval.md): Evaluation techniques for data leakage in LLMs
-- [Neural Network Attacks](/posts/2024-01-07-attacking-neural-networks.md): Overview of attack vectors on neural networks
+- [Why I Write](/posts/2024-01-07-why-i-write.md): Personal thoughts on writing
+- [Quitting Full-time Poker](/posts/2023-11-12-quitting-fulltime-poker.md): Experience as a professional poker player
+- [Cold Coffee Consistency](/posts/2024-12-19-cold-coffee-consistent.md): Thoughts on consistency
+- [Tolstoy: How Much Land Does a Man Need](/posts/2025-02-18-tolstoy-man-need.md): Literary analysis
