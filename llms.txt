@@ -43,7 +43,7 @@
 - [LuaSec HTTPS Library](/posts/2017-08-23-luasec-https-library.md): Guide to using LuaSec for HTTPS
 - [Sailor Lua Framework](/posts/2016-05-03-sailor-lua-elasticsearch-admincenter.md): MVC framework in Lua
 
-## Optional
+## Personal
 
 - [Why I Write](/posts/2024-01-07-why-i-write.md): Personal thoughts on writing
 - [Quitting Full-time Poker](/posts/2023-11-12-quitting-fulltime-poker.md): Experience as a professional poker player
