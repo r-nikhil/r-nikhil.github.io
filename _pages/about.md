@@ -106,8 +106,10 @@ Top 5 posts by views:
 
 #### Short resume
 
-- These days(2024-)
-  - Jan-Nov 2024: Leading product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations, compliance/goverance issues and other security vulnerabilities.
+- 2025-Present
+  - Doing some AI stuff at Accel 
+- 2024
+  - Led product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations, compliance/goverance issues and other security vulnerabilities.
 - 2018-2023
     - Led the product and business for the Poker app in Paytm and scaled it to a $10m biz
     - Trading and yeild farming across all DeFi protocols 

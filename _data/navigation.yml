@@ -1,8 +1,11 @@
 links:
-- title: Home
+- title: Writing
   url: /
+- title: About
+  url: /about/
 - title: Projects
   url: /projects
+
 
 
 
