@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+
 ---
 <!-- <a href="https://twitter.com/rnikhilcom">
 <img  src="/assets/files/x.png" style="width: 25px; height: 25px; float:left; margin-right:10px;"> </a>
