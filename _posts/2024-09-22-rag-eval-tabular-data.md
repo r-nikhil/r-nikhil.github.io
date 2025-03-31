@@ -2,7 +2,6 @@
 
 layout: post
 title:  How to (Accurately) Evaluate RAG Systems on Tabular Data
-tags: ai llms eval rag tabular hallucination 
 
 ---
 

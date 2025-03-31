@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Introduction to AI agents
-tags: ai agents
 
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: LLM security - Part 2 
-tags: ai llm security prompt 
 
 ---
 

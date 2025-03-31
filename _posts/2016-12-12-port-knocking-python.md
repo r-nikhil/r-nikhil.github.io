@@ -1,7 +1,6 @@
 ---
 layout: post
 title: A Secure Portknocking Implementation - Portsmith
-tags: coding python network security linux
 ---
 
 [Source](https://github.com/r-nikhil/Portsmith)

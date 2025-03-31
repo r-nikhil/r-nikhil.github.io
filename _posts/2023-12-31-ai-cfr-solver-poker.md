@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Counterfactual Regret Minimization or How I won any money in Poker?
-tags: ai cfr poker solver
 ---
 [HN Discussion](https://news.ycombinator.com/item?id=38823240)
 

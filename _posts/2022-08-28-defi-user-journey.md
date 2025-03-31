@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Problem statements to solve for a retail investor in DeFi
-tags: defi crypto web3 user 
 ---
 
 

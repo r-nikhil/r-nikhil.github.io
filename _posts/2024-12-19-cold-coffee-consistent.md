@@ -1,7 +1,6 @@
 ---
 layout: post
 title: How to make consistent cold coffees? 
-tags: coffee ice 
 
 ---
 

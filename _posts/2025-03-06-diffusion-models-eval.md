@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Diffusion models are interesting
-tags: Diffusion evals dLLMs agents hallucination
 ---
 > [HN Discussion](https://news.ycombinator.com/item?id=43285726)
 

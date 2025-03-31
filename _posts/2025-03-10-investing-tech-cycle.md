@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Quick thoughts on investing during tech cycles
-tags: investing vc markets
 
 ---
 

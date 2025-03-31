@@ -1,7 +1,6 @@
 ---
 layout: post
 title: How much does a man need? 
-tags: coffee ice 
 
 ---
 

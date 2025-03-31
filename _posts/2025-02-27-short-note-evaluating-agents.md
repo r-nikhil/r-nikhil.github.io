@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Quick thoughts on evaluating agents
-tags: LLMs evals AI agents 
 
 ---
 

@@ -2,7 +2,6 @@
 
 layout: post
 title: Derivative protocols in DeFi
-tags: defi derivatives protocols web3
 
 ---
 

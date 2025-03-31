@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Some notes on Real Money Gaming (RMG) in India
-tags: gaming market rmg research
 ---
 
 

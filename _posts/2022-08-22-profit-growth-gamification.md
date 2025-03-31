@@ -2,7 +2,6 @@
 
 layout: post
 title: Make Poker fun again
-tags: poker Octalysis gamification gaming
 
 ---
 

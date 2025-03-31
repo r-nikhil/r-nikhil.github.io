@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Why do I write? 
-tags: opinion blog
 ---
 
 Over the last week, 4-5 folks have asked me why I write or why do I maintain this blog? This post attempts to answer the question and ensures I don't have to repeat myself again. 

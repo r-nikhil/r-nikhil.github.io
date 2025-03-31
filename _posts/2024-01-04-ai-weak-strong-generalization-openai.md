@@ -1,7 +1,6 @@
 ---
 layout: post
 title: AI Alignment - Weak-to-strong generalization (W2SG) explained
-tags: ai alignment llm openai
 ---
 
 

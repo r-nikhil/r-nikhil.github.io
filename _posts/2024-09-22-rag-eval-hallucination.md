@@ -2,7 +2,6 @@
 
 layout: post
 title:  Tackling the Explainability Gap in RAG Hallucination Evals
-tags: ai llms rag hallucination eval 
 
 ---
 

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: The magic words are squeamish ossifrage
-tags: crypto rsa encryption internship
 ---
 
 

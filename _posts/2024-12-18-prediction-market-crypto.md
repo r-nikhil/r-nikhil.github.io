@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  No, You can't bet on everything (and that's okay)
-tags: prediction markets trading finance
 
 ---
 
