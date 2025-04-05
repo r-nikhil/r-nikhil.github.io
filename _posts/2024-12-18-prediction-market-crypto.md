@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  No, You can't bet on everything (and that's okay)
+title:  Why do I think prediction markets wont scale?
 
 ---
 
