@@ -4,7 +4,7 @@ title: Google cloud launches Agent2Agent protocol
 
 ---
 
-Google has launched a new protocol spec for agents to talk to each other. [Link](https://github.com/google/A2A) to the spec. 
+Google has launched a new protocol spec for agents to talk to each other. [Link](https://github.com/google/A2A) to the spec. Homepage [here](https://google.github.io/A2A/#/). 
 
 From the [blog](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/): 
 
