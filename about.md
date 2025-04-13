@@ -92,7 +92,7 @@ title: About
 </style> -->
 
 
-Hey, I am Nikhil (நிக்கில்). I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang random text.
+Hey, I am Nikhil. I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang random text.
 
 Top 5 posts by views: 
 - <a href = "https://rnikhil.com/2024/01/07/attacking-neural-networks.html">Attacks on machine learning models</a>
@@ -108,7 +108,8 @@ Top 5 posts by views:
 #### Short resume
 
 - 2025-Present
-  - Doing some AI stuff at Accel 
+  - Doing some AI stuff at Accel
+  - If you are building in AI, mail me on nikhil.ramesh@accel.com
 - 2024
   - Led product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations, compliance/goverance issues and other security vulnerabilities.
 - 2018-2023

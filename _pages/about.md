@@ -108,7 +108,8 @@ Top 5 posts by views:
 #### Short resume
 
 - 2025-Present
-  - Doing some AI stuff at Accel 
+  - AI resident at Accel
+  - If you are building in AI, mail me on nikhil.ramesh@accel.com
 - 2024
   - Led product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations, compliance/goverance issues and other security vulnerabilities.
 - 2018-2023
