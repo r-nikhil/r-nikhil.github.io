@@ -344,3 +344,36 @@ figcaption {
         display: none !important;
     }
 }
+
+.site-footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  
+  .footer-content {
+    max-width: var(--width);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .social-link {
+    color: var(--text-main);
+    transition: color 0.2s;
+    
+    &:hover {
+      color: var(--links);
+    }
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+    color: var(--text-aux);
+  }
+}
