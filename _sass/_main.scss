@@ -1,13 +1,13 @@
 :root {
   --bg-color: #FFFFFF;
-  --text-color: #1A1A1A;
-  --link-color: #2962FF;
-  // --link-hover-color: #0039CB;
-  --code-bg: #F0F0F0;
-  --border-color: #1A1A1A;
-  --blockquote-bg: #F5F5F5;
-  --button-color: #2962FF;
-  --box-shadow: 4px 4px 0px 0px rgba(26,26,26,1);
+  --text-color: #2C3E50;
+  --link-color: #3498DB;
+  --link-hover-color: #2980B9;
+  --code-bg: #F7F9FC;
+  --border-color: #E5E9F0;
+  --blockquote-bg: #F8FAFC;
+  --button-color: #3498DB;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 *,:after,:before {
@@ -22,10 +22,11 @@ body {
 	font-family: 'Inter', system-ui, sans-serif;
 	-webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
-	line-height: 1.5;
-	font-size: 1rem;
+	line-height: 1.7;
+	font-size: 1.125rem;
 	color: var(--text-color);
 	background-color: var(--bg-color);
+	letter-spacing: -0.011em;
 }
 
 nav ul {
@@ -36,15 +37,15 @@ a {
     color: var(--link-color);
     text-decoration-skip-ink: auto;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
+    padding-bottom: 1px;
     transition: all 0.2s ease;
 }
 
 a:hover {
     color: var(--link-hover-color);
-    background-color: rgba(0, 102, 204, 0.1);
+    border-bottom-color: var(--link-hover-color);
 }
 
 pre {
@@ -143,11 +144,12 @@ header, section {
 
 blockquote {
 	font-style: italic;
-    border: 2px solid var(--border-color);
-    padding: 1rem;
-    margin: 1.5rem 0;
+    border-left: 4px solid var(--link-color);
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
     background-color: var(--blockquote-bg);
-    border-radius: 4px;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
 h1, h2, h3, h4, h5 {
