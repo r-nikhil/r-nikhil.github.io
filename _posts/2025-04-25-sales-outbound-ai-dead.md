@@ -2,6 +2,8 @@
 layout: post
 title: Is outbound going to die?  
 ---
+> [HN Discussion](https://news.ycombinator.com/item?id=43823851)
+
 
 I see a ton of sales/marketing products all powered by AI, making hyper personalised content to target potential users and customers. These tools now make sophisticated, high-volume paid marketing campaigns accessible to everyone, from large enterprises to individual consumers. With LLMs, the messages and content have gotten to a point where the accuracy and quality of the has improved tremendously at scale. Moreover, the scale of outbound sales has also increased rapidly. You are now able to pump out 1000s of SEO blog posts, generate reels/videos on the fly and even use AI agents to do email/phone outreach at a never before seen scale. 
 
