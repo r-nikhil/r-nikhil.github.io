@@ -50,11 +50,11 @@ Simulate backroom conversations with LLMs. Give each LLM a character or persona 
 <img  src="/assets/files/baka.png">
 </div>
 
-#### [**Haiku Vision**](https://rnikhil.com/heli/)
+#### [**Helicopter game**](https://rnikhil.com/heli)
 
 three.js powered clone of the popular Flash helicopter game. 
 
-#### [**Helicopter game**](https://haiku-vision.rnikhil.com/)
+#### [**Haiku vision**](https://haiku-vision.rnikhil.com/)
 
 Convert your camera feed into poetry. Takes an image and sends it to Claude Haiku asking it to generate a 3 line poem. 
 
