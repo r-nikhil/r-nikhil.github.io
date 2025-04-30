@@ -53,7 +53,7 @@ A χ² value greater than 3.84 (critical value for df=1, p=0.05) indicates stati
 
 ## Experiment 2 : Odd vs even
 
-> Prompt used: Generate a random number between 0 and 10 (both inclusive). Just output the number. Don't say anything else. Don't write code. Don't use any tools. Don't explain. Don't output anything except the number.
+> Prompt used: Generate a random number between 1 and 10 (both inclusive). Just output the number. Don't say anything else. Don't write code. Don't use any tools. Don't explain. Don't output anything except the number.
 
 Now we repeat the same analysis as above and plot the numbers. 
 
