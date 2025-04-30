@@ -4,7 +4,7 @@ title: Are LLMs random?
 ---
 
 
-While LLMs theoretically understand "randomness," their training data distributions may create unexpected patterns. In this article we will test different LLMs from OpenAI and Anthropic to see if they provide unbiased results. For the first experiment we will make it toss a fair coin and for the next, we will make it guess a number between 0-10 and see if its equally distributed between even and odd. I know the sample sizes are small and probably not very statistically significant. This whole thing is just for fun. 
+While LLMs theoretically understand "randomness," their training data distributions may create unexpected patterns. In this article we will test different LLMs from OpenAI and Anthropic to see if they provide unbiased results. For the first experiment we will make it toss a fair coin and for the next, we will make it guess a number between 1-10 and see if its equally distributed between even and odd. I know the sample sizes are small and probably not very statistically significant. This whole thing is just for fun. 
 
 ## Experiment 1 : Tossing a fair coin
 
