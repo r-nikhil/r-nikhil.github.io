@@ -31,28 +31,16 @@ layout: default
   display: inline-block;
   padding: 0.5rem 1rem;
   margin: 0.2rem;
-  background-color: var(--button-color);
-  color: white;
-  font-weight: 700;
-  border: 2px solid black;
-  border-radius: 4px;
-  box-shadow: var(--box-shadow);
-  transition: all 0.1s ease;
+  border: none;
+  border-radius: 3px;
+  background: #eee;
+  color: #333;
   cursor: pointer;
   font-size: 0.9rem;
 }
-.filter-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
-}
-.filter-btn:active {
-  transform: translate(0px, 0px);
-  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
-}
 .filter-btn.active {
-  background-color: #0039CB;
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+  background: #333;
+  color: #fff;
 }
 .post-item.hidden {
   display: none;
