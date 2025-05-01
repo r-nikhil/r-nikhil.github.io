@@ -58,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function() {
       button.classList.add('active');
       
       posts.forEach(post => {
-        const url = post.dataset.categories;
-        if (category === 'all' || url.includes('/' + category + '/')) {
+        const categories = post.dataset.categories.split(' ');
+        if (category === 'all' || categories.includes(category)) {
           post.classList.remove('hidden');
         } else {
           post.classList.add('hidden');
