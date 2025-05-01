@@ -25,30 +25,40 @@ layout: default
 
 <style>
 .category-filter {
-  margin-bottom: 2rem;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 5px 0;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-color);
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
 }
 .filter-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 2px solid var(--border-color);
-  background: var(--bg-color);
+  padding: 1px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: all 0.1s ease;
+  display: block;
+  font-weight: 700;
+  padding: 5px;
+  border-bottom: none;
+  transition: all 0.2s ease;
+  background: none;
   color: var(--text-color);
   cursor: pointer;
-  font-weight: 700;
-  font-size: 0.9rem;
-  transition: all 0.1s ease;
+  flex: 1;
+  min-width: 100px;
 }
 .filter-btn:hover {
   transform: translate(-2px, -2px);
   box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
   background-color: rgba(0, 102, 204, 0.05);
+  color: var(--link-hover-color);
+  transform: scale(1.05);
 }
 .filter-btn.active {
-  background: var(--text-color);
-  color: var(--bg-color);
+  background-color: rgba(0, 102, 204, 0.05);
   box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
 }
 .post-item.hidden {
