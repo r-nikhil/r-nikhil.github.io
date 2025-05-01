@@ -1,8 +1,7 @@
 ---
-
 layout: post
 title:  How to (Accurately) Evaluate RAG Systems on Tabular Data
-
+categories: [ai]
 ---
 
 ------------------------

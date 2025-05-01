@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  Chinchilla Paper explained
+categories: [ai]
 ---
 
 Whenever I see a discussion online about the current generation of LLMs, there is an inherent assumption and extrapolation that these technologies will keep improving with time. Why do we think that? The approximate answer is because of **scaling laws** which suggest indefinite improvement for the current style of transformers with additional pre-training data and parameters. This blog post delves into the intricacies of these scaling laws and examines how they guide the development of more powerful and efficient LLMs. I will be as comprehensive as I can (with the math knowledge I have) including parts about the scaling law origins, recent finding and their implications. 

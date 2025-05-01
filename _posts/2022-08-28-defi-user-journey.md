@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Problem statements to solve for a retail investor in DeFi
+categories: [crypto]
 ---
 
 

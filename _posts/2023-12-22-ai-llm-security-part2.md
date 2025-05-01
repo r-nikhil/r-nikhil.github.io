@@ -1,7 +1,7 @@
 ---
 layout: post
 title: LLM security - Part 2 
-
+categories: [ai]
 ---
 
 In the previous blog post, we gave an introduction to how LLMs work and started looking at various offensive measures that we use to break them. In this post, we will explore more offensive strategies, look at examples from the wild and also briefly touch upon the common defenses used by AI companies.

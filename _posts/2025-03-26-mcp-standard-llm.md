@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Will MCP stay for the long term? 
+categories: [ai]
 ---
 
 [MCP](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools. Based on the context, AI agents can decide which tools to use, in what order, and how to chain them together to accomplish a task. MCP also introduced a human-in-the-loop capabilities for humans to provide additional data and approve execution. With the right set of MCP servers, users can turn every MCP client into an "everything app."

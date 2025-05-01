@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Teaching domain knowledge to AI systems
+categories: [ai]
 ---
 
 > This is part 1 of a series of posts I plan on writing on how do you teach your AI systems domain specific knowledge. 

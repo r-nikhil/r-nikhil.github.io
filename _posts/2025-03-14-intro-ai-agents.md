@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduction to AI agents
-
+categories: [ai]
 ---
 
 > This is the first couple pages of a report I worked on about AI agents.

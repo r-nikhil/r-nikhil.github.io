@@ -1,6 +1,7 @@
 ---
 layout: post
 title: AI Alignment - Weak-to-strong generalization (W2SG) explained
+categories: [ai]
 ---
 
 

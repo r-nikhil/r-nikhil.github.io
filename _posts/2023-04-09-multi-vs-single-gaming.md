@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Do multi-gaming apps make sense? 
+categories: [markets]
 ---
 
 I've been thinking about multi-gaming platforms due to their recent meteoric rise to [capture about 10%](https://rnikhil.com/2023/04/03/gaming-state-india.html) of the RMG market and the fact that I have to make a decision at work on bundling a mini-game with our main app. The multi-gaming segment is also growing at about 40% y-o-y which is the highest among all RMG segments. While one can argue that this growth was mostly driven by monstrous advertisement spends, this document tries to dig a bit deeper into the user behavior/personas between Multi Gaming Platforms and Single Gaming Platforms, framework to define value of adding/removing each game in the bundle, mental models for packaging games and finally some perspectives on user requirements/needs and way forward for building multi gaming apps. We want to basically explore why everybody is packaging games together or building yet another subscription service?

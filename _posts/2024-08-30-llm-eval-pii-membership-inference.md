@@ -1,8 +1,7 @@
 ---
-
 layout: post
 title:  Integrating Explainable LLM Data Leakage Testing into your CI/CD Pipeline 
-
+categories: [ai]
 ---
 ---------------------
 

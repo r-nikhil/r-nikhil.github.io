@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Is outbound going to die?  
+categories: [ai]
 ---
 > [HN Discussion](https://news.ycombinator.com/item?id=43823851)
 

@@ -2,7 +2,7 @@
 
 layout: post
 title: Make Poker fun again
-
+categories: [poker, markets]
 ---
 
 #### Introduction 

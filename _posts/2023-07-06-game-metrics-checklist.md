@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Gaming - Pre and Post launch checklist
+categories: [markets]
 ---
 
 This post is a checklist for game developers and product managers to use during the pre-launch period and some important metrics to track immediately post launch. We are assuming that the game has been developed(and tested) and is in the final stages of going live in a single country. 

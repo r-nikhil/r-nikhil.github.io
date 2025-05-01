@@ -2,7 +2,7 @@
 
 layout: post
 title: Derivative protocols in DeFi
-
+categories: [crypto, markets]
 ---
 
 

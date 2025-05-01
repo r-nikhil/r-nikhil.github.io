@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Counterfactual Regret Minimization or How I won any money in Poker?
+categories: [poker]
 ---
 [HN Discussion](https://news.ycombinator.com/item?id=38823240)
 

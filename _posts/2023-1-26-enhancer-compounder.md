@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Classifying 2022 DeFi protocols
+categories: [crypto]
 ---
 
 DeFi in 2022 was a lot about liquidity provisioning and balance sheet monetization. Everybody was looking for simple and safe yields without the risk of getting their hands burnt. The year has brought the dawn of certain type of protocols like: 

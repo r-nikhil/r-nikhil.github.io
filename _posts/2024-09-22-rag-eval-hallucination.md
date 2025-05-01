@@ -2,7 +2,7 @@
 
 layout: post
 title:  Tackling the Explainability Gap in RAG Hallucination Evals
-
+categories: [ai]
 ---
 
 ------------------------

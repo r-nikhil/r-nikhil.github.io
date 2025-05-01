@@ -3,7 +3,7 @@
 layout: post
 title: GTO Inspector - My attempt at building an online business
 youtubeId: VdmHds-lylY
-
+categories: [poker]
 ---
 
 This document explores the hypothesis and my experience running an online business in the Indian poker ecosystem. 

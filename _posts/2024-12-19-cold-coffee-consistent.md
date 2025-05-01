@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to make consistent cold coffees? 
-
+categories: [personal]
 ---
 
 I make 1-2 cups of cold coffee daily and sometimes for my SO and small inconsistencies have started driving us crazy. Some days it would be perfectly cold and creamy and other days a watery sludge. After months of trying various things and drinking a lot of coffee, I've discovered that making consistently great cold coffee comes down to understanding a few key things. 

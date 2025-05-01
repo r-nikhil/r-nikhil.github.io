@@ -2,7 +2,7 @@
 
 layout: post
 title:  Testing LLMs for Data Leakage Vulnerabilities
-
+categories: [ai]
 ---
 ------------------------
 

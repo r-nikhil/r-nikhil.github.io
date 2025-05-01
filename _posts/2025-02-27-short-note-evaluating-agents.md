@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Quick thoughts on evaluating agents
-
+categories: [ai]
 ---
 
 I recently encountered some companies which are in the due diligence and report generation space. They all use a multitude of AI agents to plan and do the research and this made me wonder how these agent stacks are evaluated.

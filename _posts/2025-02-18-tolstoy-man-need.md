@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How much does a man need? 
-
+categories: [personal]
 ---
 
 > I am so enamoured by the last chapter in Alok Sama's book - [Money trap](https://www.goodreads.com/book/show/203578944-the-money-trap), that I have decided to repost Tolstoy's short story on my blog. I think my readers will benefit from reading it. 

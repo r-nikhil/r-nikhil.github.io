@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Why do I think prediction markets wont scale?
-
+categories: [markets]
 ---
 
 >

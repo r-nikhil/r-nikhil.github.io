@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Some notes on Real Money Gaming (RMG) in India
+categories: [markets, poker]
 ---
 
 
