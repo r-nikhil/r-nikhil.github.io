@@ -1,7 +1,7 @@
 ---
 layout: post
 title: A take on web3/DeFi
-categories: [crypto]
+categories: [crypto, markets]
 ---
 
 

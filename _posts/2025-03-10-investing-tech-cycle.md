@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Quick thoughts on investing during tech cycles
-categories: [markets]
+categories: [markets, ai]
 ---
 
 > I was recently asked to put together a thesis on the AI agent tooling space. While I was researching the sector, talking to some VCs and looking at approaches taken by various companies, I decided to take a step back and question myself on whether the tooling+infra space is investable <u>today</u> in the first place. This short post is the result of that pondering. 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How to evaluate a game for your startup? 
-categories: [markets]
+categories: [markets, poker]
 ---
 
 As a product manager working in gaming, its impossible to miss the recent rise of multi gaming platforms which package multiple individual games together inside one app. Doing this has a lot of benefits and you can read my previous blog posts to better understand [how bundling benefits everybody in the ecosystem](https://rnikhil.com/2023/04/09/multi-vs-single-gaming.html). In this post, we investigate intrinsic aspects of a game apart from their **powerUser:casualUser** ratio and delve deeper into what makes a game successful by itself. In the previous post, we looked at how different games interact with each other inside a MGP and in this post, we will look at ways in no particular order to evaluate a game in isolation. All games are looked at from a real money gaming POV.

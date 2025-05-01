@@ -1,6 +1,7 @@
 ---
 layout: post
 title: A Secure Portknocking Implementation - Portsmith
+categories: [security]
 
 ---
 

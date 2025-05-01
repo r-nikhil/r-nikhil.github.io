@@ -2,7 +2,7 @@
 
 layout: post
 title: We should all have something to hide - Tornado cash takedown
-categories: [personal]
+categories: [personal, security, crypto]
 ---
 
 [HN Discussion](https://news.ycombinator.com/item?id=32403504)
