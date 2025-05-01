@@ -1,12 +1,72 @@
+
 ---
 layout: default
 ---
 
 <section class="posts">
+<div class="category-filter">
+  <button class="filter-btn active" data-category="all">All</button>
+  <button class="filter-btn" data-category="ai">AI</button>
+  <button class="filter-btn" data-category="poker">Poker</button>
+  <button class="filter-btn" data-category="crypto">Crypto</button>
+  <button class="filter-btn" data-category="personal">Personal</button>
+</div>
+
 <ul>
 {% for post in site.posts %}
-<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b '%y" }}</time></li>
+<li class="post-item" data-categories="{{ post.url | downcase }}">
+  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b '%y" }}</time>
+</li>
 {% endfor %}
 </ul>
 </section>
 
+<style>
+.category-filter {
+  margin-bottom: 2rem;
+}
+.filter-btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.2rem;
+  border: none;
+  border-radius: 3px;
+  background: #eee;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.filter-btn.active {
+  background: #333;
+  color: #fff;
+}
+.post-item.hidden {
+  display: none;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const posts = document.querySelectorAll('.post-item');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.category;
+      
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      posts.forEach(post => {
+        const url = post.dataset.categories;
+        if (category === 'all' || url.includes('/' + category + '/')) {
+          post.classList.remove('hidden');
+        } else {
+          post.classList.add('hidden');
+        }
+      });
+    });
+  });
+});
+</script>
