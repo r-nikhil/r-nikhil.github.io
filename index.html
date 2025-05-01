@@ -13,7 +13,7 @@ layout: default
 
 <ul>
 {% for post in site.posts %}
-<li class="post-item" data-categories="{{ post.url | downcase }}">
+<li class="post-item" data-categories="{% if post.categories %}{{ post.categories | join: ' ' }}{% endif %}">
   <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
   <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b '%y" }}</time>
 </li>
