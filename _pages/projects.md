@@ -34,6 +34,14 @@ Resume optimization project that uses AI agents(CrewAI) to enhance resumes based
 
 Convert your camera feed into poetry. Takes an image and sends it to Claude Haiku asking it to generate a 3 line poem. 
 
+#### [**HN-Schedule** ](https://hn-schedule.rnikhil.com/)
+
+A small tool to schedule your post on HN. One shotted with Replit 
+
+<div align = "center">
+<img  src="/assets/files/scheduledash.png">
+</div>
+
 #### [**BAYC Clone bot**](https://github.com/r-nikhil/BAYCBOT)
 
 An autonomous AI Twitter agent that engages in contextual conversations using OpenAI for text and Replicate (image model fine-tuned on BAYC art) for image generation. It maintains conversation history of recent interactions and intelligently decides between text and image responses when replying to mentions and threads.
