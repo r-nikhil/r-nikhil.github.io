@@ -30,6 +30,9 @@ Pulls the latest tweets for a set of accounts, ranks them based on engagement po
 
 Resume optimization project that uses AI agents(CrewAI) to enhance resumes based on company data and job descriptions. The system has four agents working collaboratively - a Resume Analyzer that examines the uploaded resume for key details, a Job Analyzer that scrapes and understands job requirements and company details from provided URLs or  web search, a Resume Writer that optimizes the resume while maintaining authenticity, and a Quality Controller that oversees the entire process(can trigger rewrites, more web searches etc). 
 
+#### [**Haiku vision**](https://haiku-vision.rnikhil.com/)
+
+Convert your camera feed into poetry. Takes an image and sends it to Claude Haiku asking it to generate a 3 line poem. 
 
 #### [**BAYC Clone bot**](https://github.com/r-nikhil/BAYCBOT)
 
@@ -54,9 +57,6 @@ Simulate backroom conversations with LLMs. Give each LLM a character or persona 
 
 three.js powered clone of the popular Flash helicopter game. 
 
-#### [**Haiku vision**](https://haiku-vision.rnikhil.com/)
-
-Convert your camera feed into poetry. Takes an image and sends it to Claude Haiku asking it to generate a 3 line poem. 
 
 #### [**Habit tracker**](https://habits.rnikhil.com/)
 
