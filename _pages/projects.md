@@ -21,6 +21,13 @@ A hand analysis software for poker professionals. Fix your weak points by upload
 <img  src="/assets/files/gtoinspect.png">
 </div>
 
+#### [**LLM Backroom Simulator**](https://simulator.rnikhil.com/)
+
+Simulate backroom conversations with LLMs. Give each LLM a character or persona and watch them talk in a group chat. Fun for simulating rap battles between random personalities. Endless entertainment value if you know how to prompt the LLMs and give character definitions. 
+
+<div align = "center">
+<img  src="/assets/files/baka.png">
+</div>
 
 #### [**Twitter Meme Bot**](https://github.com/r-nikhil/twitterMEMEbot)
 
@@ -49,17 +56,6 @@ An autonomous AI Twitter agent that engages in contextual conversations using Op
 #### [**Pomodoro timer**](https://pomodoro.rnikhil.com/)
 
 25min timer for us folks who need tools to take a break or concentrate. 
-
-
-
-
-#### [**LLM Backroom Simulator**](https://simulator.rnikhil.com/)
-
-Simulate backroom conversations with LLMs. Give each LLM a character or persona and watch them talk in a group chat. Fun for simulating rap battles between random personalities. Endless entertainment value if you know how to prompt the LLMs and give character definitions. 
-
-<div align = "center">
-<img  src="/assets/files/baka.png">
-</div>
 
 #### [**Helicopter game**](https://rnikhil.com/heli)
 
