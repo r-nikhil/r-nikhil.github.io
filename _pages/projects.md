@@ -29,9 +29,6 @@ Simulate backroom conversations with LLMs. Give each LLM a character or persona 
 <img  src="/assets/files/baka.png">
 </div>
 
-#### [**Twitter Meme Bot**](https://github.com/r-nikhil/twitterMEMEbot)
-
-Pulls the latest tweets for a set of accounts, ranks them based on engagement potential and then creates a meme to be posted as a reply. Works with your twitter cookies. Uses [IMGFlip AI meme API](https://imgflip.com/ai-meme) and supermeme. GPT-4o rewrites/summarises the tweet into a prompt for the imagegen pipeline. 
 
 #### [**Resume writing crew**](https://github.com/r-nikhil/Resume-Agent-Crew)
 
@@ -43,7 +40,7 @@ Convert your camera feed into poetry. Takes an image and sends it to Claude Haik
 
 #### [**HN-Schedule** ](https://hn-schedule.rnikhil.com/)
 
-A small tool to schedule your post on HN. One shotted with Replit 
+A small tool to schedule your post on HN. 
 
 <div align = "center">
 <img  src="/assets/files/scheduledash.png">
@@ -53,26 +50,10 @@ A small tool to schedule your post on HN. One shotted with Replit
 
 An autonomous AI Twitter agent that engages in contextual conversations using OpenAI for text and Replicate (image model fine-tuned on BAYC art) for image generation. It maintains conversation history of recent interactions and intelligently decides between text and image responses when replying to mentions and threads.
 
-#### [**Pomodoro timer**](https://pomodoro.rnikhil.com/)
-
-25min timer for us folks who need tools to take a break or concentrate. 
 
 #### [**Helicopter game**](https://rnikhil.com/heli)
 
 three.js powered clone of the popular Flash helicopter game. 
-
-
-#### [**Habit tracker**](https://habits.rnikhil.com/)
-
-
-Browser based habit tracker. All data is stored locally and perists across refresh. No login or sign up needed. A small tool which I use every day to track my streaks. 
-
-
-
-#### [**TODO app**](https://todo.rnikhil.com/)
-
-
-Browser based todo app. All data is stored locally and perists across refresh. No login or sign up needed. A small tool which I use every day to track my todos.
 
 
 #### [**Wolfram Mathematica** ](https://github.com/r-nikhil/wolfram-2017)
@@ -106,9 +87,6 @@ Billing and inventory management system used daily at all messes and canteens to
 
 CLI for Google search. This was useful back in 2012. 
 
-#### [**StarMash**](https://github.com/r-nikhil/StarMash)
-
-FaceMash clone but with celeb photos scraped from IMBD
 
 #### [**MicroTracer**](https://github.com/r-nikhil/microTracer)
 
@@ -125,3 +103,27 @@ It is to help developers jump start developing any kind of mobility tracking app
 #### **Peer to Peer Streaming Protocol**
 
 Was involved in the building a statistics module for an application layer streaming protocol in Python. It records information related to the stream, number of peers (audience) per minute, in/out of peers, total peers, etc. Wrote a graphical interface for viewing the numbers built using d3.js. Learnt a bunch about WebRTC
+
+#### [**Twitter Meme Bot**](https://github.com/r-nikhil/twitterMEMEbot)
+
+Pulls the latest tweets for a set of accounts, ranks them based on engagement potential and then creates a meme to be posted as a reply. Works with your twitter cookies. Uses [IMGFlip AI meme API](https://imgflip.com/ai-meme) and supermeme. GPT-4o rewrites/summarises the tweet into a prompt for the imagegen pipeline. 
+
+#### [**Pomodoro timer**](https://pomodoro.rnikhil.com/)
+
+25min timer for us folks who need tools to take a break or concentrate. 
+
+#### [**Habit tracker**](https://habits.rnikhil.com/)
+
+
+Browser based habit tracker. All data is stored locally and perists across refresh. No login or sign up needed. A small tool which I use every day to track my streaks. 
+
+
+
+#### [**TODO app**](https://todo.rnikhil.com/)
+
+
+Browser based todo app. All data is stored locally and perists across refresh. No login or sign up needed. A small tool which I use every day to track my todos.
+
+#### [**StarMash**](https://github.com/r-nikhil/StarMash)
+
+FaceMash clone but with celeb photos scraped from IMBD
