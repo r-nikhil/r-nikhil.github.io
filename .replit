@@ -7,3 +7,15 @@ channel = "stable-24_05"
 localPort = 4000
 externalPort = 80
 exposeLocalhost = true
+
+[workflows]
+runButton = "run"
+
+[[workflows.workflow]]
+name = "run"
+mode = "sequential"
+author = 26136731
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bundle exec jekyll serve"

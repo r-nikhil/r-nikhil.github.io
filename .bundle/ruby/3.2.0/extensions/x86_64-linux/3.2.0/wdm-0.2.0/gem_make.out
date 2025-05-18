@@ -1,0 +1,14 @@
+current directory: /home/runner/workspace/.bundle/ruby/3.2.0/gems/wdm-0.2.0/ext/wdm
+/nix/store/v45ny4knx2a7mmv12nm72a79dr8hlzqc-ruby-3.2.2/bin/ruby extconf.rb
+
+current directory: /home/runner/workspace/.bundle/ruby/3.2.0/gems/wdm-0.2.0/ext/wdm
+make DESTDIR\= sitearchdir\=./.gem.20250518-857-gj8f6h sitelibdir\=./.gem.20250518-857-gj8f6h clean
+
+current directory: /home/runner/workspace/.bundle/ruby/3.2.0/gems/wdm-0.2.0/ext/wdm
+make DESTDIR\= sitearchdir\=./.gem.20250518-857-gj8f6h sitelibdir\=./.gem.20250518-857-gj8f6h
+
+current directory: /home/runner/workspace/.bundle/ruby/3.2.0/gems/wdm-0.2.0/ext/wdm
+make DESTDIR\= sitearchdir\=./.gem.20250518-857-gj8f6h sitelibdir\=./.gem.20250518-857-gj8f6h install
+
+current directory: /home/runner/workspace/.bundle/ruby/3.2.0/gems/wdm-0.2.0/ext/wdm
+make DESTDIR\= sitearchdir\=./.gem.20250518-857-gj8f6h sitelibdir\=./.gem.20250518-857-gj8f6h clean

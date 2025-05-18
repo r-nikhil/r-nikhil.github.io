@@ -3,6 +3,13 @@ layout: page
 title: Random assortment of side projects
 ---
 
+#### [**Voice AI latency simulator and cost comparison**](https://comparevoiceai.com)
+
+A simple website to see the overall cost of building voice agents (STT+LLM+TTS) and simulate various latency scenarios. 
+
+<div align = "center">
+<img  src="/assets/files/comparevoiceai.png">
+</div>
 
 
 #### [**LLM Consortium**](https://llm-consortium.rnikhil.com/)
