@@ -94,12 +94,12 @@ title: About
 
 Hey, I am Nikhil. I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang random text.
 
-Top 5 posts by views: 
+<!-- Top 5 posts by views: 
 - <a href = "https://rnikhil.com/2024/01/07/attacking-neural-networks.html">Attacks on machine learning models</a>
 - <a href = "https://rnikhil.com/2023/12/31/ai-cfr-solver-poker.html">Counterfactual Regret Minimization or How I won any money in Poker?</a>
 - <a href = "https://rnikhil.com/2025/03/06/diffusion-models-eval">Diffusion models are interesting</a>
 - <a href = "https://rnikhil.com/2023/04/09/multi-vs-single-gaming.html">How to bundle different games?</a>
-- <a href = "https://rnikhil.com/2022/08/09/tornado-cash-block.html">We should all have something to hide - Tornado cash takedown</a>
+- <a href = "https://rnikhil.com/2022/08/09/tornado-cash-block.html">We should all have something to hide - Tornado cash takedown</a> -->
 
 
 <!-- <a href= "https://rnikhil.com/assets/files/resume.pdf"> Resume </a> -->
@@ -113,13 +113,13 @@ Top 5 posts by views:
 - 2024
   - Led product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations, compliance/goverance issues and other security vulnerabilities.
 - 2018-2023
-    - Led the product and business for the Poker app in Paytm and scaled it to a $10m biz
+    - Responsible for the product and business verticals for the Poker app at Paytm and scaled it to a $10m biz
     - Trading and yeild farming across all DeFi protocols 
     - Played professional poker (all.in adj 11bb/100), built a poker analytics tool startup and ran a coaching and staking operation
     - Started at Flipkart as a PM to build their data platform ingestion pipelines and BNPL product
 - 2014-2018
     - Focus was on learning how computers work. Self taught programmer. Started with web dev but spent majority time on OS, computer security and network protocols. Contributed a ton to FOSS projects
-    - Wrote malware shellcode obfuscators for OWASP and added packaet sniffing suport for Mathematica
+    - Wrote malware shellcode obfuscators for OWASP and added packaet sniffing suport for Wolfram Mathematica
     - Did <ins>[some](https://summerofcode.withgoogle.com/)</ins> <ins>[cool](https://owasp.org/www-community/initiatives/code_sprint/)</ins> <ins>[internships](https://education.wolfram.com/summer-school)</ins> with low acceptance rates
 
 
