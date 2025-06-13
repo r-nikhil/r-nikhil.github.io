@@ -26,6 +26,7 @@ body {
 	font-size: 0.95rem;
 	color: var(--text-color);
 	background-color: var(--bg-color);
+	text-align: justify;
 }
 
 nav ul {
@@ -57,6 +58,7 @@ pre {
 
 .post p {
 	margin: 1rem 0;
+	text-align: justify;
 }
 
 .post h1, .post h2, .post h3, .post h4 {
@@ -148,6 +150,7 @@ blockquote {
     margin: 1.5rem 0;
     background-color: var(--blockquote-bg);
     border-radius: 4px;
+    text-align: justify;
 }
 
 h1, h2, h3, h4, h5 {
