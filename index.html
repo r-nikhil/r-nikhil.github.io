@@ -24,42 +24,64 @@ layout: default
 </section>
 
 <style>
+@media screen and (max-width: 45rem) {
+  .category-filter {
+    gap: 0.4rem;
+    margin: 1.5rem 0 2rem 0;
+  }
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 16px;
+  }
+}
+
 .category-filter {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 5px 0;
-  border: 0.1px solid var(--border-color);
-  background-color: var(--bg-color);
+  margin: 2rem 0 3rem 0;
   display: flex;
   flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
 }
 .filter-btn {
-  padding: 1px;
-  text-align: center;
-  border: 1px solid var(--border-color);
-  transition: all 0.1s ease;
-  display: block;
-  font-weight: 700;
-  padding: 5px;
-  /* border-bottom: none; */
-  transition: all 0.2s ease;
-  background: none;
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  border: 1px solid rgba(26, 26, 26, 0.15);
+  border-radius: 20px;
   color: var(--text-color);
+  font-weight: 500;
+  font-size: 0.85rem;
   cursor: pointer;
-  flex: 1;
-  min-width: 100px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  min-width: auto;
+  letter-spacing: 0.02em;
+}
+.filter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(26, 26, 26, 0.04), transparent);
+  transition: left 0.5s ease;
+}
+.filter-btn:hover::before {
+  left: 100%;
 }
 .filter-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
-  background-color: rgba(0, 102, 204, 0.05);
-  color: var(--link-hover-color);
-  transform: scale(1.05);
+  border-color: rgba(26, 26, 26, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(26, 26, 26, 0.1);
 }
 .filter-btn.active {
-  background-color: rgba(0, 102, 204, 0.05);
-  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+  background: rgba(26, 26, 26, 0.05);
+  border-color: rgba(26, 26, 26, 0.25);
+  color: var(--text-color);
+  font-weight: 600;
 }
 .post-item.hidden {
   display: none;
