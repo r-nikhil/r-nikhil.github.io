@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Building comparevoiceai.com - Voice agent pricing calculator
+title: Voice agent pricing calculator
 categories: [ai]
 ---
 
