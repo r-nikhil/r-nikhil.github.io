@@ -2,6 +2,7 @@
 ---
 layout: page
 title: Chat with me
+permalink: /chat/
 ---
 
 <div id="n8n-chat-container"></div>
