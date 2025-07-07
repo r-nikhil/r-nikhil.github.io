@@ -5,12 +5,13 @@ categories: [ai]
 ---
 
 ```
-This post is edited and rewritten by Claude
+This post is edited and rewritten by Claude. 
 ```
 
 When Zapier was exploding in the 2010s, everyone saw the obvious opportunity: no-code automation connecting SaaS tools. Lead comes into Gmail, add to spreadsheet. Stripe payment triggers Slack message. Simple workflows for non-technical users who just wanted things to work seamlessly.
 
 But n8n took a completely different approach. Instead of building another business-user-friendly automation tool, they went straight after developers and technical teams. **And it's working incredibly well.**
+If you want to read how n8n counter positioned vs Zapier, read my friend Manas's blog [here](https://manassaloi.com/2025/05/20/n8n-zapier.html).
 
 ### What Makes Each Platform Different
 
