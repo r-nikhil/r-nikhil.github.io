@@ -9,12 +9,11 @@ This post is edited and rewritten by Claude
 ```
 
 
-
 When Zapier was exploding in the 2010s, everyone saw the obvious opportunity: no-code automation connecting SaaS tools. Lead comes into Gmail, add to spreadsheet. Stripe payment triggers Slack message. Simple workflows for non-technical users who just wanted things to work seamlessly.
 
 But n8n didn't try to out-Zapier Zapier. Instead, they completely changed the game through textbook counter-positioning. They looked at what Zapier, Workato, and Tray.io were doing and deliberately chose a path that these incumbents couldn't follow without destroying their own business models.
 
-## The Strategic Wedge
+### The Strategic Wedge
 
 **n8n went after developers while everyone else targeted business users.** Zapier was built for marketers and ops teams who wanted plug-and-play simplicity. Workato and Tray.io focused on enterprise IT departments who needed robust integration platforms but still emphasized ease-of-use with drag-and-drop builders and AI-assisted workflow creation.
 
@@ -26,7 +25,7 @@ If Zapier tried to become developer-friendly by adding deep scripting capabiliti
 
 Workato and Tray face similar constraints. They've built entire businesses around enterprise custom pricing, professional services, and managed cloud infrastructure. Going fully self-hostable would undermine their high-margin enterprise model.
 
-## How the Pricing Models Lock Everyone In
+### How the Pricing Models Lock Everyone In
 
 Here's where it gets interesting. **Zapier popularized usage-based pricing - charging per "task" or action in a workflow.** This works great for small automations but gets expensive fast at scale. Workato and Tray followed similar models with enterprise pricing starting around $2,500/month, often custom-quoted based on tasks and connectors.
 
@@ -36,7 +35,7 @@ This means a business can automate high-volume processes far more affordably wit
 
 But here's the key insight: **Zapier could technically copy this pricing model, but doing so would destroy their business.** Their per-task model is their cash cow. The entire company is built around that flywheel. They can't just flip a switch and offer unlimited automation without fundamentally restructuring their economics.
 
-## The Technical Differentiation
+### The Technical Differentiation
 
 While Zapier focused on simplicity, n8n embraced complexity as a feature. You can drop into JavaScript or Python code when needed, use command-line tools, create custom integrations, and build workflows with multiple triggers, branches, loops, and parallel processing.
 
@@ -44,7 +43,7 @@ While Zapier focused on simplicity, n8n embraced complexity as a feature. You ca
 
 Workato and Tray have powerful capabilities too, but they're designed for enterprise IT departments with budgets to match. n8n gives you enterprise-grade flexibility at a price point accessible to individual developers and small teams.
 
-## Why This Strategy Is Working
+### Why This Strategy Is Working
 
 **n8n found product-market fit in a segment that was completely underserved.** There was pent-up demand from technical teams who had outgrown Zapier's limitations or balked at enterprise tools' pricing. These teams needed to orchestrate entire internal data flows, build data lakes, replace lightweight ETL pipelines, and integrate with custom APIs and internal systems.
 
@@ -52,7 +51,7 @@ The open source model created a distribution advantage. Anyone can try n8n for f
 
 **The timing with AI was perfect.** When AI workflows started becoming critical, n8n was already positioned as the flexible platform that could integrate with any AI API or model. Their revenue grew 5x after adding AI features in 2022, while competitors had to retrofit AI capabilities into their existing business-user-focused platforms.
 
-## The Competitive Landscape
+### The Competitive Landscape
 
 The beauty of n8n's strategy is that **it didn't kill anyone else's market - it created a new one.** Zapier still dominates simple automations for non-technical users with their 7,000+ app integrations and dead-simple interface. 
 
@@ -70,7 +69,7 @@ But n8n owns the developer-automation space. They're now at $7M+ ARR (up from $0
 
 **What's the long-term moat here?** Counter-positioning itself creates competitive protection. n8n can grow relatively unchallenged in their niche because incumbents face a genuine strategic dilemma in responding. The open source community creates network effects - every new integration or feature contributed increases value for all users. And once companies build dozens of custom workflows with embedded code on n8n, there's significant switching cost to moving platforms.
 
-## The Broader Lesson
+### The Broader Lesson
 
 This is what smart positioning looks like in a crowded market. **Instead of competing on the incumbent's terms, n8n identified an underserved segment and built a business model that the incumbents couldn't easily replicate.**
 
