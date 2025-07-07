@@ -18,11 +18,11 @@ But n8n took a completely different approach. Instead of building another busine
 
 The limitation is that Zapier is fundamentally designed for simplicity. Linear workflows, limited customization, and everything runs in their cloud with per-task pricing that gets expensive fast at scale.
 
-**Workato is enterprise integration on steroids.** This isn't really competing with Zapier - it's more like competing with MuleSoft and Boomi. Gartner consistently rates them as a Leader in enterprise iPaaS. Their buyers are CIOs and IT architects who need to connect both cloud and on-premise systems at massive scale.
+**Workato is enterprise integration on steroids.** This isn't really competing with Zapier - it's more like competing with MuleSoft and Boomi. Their buyers are CIOs and IT architects who need to connect both cloud and on-premise systems at massive scale.
 
 Workato has 1,000+ connectors including enterprise databases and legacy systems. You can sync Salesforce with SAP and an on-prem SQL database, with proper role-based access control, versioning, and audit logging. But this comes at enterprise prices - often five-figure or six-figure annual contracts with custom pricing based on your needs.
 
-**Tray.io is positioning itself as the modern alternative to Workato.** They're going after similar enterprise customers but with a more contemporary approach. Gartner calls them a Visionary in iPaaS. Tray's betting big on AI with an AI-powered workflow builder and chat-based automation interface.
+**Tray.io is positioning itself as the modern alternative to Workato.** They're going after similar enterprise customers but with a more contemporary approach. Tray's betting big on AI with an AI-powered workflow builder and chat-based automation interface.
 
 The difference is Tray appeals more to revenue ops teams, marketing ops, and product teams at high-growth companies rather than traditional IT departments. They let you publish workflows as APIs and they're targeting organizations that want cutting-edge AI capabilities. But they have a smaller connector library (~500) and still use enterprise pricing starting around $2,500/month.
 
