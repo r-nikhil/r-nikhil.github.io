@@ -356,7 +356,7 @@ class ChatInterface {
 }
 
 // Initialize chat when page loads
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
   new ChatInterface();
 });
 </script>
