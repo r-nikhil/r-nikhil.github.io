@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Chat with me
+title: Chat with my AI clone
 permalink: /chat/
 ---
 
