@@ -1,138 +1,362 @@
+
 ---
 layout: page
 title: Chat with me
 permalink: /chat/
 ---
 
-<div id="n8n-chat-container"></div>
-
-<script type="module">
-// Load the n8n chat CSS
-const link = document.createElement('link');
-link.href = 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css';
-link.rel = 'stylesheet';
-document.head.appendChild(link);
-
-// Load and initialize the n8n chat
-import('https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js').then(({ createChat }) => {
-  createChat({
-    webhookUrl: 'https://accel.app.n8n.cloud/webhook/867e2403-b6b3-4d22-8b35-99b559611297/chat',
-    target: '#n8n-chat-container',
-    mode: 'fullscreen',
-    showWelcomeScreen: true,
-    defaultLanguage: 'en',
-    initialMessages: [
-      'Hey there! 👋',
-      'I\'m Nikhil. Ask me anything about AI, poker, or my projects!'
-    ],
-    i18n: {
-      en: {
-        title: 'Chat with Nikhil',
-        subtitle: 'Ask me about AI, investing, poker, or anything else!',
-        footer: '',
-        getStarted: 'Start Conversation',
-        inputPlaceholder: 'Type your message...',
-      },
-    },
-  });
-});
-</script>
+<div id="chat-container">
+  <div id="chat-header">
+    <h2>Chat with Nikhil</h2>
+    <p>Ask me about AI, investing, poker, or anything else!</p>
+  </div>
+  
+  <div id="chat-messages"></div>
+  
+  <div id="chat-input-container">
+    <textarea id="chat-input" placeholder="Type your message..." rows="3"></textarea>
+    <button id="send-button">Send</button>
+  </div>
+  
+  <div id="loading" style="display: none;">
+    <div class="typing-indicator">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
 
 <style>
 :root {
-  --chat--color-primary: #0066cc;
-  --chat--color-primary-shade-50: #0056b3;
-  --chat--color-primary-shade-100: #004d99;
-  --chat--color-secondary: #333333;
-  --chat--color-secondary-shade-50: #2a2a2a;
-  --chat--color-white: #ffffff;
-  --chat--color-light: #f8f9fa;
-  --chat--color-light-shade-50: #e9ecef;
-  --chat--color-light-shade-100: #dee2e6;
-  --chat--color-medium: #6c757d;
-  --chat--color-dark: #212529;
-  --chat--color-disabled: #6c757d;
-  --chat--color-typing: #495057;
-
-  --chat--spacing: 1rem;
-  --chat--border-radius: 0px;
-  --chat--transition-duration: 0.2s;
-
-  --chat--window--width: 100%;
-  --chat--window--height: 100%;
-
-  --chat--header-height: auto;
-  --chat--header--padding: var(--chat--spacing);
-  --chat--header--background: var(--chat--color-dark);
-  --chat--header--color: var(--chat--color-white);
-  --chat--header--border-top: 3px solid var(--chat--color-dark);
-  --chat--header--border-bottom: 3px solid var(--chat--color-dark);
-  --chat--heading--font-size: 1.5em;
-  --chat--subtitle--font-size: 1em;
-  --chat--subtitle--line-height: 1.4;
-
-  --chat--textarea--height: 60px;
-
-  --chat--message--font-size: 1rem;
-  --chat--message--padding: var(--chat--spacing);
-  --chat--message--border-radius: 0px;
-  --chat--message-line-height: 1.6;
-  --chat--message--bot--background: var(--chat--color-light);
-  --chat--message--bot--color: var(--chat--color-dark);
-  --chat--message--bot--border: 2px solid var(--chat--color-dark);
-  --chat--message--user--background: var(--chat--color-primary);
-  --chat--message--user--color: var(--chat--color-white);
-  --chat--message--user--border: 2px solid var(--chat--color-dark);
-  --chat--message--pre--background: rgba(0, 0, 0, 0.1);
-
-  --chat--toggle--background: var(--chat--color-primary);
-  --chat--toggle--hover--background: var(--chat--color-primary-shade-50);
-  --chat--toggle--active--background: var(--chat--color-primary-shade-100);
-  --chat--toggle--color: var(--chat--color-white);
-  --chat--toggle--size: 64px;
+  --chat-primary: #0066cc;
+  --chat-primary-hover: #0056b3;
+  --chat-background: #ffffff;
+  --chat-user-bg: var(--chat-primary);
+  --chat-bot-bg: #f8f9fa;
+  --chat-border: #333333;
+  --chat-text: #333333;
+  --chat-text-light: #ffffff;
+  --chat-shadow: 5px 5px 0px 0px var(--chat-border);
 }
 
-#n8n-chat-container {
+#chat-container {
   width: 100%;
-  height: 80vh;
-  min-height: 600px;
-  border: 3px solid var(--text-color);
-  box-shadow: 5px 5px 0px 0px var(--text-color);
+  max-width: 800px;
+  margin: 0 auto;
+  border: 3px solid var(--chat-border);
+  box-shadow: var(--chat-shadow);
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  background: var(--chat-background);
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Override n8n chat styles to match your design */
-#n8n-chat-container * {
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+#chat-header {
+  background: var(--chat-border);
+  color: var(--chat-text-light);
+  padding: 1rem;
+  border-bottom: 3px solid var(--chat-border);
 }
 
-/* Make buttons more neo-brutalist */
-#n8n-chat-container button {
-  border: 2px solid var(--chat--color-dark) !important;
-  box-shadow: 3px 3px 0px 0px var(--chat--color-dark) !important;
-  border-radius: 0px !important;
-  font-weight: bold !important;
-  transition: all 0.2s ease !important;
+#chat-header h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5em;
 }
 
-#n8n-chat-container button:hover {
-  transform: translate(-2px, -2px) !important;
-  box-shadow: 5px 5px 0px 0px var(--chat--color-dark) !important;
+#chat-header p {
+  margin: 0;
+  font-size: 1em;
+  opacity: 0.9;
 }
 
-/* Style the input field */
-#n8n-chat-container textarea,
-#n8n-chat-container input {
-  border: 2px solid var(--chat--color-dark) !important;
-  border-radius: 0px !important;
-  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+#chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  min-height: 400px;
+  max-height: 500px;
 }
 
-/* Style message bubbles */
-#n8n-chat-container .message {
-  border: 2px solid var(--chat--color-dark) !important;
-  border-radius: 0px !important;
-  box-shadow: 2px 2px 0px 0px var(--chat--color-dark) !important;
-  margin: 10px 0 !important;
+.message {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message-content {
+  max-width: 70%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--chat-border);
+  box-shadow: 2px 2px 0px 0px var(--chat-border);
+  border-radius: 0;
+  word-wrap: break-word;
+}
+
+.message.user .message-content {
+  background: var(--chat-user-bg);
+  color: var(--chat-text-light);
+}
+
+.message.bot .message-content {
+  background: var(--chat-bot-bg);
+  color: var(--chat-text);
+}
+
+.message-avatar {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--chat-border);
+  background: var(--chat-border);
+  color: var(--chat-text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.8em;
+  flex-shrink: 0;
+}
+
+.message.user .message-avatar {
+  background: var(--chat-user-bg);
+}
+
+.message.bot .message-avatar {
+  background: var(--chat-bot-bg);
+  color: var(--chat-text);
+}
+
+#chat-input-container {
+  padding: 1rem;
+  border-top: 3px solid var(--chat-border);
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+#chat-input {
+  flex: 1;
+  border: 2px solid var(--chat-border);
+  padding: 0.75rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  resize: vertical;
+  min-height: 60px;
+  background: var(--chat-background);
+  color: var(--chat-text);
+}
+
+#chat-input:focus {
+  outline: none;
+  box-shadow: 2px 2px 0px 0px var(--chat-border);
+}
+
+#send-button {
+  border: 2px solid var(--chat-border);
+  background: var(--chat-primary);
+  color: var(--chat-text-light);
+  padding: 0.75rem 1.5rem;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 0px 0px var(--chat-border);
+}
+
+#send-button:hover:not(:disabled) {
+  background: var(--chat-primary-hover);
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px 0px var(--chat-border);
+}
+
+#send-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 1rem;
+}
+
+.typing-indicator span {
+  height: 8px;
+  width: 8px;
+  background: var(--chat-text);
+  border-radius: 50%;
+  display: inline-block;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  border: 2px solid #c62828;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  box-shadow: 2px 2px 0px 0px #c62828;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  #chat-container {
+    margin: 0 1rem;
+    min-height: 500px;
+  }
+  
+  .message-content {
+    max-width: 85%;
+  }
+  
+  #chat-input-container {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  #send-button {
+    align-self: stretch;
+  }
 }
 </style>
+
+<script>
+class ChatInterface {
+  constructor() {
+    this.apiUrl = 'https://your-replit-app.replit.app/api/chat'; // Replace with your Replit backend URL
+    this.messagesContainer = document.getElementById('chat-messages');
+    this.chatInput = document.getElementById('chat-input');
+    this.sendButton = document.getElementById('send-button');
+    this.loadingIndicator = document.getElementById('loading');
+    
+    this.init();
+  }
+  
+  init() {
+    this.sendButton.addEventListener('click', () => this.sendMessage());
+    this.chatInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        this.sendMessage();
+      }
+    });
+    
+    // Initial welcome message
+    this.addMessage('bot', "Hey there! 👋 I'm Nikhil. Ask me anything about AI, poker, or my projects!");
+  }
+  
+  async sendMessage() {
+    const message = this.chatInput.value.trim();
+    if (!message) return;
+    
+    // Add user message to chat
+    this.addMessage('user', message);
+    this.chatInput.value = '';
+    this.setLoading(true);
+    
+    try {
+      const response = await fetch(this.apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: message,
+          timestamp: new Date().toISOString()
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      this.addMessage('bot', data.response || 'Sorry, I encountered an error processing your message.');
+      
+    } catch (error) {
+      console.error('Chat error:', error);
+      this.showError('Sorry, I\'m having trouble connecting to my backend. Please try again later.');
+    } finally {
+      this.setLoading(false);
+    }
+  }
+  
+  addMessage(sender, content) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}`;
+    
+    const avatar = document.createElement('div');
+    avatar.className = 'message-avatar';
+    avatar.textContent = sender === 'user' ? 'U' : 'N';
+    
+    const messageContent = document.createElement('div');
+    messageContent.className = 'message-content';
+    messageContent.textContent = content;
+    
+    if (sender === 'user') {
+      messageDiv.appendChild(messageContent);
+      messageDiv.appendChild(avatar);
+    } else {
+      messageDiv.appendChild(avatar);
+      messageDiv.appendChild(messageContent);
+    }
+    
+    this.messagesContainer.appendChild(messageDiv);
+    this.scrollToBottom();
+  }
+  
+  setLoading(isLoading) {
+    this.sendButton.disabled = isLoading;
+    this.chatInput.disabled = isLoading;
+    this.loadingIndicator.style.display = isLoading ? 'block' : 'none';
+    
+    if (isLoading) {
+      this.messagesContainer.appendChild(this.loadingIndicator);
+      this.scrollToBottom();
+    }
+  }
+  
+  showError(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    this.messagesContainer.appendChild(errorDiv);
+    this.scrollToBottom();
+  }
+  
+  scrollToBottom() {
+    this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
+  }
+}
+
+// Initialize chat when page loads
+document.addEventListener('DOMContentLoaded', () => {
+  new ChatInterface();
+});
+</script>
