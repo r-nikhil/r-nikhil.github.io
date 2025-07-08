@@ -293,7 +293,7 @@ class ChatInterface {
       });
 
       if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`);
+        throw new Error('Server error: ' + response.status);
       }
 
       const data = await response.json();
@@ -301,7 +301,7 @@ class ChatInterface {
 
     } catch (error) {
       console.error('Chat error:', error);
-      this.showError('Sorry, I\'m having trouble connecting to my backend. Please try again later.');
+      this.showError('Sorry, I am having trouble connecting to my backend. Please try again later.');
     } finally {
       this.setLoading(false);
     }
@@ -309,7 +309,7 @@ class ChatInterface {
 
   addMessage(sender, content) {
     const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${sender}`;
+    messageDiv.className = 'message ' + sender;
 
     const avatar = document.createElement('div');
     avatar.className = 'message-avatar';
