@@ -9,6 +9,10 @@ permalink: /chat/
   <div id="chat-header">
     <h2>Chat with Nikhil</h2>
     <p>Ask me about AI, investing, poker, or anything else!</p>
+    <div id="health-status">
+      <span id="health-icon">●</span>
+      <span id="health-text">Checking...</span>
+    </div>
   </div>
 
   <div id="chat-messages"></div>
@@ -68,6 +72,31 @@ permalink: /chat/
 #chat-header p {
   margin: 0;
   font-size: 1em;
+  opacity: 0.9;
+}
+
+#health-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.9em;
+}
+
+#health-icon {
+  font-size: 1.2em;
+  color: #666;
+}
+
+#health-icon.healthy {
+  color: #00ff00;
+}
+
+#health-icon.unhealthy {
+  color: #ff0000;
+}
+
+#health-text {
   opacity: 0.9;
 }
 
@@ -250,10 +279,13 @@ permalink: /chat/
 class ChatInterface {
   constructor() {
     this.apiUrl = 'https://llm-chat-backend-nikhilr24.replit.app/api/chat';
+    this.healthUrl = 'https://llm-chat-backend-nikhilr24.replit.app/api/health';
     this.messagesContainer = document.getElementById('chat-messages');
     this.chatInput = document.getElementById('chat-input');
     this.sendButton = document.getElementById('send-button');
     this.loadingIndicator = document.getElementById('loading');
+    this.healthIcon = document.getElementById('health-icon');
+    this.healthText = document.getElementById('health-text');
 
     this.init();
   }
@@ -272,24 +304,42 @@ class ChatInterface {
       }
     });
 
-    // Test backend connection on load
-    this.testConnection();
+    // Check backend health on load
+    this.checkHealth();
 
     // Initial welcome message
     this.addMessage('bot', "Hey there! I'm Nikhil. Ask me anything about AI, poker, or my projects!");
   }
 
-  async testConnection() {
+  async checkHealth() {
     try {
-      console.log('Testing connection to:', this.apiUrl);
-      const response = await fetch(this.apiUrl, {
-        method: 'OPTIONS'  // CORS preflight check
+      console.log('Checking health at:', this.healthUrl);
+      const response = await fetch(this.healthUrl, {
+        method: 'GET'
       });
-      console.log('Connection test result:', response.status);
+      
+      if (response.ok) {
+        const data = await response.json();
+        console.log('Health check response:', data);
+        
+        if (data.status === 'healthy') {
+          this.updateHealthStatus(true, 'Backend Online');
+        } else {
+          this.updateHealthStatus(false, 'Backend Unhealthy');
+        }
+      } else {
+        console.error('Health check failed:', response.status);
+        this.updateHealthStatus(false, 'Backend Offline');
+      }
     } catch (error) {
-      console.error('Connection test failed:', error);
-      this.addMessage('bot', 'Warning: Cannot connect to backend server. Chat functionality may not work.');
+      console.error('Health check error:', error);
+      this.updateHealthStatus(false, 'Backend Offline');
     }
+  }
+
+  updateHealthStatus(isHealthy, statusText) {
+    this.healthIcon.className = isHealthy ? 'healthy' : 'unhealthy';
+    this.healthText.textContent = statusText;
   }
 
   async sendMessage() {
