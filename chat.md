@@ -249,7 +249,7 @@ permalink: /chat/
 <script>
 class ChatInterface {
   constructor() {
-    this.apiUrl = 'https://your-replit-app.replit.app/api/chat'; // Replace with your Replit backend URL
+    this.apiUrl = 'https://llm-chat-backend-nikhilr24.replit.app/api/chat';
     this.messagesContainer = document.getElementById('chat-messages');
     this.chatInput = document.getElementById('chat-input');
     this.sendButton = document.getElementById('send-button');
