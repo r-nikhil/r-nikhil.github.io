@@ -268,7 +268,7 @@ class ChatInterface {
     });
 
     // Initial welcome message
-    this.addMessage('bot', "Hey there! 👋 I'm Nikhil. Ask me anything about AI, poker, or my projects!");
+    this.addMessage('bot', "Hey there! I'm Nikhil. Ask me anything about AI, poker, or my projects!");
   }
 
   async sendMessage() {
