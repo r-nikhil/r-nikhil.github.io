@@ -259,28 +259,53 @@ class ChatInterface {
   }
 
   init() {
-    this.sendButton.addEventListener('click', () => this.sendMessage());
+    this.sendButton.addEventListener('click', () => {
+      console.log('Send button clicked');
+      this.sendMessage();
+    });
+    
     this.chatInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' && !e.shiftKey) {
         e.preventDefault();
+        console.log('Enter key pressed');
         this.sendMessage();
       }
     });
 
+    // Test backend connection on load
+    this.testConnection();
+
     // Initial welcome message
     this.addMessage('bot', "Hey there! I'm Nikhil. Ask me anything about AI, poker, or my projects!");
+  }
+
+  async testConnection() {
+    try {
+      console.log('Testing connection to:', this.apiUrl);
+      const response = await fetch(this.apiUrl, {
+        method: 'OPTIONS'  // CORS preflight check
+      });
+      console.log('Connection test result:', response.status);
+    } catch (error) {
+      console.error('Connection test failed:', error);
+      this.addMessage('bot', 'Warning: Cannot connect to backend server. Chat functionality may not work.');
+    }
   }
 
   async sendMessage() {
     const message = this.chatInput.value.trim();
     if (!message) return;
 
+    console.log('Sending message:', message);
+    
     // Add user message to chat
     this.addMessage('user', message);
     this.chatInput.value = '';
     this.setLoading(true);
 
     try {
+      console.log('Making request to:', this.apiUrl);
+      
       const response = await fetch(this.apiUrl, {
         method: 'POST',
         headers: {
@@ -292,16 +317,33 @@ class ChatInterface {
         })
       });
 
+      console.log('Response status:', response.status);
+      console.log('Response ok:', response.ok);
+
       if (!response.ok) {
-        throw new Error('Server error: ' + response.status);
+        const errorText = await response.text();
+        console.error('Server error response:', errorText);
+        throw new Error('Server error: ' + response.status + ' - ' + errorText);
       }
 
       const data = await response.json();
+      console.log('Response data:', data);
+      
       this.addMessage('bot', data.response || 'Sorry, I encountered an error processing your message.');
 
     } catch (error) {
       console.error('Chat error:', error);
-      this.showError('Sorry, I am having trouble connecting to my backend. Please try again later.');
+      
+      // More specific error messages
+      if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+        this.addMessage('bot', 'Error: Cannot connect to backend server. The chat service may be down or the URL may be incorrect.');
+      } else if (error.message.includes('Server error: 404')) {
+        this.addMessage('bot', 'Error: Chat endpoint not found. Please check if the backend is running correctly.');
+      } else if (error.message.includes('Server error: 500')) {
+        this.addMessage('bot', 'Error: Backend server error. Please try again in a moment.');
+      } else {
+        this.addMessage('bot', 'Error: ' + error.message);
+      }
     } finally {
       this.setLoading(false);
     }
