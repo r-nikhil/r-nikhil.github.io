@@ -1,4 +1,4 @@
-modules = ["web", "ruby-3.2", "nodejs-20"]
+modules = ["web", "ruby-3.2", "nodejs-20", "postgresql-16"]
 
 [nix]
 channel = "stable-24_05"
