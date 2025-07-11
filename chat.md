@@ -1,4 +1,3 @@
-
 ---
 layout: page
 title:  
@@ -362,17 +361,26 @@ permalink: /chat/
 }
 </style>
 
+{% raw %}
 <script>
 class ChatInterface {
   constructor() {
     this.apiUrl = 'https://llm-chat-backend-NikhilR24.replit.app/api/chat';
     this.healthUrl = 'https://llm-chat-backend-NikhilR24.replit.app/api/health';
+    
+    // Check if required elements exist
     this.messagesContainer = document.getElementById('chat-messages');
     this.chatInput = document.getElementById('chat-input');
     this.sendButton = document.getElementById('send-button');
     this.loadingIndicator = document.getElementById('loading');
     this.healthIcon = document.getElementById('health-icon');
     this.healthText = document.getElementById('health-text');
+
+    // Verify all required elements exist
+    if (!this.messagesContainer || !this.chatInput || !this.sendButton || !this.loadingIndicator || !this.healthIcon || !this.healthText) {
+      console.error('Required DOM elements not found');
+      return;
+    }
 
     this.currentConversationId = null;
     this.isLoading = false;
@@ -386,10 +394,13 @@ class ChatInterface {
     this.setupEventListeners();
     this.checkHealth();
     this.addWelcomeMessage();
+    this.validateInput(); // Initialize button state
   }
 
   setupEventListeners() {
-    this.sendButton.addEventListener('click', () => this.sendMessage());
+    this.sendButton.addEventListener('click', () => {
+      this.sendMessage();
+    });
 
     this.chatInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' && !e.shiftKey) {
@@ -564,6 +575,25 @@ class ChatInterface {
 
 // Initialize chat when page loads
 document.addEventListener('DOMContentLoaded', function() {
-  new ChatInterface();
+  try {
+    window.chatInterface = new ChatInterface();
+  } catch (error) {
+    console.error('Failed to initialize chat interface:', error);
+  }
 });
+
+// Backup initialization in case DOMContentLoaded already fired
+if (document.readyState === 'loading') {
+  // Document is still loading, DOMContentLoaded will fire
+} else {
+  // Document has already loaded
+  try {
+    if (!window.chatInterface) {
+      window.chatInterface = new ChatInterface();
+    }
+  } catch (error) {
+    console.error('Failed to initialize chat interface:', error);
+  }
+}
 </script>
+{% endraw %}
