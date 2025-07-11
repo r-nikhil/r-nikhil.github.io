@@ -1,20 +1,13 @@
-
 :root {
   --bg-color: #FFFFFF;
-  --text-color: #000000;
-  --link-color: #FF00FF;
-  --link-hover-color: #00FFFF;
-  --code-bg: #FFFF00;
-  --border-color: #000000;
-  --blockquote-bg: #00FF00;
-  --button-color: #FF00FF;
-  --box-shadow: 8px 8px 0px 0px #000000;
-  --neo-yellow: #FFFF00;
-  --neo-pink: #FF00FF;
-  --neo-cyan: #00FFFF;
-  --neo-green: #00FF00;
-  --neo-blue: #0000FF;
-  --neo-red: #FF0000;
+  --text-color: #1A1A1A;
+  --link-color: #007BFF;
+  // --link-hover-color: #0039CB;
+  --code-bg: #F0F0F0;
+  --border-color: #1A1A1A;
+  --blockquote-bg: #F5F5F5;
+  --button-color: #2962FF;
+  --box-shadow: 4px 4px 0px 0px rgba(26,26,26,1);
 }
 
 *,:after,:before {
@@ -34,52 +27,43 @@ body {
 	color: var(--text-color);
 	background-color: var(--bg-color);
 	text-align: justify;
-	font-weight: bold;
 }
 
 nav ul {
-    border-right: 4px solid var(--border-color);
+    border-right: 1px solid rgba(0,0,0,0.1);
 }
 
 a {
     color: var(--link-color);
     text-decoration-skip-ink: auto;
     text-decoration: none;
-    font-weight: 800;
-    border-bottom: 3px solid var(--link-color);
-    padding: 2px 4px;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
     transition: all 0.2s ease;
-    text-transform: uppercase;
 }
 
 a:hover {
     color: var(--link-hover-color);
-    background-color: var(--link-color);
-    color: #000000;
-    transform: translate(-2px, -2px);
-    box-shadow: 4px 4px 0px var(--border-color);
+    background-color: rgba(0, 102, 204, 0.1);
 }
 
 pre {
 	margin: .5rem 0;
 	padding: 1rem;
 	background-color: var(--code-bg);
-	border: 4px solid var(--border-color);
+	border: 2px solid var(--border-color);
 	box-shadow: var(--box-shadow);
-	font-weight: bold;
 }
 
 .post p {
 	margin: 1rem 0;
 	text-align: justify;
-	font-weight: 600;
 }
 
 .post h1, .post h2, .post h3, .post h4 {
 	margin: 1.5rem 0 1rem 0;
-	font-weight: 900;
-	text-transform: uppercase;
-	letter-spacing: 2px;
+	font-weight: 700;
 }
 
 .post h2:first-child, .project h2:first-child, .photo h2:first-child {
@@ -89,30 +73,24 @@ pre {
 .meta {
 	margin: 2rem 0;
 	padding: 1rem;
-	background-color: var(--neo-yellow);
-	border: 4px solid var(--border-color);
-	border-radius: 0;
+	background-color: #F0F0F0;
+	border: 2px solid var(--border-color);
+	border-radius: 4px;
 	display: inline-block;
-	box-shadow: var(--box-shadow);
-	font-weight: bold;
-	text-transform: uppercase;
 }
 
 code, pre {
 	background: var(--code-bg);
-	border-radius: 0;
-	font-weight: bold;
+	border-radius: 4px;
 }
 
 code {
-	padding: .2rem .5rem;
-	border: 2px solid var(--border-color);
-	background: var(--neo-yellow);
+	padding: .1rem .3rem;
+	border: 1px solid rgba(0,0,0,0.1);
 }
 
 pre code {
 	border: none;
-	background: transparent;
 }
 
 pre {
@@ -122,16 +100,14 @@ pre {
 
 img {
 	max-width: 100%;
-	border: 4px solid var(--border-color);
-	box-shadow: 6px 6px 0px var(--border-color);
+	border: 2px solid var(--border-color);
 }
 
 hr {
-	background: var(--border-color);
-    height: 4px;
+	background: #000;
+    height: 2px;
     border: 0;
     margin: 2rem 0;
-    box-shadow: 4px 4px 0px var(--border-color);
 }
 
 header {
@@ -149,19 +125,19 @@ header li {
 	margin-bottom: 1rem;
 	text-align: right;
 	margin-right: 2rem;
-	font-weight: 900;
-	text-transform: uppercase;
+	font-weight: bold;
 }
 
 header a.active {
-	font-weight: 900;
+	font-weight: 800;
 	position: relative;
-	background: var(--neo-pink);
-	color: #000000;
-	padding: 4px 8px;
-	border: 3px solid var(--border-color);
-	box-shadow: 4px 4px 0px var(--border-color);
 }
+
+// header a.active:before {
+// 	content: ">";
+// 	position: absolute;
+// 	left: -1rem;
+// }
 
 header, section {
 	padding: 1rem;
@@ -169,51 +145,26 @@ header, section {
 
 blockquote {
 	font-style: italic;
-    border: 4px solid var(--border-color);
-    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    padding: 1rem;
     margin: 1.5rem 0;
     background-color: var(--blockquote-bg);
-    border-radius: 0;
+    border-radius: 4px;
     text-align: justify;
-    box-shadow: var(--box-shadow);
-    font-weight: bold;
-    position: relative;
-}
-
-blockquote::before {
-	content: '"';
-	font-size: 4rem;
-	position: absolute;
-	top: -10px;
-	left: 10px;
-	color: var(--border-color);
-	font-weight: 900;
 }
 
 h1, h2, h3, h4, h5 {
 	line-height: 1.2;
 	margin: 1rem 0;
-	font-weight: 900;
-	text-transform: uppercase;
-	letter-spacing: 1px;
+	font-weight: 700;
 }
 
 section h1:first-child {
 	margin-top: 0;
-	font-size: 2.5rem;
-	background: var(--neo-cyan);
-	color: #000000;
-	padding: 1rem;
-	border: 4px solid var(--border-color);
-	box-shadow: var(--box-shadow);
-	text-align: center;
 }
 
 strong, b {
-	font-weight: 900;
-	background: var(--neo-yellow);
-	padding: 2px 4px;
-	border: 2px solid var(--border-color);
+	font-weight: bold;
 }
 
 .photos ul {
@@ -236,28 +187,17 @@ strong, b {
 	align-items: center;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 1rem;
-	padding: 1rem;
-	border: 3px solid var(--border-color);
-	background: var(--neo-cyan);
-	box-shadow: 6px 6px 0px var(--border-color);
-	transition: all 0.2s ease;
-}
-
-.posts li:hover {
-	transform: translate(-2px, -2px);
-	box-shadow: 8px 8px 0px var(--border-color);
-	background: var(--neo-yellow);
+	margin-bottom: 0.2rem;
+	padding: 0.2rem;
 }
 
 .posts li a, .posts li div, .projects li a {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	text-decoration: none;
-	font-weight: 800;
+	font-weight: 600;
 	border-bottom: none;
 	transition: color 0.2s ease;
-	text-transform: uppercase;
 }
 
 @media screen and (min-width: 45rem) {
@@ -268,23 +208,21 @@ strong, b {
 
 .posts li a:hover {
 	background: none;
-	color: var(--neo-pink);
+	color: var(--link-hover-color);
 }
 
 .posts li time, .projects li time {
 	padding-left: 1rem;
 	white-space: nowrap;
 	font-variant-numeric: tabular-nums;
-	color: var(--border-color);
+	color: #555;
 	font-size: 0.9rem;
-	font-weight: 900;
-	text-transform: uppercase;
 }
 
 @media screen and (max-width: 45rem) {
 	.posts li {
-		padding: 1rem;
-		margin-bottom: 1rem;
+		padding: 0.2rem;
+		margin-bottom: 0.2rem;
 	}
 
 	.posts li time {
@@ -297,21 +235,14 @@ strong, b {
 	margin-bottom: 1rem;
 }
 
-.post ul li, .post ol li {
-	margin-bottom: 0.5rem;
-	font-weight: 600;
-}
-
 main {
 	display: flex;
 	flex-wrap: wrap;
 	max-width: 60rem;
 	margin: 1rem auto;
-	padding: 1.5rem;
+	padding: 0.75rem;
 	background-color: var(--bg-color);
 	width: calc(100% - 2rem);
-	border: 4px solid var(--border-color);
-	box-shadow: 12px 12px 0px var(--border-color);
 }
 
 section {
@@ -325,52 +256,45 @@ section {
 
 figcaption {
     font-size: smaller;
-    font-weight: bold;
-    text-transform: uppercase;
 }
 
 .button {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 0.5rem 1rem;
     background-color: var(--button-color);
-    color: #000000;
-    font-weight: 900;
-    border: 4px solid var(--border-color);
-    border-radius: 0;
+    color: white;
+    font-weight: 700;
+    border: 2px solid black;
+    border-radius: 4px;
     box-shadow: var(--box-shadow);
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
     cursor: pointer;
     text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .button:hover {
-    transform: translate(-4px, -4px);
-    box-shadow: 12px 12px 0px var(--border-color);
-    background-color: var(--neo-yellow);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+    background-color: var(--button-color);
 }
 
 .button:active {
-    transform: translate(2px, 2px);
-    box-shadow: 4px 4px 0px var(--border-color);
+    transform: translate(0px, 0px);
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
 }
 
 @media screen and (max-width: 45rem) {
 	main {
 		margin: 0.5rem auto;
-		padding: 1rem;
-		box-shadow: 6px 6px 0px var(--border-color);
+		padding: 0.5rem;
+		// box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
 		width: calc(100% - 1rem);
-		border-width: 3px;
+		border-width: 1px;
 	}
 
 	header li {
 		display: inline;
 		margin-right: 1rem;
-		background: var(--neo-green);
-		padding: 0.5rem;
-		border: 2px solid var(--border-color);
 	}
 
 	.logo {
@@ -378,11 +302,9 @@ figcaption {
 	}
 
 	header ul {
-		border-bottom: 4px solid var(--border-color);
+		border-bottom: 2px solid var(--border-color);
 		padding-bottom: 1rem;
 		margin-bottom: 1rem;
-		background: var(--neo-pink);
-		padding: 1rem;
 	}
 
 	nav ul {
@@ -400,27 +322,23 @@ figcaption {
 
 	.posts li time {
 		padding-left: 0;
-		margin-top: 0.5rem;
-		background: var(--neo-red);
-		color: #FFFFFF;
-		padding: 0.25rem 0.5rem;
-		border: 2px solid var(--border-color);
+		margin-top: 0.25rem;
 	}
 }
 
 @media screen and (max-width: 30rem) {
 	main {
 		margin: 0.25rem auto;
-		border-radius: 0;
-		box-shadow: 4px 4px 0px var(--border-color);
+		border-radius: 4px;
+		box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
 	}
 
 	:root {
-		--box-shadow: 4px 4px 0px var(--border-color);
+		--box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
 	}
 
 	header, section {
-		padding: 1rem;
+		padding: 0.75rem;
 	}
 }
 
@@ -432,10 +350,8 @@ figcaption {
 
 .site-footer {
   margin-top: 4rem;
-  padding: 2rem;
-  border-top: 4px solid var(--border-color);
-  background: var(--neo-green);
-  box-shadow: var(--box-shadow);
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
   
   .footer-content {
     max-width: var(--width);
@@ -451,100 +367,16 @@ figcaption {
   }
 
   .social-link {
-    color: var(--border-color);
-    transition: all 0.2s;
-    font-weight: 900;
-    text-transform: uppercase;
-    padding: 0.5rem 1rem;
-    border: 3px solid var(--border-color);
-    background: var(--neo-yellow);
+    color: var(--text-main);
+    transition: color 0.2s;
     
     &:hover {
-      background: var(--neo-pink);
-      transform: translate(-2px, -2px);
-      box-shadow: 4px 4px 0px var(--border-color);
+      color: var(--links);
     }
   }
 
   .footer-text {
     font-size: 0.9rem;
-    color: var(--border-color);
-    font-weight: bold;
-    text-transform: uppercase;
+    color: var(--text-aux);
   }
-}
-
-/* Neobrutalism enhancements */
-table {
-  border: 4px solid var(--border-color);
-  border-collapse: separate;
-  border-spacing: 0;
-  box-shadow: var(--box-shadow);
-  font-weight: bold;
-}
-
-table td, table th {
-  border: 2px solid var(--border-color);
-  padding: 1rem;
-  background: var(--neo-cyan);
-}
-
-table th {
-  background: var(--neo-yellow);
-  text-transform: uppercase;
-  font-weight: 900;
-}
-
-table tr:nth-child(even) td {
-  background: var(--neo-green);
-}
-
-table tr:hover td {
-  background: var(--neo-pink);
-  transform: scale(1.02);
-}
-
-/* Form elements */
-input, textarea, select {
-  border: 4px solid var(--border-color);
-  padding: 1rem;
-  font-family: 'JetBrains Mono', monospace;
-  font-weight: bold;
-  background: var(--neo-yellow);
-  box-shadow: 4px 4px 0px var(--border-color);
-}
-
-input:focus, textarea:focus, select:focus {
-  outline: none;
-  background: var(--neo-cyan);
-  transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px var(--border-color);
-}
-
-/* Special neobrutalism elements */
-.neo-card {
-  border: 4px solid var(--border-color);
-  background: var(--neo-cyan);
-  padding: 1.5rem;
-  box-shadow: var(--box-shadow);
-  margin: 1rem 0;
-}
-
-.neo-badge {
-  display: inline-block;
-  background: var(--neo-pink);
-  color: #000000;
-  padding: 0.5rem 1rem;
-  border: 3px solid var(--border-color);
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-}
-
-.neo-highlight {
-  background: var(--neo-yellow);
-  padding: 0.25rem 0.5rem;
-  border: 2px solid var(--border-color);
-  font-weight: 900;
 }
