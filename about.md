@@ -92,7 +92,9 @@ title: About
 </style> -->
 
 
-Hey, I am Nikhil. I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang random text.
+<div class="neo-card">
+Hey, I am <span class="neo-badge">Nikhil</span>. I love to learn and hack around with new technologies. This site is a partial collection of stories I've written down, my general musings and the software I work on. There is no particular theme to this site; it's just a place to hang random t
+</div>
 
 <!-- Top 5 posts by views: 
 - <a href = "https://rnikhil.com/2024/01/07/attacking-neural-networks.html">Attacks on machine learning models</a>
@@ -121,5 +123,3 @@ Hey, I am Nikhil. I love to learn and hack around with new technologies. This si
     - Focus was on learning how computers work. Self taught programmer. Started with web dev but spent majority time on OS, computer security and network protocols. Contributed a ton to FOSS projects
     - Wrote malware shellcode obfuscators for OWASP and added packaet sniffing suport for Wolfram Mathematica
     - Did <ins>[some](https://summerofcode.withgoogle.com/)</ins> <ins>[cool](https://owasp.org/www-community/initiatives/code_sprint/)</ins> <ins>[internships](https://education.wolfram.com/summer-school)</ins> with low acceptance rates
-
-
