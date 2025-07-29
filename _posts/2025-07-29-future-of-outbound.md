@@ -32,7 +32,7 @@ So, what next? If brands have industrialised spam and we’re industrialising ou
 
   - **Example**: Your health insurance provider can’t send you a wellness offer that bypasses your filters unless it’s tagged “urgent” and reviewed by the OS for legitimacy.
 
-- How will ‘super important’ stuff land, then?
+- How will 'super important' stuff land, then?
 
   - **Example**: Your bag is lost at Bangalore. Instead of 20 emails, you get a single signed, OS-verified push (with airline branding, cryptographic proof), plus an SMS to your registered number if you don’t respond.
 
