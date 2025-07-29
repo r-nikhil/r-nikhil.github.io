@@ -24,19 +24,19 @@ So, what next? If brands have industrialised spam and we’re industrialising ou
 
 - Brand AI vs Your AI
 
-**Example**: Brands like Nike and Samsung pour millions into dynamic push campaigns (15+ versions daily per segment, tweaked by Phrasee or Optimail). On our side, personal agents summarise, defer or just auto-delete most messages. Soon, your AI will negotiate delivery lik “I’ll allow 2 notifications per week, only if there’s a true discount or a loyalty perk.” I am personally excited to see how this will play out. Lot of scope for hacking incentives here. 
+  - **Example**: Brands like Nike and Samsung pour millions into dynamic push campaigns (15+ versions daily per segment, tweaked by Phrasee or Optimail). On our side, personal agents summarise, defer or just auto-delete most messages. Soon, your AI will negotiate delivery lik “I’ll allow 2 notifications per week, only if there’s a true discount or a loyalty perk.” I am personally excited to see how this will play out. Lot of scope for hacking incentives here. 
 
 - System-level privileges
 
-**Example**: Airlines can now apply for Apple/Android “critical alert” slots—meaning only flight cancellations, gate changes, or passport reminders show up as banners, regardless of DND mode.
+  - **Example**: Airlines can now apply for Apple/Android “critical alert” slots—meaning only flight cancellations, gate changes, or passport reminders show up as banners, regardless of DND mode.
 
-**Example**: Your health insurance provider can’t send you a wellness offer that bypasses your filters unless it’s tagged “urgent” and reviewed by the OS for legitimacy.
+  - **Example**: Your health insurance provider can’t send you a wellness offer that bypasses your filters unless it’s tagged “urgent” and reviewed by the OS for legitimacy.
 
 - How will ‘super important’ stuff land, then?
 
-**Example**: Your bag is lost at Bangalore. Instead of 20 emails, you get a single signed, OS-verified push (with airline branding, cryptographic proof), plus an SMS to your registered number if you don’t respond.
+  - **Example**: Your bag is lost at Bangalore. Instead of 20 emails, you get a single signed, OS-verified push (with airline branding, cryptographic proof), plus an SMS to your registered number if you don’t respond.
 
-**Example**: Doctor’s appointment reminder? It shows up as a badge on your lock screen and if ignored—prompts your AI to reschedule or reply.
+  - **Example**: Doctor’s appointment reminder? It shows up as a badge on your lock screen and if ignored—prompts your AI to reschedule or reply.
 
 What does this mean for brands? Get ready to fight for attention with the OS or the AI assistant used by the user. Your offers need “agent readability” like clear structure, purpose, proofs of authenticity, and context awareness. The god awful and annoying practice of baking in a million emojis in your notifications is over. One interesting way I think this can evolve is brands paying for your attention. Ex: “attention micro-fees” where brands incentivize you (or your AI assistant) to delive the message and ensure that the user sees it. This could just become another line item in their CAC calculation and we might end up where we started but just with multiple extra steps in between. 
 
