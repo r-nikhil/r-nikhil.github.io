@@ -2,16 +2,6 @@
 layout: default
 ---
 
-<section class="popular-posts">
-  <h2>Blog posts with more than 20k views</h2>
-  <ul class="popular-posts-list">
-    You can add your popular post links here like:
-    <li><a href="/2023/04/09/multi-vs-single-gaming.html">How to bundle games?</a></li>
-    <li><a href="/2023/11/28/llm-scaling.html">LLM Scaling Laws</a></li>
-   
-  </ul>
-</section>
-
 <section class="posts">
 <div class="category-filter">
   <button class="filter-btn active" data-category="all">All</button>
@@ -22,6 +12,16 @@ layout: default
   <button class="filter-btn" data-category="markets">Markets</button>
   <button class="filter-btn" data-category="security">Security</button>
 </div>
+
+<section class="popular-posts">
+  <h2>Blog posts with more than 20k views</h2>
+  <ul class="popular-posts-list">
+    You can add your popular post links here like:
+    <li><a href="/2023/04/09/multi-vs-single-gaming.html">How to bundle games?</a></li>
+    <li><a href="/2023/11/28/llm-scaling.html">LLM Scaling Laws</a></li>
+   
+  </ul>
+</section>
 
 <ul>
 {% for post in site.posts %}
