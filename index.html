@@ -2,6 +2,16 @@
 layout: default
 ---
 
+<section class="popular-posts">
+  <h2>Blog posts with more than 20k views</h2>
+  <ul class="popular-posts-list">
+    <!-- You can add your popular post links here like:
+    <li><a href="/2023/04/09/multi-vs-single-gaming.html">How to bundle games?</a></li>
+    <li><a href="/2023/11/28/llm-scaling.html">LLM Scaling Laws</a></li>
+    -->
+  </ul>
+</section>
+
 <section class="posts">
 <div class="category-filter">
   <button class="filter-btn active" data-category="all">All</button>
@@ -24,6 +34,46 @@ layout: default
 </section>
 
 <style>
+.popular-posts {
+  margin-bottom: 30px;
+  border: 2px solid var(--border-color);
+  padding: 20px;
+  background-color: var(--bg-color);
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+}
+
+.popular-posts h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--text-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.popular-posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popular-posts-list li {
+  margin: 8px 0;
+  padding: 5px 0;
+}
+
+.popular-posts-list a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.popular-posts-list a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
 .category-filter {
   width: 100%;
   border-collapse: separate;
