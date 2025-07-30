@@ -1,7 +1,7 @@
 ---
 layout: post
 title: n8n vs Zapier vs Workato vs Tray.io
-categories: [ai]
+categories: [ai, markets]
 ---
 
 ```

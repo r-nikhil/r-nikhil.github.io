@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Is outbound going to die? - Part 2
-categories: [ai]
+categories: [ai, markets]
 ---
 
 This is a follow up post to [Is outbound going to die?](https://rnikhil.com/2025/04/25/sales-outbound-ai-dead)

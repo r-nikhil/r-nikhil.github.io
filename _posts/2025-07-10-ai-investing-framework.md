@@ -1,7 +1,7 @@
 ---
 layout: post
 title: AI Investing frameworks
-categories: [ai]
+categories: [ai, markets]
 ---
 
 >Compiled AI investing frameworks from Nabeel (Spark), Victor (Benchmark), and Sarah (Conviction) based on [Manas's](https://x.com/manasjsaloi) Twitter posts for personal reference.
