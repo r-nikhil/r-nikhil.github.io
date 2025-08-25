@@ -45,7 +45,7 @@ Resume optimization project that uses AI agents(CrewAI) to enhance resumes based
 
 Convert your camera feed into poetry. Takes an image and sends it to Claude Haiku asking it to generate a 3 line poem. 
 
-#### [**HN-Schedule** ](https://hn-schedule.rnikhil.com/)
+#### [**HN-Schedule** ](https://replit.com/@NikhilR24/HN-schedule?v=1)
 
 A small tool to schedule your post on HN. 
 
