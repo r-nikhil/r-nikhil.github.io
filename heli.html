@@ -1,0 +1,239 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body { margin: 0; background: #000000; }
+        #gameContainer {
+            position: relative;
+            width: 800px;
+            margin: 20px auto;
+        }
+        canvas {
+            background: linear-gradient(to bottom, #001122, #000000);
+            border: 2px solid #00ff88;
+            box-shadow: 0 0 20px #00ff8855;
+        }
+        #score, #level, #gameOver {
+            position: absolute;
+            color: #00ff88;
+            font-family: 'Courier New', monospace;
+            text-shadow: 0 0 10px #00ff88;
+            z-index: 100;
+        }
+        #score { top: 20px; left: 20px; font-size: 24px; }
+        #level { top: 20px; right: 20px; font-size: 24px; }
+        #gameOver {
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        <div id="score">Score: 0</div>
+        <div id="level">Level: 1</div>
+        <div id="gameOver">GAME OVER<br>Click to restart</div>
+    </div>
+
+<script>
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, 800/400, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ 
+    canvas: document.querySelector('canvas'),
+    antialias: true 
+});
+renderer.setSize(800, 400);
+
+// Game state
+const gameState = {
+    score: 0,
+    level: 1,
+    speed: 0.05,
+    isPlaying: false,
+    lastObstacleTime: 0,
+    obstacleInterval: 1500,
+    velocity: 0,
+    maxVelocity: 0.2,
+    minVelocity: -0.2,
+    gravity: 0.002,
+    lift: -0.004,
+    dampening: 0.99
+};
+
+// Create helicopter with improved visibility
+const helicopter = new THREE.Group();
+const bodyGeometry = new THREE.CylinderGeometry(0.3, 0.5, 2, 16);
+const bodyMaterial = new THREE.MeshPhongMaterial({ 
+    color: 0x00ff88,
+    emissive: 0x003322,
+    shininess: 30
+});
+const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+body.rotation.z = Math.PI / 2;
+
+const rotorGeometry = new THREE.BoxGeometry(3, 0.1, 0.2);
+const rotor = new THREE.Mesh(rotorGeometry, bodyMaterial);
+rotor.position.y = 0.5;
+
+helicopter.add(body);
+helicopter.add(rotor);
+helicopter.position.x = -3; // Move helicopter left for better visibility
+scene.add(helicopter);
+
+// Enhanced lighting
+const light = new THREE.PointLight(0x00ff88, 1.5, 100);
+light.position.set(0, 5, 5);
+scene.add(light);
+scene.add(new THREE.AmbientLight(0x222222));
+
+// Improved obstacles
+const obstacles = [];
+const obstacleGeometry = new THREE.BoxGeometry(0.8, 8, 1);
+const obstacleMaterial = new THREE.MeshPhongMaterial({ 
+    color: 0x00ff88,
+    emissive: 0x003322,
+    transparent: true,
+    opacity: 0.8
+});
+
+camera.position.z = 10;
+
+function createObstacle() {
+    const gap = Math.max(4 - gameState.level * 0.3, 2.5);
+    const yPos = (Math.random() - 0.5) * 4;
+    
+    const top = new THREE.Mesh(obstacleGeometry, obstacleMaterial);
+    top.position.set(10, yPos + gap/2 + 4, 0);
+    
+    const bottom = new THREE.Mesh(obstacleGeometry, obstacleMaterial);
+    bottom.position.set(10, yPos - gap/2 - 4, 0);
+    
+    scene.add(top);
+    scene.add(bottom);
+    obstacles.push({ top, bottom, passed: false });
+}
+
+function updateObstacles() {
+    const now = Date.now();
+    if (now - gameState.lastObstacleTime > gameState.obstacleInterval) {
+        createObstacle();
+        gameState.lastObstacleTime = now;
+    }
+
+    for (let i = obstacles.length - 1; i >= 0; i--) {
+        const obstacle = obstacles[i];
+        obstacle.top.position.x -= gameState.speed;
+        obstacle.bottom.position.x -= gameState.speed;
+
+        if (!obstacle.passed && obstacle.top.position.x < helicopter.position.x) {
+            gameState.score++;
+            if (gameState.score % 5 === 0) {
+                gameState.level++;
+                gameState.speed += 0.01;
+                gameState.obstacleInterval = Math.max(1500 - gameState.level * 100, 800);
+            }
+            document.getElementById('score').textContent = `Score: ${gameState.score}`;
+            document.getElementById('level').textContent = `Level: ${gameState.level}`;
+            obstacle.passed = true;
+        }
+
+        if (obstacle.top.position.x < -10) {
+            scene.remove(obstacle.top);
+            scene.remove(obstacle.bottom);
+            obstacles.splice(i, 1);
+        }
+
+        if (Math.abs(obstacle.top.position.x - helicopter.position.x) < 0.8) {
+            const heliBox = new THREE.Box3().setFromObject(helicopter);
+            const topBox = new THREE.Box3().setFromObject(obstacle.top);
+            const bottomBox = new THREE.Box3().setFromObject(obstacle.bottom);
+
+            if (heliBox.intersectsBox(topBox) || heliBox.intersectsBox(bottomBox)) {
+                gameOver();
+            }
+        }
+    }
+}
+
+function gameOver() {
+    gameState.isPlaying = false;
+    document.getElementById('gameOver').style.display = 'block';
+}
+
+function resetGame() {
+    obstacles.forEach(obstacle => {
+        scene.remove(obstacle.top);
+        scene.remove(obstacle.bottom);
+    });
+    obstacles.length = 0;
+
+    helicopter.position.set(-3, 0, 0);
+    helicopter.rotation.z = 0;
+
+    Object.assign(gameState, {
+        score: 0,
+        level: 1,
+        speed: 0.05,
+        isPlaying: true,
+        lastObstacleTime: Date.now(),
+        obstacleInterval: 1500,
+        velocity: 0
+    });
+
+    document.getElementById('score').textContent = 'Score: 0';
+    document.getElementById('level').textContent = 'Level: 1';
+    document.getElementById('gameOver').style.display = 'none';
+}
+
+let isFlying = false;
+
+function animate() {
+    requestAnimationFrame(animate);
+
+    if (gameState.isPlaying) {
+        if (isFlying) {
+            gameState.velocity += gameState.lift;
+        }
+        gameState.velocity += gameState.gravity;
+        gameState.velocity = Math.max(Math.min(gameState.velocity, gameState.maxVelocity), gameState.minVelocity);
+        gameState.velocity *= gameState.dampening;
+        
+        helicopter.position.y += gameState.velocity;
+        
+        const targetRotation = gameState.velocity * 2;
+        helicopter.rotation.z += (targetRotation - helicopter.rotation.z) * 0.1;
+        rotor.rotation.y += 0.5;
+
+        if (helicopter.position.y > 8 || helicopter.position.y < -8) {
+            gameOver();
+        }
+
+        updateObstacles();
+    }
+
+    renderer.render(scene, camera);
+}
+
+document.addEventListener('mousedown', () => {
+    if (!gameState.isPlaying) {
+        resetGame();
+    }
+    isFlying = true;
+});
+document.addEventListener('mouseup', () => isFlying = false);
+
+resetGame();
+animate();
+</script>
+<footer style="position: fixed; bottom: 10px; left: 50%; transform: translateX(-50%); color: #00ff88; font-family: 'Courier New', monospace; text-shadow: 0 0 10px #00ff88;">
+    Vibe coded with ❤️ by <a href="https://rnikhil.com" style="color: #00ff88; text-decoration: none;">Nikhil. R</a>
+</footer>
+</body>
+</html>

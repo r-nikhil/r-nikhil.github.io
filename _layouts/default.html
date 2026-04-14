@@ -1,0 +1,21 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html lang="en" >
+  {% include head.html %}  
+  <body>
+    <main>
+	    
+	    {% include navigation.html %}
+      {% include google-analytics.html %}
+
+	    
+        {{ content }}
+        
+    </main>
+    {% include footer.html %}
+    <script src="{{ site.baseurl }}/assets/js/theme-switch.js"></script>
+  </body>
+</html>

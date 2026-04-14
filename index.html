@@ -1,0 +1,94 @@
+---
+layout: default
+---
+
+<section class="posts">
+<div class="category-filter">
+  <button class="filter-btn active" data-category="all">All</button>
+  <button class="filter-btn" data-category="ai">AI</button>
+  <button class="filter-btn" data-category="poker">Poker</button>
+  <button class="filter-btn" data-category="crypto">Crypto</button>
+  <button class="filter-btn" data-category="personal">Personal</button>
+  <button class="filter-btn" data-category="markets">Markets</button>
+  <button class="filter-btn" data-category="security">Security</button>
+</div>
+
+
+<ul>
+{% for post in site.posts %}
+<li class="post-item" data-categories="{% if post.categories %}{{ post.categories | join: ' ' }}{% endif %}">
+  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+  <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b '%y" }}</time>
+</li>
+{% endfor %}
+</ul>
+</section>
+
+<style>
+
+.category-filter {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 5px 0;
+  border: 0.1px solid var(--border-color);
+  background-color: var(--bg-color);
+  display: flex;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 1px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  transition: all 0.1s ease;
+  display: block;
+  font-weight: 700;
+  padding: 5px;
+  /* border-bottom: none; */
+  transition: all 0.2s ease;
+  background: none;
+  color: var(--text-color);
+  cursor: pointer;
+  flex: 1;
+  min-width: 100px;
+}
+.filter-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+  background-color: rgba(0, 102, 204, 0.05);
+  color: var(--link-hover-color);
+  transform: scale(1.05);
+}
+.filter-btn.active {
+  background-color: rgba(0, 102, 204, 0.05);
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+}
+.post-item.hidden {
+  display: none;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const posts = document.querySelectorAll('.post-item');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const category = button.dataset.category;
+      
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      
+      posts.forEach(post => {
+        const categories = post.dataset.categories.split(' ');
+        if (category === 'all' || categories.includes(category)) {
+          post.classList.remove('hidden');
+        } else {
+          post.classList.add('hidden');
+        }
+      });
+    });
+  });
+});
+</script>

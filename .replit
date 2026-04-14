@@ -1,0 +1,24 @@
+modules = ["web", "ruby-3.2", "nodejs-20"]
+
+[nix]
+channel = "stable-24_05"
+
+[[ports]]
+localPort = 4000
+externalPort = 80
+exposeLocalhost = true
+
+[workflows]
+runButton = "run"
+
+[[workflows.workflow]]
+name = "run"
+mode = "sequential"
+author = 26136731
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bundle exec jekyll serve"
+
+[agent]
+expertMode = true

@@ -1,0 +1,48 @@
+Create a Flask backend for an LLM-powered chatbot that will serve my personal website's chat interface. Here are the requirements:
+
+Setup & Configuration:
+
+Use Flask with CORS enabled for my GitHub Pages frontend
+Run on port 5000 with host 0.0.0.0
+Set up proper error handling and logging
+Store API keys in Replit Secrets (OPENAI_API_KEY)
+RAG Implementation:
+
+Create a script to process markdown files from a blog_posts/ folder
+Use OpenAI's text-embedding-ada-002 for embeddings
+Store embeddings in ChromaDB or FAISS (lightweight vector database)
+Implement semantic search to retrieve relevant blog content based on user queries
+Parse markdown frontmatter to extract metadata (title, categories, date)
+API Endpoints:
+
+POST /api/chat
+- Accept JSON: {"message": "user query", "timestamp": "ISO string"}
+- Retrieve relevant blog content using RAG
+- Send to OpenAI GPT-4 with system prompt about being Nikhil
+- Return JSON: {"response": "bot response", "timestamp": "ISO string"}
+GET /api/health
+- Return simple health check status
+LLM Integration:
+
+Use OpenAI GPT-4 API
+System prompt should include: "You are Nikhil, an AI engineer and poker professional. Use the retrieved blog content to answer questions about AI, investing, poker, and your projects. Keep responses conversational and helpful."
+Include retrieved blog content in the prompt context
+Limit response length to ~200 words
+Guardrails & Security:
+
+Rate limiting: max 10 requests per minute per IP
+Input validation and sanitization
+Content filtering for inappropriate requests
+Token usage limits to prevent API abuse
+Proper error handling for API failures
+File Structure:
+
+app.py (main Flask app)
+rag_processor.py (blog processing and vector search)
+requirements.txt (dependencies)
+Dependencies needed:
+flask, flask-cors, openai, chromadb (or faiss-cpu), python-frontmatter, numpy, requests
+
+The frontend expects the backend to be deployed at a Replit URL that it can call via fetch(). Make sure CORS headers allow requests from any origin during development.
+
+Create a complete, production-ready backend that I can deploy on Replit as a Reserved VM.
