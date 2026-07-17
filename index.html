@@ -2,7 +2,53 @@
 layout: default
 ---
 
-<section class="posts">
+<section class="home-content">
+<div class="home-intro">
+  <nav class="social-strip" aria-label="Social links">
+    <a href="https://twitter.com/rnikhilcom">Twitter</a>
+    <a href="https://www.linkedin.com/in/rnikhilcom/">LinkedIn</a>
+    <a href="https://news.ycombinator.com/user?id=whoami_nr">HN</a>
+    <a href="https://github.com/r-nikhil">GitHub</a>
+    <a href="mailto:contact@rnikhil.com">Email</a>
+  </nav>
+
+  <p>Hey, I am Nikhil. I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang random text.</p>
+
+  <div class="career-history" aria-label="Career history">
+    <div class="career-entry">
+      <div class="career-period">2025-Present</div>
+      <ul>
+        <li>Doing some AI stuff at Accel</li>
+        <li>If you are building in AI, mail me on nikhil.ramesh@accel.com</li>
+      </ul>
+    </div>
+    <div class="career-entry">
+      <div class="career-period">2024</div>
+      <ul>
+        <li>Led product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations, compliance/goverance issues and other security vulnerabilities.</li>
+      </ul>
+    </div>
+    <div class="career-entry">
+      <div class="career-period">2018-2023</div>
+      <ul>
+        <li>Responsible for the product and business verticals for the Poker app at Paytm and scaled it to a $10m biz</li>
+        <li>Trading and yeild farming across all DeFi protocols</li>
+        <li>Played professional poker (all.in adj 11bb/100), built a poker analytics tool startup and ran a coaching and staking operation</li>
+        <li>Started at Flipkart as a PM to build their data platform ingestion pipelines and BNPL product</li>
+      </ul>
+    </div>
+    <div class="career-entry">
+      <div class="career-period">2014-2018</div>
+      <ul>
+        <li>Focus was on learning how computers work. Self taught programmer. Started with web dev but spent majority time on OS, computer security and network protocols. Contributed a ton to FOSS projects</li>
+        <li>Wrote malware shellcode obfuscators for OWASP and added packaet sniffing suport for Wolfram Mathematica</li>
+        <li>Did <ins><a href="https://summerofcode.withgoogle.com/">some</a></ins> <ins><a href="https://owasp.org/www-community/initiatives/code_sprint/">cool</a></ins> <ins><a href="https://education.wolfram.com/summer-school">internships</a></ins> with low acceptance rates</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="posts">
 <div class="category-filter">
   <button class="filter-btn active" data-category="all">All</button>
   <button class="filter-btn" data-category="ai">AI</button>
@@ -22,9 +68,79 @@ layout: default
 </li>
 {% endfor %}
 </ul>
+</div>
 </section>
 
 <style>
+
+.home-intro {
+  width: 100%;
+}
+
+.social-strip {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--border-color);
+  margin: 5px 0 1.5rem;
+}
+
+.social-strip a {
+  flex: 1 1 100px;
+  display: block;
+  padding: 5px;
+  text-align: center;
+  border-right: 1px solid var(--border-color);
+  border-bottom: none;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.social-strip a:last-child {
+  border-right: none;
+}
+
+.social-strip a:hover {
+  color: var(--link-hover-color);
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+  background-color: rgba(0, 102, 204, 0.05);
+}
+
+.home-intro > p {
+  margin: 1rem 0 1.5rem;
+  text-align: justify;
+}
+
+.career-history {
+  border-top: 1px solid var(--border-color);
+  margin-bottom: 2rem;
+}
+
+.career-entry {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.career-period {
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.career-entry ul {
+  margin: 0 0 0 1.25rem;
+}
+
+.career-entry li {
+  margin-bottom: 0.35rem;
+}
+
+.career-entry li:last-child {
+  margin-bottom: 0;
+}
 
 .category-filter {
   width: 100%;
@@ -65,6 +181,17 @@ layout: default
 }
 .post-item.hidden {
   display: none;
+}
+
+@media screen and (max-width: 45rem) {
+  .social-strip a {
+    flex-basis: 30%;
+  }
+
+  .career-entry {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
+  }
 }
 </style>
 
