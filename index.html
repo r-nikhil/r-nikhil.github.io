@@ -4,12 +4,18 @@ layout: default
 
 <section class="home-content">
 <div class="home-intro">
-  <nav class="social-strip" aria-label="Social links">
-    <a href="https://twitter.com/rnikhilcom">Twitter</a>
-    <a href="https://www.linkedin.com/in/rnikhilcom/">LinkedIn</a>
-    <a href="https://news.ycombinator.com/user?id=whoami_nr">HN</a>
-    <a href="https://github.com/r-nikhil">GitHub</a>
-    <a href="mailto:contact@rnikhil.com">Email</a>
+  <nav class="social-groups" aria-label="Social links">
+    <span class="social-label">Elsewhere</span>
+    <div class="social-links">
+      <a href="https://twitter.com/rnikhilcom">Twitter</a>
+      <a href="https://www.linkedin.com/in/rnikhilcom/">LinkedIn</a>
+      <a href="https://news.ycombinator.com/user?id=whoami_nr">HN</a>
+      <a href="https://github.com/r-nikhil">GitHub</a>
+    </div>
+    <span class="social-label">Contact</span>
+    <div class="social-links">
+      <a href="mailto:contact@rnikhil.com">Email</a>
+    </div>
   </nav>
 
   <p>Hey, I am Nikhil. I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang random text.</p>
@@ -50,13 +56,13 @@ layout: default
 
 <div class="posts">
 <div class="category-filter">
-  <button class="filter-btn active" data-category="all">All</button>
-  <button class="filter-btn" data-category="ai">AI</button>
-  <button class="filter-btn" data-category="poker">Poker</button>
-  <button class="filter-btn" data-category="crypto">Crypto</button>
-  <button class="filter-btn" data-category="personal">Personal</button>
-  <button class="filter-btn" data-category="markets">Markets</button>
-  <button class="filter-btn" data-category="security">Security</button>
+  <button class="filter-btn active" data-category="all" aria-pressed="true">All</button>
+  <button class="filter-btn" data-category="ai" aria-pressed="false">AI</button>
+  <button class="filter-btn" data-category="poker" aria-pressed="false">Poker</button>
+  <button class="filter-btn" data-category="crypto" aria-pressed="false">Crypto</button>
+  <button class="filter-btn" data-category="personal" aria-pressed="false">Personal</button>
+  <button class="filter-btn" data-category="markets" aria-pressed="false">Markets</button>
+  <button class="filter-btn" data-category="security" aria-pressed="false">Security</button>
 </div>
 
 
@@ -77,33 +83,37 @@ layout: default
   width: 100%;
 }
 
-.social-strip {
+.social-groups {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  border: 1px solid var(--border-color);
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  gap: 0.65rem 1rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   margin: 5px 0 1.5rem;
 }
 
-.social-strip a {
-  flex: 1 1 100px;
-  display: block;
-  padding: 5px;
-  text-align: center;
-  border-right: 1px solid var(--border-color);
-  border-bottom: none;
+.social-label {
+  color: #555;
+  font-size: 0.8rem;
   font-weight: 700;
-  transition: all 0.2s ease;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.social-strip a:last-child {
-  border-right: none;
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
 }
 
-.social-strip a:hover {
+.social-links a {
+  border-bottom: none;
+}
+
+.social-links a:hover {
   color: var(--link-hover-color);
-  transform: translate(-2px, -2px);
-  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
   background-color: rgba(0, 102, 204, 0.05);
 }
 
@@ -144,48 +154,52 @@ layout: default
 
 .category-filter {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  margin: 5px 0;
-  border: 0.1px solid var(--border-color);
+  margin: 5px 0 1rem;
   background-color: var(--bg-color);
   display: flex;
   flex-wrap: wrap;
+  gap: 0.45rem;
 }
 .filter-btn {
-  padding: 1px;
   text-align: center;
   border: 1px solid var(--border-color);
-  transition: all 0.1s ease;
+  border-radius: 999px;
   display: block;
   font-weight: 700;
-  padding: 5px;
-  /* border-bottom: none; */
+  padding: 4px 12px;
   transition: all 0.2s ease;
   background: none;
   color: var(--text-color);
   cursor: pointer;
-  flex: 1;
-  min-width: 100px;
+  flex: 0 0 auto;
+  min-width: 0;
 }
 .filter-btn:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+  transform: translateY(-1px);
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
   background-color: rgba(0, 102, 204, 0.05);
   color: var(--link-hover-color);
-  transform: scale(1.05);
 }
 .filter-btn.active {
-  background-color: rgba(0, 102, 204, 0.05);
-  box-shadow: 3px 3px 0px 0px rgba(0,0,0,1);
+  background-color: var(--border-color);
+  color: var(--bg-color);
+  box-shadow: none;
 }
 .post-item.hidden {
   display: none;
 }
 
 @media screen and (max-width: 45rem) {
-  .social-strip a {
-    flex-basis: 30%;
+  header ul {
+    border-bottom: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .social-groups {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 0.65rem 0.75rem;
+    border-top: 0;
   }
 
   .career-entry {
@@ -204,8 +218,12 @@ document.addEventListener('DOMContentLoaded', function() {
     button.addEventListener('click', () => {
       const category = button.dataset.category;
       
-      filterButtons.forEach(btn => btn.classList.remove('active'));
+      filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+        btn.setAttribute('aria-pressed', 'false');
+      });
       button.classList.add('active');
+      button.setAttribute('aria-pressed', 'true');
       
       posts.forEach(post => {
         const categories = post.dataset.categories.split(' ');

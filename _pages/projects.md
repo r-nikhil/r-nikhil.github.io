@@ -87,11 +87,11 @@ Added support for HTTPS CONNECT Tunnel, HTTPS Redirects, SNI tests and HTTP/2 su
 CLI for Google search. This was useful back in 2012. 
 
 
-#### [**MicroTracer**](https://github.com/r-nikhil/microTracer)
+#### **MicroTracer**
 
 System Call tracer for Linux based systems which displays the syscalls used by a particular program in a neatly formatted manner without the complex details as shown by programs like strace. 
 
-#### [**PintOS**](https://github.com/r-nikhil/pintos)
+#### **PintOS**
 
 Extended the OS by adding virtual memory, message passing queues, POSIX threads and OS-level semaphores. Implemented "fork" and "exec" system calls and the ability to run user program. Implemented indexed filesystem, hierarchical directory structure and buffer cache. IIRC, this is part of some CS course at Stanford. 
 
@@ -102,4 +102,3 @@ It is to help developers jump start developing any kind of mobility tracking app
 #### **Peer to Peer Streaming Protocol**
 
 Was involved in the building a statistics module for an application layer streaming protocol in Python. It records information related to the stream, number of peers (audience) per minute, in/out of peers, total peers, etc. Wrote a graphical interface for viewing the numbers built using d3.js. Learnt a bunch about WebRTC
-
