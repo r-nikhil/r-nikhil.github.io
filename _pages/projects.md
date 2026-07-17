@@ -58,11 +58,6 @@ A small tool to schedule your post on HN.
 An autonomous AI Twitter agent that engages in contextual conversations using OpenAI for text and Replicate (image model fine-tuned on BAYC art) for image generation. It maintains conversation history of recent interactions and intelligently decides between text and image responses when replying to mentions and threads.
 
 
-#### [**Helicopter game**](https://rnikhil.com/heli)
-
-three.js powered clone of the popular Flash helicopter game. 
-
-
 #### [**Wolfram Mathematica** ](https://github.com/r-nikhil/wolfram-2017)
 
 Added a Network Analysis feature to Mathematica 11.3 to visualise the packet stream in a real time manner to help in debugging systems and network issues reducing average testing time by 30%. Notebook can be found [here](https://education.wolfram.com/summer/school/alumni/2017/ramesh/)
@@ -107,5 +102,4 @@ It is to help developers jump start developing any kind of mobility tracking app
 #### **Peer to Peer Streaming Protocol**
 
 Was involved in the building a statistics module for an application layer streaming protocol in Python. It records information related to the stream, number of peers (audience) per minute, in/out of peers, total peers, etc. Wrote a graphical interface for viewing the numbers built using d3.js. Learnt a bunch about WebRTC
-
 
