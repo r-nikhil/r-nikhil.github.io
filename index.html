@@ -22,9 +22,15 @@ layout: default
 
   <div class="career-history" aria-label="Career history">
     <div class="career-entry">
-      <div class="career-period">2025-Present</div>
+      <div class="career-period">2026-Present</div>
       <ul>
-        <li>Doing some AI stuff at Accel</li>
+        <li>Started a company — <a href="https://arivulabs.xyz">arivulabs.xyz</a></li>
+      </ul>
+    </div>
+    <div class="career-entry">
+      <div class="career-period">2025</div>
+      <ul>
+        <li>Did some AI stuff at Accel</li>
         <li>If you are building in AI, mail me on nikhil.ramesh@accel.com</li>
       </ul>
     </div>
@@ -79,6 +85,39 @@ layout: default
 
 <style>
 
+:root {
+  --home-paper: #f9fbfd;
+  --home-ink: #17202a;
+  --home-cobalt: #1456d9;
+  --home-cobalt-dark: #0c3ba1;
+  --home-cobalt-soft: #e8f2ff;
+  --home-grid-rule: #c8d6e1;
+}
+
+body {
+  color: var(--home-ink);
+  background-color: var(--home-paper);
+}
+
+main {
+  background-color: var(--home-paper);
+}
+
+header nav ul {
+  border-right-color: var(--home-grid-rule);
+}
+
+header a,
+.home-content a {
+  color: var(--home-cobalt);
+}
+
+header a:hover,
+.home-content a:hover {
+  color: var(--home-cobalt-dark);
+  background-color: var(--home-cobalt-soft);
+}
+
 .home-intro {
   width: 100%;
 }
@@ -89,12 +128,15 @@ layout: default
   grid-template-columns: 6rem minmax(0, 1fr);
   gap: 0.65rem 1rem;
   padding: 0 0 0.8rem;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--home-grid-rule);
   margin: 0 0 1.5rem;
 }
 
 .social-label {
-  color: #555;
+  width: max-content;
+  padding: 0.12rem 0.38rem;
+  color: #fff;
+  background-color: var(--home-cobalt);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -108,12 +150,13 @@ layout: default
 }
 
 .social-links a {
+  color: var(--home-cobalt);
   border-bottom: none;
 }
 
 .social-links a:hover {
-  color: var(--link-hover-color);
-  background-color: rgba(0, 102, 204, 0.05);
+  color: var(--home-cobalt-dark);
+  background-color: var(--home-cobalt-soft);
 }
 
 .home-intro > p {
@@ -122,16 +165,27 @@ layout: default
 }
 
 .career-history {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid var(--home-grid-rule);
   margin-bottom: 2rem;
 }
 
 .career-entry {
+  position: relative;
   display: grid;
   grid-template-columns: 8rem minmax(0, 1fr);
   gap: 1rem;
   padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  border-bottom: 1px solid var(--home-grid-rule);
+}
+
+.career-entry::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 8.5rem;
+  width: 1px;
+  background-color: var(--home-cobalt-soft);
 }
 
 .career-period {
@@ -154,14 +208,14 @@ layout: default
 .category-filter {
   width: 100%;
   margin: 5px 0 1rem;
-  background-color: var(--bg-color);
+  background-color: var(--home-paper);
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
 }
 .filter-btn {
   text-align: center;
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--home-grid-rule);
   border-radius: 999px;
   display: block;
   font-weight: 700;
@@ -175,14 +229,25 @@ layout: default
 }
 .filter-btn:hover {
   transform: translateY(-1px);
-  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
-  background-color: rgba(0, 102, 204, 0.05);
-  color: var(--link-hover-color);
+  box-shadow: 2px 2px 0 0 var(--home-cobalt);
+  background-color: var(--home-cobalt-soft);
+  color: var(--home-cobalt-dark);
 }
 .filter-btn.active {
-  background-color: var(--border-color);
-  color: var(--bg-color);
+  background-color: var(--home-cobalt);
+  border-color: var(--home-cobalt);
+  color: #fff;
   box-shadow: none;
+}
+.posts li a {
+  color: var(--home-cobalt);
+}
+.posts li a:hover {
+  color: var(--home-cobalt-dark);
+}
+.posts li time {
+  color: var(--home-cobalt);
+  font-weight: 700;
 }
 .post-item.hidden {
   display: none;
@@ -196,7 +261,7 @@ layout: default
   }
 
   .social-groups {
-    grid-template-columns: 5.5rem minmax(0, 1fr);
+    grid-template-columns: 6.25rem minmax(0, 1fr);
     gap: 0.65rem 0.75rem;
     padding-top: 0.8rem;
     margin-top: 5px;
@@ -205,6 +270,10 @@ layout: default
   .career-entry {
     grid-template-columns: 1fr;
     gap: 0.4rem;
+  }
+
+  .career-entry::after {
+    display: none;
   }
 }
 </style>
