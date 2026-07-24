@@ -155,6 +155,95 @@ header a.active {
 	position: relative;
 }
 
+.nav-companion {
+	--companion-eye-x: 0px;
+	--companion-eye-y: 0px;
+	--companion-head-x: 0px;
+	--companion-head-y: 0px;
+	--companion-head-rotate: 0deg;
+	position: relative;
+	display: block;
+	width: 1.55rem;
+	height: 1.15rem;
+	margin: 1.25rem 1.5rem 0 auto;
+	border: 1px solid var(--text-color);
+	background-color: var(--home-paper, var(--bg-color));
+	transform: translate(var(--companion-head-x), var(--companion-head-y)) rotate(var(--companion-head-rotate));
+	transform-origin: 50% 80%;
+}
+
+.nav-companion[data-active="false"] {
+	animation: nav-companion-idle 4.8s ease-in-out infinite;
+}
+
+.nav-companion-antenna {
+	position: absolute;
+	left: calc(50% - 0.5px);
+	top: -0.5rem;
+	width: 1px;
+	height: 0.5rem;
+	background-color: var(--text-color);
+	transform: rotate(var(--companion-head-rotate));
+	transform-origin: 50% 100%;
+}
+
+.nav-companion-antenna::after {
+	content: "";
+	position: absolute;
+	left: -0.12rem;
+	top: -0.18rem;
+	width: 0.24rem;
+	height: 0.24rem;
+	border-radius: 50%;
+	background-color: var(--home-cobalt, var(--link-color));
+}
+
+.nav-companion-eyes {
+	display: flex;
+	justify-content: center;
+	gap: 0.3rem;
+	padding-top: 0.3rem;
+}
+
+.nav-companion-eye {
+	position: relative;
+	width: 0.36rem;
+	height: 0.34rem;
+	overflow: hidden;
+	border: 1px solid var(--home-grid-rule, rgba(0, 0, 0, 0.18));
+	border-radius: 50%;
+	background-color: var(--home-paper, var(--bg-color));
+}
+
+.nav-companion-pupil {
+	position: absolute;
+	left: calc(50% - 0.09rem);
+	top: calc(50% - 0.09rem);
+	width: 0.18rem;
+	height: 0.18rem;
+	border-radius: 50%;
+	background-color: var(--home-cobalt, var(--link-color));
+	transform: translate(var(--companion-eye-x), var(--companion-eye-y));
+}
+
+.nav-companion-mouth {
+	display: block;
+	width: 0.48rem;
+	height: 0.22rem;
+	margin: 0.16rem auto 0;
+	border-bottom: 1px solid var(--text-color);
+	border-radius: 50%;
+}
+
+@keyframes nav-companion-idle {
+	0%, 100% {
+		transform: translateY(0) rotate(-1deg);
+	}
+	50% {
+		transform: translateY(-0.08rem) rotate(1deg);
+	}
+}
+
 // header a.active:before {
 // 	content: ">";
 // 	position: absolute;
@@ -319,6 +408,10 @@ figcaption {
 		margin-right: 1rem;
 	}
 
+	.nav-companion {
+		display: none;
+	}
+
 	.logo {
 		padding-bottom: 1rem;
 	}
@@ -345,6 +438,18 @@ figcaption {
 	.posts li time {
 		padding-left: 0;
 		margin-top: 0.25rem;
+	}
+}
+
+@media (hover: none), (pointer: coarse) {
+	.nav-companion {
+		display: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.nav-companion {
+		animation: none !important;
 	}
 }
 
