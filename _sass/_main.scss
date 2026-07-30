@@ -476,34 +476,72 @@ figcaption {
 }
 
 .site-footer {
-  margin-top: 2rem;
-  padding: 1rem 0;
-  border-top: 1px solid var(--border-color);
+  --footer-paper: var(--home-paper, var(--projects-paper, #f9fbfd));
+  --footer-cobalt: var(--home-cobalt, var(--projects-cobalt, #1456d9));
+  --footer-cobalt-dark: var(--home-cobalt-dark, var(--projects-cobalt-dark, #0c3ba1));
+  --footer-cobalt-soft: var(--home-cobalt-soft, var(--projects-cobalt-soft, #e8f2ff));
+  --footer-grid-rule: var(--home-grid-rule, var(--projects-grid-rule, #c8d6e1));
+  margin-top: 1.25rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid var(--footer-grid-rule);
+  background-color: var(--footer-paper);
   
   .footer-content {
-    max-width: var(--width);
+    width: calc(100% - 2rem);
+    max-width: 60rem;
     margin: 0 auto;
     text-align: center;
   }
 
   .social-links {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 1.5rem;
-    margin-bottom: 0.5rem;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    margin: 0;
+    line-height: 1;
   }
 
   .social-link {
-    color: var(--text-main);
-    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    padding: 0;
+    color: var(--footer-cobalt);
+    background-color: transparent;
+    border-bottom: 0;
+    transition: color 0.15s ease, background-color 0.15s ease;
     
     &:hover {
-      color: var(--links);
+      color: var(--footer-cobalt-dark);
+      background-color: var(--footer-cobalt-soft);
+    }
+
+    &:focus-visible {
+      color: var(--footer-cobalt-dark);
+      background-color: var(--footer-cobalt-soft);
+      outline: 1px solid var(--footer-cobalt);
+      outline-offset: 2px;
+    }
+
+    svg {
+      display: block;
+      width: 1.05rem;
+      height: 1.05rem;
     }
   }
+}
 
-  .footer-text {
-    font-size: 0.9rem;
-    color: var(--text-aux);
+@media screen and (max-width: 45rem) {
+  .site-footer {
+    margin-top: 1rem;
+    padding: 0.4rem 0;
+
+    .footer-content {
+      width: calc(100% - 1rem);
+    }
   }
 }
