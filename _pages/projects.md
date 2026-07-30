@@ -3,7 +3,7 @@ layout: page
 title: Random assortment of side projects
 ---
 
-<div class="projects-kicker">Full project index / 18 entries</div>
+<div class="projects-kicker">18 entries</div>
 
 <div class="project-index" aria-label="Complete project index">
   <article class="project-entry">
