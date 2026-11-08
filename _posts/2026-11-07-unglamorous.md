@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Unglamorous
-categories: [startups]
+categories: [personal]
 ---
 
 *Examples of the small, embarrassing work behind very large companies.*
