@@ -164,13 +164,13 @@ Founders doing IT support in person, from the people who wrote *Fast*.
 
 ### 20. Ankit Garg & Chaitanya Ramalingegowda, Wakefit (2016)
 
-"We visited homes for our first 100 deliveries, and did video interviews." They delivered the mattresses in their own cars.
+"We visited homes for our first 100 deliveries, and did video interviews for feedback." They delivered the mattresses in their own cars.
 
 Founders as delivery men.
 
 [YourStory](https://yourstory.com/2019/04/wakefit-mattress-startup-growth-three-years)
 
-### 21. Pebble (2013)
+### 21. Pebble (2012)
 
 "The Pebbles assembled the first several hundred watches themselves."
 
