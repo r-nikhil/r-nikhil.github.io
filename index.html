@@ -3,63 +3,6 @@ layout: default
 ---
 
 <section class="home-content">
-<div class="home-intro">
-  <nav class="social-groups" aria-label="Social links">
-    <span class="social-label">Elsewhere</span>
-    <div class="social-links">
-      <a href="https://twitter.com/rnikhilcom">Twitter</a>
-      <a href="https://www.linkedin.com/in/rnikhilcom/">LinkedIn</a>
-      <a href="https://news.ycombinator.com/user?id=whoami_nr">HN</a>
-      <a href="https://github.com/r-nikhil">GitHub</a>
-    </div>
-    <span class="social-label">Contact</span>
-    <div class="social-links">
-      <a href="mailto:contact@rnikhil.com">Email</a>
-    </div>
-  </nav>
-
-  <p>Hey, I am Nikhil. I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang random text.</p>
-
-  <div class="career-history" aria-label="Career history">
-    <div class="career-entry">
-      <div class="career-period">2026-Present</div>
-      <ul>
-        <li>Started a company — <a href="https://arivulabs.xyz">arivulabs.xyz</a></li>
-      </ul>
-    </div>
-    <div class="career-entry">
-      <div class="career-period">2025</div>
-      <ul>
-        <li>Did some AI stuff at Accel</li>
-        <li>If you are building in AI, mail me on nikhil.ramesh@accel.com</li>
-      </ul>
-    </div>
-    <div class="career-entry">
-      <div class="career-period">2024</div>
-      <ul>
-        <li>Led product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations, compliance/goverance issues and other security vulnerabilities.</li>
-      </ul>
-    </div>
-    <div class="career-entry">
-      <div class="career-period">2018-2023</div>
-      <ul>
-        <li>Responsible for the product and business verticals for the Poker app at Paytm and scaled it to a $10m biz</li>
-        <li>Trading and yeild farming across all DeFi protocols</li>
-        <li>Played professional poker (all.in adj 11bb/100), built a poker analytics tool startup and ran a coaching and staking operation</li>
-        <li>Started at Flipkart as a PM to build their data platform ingestion pipelines and BNPL product</li>
-      </ul>
-    </div>
-    <div class="career-entry">
-      <div class="career-period">2014-2018</div>
-      <ul>
-        <li>Focus was on learning how computers work. Self taught programmer. Started with web dev but spent majority time on OS, computer security and network protocols. Contributed a ton to FOSS projects</li>
-        <li>Wrote malware shellcode obfuscators for OWASP and added packaet sniffing suport for Wolfram Mathematica</li>
-        <li>Did <ins><a href="https://summerofcode.withgoogle.com/">some</a></ins> <ins><a href="https://owasp.org/www-community/initiatives/code_sprint/">cool</a></ins> <ins><a href="https://education.wolfram.com/summer-school">internships</a></ins> with low acceptance rates</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
 <div class="posts">
 <div class="category-filter">
   <button class="filter-btn active" data-category="all" aria-pressed="true">All</button>
@@ -118,93 +61,6 @@ header a:hover,
   background-color: var(--home-cobalt-soft);
 }
 
-.home-intro {
-  width: 100%;
-}
-
-.social-groups {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 6rem minmax(0, 1fr);
-  gap: 0.65rem 1rem;
-  padding: 0 0 0.8rem;
-  border-bottom: 1px solid var(--home-grid-rule);
-  margin: 0 0 1.5rem;
-}
-
-.social-label {
-  width: max-content;
-  padding: 0.12rem 0.38rem;
-  color: #fff;
-  background-color: var(--home-cobalt);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem 1rem;
-}
-
-.social-links a {
-  color: var(--home-cobalt);
-  border-bottom: none;
-}
-
-.social-links a:hover {
-  color: var(--home-cobalt-dark);
-  background-color: var(--home-cobalt-soft);
-}
-
-.home-intro > p {
-  margin: 1rem 0 1.5rem;
-  text-align: justify;
-}
-
-.career-history {
-  border-top: 1px solid var(--home-grid-rule);
-  margin-bottom: 2rem;
-}
-
-.career-entry {
-  position: relative;
-  display: grid;
-  grid-template-columns: 8rem minmax(0, 1fr);
-  gap: 1rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--home-grid-rule);
-}
-
-.career-entry::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 8.5rem;
-  width: 1px;
-  background-color: var(--home-cobalt-soft);
-}
-
-.career-period {
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.career-entry ul {
-  margin: 0 0 0 1.25rem;
-}
-
-.career-entry li {
-  margin-bottom: 0.35rem;
-}
-
-.career-entry li:last-child {
-  margin-bottom: 0;
-}
-
 .category-filter {
   width: 100%;
   margin: 5px 0 1rem;
@@ -261,33 +117,8 @@ header a:hover,
     margin-bottom: 0;
   }
 
-  .social-groups {
-    grid-template-columns: 6.25rem minmax(0, 1fr);
-    gap: 0.65rem 0.75rem;
-    padding-top: 0.8rem;
-    margin-top: 5px;
-  }
-
-  .career-entry {
-    grid-template-columns: 1fr;
-    gap: 0.4rem;
-  }
-
-  .career-entry::after {
-    display: none;
-  }
-
   .posts li time {
     font-size: 0.8rem;
-  }
-
-  .home-intro > p,
-  .career-entry li {
-    text-align: left;
-  }
-
-  .social-label {
-    align-self: start;
   }
 }
 </style>
