@@ -117,8 +117,50 @@ header a:hover,
     margin-bottom: 0;
   }
 
-  .posts li time {
-    font-size: 0.8rem;
+  .category-filter {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin-right: -0.75rem;
+    padding-right: 0.75rem;
+    -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, #000 85%, transparent);
+  }
+
+  .category-filter::-webkit-scrollbar {
+    display: none;
+  }
+
+  .posts ul {
+    border-top: 1px solid var(--home-grid-rule);
+  }
+
+  .posts li.post-item {
+    display: grid;
+    grid-template-columns: 3.6rem minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: baseline;
+    margin: 0;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--home-grid-rule);
+  }
+
+  .posts li.post-item.hidden {
+    display: none;
+  }
+
+  .posts li.post-item a {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  .posts li.post-item time {
+    order: -1;
+    margin: 0;
+    padding: 0;
+    font-size: 0.75rem;
+    color: #7a8794;
   }
 }
 </style>
