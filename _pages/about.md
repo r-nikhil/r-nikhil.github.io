@@ -23,12 +23,13 @@ title: About
 
 <div class="eras" aria-label="Career history">
   <div class="era-tabs" role="tablist" aria-label="Career by year">
-    <button class="era-tab" role="tab" id="era-2014-tab" aria-controls="era-2014" aria-selected="false" tabindex="-1"><b>2014–18</b><span>self-taught</span></button>
-    <button class="era-tab" role="tab" id="era-2018-tab" aria-controls="era-2018" aria-selected="false" tabindex="-1"><b>2018–23</b><span>Flipkart → Paytm</span></button>
-    <button class="era-tab" role="tab" id="era-2024-tab" aria-controls="era-2024" aria-selected="false" tabindex="-1"><b>2024–25</b><span>DynamoEval → Accel</span></button>
-    <button class="era-tab now" role="tab" id="era-now-tab" aria-controls="era-now" aria-selected="true" tabindex="0"><b>2026–now</b><span>arivulabs.xyz</span></button>
+    <button class="era-tab" role="tab" id="era-2014-tab" aria-controls="era-2014" aria-selected="false" tabindex="-1"><b>2014–18</b></button>
+    <button class="era-tab" role="tab" id="era-2018-tab" aria-controls="era-2018" aria-selected="false" tabindex="-1"><b>2018–23</b></button>
+    <button class="era-tab" role="tab" id="era-2024-tab" aria-controls="era-2024" aria-selected="false" tabindex="-1"><b>2024–25</b></button>
+    <button class="era-tab now" role="tab" id="era-now-tab" aria-controls="era-now" aria-selected="true" tabindex="0"><b>2026–now</b></button>
   </div>
   <div class="era-panel" role="tabpanel" id="era-2014" aria-labelledby="era-2014-tab" hidden>
+      <div class="era-label">self-taught</div>
       <ul>
       <li>Focus was on learning how computers work. Self taught programmer. Started with web dev but spent majority time on OS, computer security and network protocols. Contributed a ton to FOSS projects</li>
       <li>Wrote malware shellcode obfuscators for OWASP and added packaet sniffing suport for Wolfram Mathematica</li>
@@ -36,6 +37,7 @@ title: About
       </ul>
   </div>
   <div class="era-panel" role="tabpanel" id="era-2018" aria-labelledby="era-2018-tab" hidden>
+      <div class="era-label">Flipkart → Paytm</div>
       <ul>
       <li>Responsible for the product and business verticals for the Poker app at Paytm and scaled it to a $10m biz</li>
       <li>Trading and yeild farming across all DeFi protocols</li>
@@ -44,6 +46,7 @@ title: About
       </ul>
   </div>
   <div class="era-panel" role="tabpanel" id="era-2024" aria-labelledby="era-2024-tab" hidden>
+      <div class="era-label">DynamoEval → Accel</div>
       <ul>
       <li>Did some AI stuff at Accel</li>
       <li>If you are building in AI, mail me on nikhil.ramesh@accel.com</li>
@@ -51,6 +54,7 @@ title: About
       </ul>
   </div>
   <div class="era-panel" role="tabpanel" id="era-now" aria-labelledby="era-now-tab">
+      <div class="era-label">arivulabs.xyz</div>
       <ul>
       <li>Started a company — <a href="https://arivulabs.xyz">arivulabs.xyz</a></li>
       </ul>
@@ -151,66 +155,63 @@ header a:hover,
 }
 
 .era-tabs {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-bottom: 2px solid var(--home-cobalt);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.9rem;
 }
 
 .era-tab {
-  position: relative;
-  font: inherit;
   text-align: center;
-  line-height: 1.3;
-  color: var(--home-ink);
+  border: 1px solid var(--home-grid-rule);
+  border-radius: 999px;
+  font-weight: 700;
+  padding: 4px 12px;
+  transition: all 0.2s ease;
   background: none;
-  border: 2px solid transparent;
-  border-bottom: 0;
-  margin-bottom: -2px;
-  padding: 0.55rem 0.5rem calc(0.55rem + 2px);
+  color: var(--text-color);
   cursor: pointer;
-}
-
-.era-tab b {
-  display: block;
   white-space: nowrap;
-  font-size: 0.85rem;
-  color: var(--home-cobalt);
 }
 
-.era-tab span {
-  display: block;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 0.8rem;
-  color: #3d4a57;
-}
-
-.era-tab:hover b {
-  text-decoration: underline;
+.era-tab:hover {
+  transform: translateY(-1px);
+  box-shadow: 2px 2px 0 0 var(--home-cobalt);
+  background-color: var(--home-cobalt-soft);
+  color: var(--home-cobalt-dark);
 }
 
 .era-tab[aria-selected="true"] {
-  z-index: 1;
+  background-color: var(--home-cobalt);
   border-color: var(--home-cobalt);
-  background-color: #fff;
+  color: #fff;
+  box-shadow: none;
 }
 
 .era-tab.now b::after {
   content: " ●";
-  color: #2fa36b;
+  color: #5fd38d;
 }
 
 .era-tab:focus-visible {
   outline: 2px solid var(--home-cobalt);
-  outline-offset: -5px;
+  outline-offset: 2px;
 }
 
 .era-panel {
-  border: 2px solid var(--home-cobalt);
-  border-top: 0;
-  padding: 0.75rem 1rem;
+  border: 1px solid var(--home-grid-rule);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
   background-color: #fff;
+}
+
+.era-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #66717d;
+  margin-bottom: 0.4rem;
 }
 
 .era-panel ul {
@@ -263,23 +264,17 @@ header a:hover,
   }
 
   .era-tabs {
-    grid-template-columns: repeat(4, auto);
+    flex-wrap: nowrap;
+    gap: 0.35rem;
+    margin-bottom: 0.75rem;
   }
 
   .era-tab {
-    padding: 0.5rem 0.2rem calc(0.5rem + 2px);
-  }
-
-  .era-tab b {
-    font-size: 0.75rem;
-  }
-
-  .era-tab span {
-    display: none;
+    padding: 4px 7px;
   }
 
   .era-panel {
-    padding: 0.65rem 0.75rem;
+    padding: 0.7rem 0.8rem;
   }
 
   .posts li time {
@@ -288,8 +283,13 @@ header a:hover,
 }
 
 @media screen and (max-width: 22rem) {
-  .era-tab b {
-    font-size: 0.7rem;
+  .era-tabs {
+    gap: 0.3rem;
+  }
+
+  .era-tab {
+    padding: 4px 5px;
+    font-size: 11.5px;
   }
 }
 </style>
