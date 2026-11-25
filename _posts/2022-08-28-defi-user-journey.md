@@ -37,11 +37,73 @@ Broad retail requirements for interacting with financial services and products c
 
 Currently, the first two user personas (**Investor and the speculator**) are the most common place in DeFi. In fact every other use case is in fact a minority. Lets look at them deeper. 
 
-| **Average investor** | **Speculator/ trader** |
-|---|---|
-| Wants economic exposure to DeFi. Is not every sophisticated, intends to make +ve ROI, wants an engaging experience. | Wants a platform get access to capital and trade/gamble. High returns on capital is the ultimate priority.  |
-| *Product requirements*<br><br>    - Savings<br>    - Investing<br>    - Lending/Borrowing<br>    - Insurance | *Product Requirements*<br><br>    - Investing<br>    - Trading across asset classes <br>    - Coin/NFT launchpads<br>    - Credit (Lending/Borrowing/Leverage)<br>    - Other financial products (derivatives/swaps/bonds/etc)<br>    - Insurance<br>    - Data and Analytics |
-| *First priorities*<br><br>    - Easy on-ramp and off-ramp<br>  - High yield products<br>     - Minimal friction while adding/removing/transferring/spending money<br>      - KYC/Identity<br>      - Regulatory/Compliance and clarity<br>      - Taxation/Ease of filing<br>    - Trust/Safety in the platform<br>    - Principal protection (low volatility) for investment products<br>    - Easy to use (non complicated) UX<br>      -  Wants a personalized UX which is engaging as well as efficient<br>    - Easy Access everywhere (on mobile while travelling)<br>    - Speed of transactions have to instantaneous <br>    - (Single preferably) centralized market place/platform access to all products<br>      - Variety of markets available<br>    - Custody/Asset management<br>    - Cheap transaction costs<br>    - Best APR/APY (for savings/investments) and credit products<br>    - Easy onboarding | *First priorities*<br><br>  - Everything from Average investor<br>     - Advanced feature rich snappy UX <br>      - Portfolio management<br>     - Strategy builder<br>  - Risk Management<br>   - Centralized market place/platform access to all products<br>     - Variety of markets available with sufficient liquidity to do big trades<br>      - Derivatives/Spot/Prediction/FX products<br>     - Integration with other DeFi protocols<br>    - Regulatory compliance/clarity<br>       - Custody/Asset management<br>      - Rakeback for transaction fees<br>     - Best margin funding rate/leverage tools<br>     - Lowest interest fees<br>         - Best bid/offer spread<br>     - Low slippage<br>  - Easy onboarding<br>    - Capital efficiency(DeFi composability)<br> - Loyalty programs       |
+**Average investor**
+
+Wants economic exposure to DeFi. Is not every sophisticated, intends to make +ve ROI, wants an engaging experience.
+
+*Product requirements*
+
+- Savings
+- Investing
+- Lending/Borrowing
+- Insurance
+
+*First priorities*
+
+- Easy on-ramp and off-ramp
+- High yield products
+- Minimal friction while adding/removing/transferring/spending money
+- KYC/Identity
+- Regulatory/Compliance and clarity
+- Taxation/Ease of filing
+- Trust/Safety in the platform
+- Principal protection (low volatility) for investment products
+- Easy to use (non complicated) UX
+- Wants a personalized UX which is engaging as well as efficient
+- Easy Access everywhere (on mobile while travelling)
+- Speed of transactions have to instantaneous
+- (Single preferably) centralized market place/platform access to all products
+- Variety of markets available
+- Custody/Asset management
+- Cheap transaction costs
+- Best APR/APY (for savings/investments) and credit products
+- Easy onboarding
+
+**Speculator/ trader**
+
+Wants a platform get access to capital and trade/gamble. High returns on capital is the ultimate priority.
+
+*Product Requirements*
+
+- Investing
+- Trading across asset classes
+- Coin/NFT launchpads
+- Credit (Lending/Borrowing/Leverage)
+- Other financial products (derivatives/swaps/bonds/etc)
+- Insurance
+- Data and Analytics
+
+*First priorities*
+
+- Everything from Average investor
+- Advanced feature rich snappy UX
+- Portfolio management
+- Strategy builder
+- Risk Management
+- Centralized market place/platform access to all products
+- Variety of markets available with sufficient liquidity to do big trades
+- Derivatives/Spot/Prediction/FX products
+- Integration with other DeFi protocols
+- Regulatory compliance/clarity
+- Custody/Asset management
+- Rakeback for transaction fees
+- Best margin funding rate/leverage tools
+- Lowest interest fees
+- Best bid/offer spread
+- Low slippage
+- Easy onboarding
+- Capital efficiency(DeFi composability)
+- Loyalty programs
 
 Broad institutional personas who interact with financial services and products can be classified as:
 
@@ -53,7 +115,7 @@ Broad institutional personas who interact with financial services and products c
 They all want economic exposure to DeFi and to leverage the benefits of transacting on-chain (distributed/ decentralized/trust less/ permission less/cheaper / available/etc). 
 Some requirements for the above actors: 
 
-<u>Product Requirements</u>:
+**Product Requirements**:
 
 Everything from a retail speculator |
 Risk Management | Portfolio management 
@@ -86,7 +148,7 @@ Intent to invest
 Now, lets break down each of these steps and inspect the actors. 
 
 
-**<u>Custody and Asset Management</u>**
+**Custody and Asset Management**
 
 Similar to how fiat money is usually stored in savings accounts, central depositories, etc, crypto currencies have to stored in an online equivalent. Blockchains use digital signatures to secure money. Digital signatures are a pair of random keys, where one key is a “private key” and the other a “public key”. Through digital signatures, any person with the “private key” can “sign” a transaction and spend the digital currencies. Therefore, it is crucial to safeguard the “private key”. Some tech-savvy users of blockchains opt to safeguard this key themselves, and accept the risk of theft or loss of the key (and therefore the loss of their funds). In contrast, other blockchain users trust online wallets or exchanges with the safeguarding of their keys.
 
@@ -171,7 +233,7 @@ Identity (Polygon ID, dynamic.xyz)
 These Dapps which the users want to interact with are built on top of blockchains which we will investigate in the next section. While an average CeX user may not even interact with blockchains (just buys on Coinbase and doesn't do anything else), we are discussing about a web3 DeFi investor here. The user also doesn't pay for these services as they are usually available for free but instead monetized through adjacent offerings. In the next section, we shall look at some of the core infra DeFi products as well. 
 
 
-**<u>Infrastructure</u>**
+**Infrastructure**
 
 
 This is the plumbing needed for all of web3 to function. As an user, I don't really care how what the name of the chain is or the infrastructure complexity. The only requirements here are: 
@@ -192,7 +254,8 @@ The participants here include:
         - Delegators
             - Staking as a service 
     - Searchers extracting MeV
-        -   ![mev](/assets/files/mev.png){:class="img-responsive"}
+
+      ![mev](/assets/files/mev.png){:class="img-responsive"}
     - Multi chain protocols (shared liquidity/data layers)
     - Identity (authentication and authorization) layers
 
@@ -259,7 +322,7 @@ Above DeFi actors capture majority of the value in this step. They are directly/
 
 Now the user has a wallet and connected to a chain to transact. Its time to move on to looking at the next participants in this value chain
 
-**<u>On-Ramp and exchanges</u>**
+**On-Ramp and exchanges**
 
 Remembering that our user is a **retail DeFi investor**, lets look at some user requirements and pain points: 
 - User just wants to convert his/her fiat into crypto
@@ -283,7 +346,7 @@ what problems to work on?
 - Reduce the number of steps needed to convert crypto through block chain interop
 - Geography aware KYC solutions
 
-**<u>Dapp interaction</u>**
+**Dapp interaction**
 
 Now that the user has converted his/her to fiat to crypto, lets look at the journey to invest in Dapps.
 As an user, my primary requirements would be: 

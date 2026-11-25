@@ -4,13 +4,10 @@ layout: post
 title:  Testing LLMs for Data Leakage Vulnerabilities
 categories: [ai, security]
 ---
-------------------------
 
 This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/testing-llms-for-data-leakage-vulnerabilities-with-dynamoeval).
 
-<div align = "center">
-<img  src="/assets/files/dataleak1.png">
-</div>
+![](/assets/files/dataleak1.png)
 
 [Recent](https://arxiv.org/abs/2012.07805) [studies](https://arxiv.org/abs/2302.04460)  [highlight](https://arxiv.org/abs/2311.17035)  a critical issue: large language models (LLMs) can memorize and reproduce text verbatim from their training data when prompted.
 
@@ -30,17 +27,14 @@ Over the past year, the Dynamo AI team has collaborated closely with customers t
 
 **Key features and benefits:**
 
--   **Compatibility:** Supports all major open-source and commercial language models (e.g., OpenAI, Azure, Bedrock)**‍**
--   **Advanced techniques:** Supports cutting edge attack techniques and metrics from state of the art literature**‍**
+-   **Compatibility:** Supports all major open-source and commercial language models (e.g., OpenAI, Azure, Bedrock)
+-   **Advanced techniques:** Supports cutting edge attack techniques and metrics from state of the art literature
 -   **Defense strategies:** Offers recommendations for mitigating data extraction risks, including privacy-preserving training techniques, guardrails, and guidance on model selection
 -   **Customization:** Can be tailored to work with any training dataset
 
 The figure below illustrates a real-world example of a data leakage attack using a paragraph from the novel  _Harry Potter and the Sorcerer's Stone_. We input the first 22 words of the paragraph (the prefix) into the Llama 2 13B language model, and ask it to complete the paragraph. The model is able to generate 40 words that match the original text (highlighted in red), which suggests that it has seen this paragraph in its training corpus.
 
-
-<div align = "center">
-<img  src="/assets/files/dataleak2.png">
-</div>
+![](/assets/files/dataleak2.png)
 
 ## Evaluating data extraction attacks on AI models
 
@@ -50,15 +44,13 @@ For example, one basic test we perform involves DynamoEval prompting the AI syst
 
 To identify if the generated text is “memorized,” we use a set of similarity thresholds, including trigram memorization, exact starting word memorization, and overlapping words memorization. This approach assumes the adversary has black-box access to the model, allowing them to observe the generated text in response to specific prompts.
 
+![](/assets/files/dataleak3.png)
 
-<div align = "center">
-<img  src="/assets/files/dataleak3.png">
-</div>
 ## Running data extraction tests on the Dynamo AI platform
 
 You can easily run a data extraction attack using either our SDK or the Dynamo AI dashboard. The figure below illustrates how to run a test using the SDK.
 
-```javascript
+```python
 dfl = DynamoFL(DYNAMOFL_API_KEY, host=DYNAMOFL_HOST)
 
 test = dfl.data_extraction_test(
@@ -77,13 +69,13 @@ test = dfl.data_extraction_test(
 )
 ```
 
--   `name: name of the test`
--   `model_key: model key for the generator model tested`
--   `datsaet_id: dataset id containing the reference text which has to be extracted`
--   `gpu: type and number of GPU(s) to be used for the test`
--   `memorization_granularity: Granularity of memorization (Ex: paragraph, sentence)`
--   `grid: a set of test hyperparameters to be searched (model’s temperature, prompt length)`
--   `sampling_rate: Number of times the model will be queried during the attack`
+-   `name`: name of the test
+-   `model_key`: model key for the generator model tested
+-   `datsaet_id`: dataset id containing the reference text which has to be extracted
+-   `gpu`: type and number of GPU(s) to be used for the test
+-   `memorization_granularity`: Granularity of memorization (Ex: paragraph, sentence)
+-   `grid`: a set of test hyperparameters to be searched (model’s temperature, prompt length)
+-   `sampling_rate`: Number of times the model will be queried during the attack
 
 ## Effective mitigation measures for data leakage
 

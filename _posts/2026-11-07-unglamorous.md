@@ -4,7 +4,7 @@ title: Unglamorous
 categories: [personal]
 ---
 
-*Examples of the small, embarrassing work behind very large companies.*
+Examples of the small, embarrassing work behind very large companies.
 
 Patrick Collison keeps a list called [Fast](https://patrickcollison.com/fast), about ambitious things that got done quickly. This is the other half. Before the speed, the scale and the press, nearly every founder we admire spent time doing something that looked small: shilling their own product, sending DMs nobody answered, pretending to be their own users.
 

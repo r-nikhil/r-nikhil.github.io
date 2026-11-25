@@ -3,7 +3,7 @@ layout: post
 title: Tools for the era of experience 
 categories: [ai, markets]
 ---
-<div align = "center"> <img src="/assets/files/eraofexp.png"> </div>
+![](/assets/files/eraofexp.png)
 
 I recently read a beautiful chapter from the unpublished book "Designing an Intelligence" by [David Silver](https://en.wikipedia.org/wiki/David_Silver_\(computer_scientist\) "null") and [Rich Sutton](https://en.wikipedia.org/wiki/Richard_S._Sutton). It's titled "Welcome to the Era of Experience" and you can read it [here](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf). The basic gist is this: current LLMs, trained on the sum of human knowledge, are approaching a ceiling. High-quality human data is a finite resource, and these models can only reproduce human capabilities, not truly surpass them.
 
@@ -37,7 +37,7 @@ Or consider hospital emergency rooms. A startup could build the connective tissu
 
 For non-hardware domains, legacy tech companies might have an edge. They already have a wealth of simulation data from their users and are best positioned to train these agents. Here is an excerpt from the Pleias.fr blog on [training LLM agents](https://pleias.fr/blog/blogactual-llm-agents-are-coming).
 
-<div align = "center"> <img src="/assets/files/rlphoto1.png"> </div>
+![](/assets/files/rlphoto1.png)
 
 What else to build:
 
@@ -67,7 +67,7 @@ We're already seeing early versions of this. Harvey, the legal AI, is supposedly
 
 > The real-world impact of this approach is exemplified by a case from Veris AI: an agent trained with RL to automate the complex, hours-long process of supplier negotiations. By training on realistic simulations of Slack and email conversations—complete with sensitive data—the agent learns optimal tone, questions to ask, and search strategies, dramatically outperforming prompt chaining or one-shot LLM attempts.
 
-<div align = "center"> <img src="/assets/files/rlphoto2.png"> </div>
+![](/assets/files/rlphoto2.png)
 
 #### Interface changes
 

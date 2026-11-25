@@ -22,9 +22,7 @@ Over the last week, 4-5 folks have asked me why I write or why do I maintain thi
 
 - And finally, here is one of my [comment](https://news.ycombinator.com/item?id=35936828#35967811) on HN about 7 months ago on writing. Its a thread about the British art critic [David Sylvester](https://en.wikipedia.org/wiki/David_Sylvester)
 
-<div align = "center">
-<img  src="/assets/files/hnquote.png">
-</div>
+![](/assets/files/hnquote.png)
 
 
 

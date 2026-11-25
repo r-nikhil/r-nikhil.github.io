@@ -10,7 +10,7 @@ My fork of Luasec(dev branch) can be found <a href="https://github.com/whoami-nr
 
 ### Work done till now
 
-<strong>HTTPS Module</strong>
+**HTTPS Module**
 
 I was working to add features for the HTTPS module during the first part of GSoC. It now supports the ability to talk HTTPS with a proxy, redirects through or without the proxy for HTTPS URLs, certain low level HTTP API functions are exposed and also supports SNI now. Work done in this section are relevant to this [file](https://github.com/whoami-nr/luasec/blob/dev/src/https.lua).   
 
@@ -25,7 +25,7 @@ proxy which enables the proxy to relay encrypted packets between Luasec and the 
 
 More details on how to use it and references for the functions can be found on the wiki page of my fork <a href="https://github.com/whoami-nr/luasec/wiki/Luasec-HTTPS-Module">here</a>.
 
-<strong>HTTP/2 Module</strong>
+**HTTP/2 Module**
 
 This portion of the module was worked on during the second part of GSoC. I went by implementing RFC's sequentially while also trying to make sure that I had a basic implementation for sending and receving frames working all along. Work done in this section are relevant to these files. 
 

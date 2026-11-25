@@ -14,15 +14,13 @@ Peter Norvig in his popular [book](https://www.amazon.in/Artificial-Intelligence
 
 Interestingly, the definition of the term "AI agents" is [hotly](https://x.com/NickADobos/status/1714065139878482030) contested. Most of the common ones involve some version of putting LLMs + tools in a loop. Rather than looking at LLM systems in a binary way, it's more useful to think of them to be agent-like to a different degree. The degree of control given to the LLM in guiding an application's flow allows for varying levels of autonomy, which we shall call agentic. This helps us move away from the binary classification of systems and look at them as part of a spectrum. Ultimately, you want to give it a task and the AI is agentic enough to go and accomplish it.
 
-<div align = "center">
-<img  src="/assets/files/agentspectrum.png">
-</div>
+![](/assets/files/agentspectrum.png)
 
 ### What are the different types of AI agents?
 
-Since we have established that all LLM+tool powered systems are agentic on some level, we need to first classify the different types of agents. Borrowing the definition from [Anthropic](https://www.anthropic.com/research/building-effective-agents, we have two types of agentic systems. 
+Since we have established that all LLM+tool powered systems are agentic on some level, we need to first classify the different types of agents. Borrowing the definition from [Anthropic](https://www.anthropic.com/research/building-effective-agents), we have two types of agentic systems. 
 
-<u>Workflow agents</u> are systems which are built by chaining together LLMs and tools which then are orchestrated through pre-defined code paths
+Workflow agents are systems which are built by chaining together LLMs and tools which then are orchestrated through pre-defined code paths
 
 Types of workflow agents:
 
@@ -32,22 +30,15 @@ Types of workflow agents:
 - **Orchestrator-workers**, where a orchestrator triggers multiple LLM calls that are then synthesized together, for example running searches against multiple sources and combining the results or in coding tools where the agent is making changes to multiple files at the same time
 - **Evaluator-optimizer**, where one model checks the work of another in a loop and starts a feedback loop. This architecture is useful in scenarios where you need a second LLM to ensure the response is complete and correct
 
+![](/assets/files/workflowagent.png)
 
-<div align = "center">
-<img  src="/assets/files/workflowagent.png">
-</div>
+Autonomous agents are systems where the LLM dynamically directs the execution path and tool usage and maintain full ownership on how they accomplish the task. They have no predefined paths to take. They start their flow from a simple command or conversation with the user, plan the task and use tools to accomplish the task. They might choose to ask humans for feedback or when encountering blockers and automatically terminate themselves when the task is completed.
 
-<u>Autonomous agents</u> are systems where the LLM dynamically directs the execution path and tool usage and maintain full ownership on how they accomplish the task. They have no predefined paths to take. They start their flow from a simple command or conversation with the user, plan the task and use tools to accomplish the task. They might choose to ask humans for feedback or when encountering blockers and automatically terminate themselves when the task is completed.
-
-
-
-<div align = "center">
-<img  src="/assets/files/autoagent.png">
-</div>
+![](/assets/files/autoagent.png)
 
 They are particularly useful for open-ended tasks where it's hard to predict beforehand the number of steps required and where you can't really hard code a fixed path. Some real world applications include CX agents which, based on the user conversation, automatically decide to access customer data and perform actions like issuing refunds and updating ticket statuses. In software development, coding autonomous agents are excellent because the solutions are verifiable, agents can iterate based on feedback from automated tests and the problem space is well defined
 
-<u>Workflow agents in general are more predictive, consistent, cheap and fast whereas the autonomous agents generally excel in complex tasks where you need flexibility at scale.</u>
+Workflow agents in general are more predictive, consistent, cheap and fast whereas the autonomous agents generally excel in complex tasks where you need flexibility at scale.
 
 
 ### Architecture of autonomous agents
@@ -58,13 +49,11 @@ Before we jump into the tooling and infrastructure world for AI agents, it’s i
 - **Memory:** Both short term memory (in context learning frameworks like MemGPT) and long term memory like a vector store
 - **Tool use:** The LLM is trained to call external tools for tasks it can't do by itself like pulling up current information or executing code
 
-<div align = "center">
-<img  src="/assets/files/archagent.png">
-</div>
+![](/assets/files/archagent.png)
 
 #### Why did they blow up in 2024?
 
-The LLM functions as the agent's brain and agents typically require much powerful and bigger models compared to non-agentic use cases. This is because mistakes in <u>multi step tasks get compounded</u>. If an LLM is accurate, say 90% on a single step, this accuracy drops to 35% over 10 steps(0.9^10) and 12% over 20 steps. Smaller LLMs (and LLMs not trained on agentic flows) are simply unfeasible for these use cases. 
+The LLM functions as the agent's brain and agents typically require much powerful and bigger models compared to non-agentic use cases. This is because mistakes in multi step tasks get compounded. If an LLM is accurate, say 90% on a single step, this accuracy drops to 35% over 10 steps(0.9^10) and 12% over 20 steps. Smaller LLMs (and LLMs not trained on agentic flows) are simply unfeasible for these use cases. 
 
 Lot of core frameworks for agent planning were invented in 2022 and 2023. [CoT](https://arxiv.org/abs/2201.11903) or [Tree of thoughts](https://arxiv.org/abs/2305.10601) for example are standard prompting techniques for enhancing model performance on complex tasks. This forces the model to spend more test time compute in thinking step by step and break down big tasks into multiple smaller subtasks. Even self reflection frameworks (like [ReACT](https://arxiv.org/abs/2210.03629)) were invented in 2023 which help the LLM improve iteratively by refining past actions and correcting previous mistakes.
 
@@ -86,15 +75,11 @@ The value add for agents is clear. Copilot was [40% of github revenue](https://v
 
 While we have briefly looked at which agent architecture works for which kind of flows, we should also define what makes a task agentic vs non-agentic.
 
-<div align = "center">
-<img  src="/assets/files/agenttask.png">
-</div>
+![](/assets/files/agenttask.png)
 
 A market map from [Felicis](https://www.felicis.com/) showing some early winners in the AI agents space
 
-<div align = "center">
-<img  src="/assets/files/marketmapagents.png">
-</div>
+![](/assets/files/marketmapagents.png)
 
 - Customer service  
   - AI agents analyze call data, manage chatbots, and handle complete support workflows autonomously from greeting to resolution, including processing refunds by checking orders and updating inventory without human intervention.  

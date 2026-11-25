@@ -4,15 +4,9 @@ title:  How to (Accurately) Evaluate RAG Systems on Tabular Data
 categories: [ai]
 ---
 
-------------------------
-
 This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/rag-evals-on-embedded-tables).
 
-
-<div align = "center">
-<img  src="/assets/files/raga1.png">
-</div>
-
+![](/assets/files/raga1.png)
 
 In our  [previous](https://dynamo.ai/blog/tackling-the-explainability-gap-in-open-source-hallucination-evals)  post, we explored how retrieval-augmented generation (RAG) systems can face hallucination issues and how DynamoEval can accurately and effectively diagnose these errors.
 
@@ -28,10 +22,7 @@ Accurate and faithful responses would be "$143,566 million" or "Increased by 1.9
   
 [DynamoEval](https://dynamo.ai/platform/dynamoeval)  excels in evaluating such responses by accurately assessing the correctness and faithfulness of the answers, addressing gaps left by existing evaluation solutions.
 
-
-<div align = "center">
-<img  src="/assets/files/raga2.png">
-</div>
+![](/assets/files/raga2.png)
 
 In the following sections, we explore methods to enhance the evaluation capabilities of two critical aspects:
 
@@ -48,15 +39,11 @@ Additionally, we explore a multimodal evaluation approach. Instead of providing 
 
 We also test a multimodal evaluation approach using image inputs as a baseline. Instead of providing table content as text, we converted the table into an image and fed it to a vision-language model (VLM), like GPT-4 Vision. These alternative methods provide insights into the effectiveness of different evaluation strategies.
 
-
-<div align = "center">
-<img  src="/assets/files/raga3.png">
-</div>
-<div align = "center">
-<img  src="/assets/files/raga4.png">
-</div>
+![](/assets/files/raga3.png)
 
 
+
+![](/assets/files/raga4.png)
 
 Because existing RAG evaluation solutions are primarily designed for evaluating textual data, we observe that they are not well-suited for tasks involving tables when used out-of-the-box, despite utilizing the same base model, such as GPT-4. However, DynamoEval demonstrates that significant performance improvements can be achieved through prompt optimizations. Some key factors contributing to this enhancement include:
 
@@ -75,13 +62,11 @@ We have observed that the performance of the evaluation process varies significa
 2.  CoT: Chain of Thought prompting, with the decision stated  _before_  the explanation
 3.  CoT + Optimized: Chain of Thought prompting, with the decision stated  _after_  the explanation
 
+![](/assets/files/raga5.png)
 
-<div align = "center">
-<img  src="/assets/files/raga5.png">
-</div>
-<div align = "center">
-<img  src="/assets/files/raga6.png">
-</div>
+
+
+![](/assets/files/raga6.png)
 
 The results demonstrate that CoT prompting and stating the decision after the explanation provides a greater benefit to the GPT model compared to the Mistral model. However, both models ultimately exhibit lower performance compared to the GPT-4 model discussed earlier.
 
@@ -91,10 +76,7 @@ When working with tabular data, it is common to encounter queries that demand mo
 
 By assessing the models' performance on this curated dataset, we aim to gain insights into their capabilities and limitations when dealing with more complex queries involving tabular data. The below figure demonstrates DynamoEval’s performance compared to other RAG evaluation solutions.
 
-
-<div align = "center">
-<img  src="/assets/files/raga7.png">
-</div>
+![](/assets/files/raga7.png)
 
 While DynamoEval shows a slightly lower performance compared to the previous set of “easier” queries, it is still able to significantly outperform existing solutions. We describe some preliminary patterns from the failure cases, which will be useful to further investigate and categorize the types of queries/tables the evaluator model is particularly weak at:
 
@@ -104,18 +86,11 @@ While DynamoEval shows a slightly lower performance compared to the previous set
 
 #### Example 1
 
-<div align = "center">
-<img  src="/assets/files/raga8.png">
-</div>
-
+![](/assets/files/raga8.png)
 
 #### Example 2
 
-<div align = "center">
-<img  src="/assets/files/raga9.png">
-</div>
-
-
+![](/assets/files/raga9.png)
 
 ### Errors in filtering the correct entries
 
@@ -123,18 +98,11 @@ While DynamoEval shows a slightly lower performance compared to the previous set
 
 #### Example 1
 
-<div align = "center">
-<img  src="/assets/files/raga10.png">
-</div>
-
+![](/assets/files/raga10.png)
 
 #### Example 2
 
-<div align = "center">
-<img  src="/assets/files/raga11.png">
-</div>
-
-‍
+![](/assets/files/raga11.png)
 
 Evaluating the performance of RAG systems involving table data presents unique challenges due to the inherent differences between tabular and textual content. Our findings demonstrate that DynamoEval, with its optimized prompting techniques, significantly outperforms existing RAG evaluation solutions in assessing the relevance of retrieved tables and the faithfulness of generated responses. Through our curated datasets based on the WikiTableQuestion (WTQ) benchmark, we have identified key areas where the evaluator models may struggle, particularly when dealing with complex queries involving lengthy tables or multiple logical operations. By further understanding these limitations, we can focus our efforts on developing more robust and reliable diagnostics for RAG systems that can handle a wider range of tabular data and query types.
 

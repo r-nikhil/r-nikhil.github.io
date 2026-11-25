@@ -21,9 +21,7 @@ As a product manager working in gaming, its impossible to miss the recent rise o
 
 - You ideally want games which are super easy to learn and takes infinite time to master. This will ensure longevity and the game might eventually become a sport.
 
-<div align = "center">
-<img  src="/assets/files/lcurve.png">
-</div>
+![](/assets/files/lcurve.png)
 
 #### Legality and regulations
 
@@ -50,7 +48,7 @@ As a product manager working in gaming, its impossible to miss the recent rise o
 - Some examples of standard deviation for different poker formats: NLH(9max): 60-80 BB/100, PLO 6-max: 120-160 BB/100, PLO Heads up: 220 BB/100. Higher the number, higher the variance. You can see that heads up poker has insanely high variance compared to full ring poker.This basically tells us the randomness of the reward distribution from the average win rate of the player. So, a short heads up session will have a bigger monetary swing compared to a similar session on a full ring (9max) table on an average. 
 - Higher the variance = higher the wins and losses w.r.t time = more fun for new players
 
-### Conclusion
+#### Conclusion
 
 - In the previous blog, we discussed about how two games interact with each other and in this post, we looked at some ways to evaluate and pick a game for our bundle. Do remember that the games you pick initially and the dimension you focus on to evaluate them would determine your product and strategy. For example, if the game has high power user population, your game discovery should be more towards satisfying their core need/game, skill vs Luck factor of the game would determine your FTUE and how you will deal with the learning curve and cultural significance of the game would determine your GTM etc. Ultimately, your selection of games should determine the product and discovery and not the other way around. I would like to end this post with a rap written by GPT4 summarizing this post.  
 

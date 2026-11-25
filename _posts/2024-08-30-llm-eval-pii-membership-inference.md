@@ -3,13 +3,10 @@ layout: post
 title:  Integrating Explainable LLM Data Leakage Testing into your CI/CD Pipeline 
 categories: [ai, security]
 ---
----------------------
 
 This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/integrate-explainable-llm-data-leakage-testing-into-your-ci-cd-pipeline-with-dynamoeval).
 
-<div align = "center">
-<img  src="/assets/files/piimain.png">
-</div>
+![](/assets/files/piimain.png)
 
 Generative AI (GenAI) introduces new challenges in data privacy, including the potential risk of large language models (LLMs) memorizing and leaking personally identifiable information (PII) or copyrighted data in training datasets. Although this technology is still emerging, enterprises using or deploying GenAI still need to meet the existing laws and regulations on data privacy.
 
@@ -28,7 +25,7 @@ Below, we explore how DynamoEval uses explainable testing to address PII extract
 
 **PII extraction attacks**  and  **membership Inference attacks**  are two types of privacy attacks that can expose sensitive information in machine learning models. We demonstrate how to evaluate models against these attacks and interpret the results.
 
--   In a  **PII extraction attack** setting**,**  an adversary attempts to extract sensitive pieces of information (e.g., names, addresses, phone numbers) that the model might have memorized during fine-tuning or training.
+-   In a  **PII extraction attack** setting,  an adversary attempts to extract sensitive pieces of information (e.g., names, addresses, phone numbers) that the model might have memorized during fine-tuning or training.
 -   In a  **membership inference attack** setting, the adversary tries to infer whether or not an already-known data point was used for training.
 
 With DynamoEval, we evaluate our models against these attacks by simulating an adversary with access to the model and a set of data records. DynamoEval runs multiple iterations of an attack using different splits of the data and hyperparameter settings. We then provide detailed metrics, like ROC curves, AUC scores, PII extraction, Precision, and Recall to quantify the model's vulnerability to these attacks.
@@ -37,15 +34,13 @@ With DynamoEval, we evaluate our models against these attacks by simulating an a
 
 A PII extraction attack assesses the risk of PII being extracted by attackers who have various levels of knowledge about the training dataset. This attack involves prompting the model with a series of inputs and analyzing whether PII is present in the model's outputs.
 
-During a PII extraction attack, three key metrics are reported:**‍**
+During a PII extraction attack, three key metrics are reported:
 
 -   **PII Extracted:** The number of PII successfully extracted from the model responses
 -   **Recall**: The percentage of actual PII that was successfully extracted (out of the training dataset)
 -   **Precision**: The proportion of identified PII instances that are true positives
 
-<div align = "center">
-<img  src="/assets/files/piiextract.png">
-</div>
+![](/assets/files/piiextract.png)
 
 ## Membership inference attacks
 
@@ -57,40 +52,31 @@ We simulate the attacker building a classifier that predicts whether a data reco
 -   **True positive rate (TPR):**  In this attack, the true positive rate (TPR) represents the percentage of data records correctly predicted to be members of the training dataset. We evaluate the TPR at various low false positive rates (FPRs) to determine the attacker’s success in high-confidence scenarios.
 -   **ROC-AUC**: In this attack, the Receiver Operating Characteristic (ROC) curve can also be used to to define vulnerability, which demonstrates the performance of the attack as a tradeoff between the TPR and FPR at various thresholds. We can then use the Area Under the ROC Curve (AUC) to measure the aggregate performance across all thresholds.  [Recent research](https://arxiv.org/abs/2112.03570)  also suggests evaluating the attack’s TPR in the low FPR regime (the three percentages shown at the top) to characterize whether the attack can confidently identify members of the training set.
 
-<div align = "center">
-<img  src="/assets/files/meminf.png">
-</div>
-
+![](/assets/files/meminf.png)
 
 ## DynamoEval UI walkthrough
 
 In this section, we provide a step-by-step guide to using the DynamoEval product:
 
-#### 1. Curate a train/test dataset
+### 1. Curate a train/test dataset
 
 First, select the training and test datasets for evaluating the model’s privacy vulnerabilities. Specify which column contains the text data. Datasets are uploaded in CSV format.
 
 For PII extraction and membership inference attacks, this dataset is usually the one used for fine-tuning the model.
 
-#### 2. Upload model and dataset to Dynamo AI
+### 2. Upload model and dataset to Dynamo AI
 
 Upload both your trained model and the dataset to the Dynamo AI platform. Make sure to specify any relevant files, such as LoRA adapter configurations, if applicable.
 
-<div align = "center">
-<img  src="/assets/files/upload.png">
-</div>
+![](/assets/files/upload.png)
 
-
-#### 3. Choose tests
+### 3. Choose tests
 
 Select the specific attack you want to run, such as PII Extraction or Membership Inference. The screenshot below displays the range of privacy attacks available on our platform.
 
-<div align = "center">
-<img  src="/assets/files/testcat.png">
-</div>
+![](/assets/files/testcat.png)
 
-
-#### 4. Analyze results
+### 4. Analyze results
 
 After the tests are complete, we analyze the results to understand the model's vulnerability to the attacks.
 
@@ -98,54 +84,42 @@ In the ROC curve example below, the straight, gray line where X = Y indicates a 
 
 In this case, the AUC is 0.77, revealing that the attacker was able to differentiate between members and non-members of the dataset with a high success rate.
 
-<div align = "center">
-<img  src="/assets/files/miipii.png">
-</div>
+![](/assets/files/miipii.png)
+
 Below, the FPR represents the percentage of records falsely identified as being members of the training dataset, and the TPR represents the percentage of records correctly identified as being members of the training dataset.
 
 We provide three different TPR rates for clarity. You can also review the prompts and responses used in the attack in our deep dive section. Additionally, any PII extracted from the model during the attack is tagged and included in the response.
 
-<div align = "center">
-<img  src="/assets/files/deepdive.png">
-</div>
-
+![](/assets/files/deepdive.png)
 
 We can also review the loss distribution plots to gain insights into the model's behavior on both training and testing data. [Research](https://arxiv.org/abs/1906.00389) shows that a high degree of separation in these distributions suggests the model is less generalized and more vulnerable to membership inference and data leakage.
 
-<div align = "center">
-<img  src="/assets/files/plotmii.png">
-</div>
+![](/assets/files/plotmii.png)
 
-#### 5. Generate test reports
+### 5. Generate test reports
 
 After the tests are completed, we generate PDF reports that provide detailed information on the attack methodology, results, and recommendations for improving the models.
 
-<div align = "center">
-<img  src="/assets/files/testreport.png">
-</div>
-
+![](/assets/files/testreport.png)
 
 ## DynamoEval SDK walkthrough
 
-#### 1. Initiation
+### 1. Initiation
 
 Start by installing the public Dynamo AI SDK. import the required libraries and specify the required environment variables. Create a Dynamo AI instance using your API token and host.
 
 If you do not have an API token, log into  [app.dynamofl.com](http://app.dynamofl.com/)  with your credentials to generate one. This API token will enable you to programmatically connect to the DynamoFL server, create projects, and evaluate models. (Note that if you generate multiple API tokens, only your most recent one will be valid.)
 
 ```
-
 from dynamofl import DynamoFL, GPUConfig, GPUType
 
 API_KEY = "" # Add your API key here
 API_HOST = "https://api.dynamofl.com" # DFL or custom API host here
 
 dfl = DynamoFL(API_KEY, host=API_HOST)
-
 ```
 
-
-#### 2. Create a model and dataset object
+### 2. Create a model and dataset object
 
 Next, create a local model object. This object specifies the model on which privacy tests will be run using the 'create_test' method. Dynamo AI currently supports two types of model objects: local models and remote model API endpoints. In this example, we will focus on local models.
 
@@ -158,7 +132,6 @@ When working with a model fine-tuned with LoRA or parameter-efficient fine-tunin
 To run a privacy evaluation test, specify the dataset used for fine-tuning the model. Create a dataset object by providing the dataset file path and assign it a unique key and identifying name.
 
 ```
-
 model_path_dir = "<path_to_your_trained_model_file>"
 
 # using a PEFT LoRA adapter for a lightweight model upload
@@ -185,11 +158,9 @@ dataset = dfl.create_dataset(
 )
 # dataset id
 print(f"Dataset successfully uploaded with key {dataset.key}.")
-
 ```
 
-
-#### 3. Test parameters
+### 3. Test parameters
 
 When configuring a test, you can configure various parameters to customize the test to your needs. Key parameters include:
 
@@ -199,7 +170,7 @@ When configuring a test, you can configure various parameters to customize the t
 
 These test configuration parameters should be provided to the  `create_pii_extraction_test`  method. Additionally, it's required to provide the dataset column names in the test parameters when creating a test.
 
-##### PII classes and entities
+#### PII classes and entities
 
 When configuring a PII extraction or inference attack, one of the most important hyperparameters is the  `pii_classes`  parameter. This parameter defines which types of PII the extraction attack will target.
 
@@ -229,7 +200,7 @@ attack_info = dfl.get_attack_info(attack_id)
 print("Attack status: {}.".format(attack_info))
 ```
 
-#### 4. Run the test
+### 4. Run the test
 
 To run a membership inference privacy evaluation test, call the  `create_membership_inference_test`  method. This will submit the test to your cloud machine-learning platform, where it will be run.
 
@@ -268,8 +239,7 @@ test_info_mia = dfl.create_membership_inference_test(
 )
 ```
 
-
-#### Integrating DynamoEval into your CI/CD pipelines
+### Integrating DynamoEval into your CI/CD pipelines
 
 Ensuring data privacy and security in machine learning models is critical, and real-time monitoring plays an important role in the process.
 
@@ -283,7 +253,7 @@ By integrating DynamoEval into your development and deployment process, you can 
 
 Making DynamoEval scans a routine part of the CI/CD pipelines enables you to proactively safeguard your models against privacy risks, ensuring trust and compliance throughout your operations.
 
-#### Actionable insights and mitigation strategies
+### Actionable insights and mitigation strategies
 
 DynamoEval not only identifies potential privacy vulnerabilities, it also provides actionable insights to mitigate these risks. Based on the evaluation results, the platform offers recommendations for improving the model's privacy protection.
 
@@ -295,6 +265,6 @@ Finally, leveraging  [DynamoGuard](https://dynamo.ai/platform/dynamoguard), our 
 
 As LLMs become more powerful and prevalent, the risk of exposing sensitive information from training datasets increases. With Dynamo AI's comprehensive privacy solutions, teams can effectively measure, address, and prevent data leakage, ensuring the responsible deployment and use of LLMs while protecting sensitive information.
 
-**Learn more about Dynamo AI and our AI privacy and security solutions by** [**scheduling a demo.**](https://dynamo.ai/request-a-demo)
+Learn more about Dynamo AI and our AI privacy and security solutions by [scheduling a demo.](https://dynamo.ai/request-a-demo)
 
 

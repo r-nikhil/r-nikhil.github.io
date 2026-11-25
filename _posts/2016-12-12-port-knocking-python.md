@@ -8,7 +8,7 @@ categories: [security]
 [Source](https://github.com/r-nikhil/Portsmith)
 
 
-<a href="https://en.wikipedia.org/wiki/Port_knocking">Port Knocking</a> is a concept where the ports on a particular computer appear to be closed until a special packet/port knock sequence is established. It is a method of externally opening ports in a system by doing a sequence of connection attempts on a set of pre-specified closed ports. Once a correct sequence of connection attempts is made, the firewall rules are dynamically modified to allow the external system to connect to a specified port. This concept has been around for a long time and you can check out some implementations <a href = "http://www.portknocking.org/view/implementations">here.</a> 
+<a href="https://en.wikipedia.org/wiki/Port_knocking">Port Knocking</a> is a concept where the ports on a particular computer appear to be closed until a special packet/port knock sequence is established. It is a method of externally opening ports in a system by doing a sequence of connection attempts on a set of pre-specified closed ports. Once a correct sequence of connection attempts is made, the firewall rules are dynamically modified to allow the external system to connect to a specified port. This concept has been around for a long time and you can check out some implementations <a href="http://www.portknocking.org/view/implementations">here</a>.
 
 ### Why?
 
@@ -59,7 +59,7 @@ As you can see above, there is hardly any complex logic involved in PortKnocking
 
 ### TODO
 
-1) It currently uses <a href = "https://cryptography.io/en/latest/fernet/"> Fernet </a> Symmetric Encryption Library from the cryptography package. It's source and spec can be found [here](https://cryptography.io/en/latest/_modules/cryptography/fernet/) and [here](https://github.com/fernet/spec/blob/master/Spec.md) respectively. It uses:
+1) It currently uses <a href="https://cryptography.io/en/latest/fernet/">Fernet</a> Symmetric Encryption Library from the cryptography package. It's source and spec can be found [here](https://cryptography.io/en/latest/_modules/cryptography/fernet/) and [here](https://github.com/fernet/spec/blob/master/Spec.md) respectively. It uses:
 
 - AES in CBC mode with a 128 bit key for encryption; using PKCS7 for padding
 - HMAC using SHA256 for authentication

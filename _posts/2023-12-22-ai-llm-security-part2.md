@@ -13,34 +13,30 @@ In the previous blog post, we gave an introduction to how LLMs work and started 
 - Exploiting nuances in common training datasets. Using strings like "tldr", some emojis etc trick LLMs into giving out info which is generally protected
 - Creating a fake dictionary. This is commonly used to bypass sandwich defenses where there is a system prompt before the user input AS WELL AS after the user input. Here is an example from [learnprompting](https://learnprompting.org/docs/prompt_hacking/offensive_measures/defined_dictionary) showcasing this. 
 
-<div align = "center">
-<img  src="/assets/files/img1learn.png">
-</div>
+![](/assets/files/img1learn.png)
+
 - The above is the defense and below we can see how to bypass it. 
-<div align = "center">
-<img  src="/assets/files/img2learn.png">
-</div>
-- Poisoning the training data. Most LLMs these days are trained on the internet and buying up expired domains and loading them with malicious content would inadvertently poison the model as well. [Nicholas Carlini](https://nicholas.carlini.com/)shows how he bought expired domains corressponding to URLs in popular image datasets which gave him control over 0.01% of each of these datasets(LAION-400M). He is a researcher at Google Brain and he recently gave a talk on how the attack works, consequences and potential defenses. You can find the video below. I would also suggest you to visit his website to learn more about his work on AI security. He even has a paper demonstrating ways to extract the training data itself from language models which I thought was pretty cool. 
-<iframe width = '700' height = '400' align = 'center'
-src="https://www.youtube.com/embed/h9jf1ikcGyk">
-</iframe>
+
+![](/assets/files/img2learn.png)
+
+- Poisoning the training data. Most LLMs these days are trained on the internet and buying up expired domains and loading them with malicious content would inadvertently poison the model as well. [Nicholas Carlini](https://nicholas.carlini.com/) shows how he bought expired domains corressponding to URLs in popular image datasets which gave him control over 0.01% of each of these datasets(LAION-400M). He is a researcher at Google Brain and he recently gave a talk on how the attack works, consequences and potential defenses. You can find the video below. I would also suggest you to visit his website to learn more about his work on AI security. He even has a paper demonstrating ways to extract the training data itself from language models which I thought was pretty cool. 
+
+<iframe src="https://www.youtube.com/embed/h9jf1ikcGyk" allowfullscreen></iframe>
+
 Also, most LLMs today have browsing capabilities. Here, the adversarial instructions are introduced by a third party data source like a web search or API call. You can make the LLM go to a particular website and load your malicious instruction from here and this is especially more prevalent with ChatGPT plugins and the upcoming GPT Store. 
-<div align = "center">
-<img  src="/assets/files/attackscheme.png">
-</div>
+
+![](/assets/files/attackscheme.png)
 
 - In another case of indirect injection, you can see below where they are able to extract private conversations with a GPT bot by making it visit a website. The [Embrace The Red](https://embracethered.com/blog/) has a ton of examples and tutorials demonstrating adversarial prompting methods. People have done the same thing with even [Youtube Transcripts](https://www.tomshardware.com/news/chatgpt-vulnerable-to-youtube-prompt-injection). You can find one more example [here](https://greshake.github.io/)
-<iframe width = '700' height = '400' align = 'center'
-src="https://www.youtube.com/embed/PIY5ZVktiGs">
-</iframe>
+
+<iframe src="https://www.youtube.com/embed/PIY5ZVktiGs" allowfullscreen></iframe>
+
 
 - Dual LLM attack. These days most LLM chat providers uses two or more LLMs for moderation. Your input is first evaluated by an LLM which then passes on the output to the main model. Cracking this would involve sending prompt injecting the first LLM to ensure that its output **recursively** attacks the second one.  There is a [paper](https://arxiv.org/abs/2302.05733) from Stanford which explains ways to overcome this.
 
 - [Universal cheatcodes](https://llm-attacks.org/zou2023universal.pdf). This is by far the most interesting and research oriented method. The approach is to find suffix(the cheat code) that, when attached to a wide range of queries for an LLM to produce objectionable content, aims to maximize the probability that the model produces an affirmative response (rather than refusing to answer). However, instead of relying on manual engineering, the idea is to automatically produces these adversarial suffixes by a combination of greedy and gradient-based search techniques, and also improves over past automatic prompt generation methods. The code can be found [here](https://github.com/llm-attacks/llm-attacks)
 
-<div align = "center">
-<img  src="/assets/files/cheatcode.png">
-</div>
+![](/assets/files/cheatcode.png)
 
 
 - Use a second LLM to jailbreak the main LLM. The University of Pennsylvania folks came up with a system called PAIR - (Prompt Automatic Iterative Refinement). PAIR uses a separate attacker language model to generate jailbreaks on any target model. The attacker model receives a detailed system prompt, instructing it to operate as a red teaming assistant. PAIR utilizes in-context learning to iteratively refine the candidate prompt until a successful jailbreak by accumulating previous attempts and responses in the chat history. The attacker model also reflects upon the both prior prompt and target model's response to generate an "improvement" as a form of chain-of-thought reasoning, allowing the attacker model to explain its approach, as a form of model interpretablility. You can find more details about this [here](https://jailbreaking-llms.github.io/)

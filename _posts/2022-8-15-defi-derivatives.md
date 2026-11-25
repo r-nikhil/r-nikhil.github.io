@@ -82,7 +82,7 @@ Let's look at how these products are structured in the DeFi space:
 
 - **Volt3**: Deltra neutral  crab strategy. In TradFi, I would usually express this sentiment with a stradle or a strangle. Here, they use power perps to come up with a novel way to delta hedge. Payoff looks something like this:
 
-    -  ![payoff](/assets/files/payoff.png){:class="img-responsive"}
+  ![payoff](/assets/files/payoff.png){:class="img-responsive"}
 
 
 - **Volt4**: Basis yield (delta neutral strategy which is used for eating the funding rate in perps as discussed above). During a positive funding environment, this strategy goes short on the perp contract and long on the spot to earn the funding rate and vice verse during negative funding environments. 

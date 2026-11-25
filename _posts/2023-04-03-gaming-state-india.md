@@ -7,7 +7,7 @@ categories: [markets, poker]
 
 The gaming industry in India has been growing exponentially in recent years, with many people joining the ranks of avid and serious players. India has now become one of the leading countries in the world in terms of gaming, and this is largely due to the large population, the availability of technology, and the increasing enthusiasm and accessibility of gaming platforms. With more and more people playing games, India has become a massive and vibrant gaming community, with people of all ages and backgrounds enjoying the many styles and genres of gaming. From console and PC gaming, to mobile and online gaming, there is something for everyone to enjoy in India's gaming scene. This post mostly focusses on the real money gaming market, potential profit pool and if somebody is starting a RMG company in India - this document can serve as a preliminary primer in understanding the market.
 
-<u>High level Index:
+**High level Index:**
 
 1. Why bother building in India in the first place?
 2. What is the current market scenario in India?
@@ -28,33 +28,25 @@ The gaming industry in India has been growing exponentially in recent years, wit
 - Growing youth population. Already the youngest population which overlaps greatly with the target demographic for gaming. About 400Mn gamers today is the conservative estimate
 - This photo illustrate the growing internet user base leading to growing number of gamers >> growing number of paid gamers
 
-<div align = "center">
-<img  src="/assets/files/funnel.png"  height = "400" width ="650">
-</div>
+![funnel](/assets/files/funnel.png)
 
 - Among this - about 110Mn are paying gamers which includes RMG + IAP + subscriptions.  
   - This number is set to double along with ARPU according to Redseer (by basically benchmarking with US/China)
 - 90% of them are mobile based. 90% revenue also comes in mobile. 
 - Demand side plus points
 
-  - **Affinitly/Aspiration to make money/win money online is high for our demographic. Aspirational youth population.**
+  - Affinitly/Aspiration to make money/win money online is high for our demographic. Aspirational youth population.
   - Rising disposable income. Lot of this 400Mn gamers are in Tier 1-2 cities
   - Time spent in gaming rivals OTT/Social. About 3.1hrs per week
   - Power user retention and LTV is comparable to international platforms. Example: 20% of MAU of Adda52 are players who are > 3 years old on the platform.
 
-<div align = "center">
-<img  src="/assets/files/timespent.png"  height = "400" width ="550">
-</div>
+![timespent](/assets/files/timespent.png)
 
 - Supply side
 
   - Rich cultural history leading to lot of familiar homegrown titles. Rummy is about 85% of the RMG market which in turn is about 55% of the overall gaming market
 
-<div align = "center">
-
-<img  src="/assets/files/revenuesplit.png"  height = "400" width ="500">
-
-</div>
+![revenuesplit](/assets/files/revenuesplit.png)
 
 - Multi gaming platforms (MGP's) still haven't exactly cracked the unit economics for hyper casual games but they at least bring in DAU
 - Rising consumer trust in online platforms and digital payments
@@ -76,40 +68,24 @@ RMG dominates the market account for about 55-60% of the overall revenue. While 
 
 #### RMG vs Non-RMG
 
-<div align = "center">
-
-<img  src="/assets/files/rmg.png"  height = "400" width ="500">
-
-</div>
+![rmg](/assets/files/rmg.png)
 
 Online RMG market is segmented into 3 game types (Online Rummy, Poker & Fantasy Sports) and by
 platforms into Single game (>91%) & Multi game (~9%) - collectively growing at a CAGR of ~61% for the last 3 years. Online Real Money Gaming Market split by the following segments :
 
-<div align = "center">
+![rmggrowth](/assets/files/rmggrowth.png)
 
-<img  src="/assets/files/rmggrowth.png"  height = "400" width ="500">
-
-</div>
 Rummy is currently the largest segment and is expected to dominate the RMG market in the future due to rising number of new rummy users from north India and increasing propensity to pay of existing users. Rummy market is expected to increase from $1Bn in FY2022 to $2.4Bn-$2.5Bn in FY2026 at CAGR of 24%.
 
 Poker has the least penetration when compared to rummy and fantasy, indicating a very high potential for growth in the coming years. Poker has the highest user retention rate and highest revenue per user among the two games considered here. Poker market is expected to grow from $150Mn in FY2022 to $450Mn in FY2026.
 
 #### Inside Non-RMG, where is the money coming from?
 
-
-<div align = "center">
-
-<img  src="/assets/files/nonrmg.png"  height = "400" width ="500">
-
-</div>
-
+![nonrmg](/assets/files/nonrmg.png)
 
 Lets now move on how the users are split between RMG vs Non-RMG. The Non-RMG market has two major categories in terms of game types - Casual and Hyper-casual, and core games. Casual and Hyper casual games offer a quick and easy means to pass time and have become a popular entry point for India’s first-time mobile gamers. As a result, this segment has the highest number of overall users, i.e. 350-420 Mn, with very low paid user conversion rate (8-10%). Also, there are around 150-160 Mn core game users with very high conversion of paid gamers (36-43%)
-<div align = "center">
 
-<img  src="/assets/files/usersplit.png"  height = "400" width ="500">
-
-</div>
+![usersplit](/assets/files/usersplit.png)
 
 RMG witnesses a MACU of 12-13 Mn of the total 26-30 Mn real money gamers and it is expected to reach 60- 80 Mn real money gamers in the upcoming years.
 
@@ -119,7 +95,7 @@ Everything else like e-sports, desktop, platforms are rounding off errors at the
 
 While Single Game Platforms (SGP) currently dominate the market with (~90%) market share; the upcoming format of Multi-game platforms (MGP) may get popular in the future. MGPs offer a wider variety of games to users; and are therefore able to attract gamers from a wider set of interests and abilities. It should conceptually also be able retain them more by keeping them entertained and engaged for a longer time due to the wide array of game offerings (in reality however, this is harder than it looks).
 
-The recent rise of MGP can be attributed to greater game types attracting wider variety of audiences(thereby increasing reach), distributed game dev costs and ability to capitalize on cross game synergies. <b>In its current state, MGP is growing at ~40%; which is the highest across various segments of RMG; and is expected to be ~12% of the market by 2026. While, the relative share appears low, in absolute terms this translates to nearly $500Mn (viz. ~4x in 5 years) by 2026. This explains the observed interest amongst gaming companies to explore and grow as Multi-gaming Platforms.</b>
+The recent rise of MGP can be attributed to greater game types attracting wider variety of audiences(thereby increasing reach), distributed game dev costs and ability to capitalize on cross game synergies. In its current state, MGP is growing at ~40%; which is the highest across various segments of RMG; and is expected to be ~12% of the market by 2026. While, the relative share appears low, in absolute terms this translates to nearly $500Mn (viz. ~4x in 5 years) by 2026. This explains the observed interest amongst gaming companies to explore and grow as Multi-gaming Platforms.
 
 MGP's have also really lowered customer acquisition costs by spreading it and averaging it between low CAC games like Fantasy/Ludo and high LTV games like Poker/Rummy etc. However, not all things with MGP's are positive. Majority of the users still go to these app to [play 1-2 games](https://blog.hike.in/rush-homescreen-d64a7406dc78) and don't deviate beyond them. Habit forming for the rest of the games is still a hit or miss.
 
@@ -127,7 +103,7 @@ MGP's have also really lowered customer acquisition costs by spreading it and av
 
 ### 3. Some perspective on RMG/gaming and way forward
 
-<b>How are these RMG businesses differentiated? </b>
+**How are these RMG businesses differentiated?**
 
 RMG has more or less become a commodity business. Most products look the same and some companies even modify their GTM to match competitors in hopes of attracting users with a familiar platform and better deposit offers(like a [vampire attack](https://finematics.com/vampire-attack-sushiswap-explained/)). Product innovation has been slow or non-existent in this industry for the last ten years. Adda52 from 2013 looks 90% same as today. Moreover, given the extremely low M12 retention rates, you have to keep acquiring users (spending money) every year as your platform churns through them - making this a treadmill business.
 
@@ -150,12 +126,9 @@ At the end of the day, majority of your revenue comes from power users who choos
 
 Revenue comparison between some Indian and foreign betting companies shows the market potential for a mature player globally:
 
-<div align = "center">
+![comp](/assets/files/comp.png)
 
-<img  src="/assets/files/comp.png"  height = "400" width ="500">
-
-</div>
-<u><b>Sources</b>
+**Sources**
 
 - Delta Tech(Adda52) DRHP
 - Nazara gaming DRHP

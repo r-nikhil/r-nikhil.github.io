@@ -7,7 +7,7 @@ categories: [personal, security, crypto]
 
 [HN Discussion](https://news.ycombinator.com/item?id=32403504)
 
-> " If you have nothing to hide, you have nothing to fear" 
+> "If you have nothing to hide, you have nothing to fear"
 
 
 This is a common saying parroted by folks  (made popular in the US after 9/11) for justifying many types of surveillance. It is also sometimes mistakenly used to justify the current blanket surveillance we all are a victim of.  With the development in technology and rapid increase of surveillance budgets, law enforcement has gotten a lot easier as well. 
@@ -42,6 +42,6 @@ While I digressed (ranted) away on the reasons why such bans are bad,  the curre
 - What happens to the protocols/pools/(d)apps which interacted with it? 
 
 
-*This also might be the first time where a piece of code got sanctioned.*
+This also might be the first time where a piece of code got sanctioned.
 
 I really hope that the political authorities dig deeper and technically understand services like Tornado cash and come to a realization that criminal behavior exists everywhere and cannot be blanket banned by shutting down legitimate services. You can't just end up banning hard cash just because its used by criminals and for money laundering. [(They tried this in India but it didn't go as expected)](https://en.wikipedia.org/wiki/2016_Indian_banknote_demonetisation).

@@ -4,7 +4,7 @@ title: Investing through tech cycles
 categories: [markets, ai]
 ---
 
-> I was recently putting together a thesis on the AI agent tooling space. While I was researching the sector, talking to some VCs and looking at approaches taken by various companies, I decided to take a step back and question myself on whether the tooling+infra space is investable <u>today</u> in the first place. This short post is the result of that pondering. 
+> I was recently putting together a thesis on the AI agent tooling space. While I was researching the sector, talking to some VCs and looking at approaches taken by various companies, I decided to take a step back and question myself on whether the tooling+infra space is investable today in the first place. This short post is the result of that pondering. 
 
 Generally for any tech cycle, we can categorize all the companies into one of the three buckets below. They are either making the tech or building around the tech to monetize it or using/applying the tech for real world use cases. 
 

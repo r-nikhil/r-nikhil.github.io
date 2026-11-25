@@ -76,7 +76,7 @@ I had a couple paths forward after reaching monopoly in the Indian PLO market. I
 
             - I could also take in interested players, coach them using my tools, in return for their future profits. I eventually ended up starting a poker stable (a staking operation. Same concept as prop trading firms) structured around this tool and other such proprietary tools to monetize the new-to-poker-theory players and PLO regulars wanting to improve/get staked. 
 
-            - <b>This ended up working out super well and still does to some extent. At its peak we had 15 students playing for us. </b>
+            - This ended up working out super well and still does to some extent. At its peak we had 15 students playing for us.
 
     -  Professionals abroad found it basic
 
@@ -100,7 +100,7 @@ I had a couple paths forward after reaching monopoly in the Indian PLO market. I
 
     - We had built some chip dumping and collusion detection tools to help our stable players identify profitable tables. On the flip side, there was demand from poker companies willing to use this to find multi-accounters, colluders, bonus chip abusers, RTA users etc. 
 
-        - <b>I ended up personally consulting and working with leading poker sites in India to build their anti-fraud systems.</b>
+        - I ended up personally consulting and working with leading poker sites in India to build their anti-fraud systems.
 
 - Continue selling it to stables and professionals and figure different opportunities
 

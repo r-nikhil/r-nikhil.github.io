@@ -9,9 +9,7 @@ I stumbled across [this](https://x.com/InceptionAILabs/status/189484791962446279
 
 - The company also claims 5-10x improvement across speed and efficiency
 
-<div align = "center">
-<img  src="/assets/files/inceptionlabs.png">
-</div>
+![](/assets/files/inceptionlabs.png)
 
 ### Why are they interesting to me?
 
@@ -26,9 +24,6 @@ After spending the better part of the last 2 years reading, writing, and working
 
 Here is a look at a more recent [model](https://arxiv.org/abs/2502.09992) responding to the prompt "Explain Game theory" to me. You can notice the last part of the sentences are generated before the middle. It's quite fun to run some queries and see which words get generated first. 
 
-<div align = "center">
-<img  src="/assets/files/hfgif.gif">
-</div>
-
+![](/assets/files/hfgif.gif)
 
 You can try it yourself here on [HF](https://huggingface.co/spaces/multimodalart/LLaDA).

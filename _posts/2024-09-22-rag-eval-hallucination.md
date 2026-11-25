@@ -5,15 +5,9 @@ title:  Tackling the Explainability Gap in RAG Hallucination Evals
 categories: [ai]
 ---
 
-------------------------
-
 This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/tackling-the-explainability-gap-in-open-source-hallucination-evals).
 
-
-
-<div align = "center">
-<img  src="/assets/files/rag1.png">
-</div>
+![](/assets/files/rag1.png)
 
 As many of our enterprise customers move from PoC to production LLM deployment, we find that enterprises need to demonstrate robust reliability testing of their AI systems. The tendency for LLMs to "hallucinate" incorrect or inconsistent outputs remains a major challenge for enterprises at this stage.
 
@@ -53,24 +47,17 @@ Dynamo AI leverages purpose-built models for each evaluation task, ensuring cost
 
 In a head-to-head comparison, DynamoEval’s RAG hallucination suite outperformed RAGAS in a classification task of identifying good/bad context/responses given a query. We measured accuracy and area under the receiver operating characteristic (AUROC) across the following metrics: Retrieval Relevance, Faithfulness, and Response Relevance. The following improvements in performance have been achieved through additional prompt optimizations and the use of performant task-specific models.
 
-
-<div align = "center">
-<img  src="/assets/files/rag2.png">
-</div>
+![](/assets/files/rag2.png)
 
 [DynamoEval](https://dynamo.ai/platform/dynamoeval), unlike RAGAS, returns both the relevance/faithfulness scores and binary labels (good/bad). Test results with only the scores tend to be more ambiguous due to the difficulties associated with drawing a clear threshold demarcating good and bad.
 
 The receiver operating characteristic (ROC) curves and the resulting AUROC values shown below demonstrate that the relevance/faithfulness scores from DyamoEval are more accurate in diagnosing Retrieval Relevance, Faithfulness, and Response Relevance.
 
-
-<div align = "center">
-<img  src="/assets/files/rag3.png">
-</div>
+![](/assets/files/rag3.png)
 
 
-<div align = "center">
-<img  src="/assets/files/rag4.png">
-</div>
+
+![](/assets/files/rag4.png)
 
 Easier interpretation of Response Relevance test results
 
@@ -89,25 +76,17 @@ For the "student scholarship" topic, Retrieval Relevance is low at  **0% (0% of 
 
 Another possible reason for the low Retrieval Relevance score could be that the embedding model used as part of the retriever is not performant enough to identify the correct scholarship-topic related documents, in which case additional fine-tuning of the embedding model may be necessary.
 
+![](/assets/files/rag6.png)
 
-<div align = "center">
-<img  src="/assets/files/rag6.png">
-</div>
 Faithfulness is also relatively low for the “disability eligibility” topic at 9%, indicating that the generator model struggles to produce information consistent with the retrieved documents, even if they are relevant. Augmenting the training data with more ground-truth, question-context-answer pairs related to disabilities could help fine-tune the generator to be more faithful.
 
-
-<div align = "center">
-<img  src="/assets/files/rag7.png">
-</div>
+![](/assets/files/rag7.png)
 
 Using the labels from the above section, we can drill deeper into our topic-specific metrics to find out whether any poor-performance metric was related to either a generator or retriever related problem. The analysis looks at combinations of Retrieval Relevance, Faithfulness, and Response Relevance to pinpoint issues.
 
 For example, if Retrieval Relevance and Response Relevance are both high but Faithfulness is low, it may suggest that the generator is not leveraging the retrieved information properly; or if Retrieval Relevance is low but Faithfulness and Response Relevance are high, the retriever may be the source of the problem (see the example below).
 
-
-<div align = "center">
-<img  src="/assets/files/rag8.png">
-</div>
+![](/assets/files/rag8.png)
 
 In conclusion, Dynamo AI’s evaluation suite for RAG addresses two major limitations in existing tools:
 
@@ -127,9 +106,7 @@ In conclusion, Dynamo AI’s evaluation suite for RAG addresses two major limita
 
 Dynamo AI provides an easily configurable SDK method to set up and run the RAG hallucination test by specifying the following parameters:
 
-<div align = "center">
-<img  src="/assets/files/rag9.png">
-</div>
+![](/assets/files/rag9.png)
 
 -   `name`: name of the test
 -   `model_key`: model key for the generator model tested
@@ -141,8 +118,6 @@ Dynamo AI provides an easily configurable SDK method to set up and run the RAG h
 -   `topic_list`: list of topics that could be used for clustering the input queries for better error analysis. If not provided, it will cluster and automatically detect representative topical keywords from each cluster to show.
 -   `grid`: a set of test hyperparameters to be searched (model’s temperature, generated sequence length, and number of top-k contexts to be retrieved)
 -   `gpu`: type and number of GPU(s) to be used for the test
-
-‍
 
 ## How Dynamo AI can help
 
