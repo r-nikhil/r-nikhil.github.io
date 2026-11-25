@@ -61,7 +61,7 @@ The receiver operating characteristic (ROC) curves and the resulting AUROC value
 
 Easier interpretation of Response Relevance test results
 
-![](https://cdn.prod.website-files.com/66030bc3057ae1e90ac956b7/66b694054e7371362faee8f8_66294456ae6ed9a24e4a9b71_Retrieval%2520Relevance.png)
+![](https://cdn.prod.website-files.com/66030bc3057ae1e90ac956b7/66b694054e7371362faee8f8_66294456ae6ed9a24e4a9b71_Retrieval%2520Relevance.png){: width="1200" height="776" loading="lazy" decoding="async"}
 
 
 Easy interpretation of Retrieval Relevance test results

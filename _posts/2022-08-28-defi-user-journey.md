@@ -255,7 +255,7 @@ The participants here include:
             - Staking as a service 
     - Searchers extracting MeV
 
-      ![mev](/assets/files/mev.png){:class="img-responsive"}
+      ![mev](/assets/files/mev.webp){: width="1152" height="482" loading="lazy" decoding="async"}
     - Multi chain protocols (shared liquidity/data layers)
     - Identity (authentication and authorization) layers
 

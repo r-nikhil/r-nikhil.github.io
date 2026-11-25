@@ -2,18 +2,14 @@
 layout: default
 ---
 
-<div class="filter no-print in" style="--i:2" role="group" aria-label="Filter posts">
-  <button type="button" data-c="all" aria-pressed="true">All</button>
-  <button type="button" data-c="ai" aria-pressed="false">AI</button>
-  <button type="button" data-c="markets" aria-pressed="false">Markets</button>
-  <button type="button" data-c="poker" aria-pressed="false">Poker</button>
-  <button type="button" data-c="crypto" aria-pressed="false">Crypto</button>
-  <button type="button" data-c="security" aria-pressed="false">Security</button>
-  <button type="button" data-c="personal" aria-pressed="false">Personal</button>
-</div>
-
-<ul class="list in" style="--i:2" id="list">
-{% for post in site.posts %}
-<li data-c="{{ post.categories | join: ' ' }}"><a href="{{ site.baseurl }}{{ post.url }}"><span class="row"><span class="t">{{ post.title }}</span>{% assign e = post.excerpt | strip_html | strip_newlines | strip %}{% if e.size > 40 %}<span class="c">{{ e | truncate: 110 }}</span>{% endif %}</span><time datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%b '%y" }}</time></a></li>
+<div class="sec gap" aria-hidden="true"></div>
+{% assign years = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+{% for y in years %}
+<section class="sec year" style="--n:{{ forloop.index }}">
+  <h2>{{ y.name }}</h2>
+  <ul class="body rows">
+    {% for post in y.items %}<li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
 {% endfor %}
-</ul>

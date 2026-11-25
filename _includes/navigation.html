@@ -1,7 +1,12 @@
-<header class="top no-print">
+<header class="top grid no-print">
   <a class="me" href="/">{{ site.title }}</a>
+  <p class="tag">Building <a href="https://app.agara.xyz" target="_blank" rel="noopener">app.agara.xyz</a></p>
   <nav aria-label="Site">
     {% for item in site.data.navigation.links %}<a href="{{ item.url }}"{% if item.url == page.url %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
     {% endfor %}
   </nav>
+  <div class="side">
+    <button type="button" class="to-dark" data-t="dark">Dark</button>
+    <button type="button" class="to-light" data-t="light">Light</button>
+  </div>
 </header>

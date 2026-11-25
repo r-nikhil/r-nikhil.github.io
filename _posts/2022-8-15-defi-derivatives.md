@@ -22,7 +22,7 @@ Most of these product are inspired from the equivalent TradFi products and follo
 
 In TradFi, the price of the futures contract is usually different from the underlying's prices and converges to the value of the underlying on the expiry date. The deviation is caused by the risk free interest rate and/or any dividend given out by the underlying before the expiry period. Since we don't have expiry dates here, we need a mechanism to price these contracts. Enter funding rates which the longs pay the shorts to help keep the futures price close to it underlying.
 
-![perp](/assets/files/funding.png){:class="img-responsive"}
+![perp](/assets/files/funding.webp){: width="1035" height="563" loading="lazy" decoding="async"}
 
 Basically funding rates will always tend towards zero as other market participants (traders/arbitrageurs/etc) will take advantage of the rate by going long when its negative or going short when its positive, thereby aligning the price of the of the perp with the underlying. 
 If the funding rate is positive, you can short perps and buy ETH on the spot market for a delta neutral strategy. A bunch of start-ups have automated this trade: 
@@ -82,7 +82,7 @@ Let's look at how these products are structured in the DeFi space:
 
 - **Volt3**: Deltra neutral  crab strategy. In TradFi, I would usually express this sentiment with a stradle or a strangle. Here, they use power perps to come up with a novel way to delta hedge. Payoff looks something like this:
 
-  ![payoff](/assets/files/payoff.png){:class="img-responsive"}
+  ![payoff](/assets/files/payoff.webp){: width="803" height="600" loading="lazy" decoding="async"}
 
 
 - **Volt4**: Basis yield (delta neutral strategy which is used for eating the funding rate in perps as discussed above). During a positive funding environment, this strategy goes short on the perp contract and long on the spot to earn the funding rate and vice verse during negative funding environments. 

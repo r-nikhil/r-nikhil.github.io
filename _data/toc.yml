@@ -1,0 +1,177 @@
+# Sidebar index for long posts (desktop only). Key = post slug, id = the heading's anchor, t = short label.
+# Posts are not edited for this; the anchors are the ones the headings already have.
+luasec-https-library:
+  - {id: work-done-till-now, t: Done so far}
+  - {id: work-to-be-done, t: To do}
+  - {id: roadmap-for-the-http2-implementation-and-future-work, t: HTTP/2 roadmap}
+port-knocking-python:
+  - {id: why, t: Why}
+  - {id: implementation, t: Implementation}
+  - {id: todo, t: To do}
+gtoinspector-startup:
+  - {id: what-problem-were-we-solving, t: The problem}
+  - {id: why, t: Why}
+  - {id: how, t: How}
+  - {id: conclusion, t: Conclusion}
+  - {id: afterthought, t: Afterthought}
+profit-growth-gamification:
+  - {id: why-is-growth-important, t: Why growth}
+  - {id: a-bigger-narrativemeaning, t: Narrative}
+  - {id: feeling-of-progress-and-accomplishments, t: Progress}
+  - {id: creative-user-participation, t: Participation}
+  - {id: sense-of-ownership, t: Ownership}
+  - {id: social-influence, t: Social influence}
+  - {id: fomo, t: FOMO}
+  - {id: unpredictability, t: Unpredictability}
+  - {id: loss-avoidance, t: Loss avoidance}
+  - {id: summary, t: Summary}
+defi-user-journey:
+  - {id: user-personas, t: Personas}
+  - {id: user-journey, t: Journey}
+  - {id: summary, t: Summary}
+gaming-state-india:
+  - {id: 1-why-india, t: Why India}
+  - {id: 2-indian-gaming-market, t: The market}
+  - {id: 3-some-perspective-on-rmggaming-and-way-forward, t: Way forward}
+multi-vs-single-gaming:
+  - {id: background, t: Background}
+  - {id: content, t: Content}
+  - {id: is-bundling-games-good-or-bad, t: "Bundling: good or bad?"}
+  - {id: what-is-a-correct-package-of-games, t: The right package}
+  - {id: how-to-package-games, t: How to package}
+  - {id: final-thoughts, t: Final thoughts}
+evaluating-games:
+  - {id: market, t: Market}
+  - {id: learning-curve, t: Learning curve}
+  - {id: legality-and-regulations, t: Legality}
+  - {id: familiarity-of-mechanics-or-popularity-of-the-game, t: Familiarity}
+  - {id: monetization-potential, t: Monetization}
+  - {id: network-effects, t: Network effects}
+  - {id: variance-in-reward-distribution, t: Variance}
+  - {id: conclusion, t: Conclusion}
+llm-scaling:
+  - {id: how-did-they-find-this, t: Method}
+  - {id: conclusions, t: Conclusions}
+  - {id: emergent-properties, t: Emergent properties}
+ai-llm-security-part1:
+  - {id: text-generation, t: Text generation}
+  - {id: neural-networks, t: Neural networks}
+  - {id: what-is-prompt-injection-and-why-does-it-matter, t: Prompt injection}
+  - {id: different-types-of-prompt-injection, t: Types}
+  - {id: attacking-llms, t: Attacking LLMs}
+ai-cfr-solver-poker:
+  - {id: background, t: Background}
+  - {id: game-theory-in-poker, t: Game theory}
+  - {id: regret, t: Regret}
+  - {id: what-is-a-game-tree, t: Game trees}
+  - {id: how-to-solve-the-game, t: Solving the game}
+  - {id: what-is-counterfactual-regret-minimization-cfr, t: CFR}
+  - {id: where-else-is-cfr-useful, t: Other uses}
+ai-weak-strong-generalization-openai:
+  - {id: weak-supervisor, t: Weak supervisor}
+  - {id: strong-ceiling---the-baseline-for-comparison, t: Strong ceiling}
+  - {id: the-new-method---auxillary-confidence-loss, t: Confidence loss}
+  - {id: can-small-models-supervise-larger-models, t: Small supervising large}
+  - {id: bootstrapping-for-chess-puzzles, t: Chess puzzles}
+  - {id: chatgpt-reward-modeling, t: Reward modeling}
+  - {id: conclusion, t: Conclusion}
+attacking-neural-networks:
+  - {id: adversarial-attacks, t: Adversarial attacks}
+  - {id: data-poisoning-and-backdoor-attacks, t: Poisoning and backdoors}
+  - {id: membership-inference-attacks, t: Membership inference}
+  - {id: model-extraction-attack, t: Model extraction}
+  - {id: fairwashing, t: Fairwashing}
+  - {id: other-attacks-on-ml-models, t: Other attacks}
+  - {id: conclusion, t: Conclusion}
+data-leakage-llm-eval:
+  - {id: addressing-emerging-risks-in-language-models, t: Emerging risks}
+  - {id: evaluating-data-extraction-attacks-on-ai-models, t: Extraction attacks}
+  - {id: running-data-extraction-tests-on-the-dynamo-ai-platform, t: Running tests}
+  - {id: effective-mitigation-measures-for-data-leakage, t: Mitigation}
+llm-eval-pii-membership-inference:
+  - {id: evaluating-model-vulnerability-to-pii-extraction-and-membership-inference, t: Overview}
+  - {id: evaluating-pii-extraction-attacks, t: PII extraction}
+  - {id: membership-inference-attacks, t: Membership inference}
+  - {id: dynamoeval-ui-walkthrough, t: UI walkthrough}
+  - {id: dynamoeval-sdk-walkthrough, t: SDK walkthrough}
+differential-privacy-llm:
+  - {id: challenges-in-adopting-differential-privacy-for-llms, t: Challenges}
+  - {id: apply-differential-privacy-at-scale-with-dynamoenhance, t: At scale}
+  - {id: empowering-enterprise-customers-with-differential-privacy, t: For enterprises}
+rag-eval-hallucination:
+  - {id: limitation-of-existing-tools, t: Existing tools}
+  - {id: dynamo-ais-rag-hallucination-evaluation, t: The evaluation}
+  - {id: how-dynamo-ai-can-help, t: How Dynamo helps}
+rag-eval-tabular-data:
+  - {id: findings-enhancing-evaluation-through-improved-prompting, t: Better prompting}
+  - {id: the-choice-of-base-model-for-evaluation-matters, t: Base model choice}
+  - {id: more-on-operation-heavy-queries, t: Operation-heavy queries}
+  - {id: how-dynamo-ai-can-help, t: How Dynamo helps}
+prediction-market-crypto:
+  - {id: how-do-prediction-markets-work, t: How they work}
+  - {id: the-problem-with-prediction-markets, t: The problem}
+  - {id: why-current-prediction-markets-struggle, t: Why they struggle}
+  - {id: when-do-prediction-markets-actually-work, t: When they work}
+  - {id: so-what-now, t: "So what now?"}
+intro-ai-agents:
+  - {id: what-are-ai-agents, t: What they are}
+  - {id: what-are-the-different-types-of-ai-agents, t: Types}
+  - {id: architecture-of-autonomous-agents, t: Architecture}
+  - {id: when-and-where-are-ai-agents-used, t: Where they are used}
+mcp-standard-llm:
+  - {id: what-do-we-need-for-mcp-to-win, t: What MCP needs}
+  - {id: bottomline, t: Bottom line}
+  - {id: future-predictions-for-the-mcp-stack, t: Predictions}
+how-to-reduce-latency-voice-agents:
+  - {id: semantic-caching, t: Semantic caching}
+  - {id: prompt-optimisation-techniques, t: Prompt optimisation}
+  - {id: streaming-and-overlap-of-stt-llm-and-tts, t: Streaming and overlap}
+  - {id: startup-and-warm-up-latency-minimisation, t: Warm-up}
+ai-engineer-world-fair-takeaway:
+  - {id: multi-agent-orchestration, t: Multi-agent}
+  - {id: mcp-protocol-standardization, t: MCP}
+  - {id: evaluation-as-competitive-moat, t: Evaluation}
+  - {id: development-parallelization, t: Parallel development}
+  - {id: tiny-teams-revolution, t: Tiny teams}
+n8n-vs-zapier:
+  - {id: what-makes-each-platform-different, t: Differences}
+  - {id: why-n8n-is-winning, t: Why n8n wins}
+  - {id: real-world-use-cases-where-n8n-dominates, t: Use cases}
+  - {id: the-market-reality, t: Market reality}
+  - {id: what-this-means-going-forward, t: Going forward}
+era-of-experience:
+  - {id: what-next---experiential-learning, t: Experiential learning}
+  - {id: what-to-build-for-this-era-then, t: What to build}
+  - {id: the-bottom-line, t: Bottom line}
+unglamorous:
+  - {id: 1-jeff-yan-hyperliquid-oct-2023, t: Hyperliquid}
+  - {id: 2-brian-armstrong-coinbase-2012, t: Coinbase}
+  - {id: 3-michael-truell--aman-sanger-cursor-202223, t: Cursor}
+  - {id: 4-chad-hurley-steve-chen--jawed-karim-youtube-2005, t: YouTube}
+  - {id: 5-alon-pumpfun-202324, t: pump.fun}
+  - {id: 6-steve-huffman--alexis-ohanian-reddit-2005, t: Reddit}
+  - {id: 7-ben-silbermann-pinterest-2010, t: Pinterest}
+  - {id: 8-sara-blakely-spanx-2000, t: Spanx}
+  - {id: 9-des-traynor-intercom-2011, t: Intercom}
+  - {id: 10-eric-yuan-zoom-201115, t: Zoom}
+  - {id: 11-mert-mumtaz-helius-202122, t: Helius}
+  - {id: 12-dan-romero-farcaster-202223, t: Farcaster}
+  - {id: 13-max-junestrand-legora-2023, t: Legora}
+  - {id: 14-melanie-perkins-canva-201113, t: Canva}
+  - {id: 15-wade-foster-zapier-2011, t: Zapier}
+  - {id: 16-whitney-wolfe-tinder-2012, t: Tinder}
+  - {id: 17-tony-xu--co-founders-doordash-2013, t: DoorDash}
+  - {id: 18-apoorva-mehta-instacart-2012, t: Instacart}
+  - {id: 19-patrick--john-collison-stripe-2010, t: Stripe}
+  - {id: 20-ankit-garg--chaitanya-ramalingegowda-wakefit-2016, t: Wakefit}
+  - {id: 21-pebble-2012, t: Pebble}
+fast-ai-edition:
+  - {id: math, t: Math}
+  - {id: science--bio, t: Science and bio}
+  - {id: materials--hardware, t: Materials and hardware}
+  - {id: software, t: Software}
+  - {id: security, t: Security}
+  - {id: robotics, t: Robotics}
+  - {id: compute--power, t: Compute and power}
+  - {id: companies, t: Companies}
+  - {id: competitions, t: Competitions}

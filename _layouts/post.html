@@ -2,11 +2,12 @@
 layout: default
 ---
 
-<article class="post">
-  <h1 class="in" style="--i:2">{{ page.title }}</h1>
-  <span class="meta in" style="--i:2"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% for c in page.categories %} &middot; {{ c }}{% endfor %}{% for tag in page.tags %} &middot; <a href="/tag/{{tag}}">{{tag}}</a>{% endfor %}</span>
-  <div class="rise">
-  {{ content }}
+<article class="sec article">
+  <div class="label"><a class="back" href="/"><svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true"><path d="M5.5 4.5 2.5 7.5l3 3M2.5 7.5h8a3 3 0 0 1 0 6H9" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Index</a><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>{% assign toc = site.data.toc[page.slug] %}{% if toc %}<nav class="toc" aria-label="Sections">{% for i in toc %}<a href="#{{ i.id }}">{{ i.t }}</a>{% endfor %}</nav>{% endif %}</div>
+  <div class="body">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post">
+    {{ content }}
+    </div>
   </div>
 </article>
-<a class="back no-print" href="/">&larr; All writing</a>
