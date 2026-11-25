@@ -196,3 +196,18 @@ llm-coin-toss-odd-even:
   - {id: experiment-1--tossing-a-fair-coin, t: Coin toss}
   - {id: experiment-2--odd-vs-even, t: Odd vs even}
   - {id: raw-data, t: Raw data}
+ai-assistant-uses:
+  - {id: tldr--the-top-10, t: Top 10}
+  - {id: money, t: Money}
+  - {id: inbox-calendar-and-everyday-admin, t: Inbox and admin}
+  - {id: family-and-home, t: Family and home}
+  - {id: health-and-fitness, t: Health and fitness}
+  - {id: travel, t: Travel}
+  - {id: learning-and-kids, t: Learning and kids}
+  - {id: research-and-staying-current, t: Research}
+  - {id: writing-conversations-and-creative-work, t: Writing and creative}
+  - {id: coding-and-building-your-own-tools, t: Coding and tools}
+  - {id: work-and-business, t: Work and business}
+  - {id: a-few-obvious-extras-not-from-the-thread, t: Extras}
+  - {id: how-to-use-this-list, t: How to use}
+  - {id: source-notes, t: Source notes}
