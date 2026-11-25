@@ -6,11 +6,11 @@ categories: [poker, markets]
 ---
 
 
-- Lets face it, poker has become a commoditized game/product where most poker platforms look like skins of each other. There is hardly any differentiation in the products and all of them simply focus on the betting/gambling function of the game while a human centric focus on the user journey takes a back seat.
+Lets face it, poker has become a commoditized game/product where most poker platforms look like skins of each other. There is hardly any differentiation in the products and all of them simply focus on the betting/gambling function of the game while a human centric focus on the user journey takes a back seat.
 
-    - This is primarily due to the fact that human focussed features/design elements particularly don't drive revenue directly. However, they make the product more fun to indulge in. 
+This is primarily due to the fact that human focussed features/design elements particularly don't drive revenue directly. However, they make the product more fun to indulge in. 
 
-    - Unfortunately most platforms are just laser focussed betting tools which are designed to get the user wagering as soon as possible. Its almost like 2000s traders made poker software products.
+Unfortunately most platforms are just laser focussed betting tools which are designed to get the user wagering as soon as possible. Its almost like 2000s traders made poker software products.
 
 Poker's market cap is not growing at pace with the rest of the real money gaming ecosystem. E-sports and casual gaming are growing much faster (on a bigger base too) compared to real money gaming(and especially poker. Online Gaming has become ubiquitous especially in the post COVID world where people are staying more and more indoor and interacting with others online. online gaming has surpassed from being just an entertainment thing used by a bunch of geeks to mainstream extension of one's identify online. It one of the [top categories](https://www.globenewswire.com/news-release/2022/07/06/2475487/0/en/Online-Gaming-Market-Size-to-Achieve-USD-132-Billion-by-2030-Growing-at-10-2-CAGR-Fueled-by-Massive-Investments-in-the-Gaming-Industry-Exclusive-Report-by-Acumen-Research-and-Consu.html) online in [terms of spends](https://www.businessofapps.com/data/fortnite-statistics/) as well. 
 
@@ -74,11 +74,12 @@ This article focuses on bring elements of games into poker to make it more fun a
 
 - We need a feature with tight feedback loop which takes in user input and something which preferably has a creative element attached to it. IKEA furniture have this element of self-assembly which makes the user care for the product. 
 
-    -  In poker, some common methods include 
-        - User avatar customization (filters,emojis)
-        - Custom table/card and background themes, social features ,etc. making their version of the client unique for them
-        - Allowing users to design their own card/table themes is unexplored currently though
-        - Social features (creative pre-defined voice chats, meme based emojis etc) which the user can use to express various sentiments inside the game
+    In poker, some common methods include 
+
+    - User avatar customization (filters,emojis)
+    - Custom table/card and background themes, social features ,etc. making their version of the client unique for them
+    - Allowing users to design their own card/table themes is unexplored currently though
+    - Social features (creative pre-defined voice chats, meme based emojis etc) which the user can use to express various sentiments inside the game
     
 - Waze (the traffic app) intelligently uses user generated content where the platform users feel a sense of ownership in keeping the data accurate and up to date.
         
@@ -106,7 +107,8 @@ This article focuses on bring elements of games into poker to make it more fun a
 - This drive incorporates all the social elements that drive people, including: mentorship, acceptance, social responses, companionship, as well as competition and envy.
 
 - Often implemented in the form of social events, group/team competitions, contests (with a lot of PR for the winners), televising etc by most companies. This is usually well executed as well as I see most platforms having a strong social media presence. 
-    - When you see your friend winning big in a poker competition, you automatically feel like playing the game too.  
+
+    When you see your friend winning big in a poker competition, you automatically feel like playing the game too.  
 
 
 #### FOMO

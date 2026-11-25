@@ -8,17 +8,17 @@ categories: [markets, ai]
 
 Generally for any tech cycle, we can categorize all the companies into one of the three buckets below. They are either making the tech or building around the tech to monetize it or using/applying the tech for real world use cases. 
 
-**Foundation companies**
+### Foundation companies
 
 These are the companies which lay the foundation for the tech wave. This would be semi-conductors or network switch hardware or foundational models in case of AI or even L1 chains in case of crypto. Companies here are usually very capital intensive, needs heavy technical expertise and generally takes a long time to pan out. While its debatable on whether these companies would get commoditized, they certainly delivery big venture outcomes and are generally good bets if your fund can afford it. 
 
-**Builder companies**
+### Builder companies
 
 These are companies which are building the tooling and infrastructure around the tech wave. This could be something like an observability/monitoring layer or low-code AI agent builders or evaluation tools or inference clouds. This is the so called picks and shovels of the gold rush and investing in this space gets you directional exposure to the tech cycle without getting you into investments which rely upon a particular way the tech cycle will pan out (maybe good for risk-averse investors). 
 
 My biggest concern with investing in this space is that these companies are building on a tech cycle which hasn't stabilized. The application stack hasn't yet figured out all the use cases for the technology and the foundation companies are innovating and putting out new tech everyday. Sometimes, entire building paradigms change overnight. (Imagine hallucinations get solved and AI models become interpretable and are no longer black boxes. All LLM eval tooling companies would have a bad time) 
 
-**Application companies**
+### Application companies
 
 These are companies which actually use the technology to solve pain points for customers. I think there are two types of companies which will emerge here. Existing companies which adopt the tech into their products and new companies which use this tech to delivery experiences which weren't possible before. 
 

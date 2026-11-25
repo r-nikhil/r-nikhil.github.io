@@ -82,7 +82,7 @@ While DynamoEval shows a slightly lower performance compared to the previous set
 
 ### Operation involving a long list of entries
 
--   It is more likely to fail when the table is long and therefore requires more entries to consider for operations. In the examples below, the model failed to identify the given responses as accurate and faithful, by failing to carry out calculations from a long list of entries or miscounting the entries from a long table.
+It is more likely to fail when the table is long and therefore requires more entries to consider for operations. In the examples below, the model failed to identify the given responses as accurate and faithful, by failing to carry out calculations from a long list of entries or miscounting the entries from a long table.
 
 #### Example 1
 
@@ -94,7 +94,7 @@ While DynamoEval shows a slightly lower performance compared to the previous set
 
 ### Errors in filtering the correct entries
 
--   There were occasional errors for smaller tables in filtering the correct entries to consider. In the examples below, the model failed to identify the given responses as accurate and faithful by incorrectly considering the rows that did not satisfy the conditions set by the query.
+There were occasional errors for smaller tables in filtering the correct entries to consider. In the examples below, the model failed to identify the given responses as accurate and faithful by incorrectly considering the rows that did not satisfy the conditions set by the query.
 
 #### Example 1
 

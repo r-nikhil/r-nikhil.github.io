@@ -22,7 +22,7 @@ Here is what I’ve learnt from my super un-scientific and rigorous-less experim
    
 - *You need lots of ice*
     - There is no problem with using too much ice as they stop affecting temperature or dilution beyond the equilibrium point. So, always ensure to have more ice than needed when you start. I use roughly 200g of ice for 100ml of coffee. It seems excessive but actually achieves ideal temp and dilution
-        - If you have very little ice, it will result in poor chilling and will end up over diluting your coffee. This is sometimes counter intuitive. ***You actually want to use more ice, not less, to prevent over-dilution.*** More ice equals faster chilling because you have more thermal mass to absorb heat quickly, reaching the target temp before too much of it melts.
+    - If you have very little ice, it will result in poor chilling and will end up over diluting your coffee. This is sometimes counter intuitive. ***You actually want to use more ice, not less, to prevent over-dilution.*** More ice equals faster chilling because you have more thermal mass to absorb heat quickly, reaching the target temp before too much of it melts.
 
 - *Size of the ice cube matters (sometimes)*
     - Ice cube size does matter if you are planning to let your coffee sit on your table for more than 20min. Bigger ice cubes are better because they have smaller surface area per gram and thereby melt slower which has an added benefit of diluting your coffee slower over time

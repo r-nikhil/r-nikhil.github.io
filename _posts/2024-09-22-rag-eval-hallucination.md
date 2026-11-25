@@ -31,7 +31,8 @@ While many tools exist for evaluating the degree of hallucination for RAG applic
 
 -   _Less interpretable metrics._  Usually, evaluation metrics will simply output a score value between 0 and 1. Oftentimes, these scores may not be well-calibrated or can be too difficult to understand. For instance, one prominent metric for measuring text relevance is embedding similarity, which uses the cosine distance of two embedded texts. While the range of this distance value is normalized to be between 0 and 1, it is generally unclear how to interpret these scores and what range of scores is considered good or bad.
 -   _Lack of fine-grained, actionable analysis for model improvements._  Usually, the evaluation stops at the point where the evaluation scores are computed. Further analysis of detailed error cases that can lead to potential improvements of the system is not present in most of the tools.
-    -   It's not clear which part of the RAG pipeline, the retriever or the response generator, needs to be improved based on the metrics and diving deeper into a topic level analysis is also not straightforward.
+
+    It's not clear which part of the RAG pipeline, the retriever or the response generator, needs to be improved based on the metrics and diving deeper into a topic level analysis is also not straightforward.
 
 ## Dynamo AI’s RAG hallucination evaluation
 

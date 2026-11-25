@@ -9,7 +9,9 @@ I will be working with Lablua this summer as part of Google Summer of Code (GSoC
 
 From Wikipedia,
 
-> A web framework (WF) or web application framework (WAF) is a software framework that is designed to support the development of web applications including web services, web resources and web APIs.As it says, it's basically used to remove the same redundant overhead associated with creating web applications. Most web applications have/do the following things
+> A web framework (WF) or web application framework (WAF) is a software framework that is designed to support the development of web applications including web services, web resources and web APIs.
+
+As it says, it's basically used to remove the same redundant overhead associated with creating web applications. Most web applications have/do the following things
 
 - Database access, mapping, configuration
 - Session Management

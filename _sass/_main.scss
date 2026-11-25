@@ -349,9 +349,12 @@ main.grid {
 }
 
 
+/* Article text sits on a baseline grid: every line is --lh tall and every gap is a half or whole multiple of it,
+   so paragraphs, lists, headings and images keep one rhythm at every width. */
 .post {
+  --lh: 20px;
   font-size: 13px;
-  line-height: 1.6;
+  line-height: var(--lh);
   letter-spacing: -.011em;
   max-width: 64ch;
   overflow-wrap: break-word;
@@ -373,20 +376,74 @@ main.grid {
 .post table,
 .post blockquote,
 .post figure {
-  margin: 0 0 1.1em;
+  margin: 0 0 var(--lh);
+}
+
+.post > :first-child {
+  margin-top: 0;
+}
+
+.post > :last-child {
+  margin-bottom: 0;
+}
+
+/* a line that introduces a list, a code block or a table stays close to it */
+.post p:has(+ ul),
+.post p:has(+ ol),
+.post p:has(+ pre),
+.post p:has(+ table) {
+  margin-bottom: calc(var(--lh) / 2);
 }
 
 .post h1,
 .post h2,
 .post h3,
 .post h4,
-.post h5 {
-  margin: 2.2em 0 .6em;
-  font-weight: 500;
+.post h5,
+.post h6 {
+  margin: calc(var(--lh) * 2) 0 calc(var(--lh) / 2);
+  font-weight: 600;
+  line-height: var(--lh);
+  text-wrap: balance;
 }
 
-.post h2 { font-size: 16px; letter-spacing: -.02em; line-height: 1.25; }
-.post h3 { font-size: 14px; }
+/* three steps, each heavier than bold body text; older posts whose only headings are h4 get the h3 step */
+.post h1,
+.post h2 { font-size: 16px; letter-spacing: -.02em; }
+.post h3 { font-size: 15px; letter-spacing: -.015em; }
+.post:not(:has(h2, h3)) h4 { font-size: 15px; letter-spacing: -.015em; }
+.post h4,
+.post h5,
+.post h6 { font-size: 14px; letter-spacing: -.01em; }
+
+.post:has(h2, h3) :is(h4, h5, h6) {
+  margin-top: calc(var(--lh) * 1.5);
+}
+
+.post :is(h1, h2, h3, h4, h5, h6) a {
+  text-decoration: none;
+}
+
+/* a bold line standing alone works as a small heading: more air above, close to what it introduces */
+.post p.bh {
+  margin: calc(var(--lh) * 1.5) 0 calc(var(--lh) / 2);
+}
+
+.post p.bh strong {
+  font-weight: 600;
+}
+
+.post :is(h1, h2, h3, h4, h5, h6) + p.bh,
+.post p.bh + p.bh,
+.post li > p.bh:first-child,
+.post > p.bh:first-child {
+  margin-top: 0;
+}
+
+/* a heading directly under another heading does not open a second gap */
+.post :is(h1, h2, h3, h4, h5, h6) + :is(h1, h2, h3, h4, h5, h6) {
+  margin-top: var(--lh);
+}
 
 .post a {
   text-decoration: underline;
@@ -409,26 +466,79 @@ main.grid {
   font-weight: 500;
 }
 
+/* lists: dot markers, entries half a line apart, nested levels indented by one step */
 .post ul,
 .post ol {
-  padding-left: 1.3em;
+  padding-left: 20px;
 }
 
 .post ul { list-style: disc; }
-.post ol { list-style: decimal; }
+
+/* an entry that only wraps a nested list shows one marker, not two */
+.post li.bare {
+  list-style: none;
+}
+
+.post li.bare > :is(ul, ol) {
+  margin-top: 0;
+}
+
+.post ol { list-style: decimal; padding-left: 2.2em; }
+
+.post ol > li::marker {
+  color: var(--grey);
+  font-variant-numeric: tabular-nums;
+}
 
 .post li {
-  margin: .25em 0;
+  margin: 0;
+  padding-left: 2px;
+}
+
+.post li + li {
+  margin-top: calc(var(--lh) / 2);
+}
+
+.post li > ul,
+.post li > ol {
+  margin: calc(var(--lh) / 2) 0 0;
+}
+
+.post li > p {
+  margin-bottom: calc(var(--lh) / 2);
+}
+
+.post li > :last-child {
+  margin-bottom: 0;
+}
+
+.post li > img,
+.post li > p > img {
+  margin-top: calc(var(--lh) / 2);
+}
+
+/* an entry that carries sub-points is set a full line apart, so each group reads as one block */
+.post > :is(ul, ol) > li:has(> ul, > ol) + li,
+.post > :is(ul, ol) > li + li:has(> ul, > ol) {
+  margin-top: var(--lh);
+}
+
+.post li > p:has(> img:only-child) {
+  margin: var(--lh) 0;
+}
+
+.post li > p:has(> img:only-child):last-child {
+  margin-bottom: 0;
 }
 
 /* a list entry with its sources on their own line */
-.post li:has(> .src) {
-  margin: 1.1em 0;
+.post li:has(> .src) + li,
+.post li + li:has(> .src) {
+  margin-top: var(--lh);
 }
 
 .post .src {
   display: block;
-  margin-top: .15em;
   color: var(--grey);
 }
 
@@ -447,8 +557,33 @@ main.grid {
   height: auto;
 }
 
+/* charts with a white background melt into the page instead of showing as a pale box */
+:root:not([data-theme="dark"]) .post img {
+  mix-blend-mode: multiply;
+}
+
+/* an image on its own gets a line and a half of air above and below, unless a heading introduces it */
+.post > p:has(> img:only-child) {
+  margin: calc(var(--lh) * 1.5) 0;
+}
+
+.post :is(h1, h2, h3, h4, h5, h6) + p:has(> img:only-child),
+.post > p:has(> img:only-child):first-child {
+  margin-top: calc(var(--lh) / 2);
+}
+
+.post > p:has(> img:only-child):first-child {
+  margin-top: 0;
+}
+
+.post > p:has(> img:only-child):last-child {
+  margin-bottom: 0;
+}
+
 .post iframe {
+  display: block;
   max-width: 100%;
+  margin: 0 0 var(--lh);
   border: 0;
 }
 
@@ -459,17 +594,19 @@ main.grid {
 
 .post code,
 .post pre {
-  font: 12.5px/1.6 var(--mono);
+  font: 12px/var(--lh) var(--mono);
   letter-spacing: 0;
   background: var(--surface);
 }
 
-.post code {
-  padding: .1em .3em;
+/* inline code must not make its line taller than the grid */
+.post :not(pre) > code {
+  padding: 1px 4px;
+  line-height: 1;
 }
 
 .post pre {
-  padding: 12px;
+  padding: calc(var(--lh) / 2) 12px;
   overflow-x: auto;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -486,10 +623,14 @@ main.grid {
   color: var(--grey);
 }
 
+.post blockquote > :last-child {
+  margin-bottom: 0;
+}
+
 .post hr {
   height: 1px;
   border: 0;
-  margin: 2.5em 0;
+  margin: calc(var(--lh) * 2 - 1px) 0 calc(var(--lh) * 2);
   background: var(--line);
 }
 
@@ -503,7 +644,7 @@ main.grid {
 
 .post th,
 .post td {
-  padding: 6px 12px 6px 0;
+  padding: calc(var(--lh) / 4) 12px calc(var(--lh) / 4 - 1px) 0;
   text-align: left;
   vertical-align: top;
   border-bottom: 1px solid var(--line);
@@ -655,21 +796,9 @@ html:not(.seen) main > * {
     grid-column: 2 / -1;
   }
 
-  .rows a,
-  .rows .t {
-    white-space: normal;
-  }
-
-  /* phones: the same small type as the desktop, a notch larger, rows kept close */
-  body {
-    font-size: 13px;
-    line-height: 18px;
-  }
-
+  /* type and row spacing stay exactly as on wide screens; only columns, margins and the header change */
   main.grid {
-    padding-top: 136px;
-    padding-bottom: 72px;
-    row-gap: 44px;
+    padding-top: 135px;
   }
 
   .top {
@@ -714,64 +843,17 @@ html:not(.seen) main > * {
     top: 88px;
   }
 
-  /* the month follows the title, also when the title wraps */
-  .rows li {
-    display: block;
-    padding: 2px 0;
-  }
-
-  .rows li[hidden] {
-    display: none;
-  }
-
-  .rows .d {
-    margin-left: 8px;
-    white-space: nowrap;
-  }
-
-  .rows li:has(.d.wrap) {
-    padding: 5px 0;
-  }
-
+  /* project rows show the name only, so they line up with every other list */
   .rows .d.wrap {
-    margin-left: 0;
-  }
-
-  .rows li:has(.d.wrap) > * {
-    display: block;
-    padding: 0;
-    white-space: normal;
+    display: none;
   }
 
   .prose-s li + li {
     margin-top: 8px;
   }
 
-  .gap {
-    height: 18px;
-  }
-
   .foot ul {
     gap: 12px;
-  }
-
-  .post {
-    font-size: 15px;
-    line-height: 1.6;
-  }
-
-  .post-title {
-    font-size: 22px;
-    margin-bottom: 28px;
-  }
-
-  .post code,
-  .post pre {
-    font-size: 13px;
-  }
-
-  .post table {
-    font-size: 13px;
   }
 
   #search-input {
@@ -812,6 +894,43 @@ html:not(.seen) main > * {
   .foot ul {
     grid-column: 1 / -1;
     justify-content: flex-start;
+  }
+}
+
+/* phones only: article text a little larger for reading */
+@media (max-width: 37.5rem) {
+  .post {
+    --lh: 24px;
+    font-size: 15px;
+  }
+
+  .post h1,
+  .post h2 { font-size: 18px; }
+  .post h3 { font-size: 17px; }
+  .post:not(:has(h2, h3)) h4 { font-size: 17px; }
+  .post h4,
+  .post h5,
+  .post h6 { font-size: 16px; }
+
+  .post ul,
+  .post ol {
+    padding-left: 18px;
+  }
+
+  /* from the third level on, lists indent less so text and images keep their width */
+  .post li li :is(ul, ol) {
+    padding-left: 12px;
+  }
+
+  .post-title {
+    font-size: 22px;
+    margin-bottom: 28px;
+  }
+
+  .post code,
+  .post pre,
+  .post table {
+    font-size: 13px;
   }
 }
 

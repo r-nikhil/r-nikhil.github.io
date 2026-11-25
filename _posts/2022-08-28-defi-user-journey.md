@@ -31,8 +31,7 @@ Broad retail requirements for interacting with financial services and products c
     - Network of peers/merchants already on-boarded into the network
       - Chicken/egg problem
     - Trust /Safety
-- New user personas who may start using on-chain products. The requirements for those users would be different and dependent on what use case they on-board for. 
-    - For example, my mom started using online payments (UPI) after Quick commerce (10min delivery) became commonplace). 
+- New user personas who may start using on-chain products. The requirements for those users would be different and dependent on what use case they on-board for. For example, my mom started using online payments (UPI) after Quick commerce (10min delivery) became commonplace). 
 
 
 Currently, the first two user personas (**Investor and the speculator**) are the most common place in DeFi. In fact every other use case is in fact a minority. Lets look at them deeper. 
@@ -139,11 +138,13 @@ In this section, we attempt to dig deeper into some open problem statements and 
 Lets pick an **average retail DeFI investor** and look at their user journey.
 
 Intent to invest
-- High level actions in the user journey
-    - On-boarding into a custody platform (interoperable platform)
-    - Infrastructure plumbing (equivalent of the payment rails)
-    - Fiat to crypto purchase 
-    - Transfers/uses it on a Dapp
+
+High level actions in the user journey
+
+- On-boarding into a custody platform (interoperable platform)
+- Infrastructure plumbing (equivalent of the payment rails)
+- Fiat to crypto purchase 
+- Transfers/uses it on a Dapp
 
 Now, lets break down each of these steps and inspect the actors. 
 
@@ -199,15 +200,13 @@ Let's look at the current type of wallets and understand what they do:
     - Bitgo
     - Coinbase Prime
     - Instadapp sort of does this for retail. 
-
-
-    - *Wallet as a service*
-        - MPC wallets where the key is split between you and a third party. 
-        - This means if you lose access to your private key, the key to your  wallet is still safe and recoverable. This helps with portability and availability across devices
-        - Sort of like multi-sig wallets where both the third party and you have to sign transactions
-        - Examples of wallets powered by this:
-            - Coinbase dappbrowser
-            - Coindcx Okta
+- *Wallet as a service*
+    - MPC wallets where the key is split between you and a third party. 
+    - This means if you lose access to your private key, the key to your  wallet is still safe and recoverable. This helps with portability and availability across devices
+    - Sort of like multi-sig wallets where both the third party and you have to sign transactions
+    - Examples of wallets powered by this:
+        - Coinbase dappbrowser
+        - Coindcx Okta
 
 *What can we work on?*: 
 
@@ -276,16 +275,16 @@ The participants here include:
         - Example: What does it mean for a lending protocol
             - Currently you put ETH as collateral (on ETH chain) and borrow. Then bridge it (to yield farming chain), swap (for yield token), yield farm, swap back again, bridge back again, then unlock collateral on ETH chain. Clearly this flow is broken. 
             - Ideal flow should be something like "lock collateral on ETH" chain, message goes to destination chain and you borrow directly there. Repay in destination chain and message comes back to ETH chain where your collateral gets unlocked. 
-            - State transfer 
-                - Transfer any piece of critical information across chain from your protocol. 
-                - Unified governance where votes are cast across chains
+        - State transfer 
+            - Transfer any piece of critical information across chain from your protocol. 
+            - Unified governance where votes are cast across chains
     - Liquidity transfer layer
         - Instead of maintaining individual pair wise pools across chains (ETH on mainnet + ETH on Solana) to facilitate bridging, a more capital efficient way would be to do a common shared liquidity pool across all path ways. 
         - Collateral bridging
             - How to power Dapps to have their own liquidity transfer layer across chain
                 - aave v3 has aave portal
         - Yield aggregation
-                - Ultimately user just wants to deploy on the most profitable farm
+            - Ultimately user just wants to deploy on the most profitable farm
         - DeFi apps
             - Uniswap doesnt want users to leave the platform to go to a bridge and the come back for swapping. It should be able to provide a much unified experience 
     

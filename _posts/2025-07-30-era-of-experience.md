@@ -5,7 +5,7 @@ categories: [ai, markets]
 ---
 ![](/assets/files/eraofexp.webp){: width="1400" height="779" decoding="async"}
 
-I recently read a beautiful chapter from the unpublished book "Designing an Intelligence" by [David Silver](https://en.wikipedia.org/wiki/David_Silver_\(computer_scientist\) "null") and [Rich Sutton](https://en.wikipedia.org/wiki/Richard_S._Sutton). It's titled "Welcome to the Era of Experience" and you can read it [here](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf). The basic gist is this: current LLMs, trained on the sum of human knowledge, are approaching a ceiling. High-quality human data is a finite resource, and these models can only reproduce human capabilities, not truly surpass them.
+I recently read a beautiful chapter from the unpublished book "Designing an Intelligence" by [David Silver](https://en.wikipedia.org/wiki/David_Silver_%28computer_scientist%29) and [Rich Sutton](https://en.wikipedia.org/wiki/Richard_S._Sutton). It's titled "Welcome to the Era of Experience" and you can read it [here](https://storage.googleapis.com/deepmind-media/Era-of-Experience%20/The%20Era%20of%20Experience%20Paper.pdf). The basic gist is this: current LLMs, trained on the sum of human knowledge, are approaching a ceiling. High-quality human data is a finite resource, and these models can only reproduce human capabilities, not truly surpass them.
 
 If you trained an LLM 300 years ago, it might reason using Newtonian mechanics. If you trained it 1000 years ago, it might reason in theistic terms. Today's models inherit our blind spots. They're sophisticated echo chambers of whatever worldview was baked into their training data. An LLM can give you brilliant answers about quantum mechanics, but it can't discover the next paradigm shift in physics. It's like asking a master librarian to invent new science. They can tell you everything that's been written, but they can't run the experiment that proves everyone wrong.
 
@@ -113,7 +113,7 @@ The key insight is that OpenAI won't build a niche supply chain simulator. But f
 A startup building “uncensored therapy agents” for specific populations might discover interaction patterns that actually help people more than our current “always honest, always safe” approach. Maybe the agent learns that for certain personality types recovering from addiction, a small tactical lie about recovery statistics prevents relapse better than brutal honesty.
 
 
-So, what should you do?
+#### So, what should you do?
 
 1. **Secure the telemetry monopoly now.** Find a niche where you can instrument everything. Every action, every outcome. This data exhaust becomes your moat. A friend’s startup put sensors in commercial kitchens - they now know more about restaurant operations than anyone. While they are still figuring out what to do with this data, I am pretty sure this will become their moat in the long run.
 

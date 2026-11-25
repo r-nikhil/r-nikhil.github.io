@@ -76,8 +76,7 @@ However, none of the methods work for every situation. Collectively, their resul
 
 - **Imitation Saliency:**  Superhuman models may easily imitate weak errors from human supervisors but might have harder time imitating weak errors from AI supervisors. This is mainly because human errors are basically all over the pre-training data of current LLMs. More generally, the types of errors weak models make today may be different from the types of errors humans will make when attempting to supervise superhuman models. This makes generalization of the above methods much harder. 
 
-
-![](/assets/files/leogao.webp){: width="605" height="494" loading="lazy" decoding="async"}
+  ![](/assets/files/leogao.webp){: width="605" height="494" loading="lazy" decoding="async"}
 
 - **Pre-training leakage:** Superhuman knowledge may be latent and not observable. In the paper, they elicit knowledge from the strong model using certain tasks like SciQ NLP. However, its possible that these tasks are already part of the pre-training data but just framed differently. This will overall make weak-to-strong generalization easier for strong models and make results look better than they are. However, in the future we might have models which are entirely built through self-supervised learning or reinforcement learning (rather than through imitation learning) but we don't such an AI just yet. 
 
@@ -91,7 +90,7 @@ If you liked my post, let me know on [Twitter](https://twitter.com/rnikhilcom). 
 - [Intro to LLM security](https://rnikhil.com/2023/12/18/ai-llm-security-part1.html)
 
 
-Further reading and sources: 
+#### Further reading and sources:
 
 - [Combining W2SG with other alignment techniques](https://aligned.substack.com/p/combining-w2sg-with-scalable-oversight)
 - [W2SG paper](https://cdn.openai.com/papers/weak-to-strong-generalization.pdf) and the [Github repo](https://github.com/openai/weak-to-strong)

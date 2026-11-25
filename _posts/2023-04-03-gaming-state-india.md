@@ -11,12 +11,12 @@ The gaming industry in India has been growing exponentially in recent years, wit
 
 1. Why bother building in India in the first place?
 2. What is the current market scenario in India?
-  - How is the entire gaming industry revenue split?
-    - Where is majority of the revenue and profit potential?
-    - Which sub vertical is growing?
-      - What are users majorly playing?
+   - How is the entire gaming industry revenue split?
+   - Where is majority of the revenue and profit potential?
+   - Which sub vertical is growing?
+     - What are users majorly playing?
 3. Where is the market opportunity?
-  - Differentiator for RMG companies starting today and path forward for building a RMG business
+   - Differentiator for RMG companies starting today and path forward for building a RMG business
 
 ### 1. Why India?
 
@@ -103,7 +103,7 @@ MGP's have also really lowered customer acquisition costs by spreading it and av
 
 ### 3. Some perspective on RMG/gaming and way forward
 
-**How are these RMG businesses differentiated?**
+#### How are these RMG businesses differentiated?
 
 RMG has more or less become a commodity business. Most products look the same and some companies even modify their GTM to match competitors in hopes of attracting users with a familiar platform and better deposit offers(like a [vampire attack](https://finematics.com/vampire-attack-sushiswap-explained/)). Product innovation has been slow or non-existent in this industry for the last ten years. Adda52 from 2013 looks 90% same as today. Moreover, given the extremely low M12 retention rates, you have to keep acquiring users (spending money) every year as your platform churns through them - making this a treadmill business.
 
@@ -128,7 +128,7 @@ Revenue comparison between some Indian and foreign betting companies shows the m
 
 ![comp](/assets/files/comp.webp){: width="825" height="789" loading="lazy" decoding="async"}
 
-**Sources**
+### Sources
 
 - Delta Tech(Adda52) DRHP
 - Nazara gaming DRHP

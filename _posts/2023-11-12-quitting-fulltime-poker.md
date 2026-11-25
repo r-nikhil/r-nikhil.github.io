@@ -21,7 +21,7 @@ I stopped playing full time because both of the above premises turned out to be 
   - As a Poker player, the main fundamental thing is putting volume(no. of hands played / hour/day/week whatever). Now, you can't be jet setting around the globe and putting in the required hands. 
   - *There is a reason professional Poker players are called grinders. Its a grind*. 
   - Moreover, its not at all enough to just play Poker. You need to be at the top shape mentally and physically as the game takes a heavy toll on yourself. This means getting mental coaching session 3x a week, getting theory coaching, hand reviews, etc which is up to 20hrs a week. Its actually way way more hectic schedule than working a simple day job especially given there are no breaks/weekends/festivals etc. 
-    - But all of the above sacrifice is worth it because you are also making 10x your day job. Right? Not really. Let me explain in the next section. 
+  - But all of the above sacrifice is worth it because you are also making 10x your day job. Right? Not really. Let me explain in the next section. 
 
 - The 95th percentile Poker income is about $200-250k. While this number looks big on paper(relative to what they pay at Flipkart), there are some caveats. Also, when you suddenly start making 10x your previous income, it clouds your judgment. Its hard to think long term. 
 

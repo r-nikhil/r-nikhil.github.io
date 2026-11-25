@@ -37,6 +37,7 @@ What is the thread model? Well, the LLMs works with a text prompt. If the user i
 - Bypassing AI content moderation
 - Extract data from personal assistant AIs running on top of your data. 
 - Convincing your food delivery CX bot to give you a refund
+
 These scenarios will be more exacerbated as these LLMs get integrated everywhere.  
 
 #### Different types of prompt injection
@@ -46,22 +47,25 @@ There is a lot of content online about various prompt hacking methods. In this s
 #### Attacking LLMs
 
 - Obfuscation strategies
-    - Its a simple technique designed to evade hard coded filters. Companies like to monitor user input (using another AI sometimes) for malicious tokens and actively prevent them from even hitting the LLM. Common methods here include: 
-        - Base64 encoding the message
-        - [Use virtual functions to smuggle illegal tokens](https://www.reddit.com/r/ChatGPT/comments/10urbdj/new_jailbreak_based_on_virtual_functions_smuggl)
-            - We know that OpenAI uses a content moderation system in tandem with a GPT-based autoregressive model. Further, RLHF-based learning has made it less prone to output inflammatory content. 
 
-              ![](/assets/files/mask.webp){: width="1338" height="1292" loading="lazy" decoding="async"}
+  Its a simple technique designed to evade hard coded filters. Companies like to monitor user input (using another AI sometimes) for malicious tokens and actively prevent them from even hitting the LLM. Common methods here include: 
 
-            - The key attack vector is to first develop some internal computational modules. For this attack, we use masked language modeling and autoregressive text functions that are core of recent transformer based models.
+  - Base64 encoding the message
+  - [Use virtual functions to smuggle illegal tokens](https://www.reddit.com/r/ChatGPT/comments/10urbdj/new_jailbreak_based_on_virtual_functions_smuggl)
 
-              ![](/assets/files/functions.webp){: width="1354" height="1260" loading="lazy" decoding="async"}
+    We know that OpenAI uses a content moderation system in tandem with a GPT-based autoregressive model. Further, RLHF-based learning has made it less prone to output inflammatory content. 
 
-            - Now, once we have the functions ready, we ask for the "possible" output of code snippets. (tried to use 4chan here). Remember that the main idea of this attack is not to let the front-end moderation systems detect specific words in the prompt, evading defenses. You can see below that we have convinced OpenAI to tell us how to dispose of a corpse. Not what I saw in Breaking Bad. 
+    ![](/assets/files/mask.webp){: width="1338" height="1292" loading="lazy" decoding="async"}
 
-              ![](/assets/files/out.webp){: width="1368" height="646" loading="lazy" decoding="async"}
+    The key attack vector is to first develop some internal computational modules. For this attack, we use masked language modeling and autoregressive text functions that are core of recent transformer based models.
 
-              ![](/assets/files/outres.webp){: width="1370" height="956" loading="lazy" decoding="async"}
+    ![](/assets/files/functions.webp){: width="1354" height="1260" loading="lazy" decoding="async"}
+
+    Now, once we have the functions ready, we ask for the "possible" output of code snippets. (tried to use 4chan here). Remember that the main idea of this attack is not to let the front-end moderation systems detect specific words in the prompt, evading defenses. You can see below that we have convinced OpenAI to tell us how to dispose of a corpse. Not what I saw in Breaking Bad. 
+
+    ![](/assets/files/out.webp){: width="1368" height="646" loading="lazy" decoding="async"}
+
+    ![](/assets/files/outres.webp){: width="1370" height="956" loading="lazy" decoding="async"}
 
 - Code injection is an exploit where the attacker is able to get the LLM to run arbitrary code. This can occur in tool-augmented LLMs, where the LLM is able to send code to an interpreter, but it can also occur when the LLM itself is used to evaluate code. If you check this [example](https://atlas.mitre.org/studies/AML.CS0016/), people were able to extract the OpenAPI keys from a startup called MathGPT but just asking for it.  
 

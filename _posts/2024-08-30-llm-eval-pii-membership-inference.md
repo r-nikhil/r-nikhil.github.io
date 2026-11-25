@@ -239,7 +239,7 @@ test_info_mia = dfl.create_membership_inference_test(
 )
 ```
 
-### Integrating DynamoEval into your CI/CD pipelines
+## Integrating DynamoEval into your CI/CD pipelines
 
 Ensuring data privacy and security in machine learning models is critical, and real-time monitoring plays an important role in the process.
 
@@ -253,7 +253,7 @@ By integrating DynamoEval into your development and deployment process, you can 
 
 Making DynamoEval scans a routine part of the CI/CD pipelines enables you to proactively safeguard your models against privacy risks, ensuring trust and compliance throughout your operations.
 
-### Actionable insights and mitigation strategies
+## Actionable insights and mitigation strategies
 
 DynamoEval not only identifies potential privacy vulnerabilities, it also provides actionable insights to mitigate these risks. Based on the evaluation results, the platform offers recommendations for improving the model's privacy protection.
 

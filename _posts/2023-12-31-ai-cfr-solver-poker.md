@@ -31,7 +31,7 @@ When you think of Regret in Poker, what is the first thing that comes to mind? I
 
 Regret is a measure of how well you could have done compared to some alternative. Phrased differently, what you would have done in some situation instead. **Counterfactual regret** is how much we regret not playing some strategy. For example, if we fold and find out that calling was a way better strategy, then we “regret” not calling. Mathematically it measures the gain or loss of taking some action compared to our overall strategy with that hand at that decision point.
 
-    Minimizing regret is the basis of all GTO algorithms. 
+Minimizing regret is the basis of all GTO algorithms. 
     
 The most well-known algorithm is called **CFR – counterfactual regret minimization**. In fact, my entire process of studying Poker is one big algorithm. I used to play 10k hands, take it to my coach, get it reviewed against "correct" strategy and try to play more optimal next time. My whole studying process was to minimize regret in a way. 
 
@@ -59,22 +59,22 @@ We have already defined what a "correct" strategy looks like and the game tree. 
     - This is the step where you define the game space. Things like the betting tree(you don't solve ALL of poker in one go but rather in parts), required accuracy, starting pot values, stack sizes, board cards, starting ranges, any bucketing, rake, ICM are setup before the simulation starts. Remember, complexity grows our betting tree exponentially. If you want to solve 4-5x as many betting sizes, the tree would grow by 125x and becomes harder to solve. Funnily, this is still a major simplification of the true game space. 
     - One of the most difficult problems with solvers is optimizing betting trees to produce solid strategies within the constraints of current technology. We can only make a tree so big before it becomes unsolvable due to its size. We can only make a tree so small before the solver starts exploiting the limitations of that tree.
 
-![](/assets/files/treesetup.webp){: width="533" height="597" loading="lazy" decoding="async"}
+  ![](/assets/files/treesetup.webp){: width="533" height="597" loading="lazy" decoding="async"}
 
 - **Step 2:** Compute the regret(EV loss against opponent move) for each action throughout the game tree
     - While we have defined regret earlier, we need to exactly define what is the solver calculating here. In the previous step, we have defined the game space(and the leaf nodes we are interested in calculating) and here we calculate EV of each node. Its nothing but probability*value of the action. 
 
-![](/assets/files/step2.webp){: width="1400" height="307" loading="lazy" decoding="async"}
+  ![](/assets/files/step2.webp){: width="1400" height="307" loading="lazy" decoding="async"}
 
 - **Step 3:** Slightly change one player strategy (keeping opponent moves fixed) to reduce the regret calculated in previous step
     - Once we have calculated the regret of our actions, how we figure out a new strategy. New Strategy = (Action Regret)/(Sum of positive regrets). 
 - **Step 4:** Repeat Steps 2 and 3 until you attain Nash equilibrium. 
     - I have already defined what Nash equilibrium is in Poker. But how do we know this is the most optimal part of the game tree? We certainly didn't go through the entire game tree and instead took an iterative approach. What if we are stuck in a local maximum? What if going 100x pot size allin is the best strategy and we never iterated over it? Its impossible to know before hand what game space to iterate on. Poker, in general, can be described as a “bilinear saddle point problem”. The payoff space looks something like this:
 
-![](/assets/files/payoffpoker.webp){: width="631" height="479" loading="lazy" decoding="async"}
+      ![](/assets/files/payoffpoker.webp){: width="631" height="479" loading="lazy" decoding="async"}
 
-- - Each point on the x-axis and y-axis represents a strategy pair. Each strategy pair contains information about how both players play their entire range in every spot across every runout.
-- - The height (z-axis) represents the expected value of the strategy pair, with higher points representing an EV advantage for one player, and lower points representing a disadvantage
+    - Each point on the x-axis and y-axis represents a strategy pair. Each strategy pair contains information about how both players play their entire range in every spot across every runout.
+    - The height (z-axis) represents the expected value of the strategy pair, with higher points representing an EV advantage for one player, and lower points representing a disadvantage
 
 That's it!. Almost all GTO solvers do the above 4 steps. They are aided with complex algorithms to simplify game trees, calculate regret faster, identifying which part of game tree is relevant. To ensure we aren't stuck in a local maxima of the game tree, most solvers use a process called [Counterfactual Regret Minimization (CFR)](https://poker.cs.ualberta.ca/publications/NIPS07-cfr.pdf). This algorithm was first published in a 2007 paper from the University of Alberta and it proves that the CFR algorithm will not get stuck at some local maximum, and given enough time, will reach equilibrium.
 
@@ -108,7 +108,7 @@ Assuming Poker bots take over the online scene, where else can poker players and
 - Route optimization. Lot of the traffic routing algos use CFR and you can also model transportation logistics using this
 
 
-Sources and Further reading: 
+#### Sources and Further reading:
 
 - [Libratus science.org](https://www.science.org/doi/10.1126/science.aao1733)
 - [Pluribus(elder brother of Libratus) wiki](https://en.wikipedia.org/wiki/Pluribus_(poker_bot))

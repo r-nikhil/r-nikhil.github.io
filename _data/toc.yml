@@ -33,6 +33,7 @@ gaming-state-india:
   - {id: 1-why-india, t: Why India}
   - {id: 2-indian-gaming-market, t: The market}
   - {id: 3-some-perspective-on-rmggaming-and-way-forward, t: Way forward}
+  - {id: sources, t: Sources}
 multi-vs-single-gaming:
   - {id: background, t: Background}
   - {id: content, t: Content}
@@ -67,6 +68,7 @@ ai-cfr-solver-poker:
   - {id: how-to-solve-the-game, t: Solving the game}
   - {id: what-is-counterfactual-regret-minimization-cfr, t: CFR}
   - {id: where-else-is-cfr-useful, t: Other uses}
+  - {id: sources-and-further-reading, t: Further reading}
 ai-weak-strong-generalization-openai:
   - {id: weak-supervisor, t: Weak supervisor}
   - {id: strong-ceiling---the-baseline-for-comparison, t: Strong ceiling}
@@ -75,6 +77,7 @@ ai-weak-strong-generalization-openai:
   - {id: bootstrapping-for-chess-puzzles, t: Chess puzzles}
   - {id: chatgpt-reward-modeling, t: Reward modeling}
   - {id: conclusion, t: Conclusion}
+  - {id: further-reading-and-sources, t: Further reading}
 attacking-neural-networks:
   - {id: adversarial-attacks, t: Adversarial attacks}
   - {id: data-poisoning-and-backdoor-attacks, t: Poisoning and backdoors}
@@ -83,6 +86,7 @@ attacking-neural-networks:
   - {id: fairwashing, t: Fairwashing}
   - {id: other-attacks-on-ml-models, t: Other attacks}
   - {id: conclusion, t: Conclusion}
+  - {id: further-reading, t: Further reading}
 data-leakage-llm-eval:
   - {id: addressing-emerging-risks-in-language-models, t: Emerging risks}
   - {id: evaluating-data-extraction-attacks-on-ai-models, t: Extraction attacks}
@@ -94,6 +98,8 @@ llm-eval-pii-membership-inference:
   - {id: membership-inference-attacks, t: Membership inference}
   - {id: dynamoeval-ui-walkthrough, t: UI walkthrough}
   - {id: dynamoeval-sdk-walkthrough, t: SDK walkthrough}
+  - {id: integrating-dynamoeval-into-your-cicd-pipelines, t: CI/CD}
+  - {id: actionable-insights-and-mitigation-strategies, t: Mitigation}
 differential-privacy-llm:
   - {id: challenges-in-adopting-differential-privacy-for-llms, t: Challenges}
   - {id: apply-differential-privacy-at-scale-with-dynamoenhance, t: At scale}
@@ -175,3 +181,18 @@ fast-ai-edition:
   - {id: compute--power, t: Compute and power}
   - {id: companies, t: Companies}
   - {id: competitions, t: Competitions}
+investing-tech-cycle:
+  - {id: foundation-companies, t: Foundation}
+  - {id: builder-companies, t: Builders}
+  - {id: application-companies, t: Applications}
+airtable-omni-review:
+  - {id: results, t: Results}
+  - {id: overall-impression, t: Overall impression}
+ai-investing-framework:
+  - {id: what-happens-when-the-underlying-model-becomes-10x-better, t: Better models}
+  - {id: what-happens-when-you-call-collect-customer-data-or-talk-to-customers-at-scale, t: Customers at scale}
+  - {id: 3-ways-to-bucket-startups, t: Startup buckets}
+llm-coin-toss-odd-even:
+  - {id: experiment-1--tossing-a-fair-coin, t: Coin toss}
+  - {id: experiment-2--odd-vs-even, t: Odd vs even}
+  - {id: raw-data, t: Raw data}

@@ -25,7 +25,7 @@ As a product manager working in gaming, its impossible to miss the recent rise o
 
 #### Legality and regulations
 
-- This is actually getting clearer by the day in India. Self Regulatory Organizations (SRO) are going to be established in about 2-3 months. These SRO's comprised of [AIGF](https://www.aigf.in/) + the leading RMG companies from India will determine what is a "skill" game and define frameworks around game certification. Presumably, once certified as a skill game, you should be able to advertise and promote freely everywhere. Overnight bans from different states will reduce and RMG can finally stop being a "gray" market in some jurisdictions.
+This is actually getting clearer by the day in India. Self Regulatory Organizations (SRO) are going to be established in about 2-3 months. These SRO's comprised of [AIGF](https://www.aigf.in/) + the leading RMG companies from India will determine what is a "skill" game and define frameworks around game certification. Presumably, once certified as a skill game, you should be able to advertise and promote freely everywhere. Overnight bans from different states will reduce and RMG can finally stop being a "gray" market in some jurisdictions.
 
 #### Familiarity of mechanics or Popularity of the game
 
@@ -40,7 +40,7 @@ As a product manager working in gaming, its impossible to miss the recent rise o
 
 #### Network effects
 
-- Does the game get better with more people playing it? While tournament formats are fueled by compounding network effects, cash game/1v1/ SnG variants don't benefit as much from more players playing (beyond a point, it doesn't matter if you have 1000 active players on one stake or 10000 players.). Games where MTTs(or any tournaments) is the main format like Fantasy benefit from this for example.
+Does the game get better with more people playing it? While tournament formats are fueled by compounding network effects, cash game/1v1/ SnG variants don't benefit as much from more players playing (beyond a point, it doesn't matter if you have 1000 active players on one stake or 10000 players.). Games where MTTs(or any tournaments) is the main format like Fantasy benefit from this for example.
 
 #### Variance in reward distribution
 
@@ -50,7 +50,7 @@ As a product manager working in gaming, its impossible to miss the recent rise o
 
 #### Conclusion
 
-- In the previous blog, we discussed about how two games interact with each other and in this post, we looked at some ways to evaluate and pick a game for our bundle. Do remember that the games you pick initially and the dimension you focus on to evaluate them would determine your product and strategy. For example, if the game has high power user population, your game discovery should be more towards satisfying their core need/game, skill vs Luck factor of the game would determine your FTUE and how you will deal with the learning curve and cultural significance of the game would determine your GTM etc. Ultimately, your selection of games should determine the product and discovery and not the other way around. I would like to end this post with a rap written by GPT4 summarizing this post.  
+In the previous blog, we discussed about how two games interact with each other and in this post, we looked at some ways to evaluate and pick a game for our bundle. Do remember that the games you pick initially and the dimension you focus on to evaluate them would determine your product and strategy. For example, if the game has high power user population, your game discovery should be more towards satisfying their core need/game, skill vs Luck factor of the game would determine your FTUE and how you will deal with the learning curve and cultural significance of the game would determine your GTM etc. Ultimately, your selection of games should determine the product and discovery and not the other way around. I would like to end this post with a rap written by GPT4 summarizing this post.  
 
 
 If you liked reading this, checkout my other posts too:

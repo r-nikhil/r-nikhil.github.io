@@ -36,14 +36,14 @@ A χ² value greater than 3.84 (critical value for df=1, p=0.05) indicates stati
 
 
 
-#### Key Findings:
+### Key Findings:
 
 - All models show "heads" bias - every LLM tested produced more heads than tails
 - Bias severity varies significantly - ranging from 8% (Claude) to 49% (GPT-o1)
 - Statistical significance - Claude is the only model whose bias isn't statistically significant
 - OpenAI models show substantially stronger heads bias than Claude
 
-#### Analysis Details:
+### Analysis Details:
 
 - Most biased: o1 (99% heads) and GPT-4.1 (96% heads)
 - Least biased: Claude 3.7 Sonnet (58% heads)
@@ -56,7 +56,7 @@ A χ² value greater than 3.84 (critical value for df=1, p=0.05) indicates stati
 
 Now we repeat the same analysis as above and plot the numbers. 
 
-#### Key Findings:
+### Key Findings:
 
 - Strong odd number bias in most models - 4 out of 6 models show statistically significant preference for odd numbers
 - Claude shows extreme bias - With 97% odd numbers, Claude 3.7 Sonnet has the strongest bias (47% deviation from expected)
@@ -65,7 +65,7 @@ Now we repeat the same analysis as above and plot the numbers.
 
 ![](/assets/files/ct.webp){: width="1400" height="777" loading="lazy" decoding="async"}
 
-#### Statistical Analysis:
+### Statistical Analysis:
 
 - Most biased: Claude 3.7 Sonnet (χ² = 88.36, p < 0.05)
 - Perfectly balanced: GPT-4.5-preview (χ² = 0.00)
@@ -77,12 +77,12 @@ Now we repeat the same analysis as above and plot the numbers.
 
 Its interesting to see Claude being unbiased while tossing coins but being super biased when prediction odd/even numbers. 
 
-### Raw data
+## Raw data
 
-#### Coin toss
+### Coin toss
 
 ![](/assets/files/tossdata.webp){: width="500" height="466" loading="lazy" decoding="async"}
 
-#### Odd vs Even
+### Odd vs Even
 
 ![](/assets/files/numberdata.webp){: width="476" height="458" loading="lazy" decoding="async"}

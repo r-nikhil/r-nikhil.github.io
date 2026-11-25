@@ -34,7 +34,7 @@ So in around late 2021, the Deepmind team went on to train about 400 models rang
 
 The fundamental question they were trying to answer was *"Given a fixed FLOPs budget, how should one trade-off model size and the number of training tokens?"* . Its basically an optimization problem where you fix one variable (FLOPs) and try to find the optimal values for parameters and tokens. However, every time they have to test a value for parameters/tokens they have to train a model which costs millions of dollars. For the paper, they trained over 400 models with varying values of parameters and tokens taking certain approaches. Lets look at them below: 
 
-- Approach 1: Fix the parameter variable and vary the size of the training tokens
+Approach 1: Fix the parameter variable and vary the size of the training tokens
 
  
 
@@ -44,13 +44,13 @@ Here, they took a couple models with parameters ranging from 70M to 10B and trai
 
 ![](/assets/files/plot1.webp){: width="958" height="423" loading="lazy" decoding="async"}
 
-- Approach 2: Fix the compute budget and vary the number of parameters of the neural network
+Approach 2: Fix the compute budget and vary the number of parameters of the neural network
 
 In the first approach, they fixed the number of parameters of the model and trained them on multiple token sizes. Based on the compute used for each model, they were able to select the model with the ideal parameter/token size for a given budget. In this approach, they fix the amount of FLOPs for each model and vary the number of parameters for each model. According to this approach, Google would have had to train PaLM with about 14 trillion tokens to obtain the optimal loss for a 540B parameters model.
 
 ![](/assets/files/app2.webp){: width="1050" height="737" loading="lazy" decoding="async"}
 
-- Approach 3: Take data from first two approaches and try to find a function for loss values
+Approach 3: Take data from first two approaches and try to find a function for loss values
 
 This approach was slightly mathematical in nature and I shall skip directly to the results. We find the model with the lowest loss value for a given compute budget and model size. 
 
@@ -68,10 +68,10 @@ After training more than 400models to prove the above relationships, they train 
 
 Current models are extremely oversized for their performance. Going after parameters is inefficient. While AI labs have been going after larger and larger models, post Chinchilla era dictates that they should be going after massive training data as well. This requires research into more optimization steps and increases in batch sizes (which however has adverse impact on model performance after a point). The problem of maintaining training efficiency while increasing data size becomes very important to solve. We also might be running out of data as this [Lesswrong article](https://www.lesswrong.com/posts/6Fpvch8RR29qLEWNH/chinchilla-s-wild-implications) implies. 
 
-#### [Emergent properties](https://www.assemblyai.com/blog/emergent-abilities-of-large-language-models/#references)
+#### Emergent properties
 
 
-I originally started writing this document to explain the Chinchilla results and ponder over certain emergent behavior to make an educated guess about AGI timelines. An amazing property of LLMs is the emergence of new capabilities as the size of the network increases. In other words, LLMs unpredictably learn to perform new tasks, without having been specifically trained to do so. The system becomes more complex than the sum of the parts. Here is a GIF from the Google PaLM paper showing the same.
+I originally started writing this document to explain the Chinchilla results and ponder over certain emergent behavior to make an educated guess about AGI timelines. An amazing property of LLMs is the [emergence of new capabilities](https://www.assemblyai.com/blog/emergent-abilities-of-large-language-models/#references) as the size of the network increases. In other words, LLMs unpredictably learn to perform new tasks, without having been specifically trained to do so. The system becomes more complex than the sum of the parts. Here is a GIF from the Google PaLM paper showing the same.
 
 ![](/assets/files/emergent.webp){: width="800" height="292" loading="lazy" decoding="async"}
 

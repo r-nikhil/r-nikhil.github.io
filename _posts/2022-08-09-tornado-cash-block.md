@@ -18,11 +18,11 @@ Since all transaction data is on-chain (which is public) and can be queried by a
 
 - Any (d)app you use will instantly know your entire transaction history
 
-    - Imagine you sign up with your email on a random website and they suddenly now have access to your entire bank statement.  Higher medical insurance premiums because they know that you transacted often in an online pharmacy. Expensive delivery charges because they know you can afford it. 
+    Imagine you sign up with your email on a random website and they suddenly now have access to your entire bank statement.  Higher medical insurance premiums because they know that you transacted often in an online pharmacy. Expensive delivery charges because they know you can afford it. 
 
 - Any donations to a controversial cause (which is legal) is attached to you but you don't want to handle the repercussions
 
-    - You don't want your patriotic Russian neighbors knowing that you donated to the Ukraine fund or your co-workers knowing that you donated to a particular political party
+    You don't want your patriotic Russian neighbors knowing that you donated to the Ukraine fund or your co-workers knowing that you donated to a particular political party
 
 - Everybody will know your net worth
 
