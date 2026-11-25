@@ -6,7 +6,7 @@ categories: [ai, security]
 
 This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/integrate-explainable-llm-data-leakage-testing-into-your-ci-cd-pipeline-with-dynamoeval).
 
-![](/assets/files/piimain.png)
+![](/assets/files/piimain.webp){: width="1400" height="770" decoding="async"}
 
 Generative AI (GenAI) introduces new challenges in data privacy, including the potential risk of large language models (LLMs) memorizing and leaking personally identifiable information (PII) or copyrighted data in training datasets. Although this technology is still emerging, enterprises using or deploying GenAI still need to meet the existing laws and regulations on data privacy.
 
@@ -40,7 +40,7 @@ During a PII extraction attack, three key metrics are reported:
 -   **Recall**: The percentage of actual PII that was successfully extracted (out of the training dataset)
 -   **Precision**: The proportion of identified PII instances that are true positives
 
-![](/assets/files/piiextract.png)
+![](/assets/files/piiextract.webp){: width="706" height="717" loading="lazy" decoding="async"}
 
 ## Membership inference attacks
 
@@ -52,7 +52,7 @@ We simulate the attacker building a classifier that predicts whether a data reco
 -   **True positive rate (TPR):**  In this attack, the true positive rate (TPR) represents the percentage of data records correctly predicted to be members of the training dataset. We evaluate the TPR at various low false positive rates (FPRs) to determine the attacker’s success in high-confidence scenarios.
 -   **ROC-AUC**: In this attack, the Receiver Operating Characteristic (ROC) curve can also be used to to define vulnerability, which demonstrates the performance of the attack as a tradeoff between the TPR and FPR at various thresholds. We can then use the Area Under the ROC Curve (AUC) to measure the aggregate performance across all thresholds.  [Recent research](https://arxiv.org/abs/2112.03570)  also suggests evaluating the attack’s TPR in the low FPR regime (the three percentages shown at the top) to characterize whether the attack can confidently identify members of the training set.
 
-![](/assets/files/meminf.png)
+![](/assets/files/meminf.webp){: width="702" height="897" loading="lazy" decoding="async"}
 
 ## DynamoEval UI walkthrough
 
@@ -68,13 +68,13 @@ For PII extraction and membership inference attacks, this dataset is usually the
 
 Upload both your trained model and the dataset to the Dynamo AI platform. Make sure to specify any relevant files, such as LoRA adapter configurations, if applicable.
 
-![](/assets/files/upload.png)
+![](/assets/files/upload.webp){: width="1395" height="1053" loading="lazy" decoding="async"}
 
 ### 3. Choose tests
 
 Select the specific attack you want to run, such as PII Extraction or Membership Inference. The screenshot below displays the range of privacy attacks available on our platform.
 
-![](/assets/files/testcat.png)
+![](/assets/files/testcat.webp){: width="1093" height="831" loading="lazy" decoding="async"}
 
 ### 4. Analyze results
 
@@ -84,23 +84,23 @@ In the ROC curve example below, the straight, gray line where X = Y indicates a 
 
 In this case, the AUC is 0.77, revealing that the attacker was able to differentiate between members and non-members of the dataset with a high success rate.
 
-![](/assets/files/miipii.png)
+![](/assets/files/miipii.webp){: width="1352" height="765" loading="lazy" decoding="async"}
 
 Below, the FPR represents the percentage of records falsely identified as being members of the training dataset, and the TPR represents the percentage of records correctly identified as being members of the training dataset.
 
 We provide three different TPR rates for clarity. You can also review the prompts and responses used in the attack in our deep dive section. Additionally, any PII extracted from the model during the attack is tagged and included in the response.
 
-![](/assets/files/deepdive.png)
+![](/assets/files/deepdive.webp){: width="1400" height="671" loading="lazy" decoding="async"}
 
 We can also review the loss distribution plots to gain insights into the model's behavior on both training and testing data. [Research](https://arxiv.org/abs/1906.00389) shows that a high degree of separation in these distributions suggests the model is less generalized and more vulnerable to membership inference and data leakage.
 
-![](/assets/files/plotmii.png)
+![](/assets/files/plotmii.webp){: width="791" height="473" loading="lazy" decoding="async"}
 
 ### 5. Generate test reports
 
 After the tests are completed, we generate PDF reports that provide detailed information on the attack methodology, results, and recommendations for improving the models.
 
-![](/assets/files/testreport.png)
+![](/assets/files/testreport.webp){: width="1400" height="488" loading="lazy" decoding="async"}
 
 ## DynamoEval SDK walkthrough
 

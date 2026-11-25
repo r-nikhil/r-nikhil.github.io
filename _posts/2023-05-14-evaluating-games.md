@@ -21,7 +21,7 @@ As a product manager working in gaming, its impossible to miss the recent rise o
 
 - You ideally want games which are super easy to learn and takes infinite time to master. This will ensure longevity and the game might eventually become a sport.
 
-![](/assets/files/lcurve.png)
+![](/assets/files/lcurve.webp){: width="809" height="677" decoding="async"}
 
 #### Legality and regulations
 

@@ -12,7 +12,7 @@ If you talk to my colleagues at work, they will tell you that I've been a fan of
 
 Moreover, given that majority of your revenue is going to come from these power users, I never really understood bundling random games like Fruit Ninja, Ludo etc along with the target game of the power user. In fact, the product folks behind Hike seemed to have reached a similar conclusion. A quote from their post: "Even though we have 10+ games on the platform, most users preferred to play 1 or 2 specific games that they liked the most. Users like to have options but have specific preferences when it comes to actual game play". You can read the full post [here](https://blog.hike.in/rush-homescreen-d64a7406dc78). Plus, ARPU of single gaming platforms is 3-4x higher than multi-gaming platform. Users seem to spend more on the same game inside the standalone app compared to the multi-gaming app as we can see from the below table:
 
-![](/assets/files/poker.png)
+![](/assets/files/poker.webp){: width="818" height="575" decoding="async"}
 
 Given these obvious pros of standalone apps (better ARPU, filled with power users) and cons of multi gaming apps(no obvious user overlap, bad ARPU), why are multi gaming platforms growing? This blog post basically tries to prove the above premise (single gaming is generally better than multi gaming) wrong.
 
@@ -26,13 +26,13 @@ Given these obvious pros of standalone apps (better ARPU, filled with power user
 
 For the rest of the discussion, we will consider these 4 games: Rummy, Poker, Ludo, Fantasy and debate on whether to build a stand alone app or a multi-gaming app comprising all the games. Let's also split our users and their behavior like this:
 
-![](/assets/files/usertype.png)
+![](/assets/files/usertype.webp){: width="826" height="449" loading="lazy" decoding="async"}
 
 Now that we have our four games and three types of users, lets consider two scenarios:
 
 **Scenario 1:** We build single gaming apps for the games and market them independently. This means, we are primarily trying to attract power users (only fans of Poker would have Poker installed) and will only collect revenue from them. Moreover, a consumer would only have access to game of which they are fans of. They miss out on the other games they otherwise might have played and enjoyed inside a multi-gaming platform. Clearly in this case, we lose out on the casual user revenue if we do single gaming apps and consumers lose out on discovering games they might have liked.
 
-![](/assets/files/gamebundle.png)
+![](/assets/files/gamebundle.webp){: width="1006" height="509" loading="lazy" decoding="async"}
 
 **Scenario 2:** We build a multi gaming app which has all the games bundled into it. In this scenario, we not only provide power users their favorite game but also allows them access to game they might be "casual users" of. A poker power user might be a "casual user" of Fantasy sports. Also, from a business standpoint, my total addressable market(TAM) is much bigger than my earlier user base because I am now targeting the casual user market of all the games as well.
 
@@ -69,7 +69,7 @@ To answer these questions, we need to define the marginal utility of having the 
 
 To visualize, this, lets look at at the example between Fantasy and Poker. While Fantasy has lot more users, Poker has higher marginal utility in preventing churn and attracting high value users.  
 
-![](/assets/files/usage.png)
+![](/assets/files/usage.webp){: width="715" height="403" loading="lazy" decoding="async"}
 
 For example, lets imagine that if Poker was removed from our multi-gaming app, then 10% of the users would churn. If the overall platform ARPU is about Rs. 300/month and say 1M users play, this would be mean about 100k users churning out, which means a loss of 100k * Rs.300 * 12 (yearly) = Rs. 36Cr/yr in revenue at risk. This means, Poker is valued at about Rs.36Cr to the platform*. This would be somewhat the amount, a gaming studio should be paid yearly if they are running the poker business for multi-gaming app.
 
@@ -95,7 +95,7 @@ In this case, so how much does the platform expect to make when they integrate/l
 However, this is the worst scenario and adds very little value to the platform. Lets look at the other case.
 
 
-![](/assets/files/overlap.png)
+![](/assets/files/overlap.webp){: width="750" height="448" loading="lazy" decoding="async"}
 
 **Case 2:** Zero overlap between power user base. This means, all the poker power users are isolated and currently don't play inside the Multi Gaming Platform. They only play on their standalone poker app. From the platforms POV, this is exciting because of new addition of all these power users who are now coming to your Multi Gaming Platform for the game plus the fact that existing customers of Multi Gaming Platform get Poker for free(without installing any extra app). This contributes to direct increase in revenue.
 
@@ -145,7 +145,7 @@ So, what does it mean? We have proved that adding a game which already has power
 
 Now if the Multi Gaming Platform is already valuable to the user (they installed it for some game of which they are a power user of), they will not care about adding another game to it. The value of the app for the power user comes only from their target game. So, you are better off adding a game that someone else (ideally a non-user) would be a power user of instead of adding another similar game.
 
-![](/assets/files/mgp.png)
+![](/assets/files/mgp.webp){: width="816" height="483" loading="lazy" decoding="async"}
 
 The customer will see value in the Multi Gaming Platform compared to the Single Gaming Platform if
 

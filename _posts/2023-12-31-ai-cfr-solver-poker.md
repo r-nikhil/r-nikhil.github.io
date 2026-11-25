@@ -7,7 +7,7 @@ categories: [poker, personal]
 
 As most readers of my blog would know by now, I used to play Poker for a couple years as a full time endeavour. One of the main tools we used for learning the game were called "solvers". This blog post is about these programs and how they work? An introductory understanding of Poker terminologies, betting sequences and basic conditional probability is required for this post. 
 
-![](/assets/files/gametree.png)
+![](/assets/files/gametree.webp){: width="1026" height="550" decoding="async"}
 
 #### Background
 
@@ -45,7 +45,7 @@ Before we proceed further, we need to understand the concept called "Game Tree".
 
 In the concept of sequential games, a game tree is nothing but a pictorial representation of every possible game state. This can be used to measure the complexity of a game, as it represents how dense and massive a game can play out over the long run. Below is an image of a game tree for ONLY the first two actions of the Tic tac toe game. The first player has three choices of move: in the center, at the edge, or in the corner. The second player has two choices for the reply if the first player played in the center, otherwise five choices. And so on. The number of leaf nodes in the complete game tree is the number of possible different ways the game can be played. 
 
-![](/assets/files/tictac.png)
+![](/assets/files/tictac.webp){: width="1099" height="749" loading="lazy" decoding="async"}
 
 For example, the game tree for tic-tac-toe has 255,168 leaf nodes. In comparison, a super simplified, 2 player, limit hold-em has 1,179,000,604,565,715,751 nodes. Now, remember in a real world poker setting there are 6-9 players playing, with each having infinite number of bet sizes(limit hold-em example has just 2 bet sizes). This means the actual game tree of Poker is infinitely massive and we need smart algorithms to distill a GTO strategy from it because we can't go the final leaf node of every strategy (computationally impossible). There are more leaf nodes than the number of atoms in the universe. As you will read later, the secret sauce of [Pluribus](https://www.nytimes.com/2019/07/11/science/poker-robot-ai-artificial-intelligence.html) comes from one such algorithm/approach. Two popular algorithms Minimax and Monte carlo tree search(MCTS) are some approaches that people take to find the optimal move through simulation. MCTS allows us to determine the best optimal move from a game state without having to expand the entire tree like we had to do in the minimax algorithm.
 
@@ -59,19 +59,19 @@ We have already defined what a "correct" strategy looks like and the game tree. 
     - This is the step where you define the game space. Things like the betting tree(you don't solve ALL of poker in one go but rather in parts), required accuracy, starting pot values, stack sizes, board cards, starting ranges, any bucketing, rake, ICM are setup before the simulation starts. Remember, complexity grows our betting tree exponentially. If you want to solve 4-5x as many betting sizes, the tree would grow by 125x and becomes harder to solve. Funnily, this is still a major simplification of the true game space. 
     - One of the most difficult problems with solvers is optimizing betting trees to produce solid strategies within the constraints of current technology. We can only make a tree so big before it becomes unsolvable due to its size. We can only make a tree so small before the solver starts exploiting the limitations of that tree.
 
-![](/assets/files/treesetup.png)
+![](/assets/files/treesetup.webp){: width="533" height="597" loading="lazy" decoding="async"}
 
 - **Step 2:** Compute the regret(EV loss against opponent move) for each action throughout the game tree
     - While we have defined regret earlier, we need to exactly define what is the solver calculating here. In the previous step, we have defined the game space(and the leaf nodes we are interested in calculating) and here we calculate EV of each node. Its nothing but probability*value of the action. 
 
-![](/assets/files/step2.png)
+![](/assets/files/step2.webp){: width="1400" height="307" loading="lazy" decoding="async"}
 
 - **Step 3:** Slightly change one player strategy (keeping opponent moves fixed) to reduce the regret calculated in previous step
     - Once we have calculated the regret of our actions, how we figure out a new strategy. New Strategy = (Action Regret)/(Sum of positive regrets). 
 - **Step 4:** Repeat Steps 2 and 3 until you attain Nash equilibrium. 
     - I have already defined what Nash equilibrium is in Poker. But how do we know this is the most optimal part of the game tree? We certainly didn't go through the entire game tree and instead took an iterative approach. What if we are stuck in a local maximum? What if going 100x pot size allin is the best strategy and we never iterated over it? Its impossible to know before hand what game space to iterate on. Poker, in general, can be described as a “bilinear saddle point problem”. The payoff space looks something like this:
 
-![](/assets/files/payoffpoker.png)
+![](/assets/files/payoffpoker.webp){: width="631" height="479" loading="lazy" decoding="async"}
 
 - - Each point on the x-axis and y-axis represents a strategy pair. Each strategy pair contains information about how both players play their entire range in every spot across every runout.
 - - The height (z-axis) represents the expected value of the strategy pair, with higher points representing an EV advantage for one player, and lower points representing a disadvantage
@@ -84,7 +84,7 @@ Counterfactual means “relating to or expressing what has not happened or is no
 
 In the paper, they basically introduce the notion of counterfactual regret, which exploits the degree of incomplete information in an extensive game. They show how minimizing counterfactual regret minimizes overall regret, and therefore in self-play can be used to compute a Nash equilibrium. CFR is a self play algorithm that learns by playing against itself repeatedly. It starts play with a uniform random strategy (each action at each decision point is equally likely) and iterates on these strategies to nudge closer to the game theory optimal Nash equilibrium strategy as the self play continues (the average of all strategies converges to the equilibrium strategy)
 
-![](/assets/files/cfr.png)
+![](/assets/files/cfr.webp){: width="1024" height="892" loading="lazy" decoding="async"}
 
 The concept of counterfactual value calculation involves determining the values of actions within a game state by hypothesizing that we reach that state with a certainty of 100%. In this process, only the probabilities associated with the opponent's and chance's moves leading to that state are considered.
 

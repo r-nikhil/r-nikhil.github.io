@@ -18,7 +18,7 @@ Before we plot the results, we calculate deviation. Deviation simply measures ho
 
 For example, Claude 3.7 Sonnet has P(Heads) = 0.58, so its deviation is 0.58 - 0.5 = 0.08 (or 8%). This directly quantifies bias magnitude and direction, with positive values indicating heads bias and negative values indicating tails bias. The first graph shows raw proportions of heads vs tails, while the second graph visualizes these deviations.
 
-![](/assets/files/hvt.png)
+![](/assets/files/hvt.webp){: width="1400" height="769" decoding="async"}
 
 
 Next we also do a chi-squared test to determine whether the bias is statistically significant or could reasonably occur by chance. I know we don't have a big enough sample size but I am just doing this for fun. For each model, it's calculated as:
@@ -32,7 +32,7 @@ For Claude 3.7 Sonnet:
 
 A χ² value greater than 3.84 (critical value for df=1, p=0.05) indicates statistical significance. Models with statistically significant bias are shown in red in the deviation graph, indicating their bias likely reflects an inherent trait rather than random chance. Claude's χ² = 2.56 falls below this threshold, suggesting its observed bias could reasonably occur by random variation.
 
-![](/assets/files/hvt1.png)
+![](/assets/files/hvt1.webp){: width="1400" height="832" loading="lazy" decoding="async"}
 
 
 
@@ -63,7 +63,7 @@ Now we repeat the same analysis as above and plot the numbers.
 - GPT-4.5 shows perfect balance - Exactly 50/50 distribution between odd and even
 - Two unbiased models - GPT-4.5-preview and GPT-4.1 show no statistically significant bias
 
-![](/assets/files/ct.png)
+![](/assets/files/ct.webp){: width="1400" height="777" loading="lazy" decoding="async"}
 
 #### Statistical Analysis:
 
@@ -72,7 +72,7 @@ Now we repeat the same analysis as above and plot the numbers.
 - Average bias magnitude: 18.0% deviation from expected 50/50 split
 - Direction of bias: Most models favor odd numbers, while GPT-4.1 slightly favors even numbers
 
-![](/assets/files/ct1.png)
+![](/assets/files/ct1.webp){: width="1400" height="836" loading="lazy" decoding="async"}
 
 
 Its interesting to see Claude being unbiased while tossing coins but being super biased when prediction odd/even numbers. 
@@ -81,8 +81,8 @@ Its interesting to see Claude being unbiased while tossing coins but being super
 
 #### Coin toss
 
-![](/assets/files/tossdata.png)
+![](/assets/files/tossdata.webp){: width="500" height="466" loading="lazy" decoding="async"}
 
 #### Odd vs Even
 
-![](/assets/files/numberdata.png)
+![](/assets/files/numberdata.webp){: width="476" height="458" loading="lazy" decoding="async"}

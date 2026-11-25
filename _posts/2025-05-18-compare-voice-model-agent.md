@@ -6,7 +6,7 @@ categories: [ai]
 
 Over the last week, I was reading, building and researching about voice agents. I made a few prototypes and along the way tried to understand the nuances of building voice agent applications. What started as casual curiosity about calculating pricing for voice agents culminated into vibe coding a voice ai agent pricing calculator. You can find it at [comparevoiceai.com](https://comparevoiceai.com/)
 
-![](/assets/files/comparevoiceai.png)
+![](/assets/files/comparevoiceai.webp){: width="1400" height="789" decoding="async"}
 
 After reading a bunch of blogs and comparing benchmark data across providers, I realized just how difficult it is to estimate the true cost of running voice agents in production. Most people focus on the obvious components (LLM costs, perhaps transcription), but miss the quadratic growth pattern that makes long conversations exponentially more expensive. A 40-min session can cost 100x more than a 4-min session. The costs of each component (STT, LLM, TTS) don't necessarily scale linearly. 
 
@@ -20,7 +20,7 @@ The calculator then provides a detailed breakdown showing the individual costs f
 
 Another super important thing for building voice agents is latency. Cost is only half the equation, though. Voice-to-Voice latency measures the total time from when a user finishes speaking to when they hear the AI response. Lower latency creates more natural conversational experiences. However, its not super intuitive where the latency is coming from and how you can optimise it. If you want to learn more about this, you can read this [blog](https://rnikhil.com/2025/05/18/how-to-reduce-latency-voice-agents) I wrote for reducing latency in your voice agent application. The website also has a simulator, where you can simulate a conversation with various latency figures. 
 
-![](/assets/files/latencybreakdown.png)
+![](/assets/files/latencybreakdown.webp){: width="1400" height="794" loading="lazy" decoding="async"}
 
 ---
 

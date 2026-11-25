@@ -28,7 +28,7 @@ The gaming industry in India has been growing exponentially in recent years, wit
 - Growing youth population. Already the youngest population which overlaps greatly with the target demographic for gaming. About 400Mn gamers today is the conservative estimate
 - This photo illustrate the growing internet user base leading to growing number of gamers >> growing number of paid gamers
 
-![funnel](/assets/files/funnel.png)
+![funnel](/assets/files/funnel.webp){: width="1302" height="657" decoding="async"}
 
 - Among this - about 110Mn are paying gamers which includes RMG + IAP + subscriptions.  
   - This number is set to double along with ARPU according to Redseer (by basically benchmarking with US/China)
@@ -40,13 +40,13 @@ The gaming industry in India has been growing exponentially in recent years, wit
   - Time spent in gaming rivals OTT/Social. About 3.1hrs per week
   - Power user retention and LTV is comparable to international platforms. Example: 20% of MAU of Adda52 are players who are > 3 years old on the platform.
 
-![timespent](/assets/files/timespent.png)
+![timespent](/assets/files/timespent.webp){: width="757" height="630" loading="lazy" decoding="async"}
 
 - Supply side
 
   - Rich cultural history leading to lot of familiar homegrown titles. Rummy is about 85% of the RMG market which in turn is about 55% of the overall gaming market
 
-![revenuesplit](/assets/files/revenuesplit.png)
+![revenuesplit](/assets/files/revenuesplit.webp){: width="1256" height="849" loading="lazy" decoding="async"}
 
 - Multi gaming platforms (MGP's) still haven't exactly cracked the unit economics for hyper casual games but they at least bring in DAU
 - Rising consumer trust in online platforms and digital payments
@@ -68,12 +68,12 @@ RMG dominates the market account for about 55-60% of the overall revenue. While 
 
 #### RMG vs Non-RMG
 
-![rmg](/assets/files/rmg.png)
+![rmg](/assets/files/rmg.webp){: width="827" height="526" loading="lazy" decoding="async"}
 
 Online RMG market is segmented into 3 game types (Online Rummy, Poker & Fantasy Sports) and by
 platforms into Single game (>91%) & Multi game (~9%) - collectively growing at a CAGR of ~61% for the last 3 years. Online Real Money Gaming Market split by the following segments :
 
-![rmggrowth](/assets/files/rmggrowth.png)
+![rmggrowth](/assets/files/rmggrowth.webp){: width="819" height="470" loading="lazy" decoding="async"}
 
 Rummy is currently the largest segment and is expected to dominate the RMG market in the future due to rising number of new rummy users from north India and increasing propensity to pay of existing users. Rummy market is expected to increase from $1Bn in FY2022 to $2.4Bn-$2.5Bn in FY2026 at CAGR of 24%.
 
@@ -81,11 +81,11 @@ Poker has the least penetration when compared to rummy and fantasy, indicating a
 
 #### Inside Non-RMG, where is the money coming from?
 
-![nonrmg](/assets/files/nonrmg.png)
+![nonrmg](/assets/files/nonrmg.webp){: width="529" height="516" loading="lazy" decoding="async"}
 
 Lets now move on how the users are split between RMG vs Non-RMG. The Non-RMG market has two major categories in terms of game types - Casual and Hyper-casual, and core games. Casual and Hyper casual games offer a quick and easy means to pass time and have become a popular entry point for India’s first-time mobile gamers. As a result, this segment has the highest number of overall users, i.e. 350-420 Mn, with very low paid user conversion rate (8-10%). Also, there are around 150-160 Mn core game users with very high conversion of paid gamers (36-43%)
 
-![usersplit](/assets/files/usersplit.png)
+![usersplit](/assets/files/usersplit.webp){: width="515" height="379" loading="lazy" decoding="async"}
 
 RMG witnesses a MACU of 12-13 Mn of the total 26-30 Mn real money gamers and it is expected to reach 60- 80 Mn real money gamers in the upcoming years.
 
@@ -126,7 +126,7 @@ At the end of the day, majority of your revenue comes from power users who choos
 
 Revenue comparison between some Indian and foreign betting companies shows the market potential for a mature player globally:
 
-![comp](/assets/files/comp.png)
+![comp](/assets/files/comp.webp){: width="825" height="789" loading="lazy" decoding="async"}
 
 **Sources**
 

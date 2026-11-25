@@ -12,7 +12,7 @@ The main pitch is this:
   - Chain multiple workflows at scale: Do data editing, email automation, data analysis, extracting/summarising insights, generating images for campaign concepts, doing web search for data enrichment, etc all while respecting the existing user permissions and roles. Lot of the AI governance and compliance features come out of the box. 
     - From their [docs](https://support.airtable.com/v1/docs/using-omni-ai-in-airtable), here is a sample of Omni's capabilities:
   
-![](/assets/files/airtableomni.png)
+![](/assets/files/airtableomni.webp){: width="929" height="640" decoding="async"}
 
 Some example usecases from their announcement: 
   - A VC can paste their meeting notes from a startup pitch meeting and Omni automatically creates an entry into the investment opportunity tracking database

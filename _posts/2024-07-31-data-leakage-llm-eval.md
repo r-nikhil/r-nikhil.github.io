@@ -7,7 +7,7 @@ categories: [ai, security]
 
 This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/testing-llms-for-data-leakage-vulnerabilities-with-dynamoeval).
 
-![](/assets/files/dataleak1.png)
+![](/assets/files/dataleak1.webp){: width="1400" height="255" decoding="async"}
 
 [Recent](https://arxiv.org/abs/2012.07805) [studies](https://arxiv.org/abs/2302.04460)  [highlight](https://arxiv.org/abs/2311.17035)  a critical issue: large language models (LLMs) can memorize and reproduce text verbatim from their training data when prompted.
 
@@ -34,7 +34,7 @@ Over the past year, the Dynamo AI team has collaborated closely with customers t
 
 The figure below illustrates a real-world example of a data leakage attack using a paragraph from the novel  _Harry Potter and the Sorcerer's Stone_. We input the first 22 words of the paragraph (the prefix) into the Llama 2 13B language model, and ask it to complete the paragraph. The model is able to generate 40 words that match the original text (highlighted in red), which suggests that it has seen this paragraph in its training corpus.
 
-![](/assets/files/dataleak2.png)
+![](/assets/files/dataleak2.webp){: width="1400" height="568" loading="lazy" decoding="async"}
 
 ## Evaluating data extraction attacks on AI models
 
@@ -44,7 +44,7 @@ For example, one basic test we perform involves DynamoEval prompting the AI syst
 
 To identify if the generated text is “memorized,” we use a set of similarity thresholds, including trigram memorization, exact starting word memorization, and overlapping words memorization. This approach assumes the adversary has black-box access to the model, allowing them to observe the generated text in response to specific prompts.
 
-![](/assets/files/dataleak3.png)
+![](/assets/files/dataleak3.webp){: width="1400" height="255" loading="lazy" decoding="async"}
 
 ## Running data extraction tests on the Dynamo AI platform
 

@@ -14,11 +14,11 @@ and in events with high public interest and pre-existing communities, immediate 
 
 I've been using prediction markets for various purposes over the last couple years, from speculating on sports to more recently the US elections and the F1 season. These products are pretty popular. Americans legally bet over $330 billion on sports in 2023, while the 2024 US presidential elections saw about $40 billion in wagers. Polymarket alone saw over $2 billion in volume just in October 2024. Looking at this explosive growth, it's easy to get excited about the future of prediction markets. Based on this Nick Whittaker inspired [essay](https://worksinprogress.co/issue/why-prediction-markets-arent-popular/) we investigate their hyposthesis along with data from on-chain. 
 
-![](/assets/files/preda2.png)
+![](/assets/files/preda2.webp){: width="1400" height="718" decoding="async"}
 
 This is the premise: harness the wisdom of crowds through financial incentives to predict future events. Put your money where your mouth is, and the market will aggregate everyone's knowledge into probability estimates.  At their core, prediction markets are betting markets where people can wager on the outcome of future events. The market price represents the crowd's collective estimate. If shares are trading at $0.60, the market thinks there's a 60% chance of that outcome happening. Curious about whether who is going to be the next NBA champion? There is a [market for that](https://polymarket.com/event/nba-champion-2024-2025). Wonder whether Tiktok will get banned in 2025 in US? There is a [market for that](https://polymarket.com/event/tiktok-banned-in-the-us-before-may-2025). The dream is "prediction markets on everything", where you are able to bet on every possible thing that can happen in the future. 
 
-![](/assets/files/preda3.png)
+![](/assets/files/preda3.webp){: width="1400" height="816" loading="lazy" decoding="async"}
 
 But after diving deep into how these markets actually work and analyzing real usage data, I think I was wrong about their potential to become mainstream products. While they may excel in niches like sports and elections, they may not become ubiquitous. Even in places where regulations are favourable (Betfair and UK), prediction markets have been unable to grow in volume beyond some categories. The reality is more nuanced and the challenges more fundamental than people realize.  Let me explain why.
 
@@ -46,11 +46,11 @@ So, if the theory is sound, why am I not seeing prediction markets where I can b
 
 ### The problem with Prediction Markets
 
-![](/assets/files/preda7.png)
+![](/assets/files/preda7.webp){: width="1400" height="786" loading="lazy" decoding="async"}
 
 Despite their theoretical promise, prediction markets today face some  limitations. The most obivous and repeating pattern is the crazy concentration of liquidity in short-term events and in certain niches. In India, crypto and cricket is responsible for about 80% of the volume on platforms like Probo, Winzo and MPL. On platforms like Polymarket, markets expiring within days or weeks see much higher trading volumes than longer-dated ones. This mirrors behavior in options markets, where short dated options have much higher OI compared to ones expiring next month.  
 
-![](/assets/files/preda4.png)
+![](/assets/files/preda4.webp){: width="1400" height="1019" loading="lazy" decoding="async"}
 
 Globally, volumes are dominated by elections and sports betting. The contrast becomes starker when looking at other types of markets like ones focused on scientific discoveries, CEO replacements, AI predictions, economic indicators, or technological developments. They often struggle to attract meaningful participation. Polymarket's data shows this clearly - while their election markets saw daily volumes exceeding $350 million during peak periods, most other markets struggle to maintain consistent daily volumes above $1 million.
 
@@ -75,7 +75,7 @@ Let's break it down by user type:
 - They want immediate feedback loops and gratification
 - Long-term predictions are boring for them
 
-![](/assets/files/preda6.png)
+![](/assets/files/preda6.webp){: width="1400" height="857" loading="lazy" decoding="async"}
 
 **Long-term Investors** have zero interest in locking up money in prediction markets because:
 - The capital doesn't generate returns while waiting for event resolution
@@ -88,7 +88,7 @@ Let's break it down by user type:
 - Market size for 90% of the markets is too small to justify sophisticated analysis.
 - Even these people don't want to lock up the capital in long term bets because of the opportunity cost
 
-![](/assets/files/preda1.png)
+![](/assets/files/preda1.webp){: width="1400" height="779" loading="lazy" decoding="async"}
 
 This leads to a chicken/egg problem. Without gamblers and long term investors providing liquidity, market makers won't participate. Without them making markets efficient, the prices aren't reliable enough to attract serious investment. And 99% of the markets are too small to justify professionals spending time researching them. If people actually wanted to bet on random things, financial insitutions would have dumbed it down for retail customers (like they did with stock options, futures etc)
 

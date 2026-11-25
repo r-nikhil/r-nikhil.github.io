@@ -6,7 +6,7 @@ categories: [ai, security]
 
 This post was cowritten by me and was originally published on [Dynamo AI's blog](https://dynamo.ai/blog/unlocking-differential-privacy-for-llms).
 
-![](/assets/files/dpmain.png)
+![](/assets/files/dpmain.webp){: width="1400" height="817" decoding="async"}
 
 Recent research shows that large language models (LLMs) are often prone to memorizing their training and fine-tuning datasets. This is a vulnerability that can be exploited by adversarial attacks, where malicious actors craft specific prompts to  [extract sensitive information](https://arxiv.org/abs/2311.17035)  from these models.
 
@@ -18,7 +18,7 @@ Other government organizations, like the  [U.S. Census Bureau](https://www.censu
 
 > “Differential privacy is currently the best known method for providing robust privacy protection against known and future attacks, even in the face of multiple data releases.” — The National Institute of Standards and Technology (NIST)
 
-![](/assets/files/dynaproc.png)
+![](/assets/files/dynaproc.webp){: width="1400" height="1397" loading="lazy" decoding="async"}
 
 ## Challenges in adopting differential privacy for LLMs
 Despite its promise for safeguarding LLMs, differential privacy adoption has faced significant challenges. The sheer magnitude of LLMs, some of which have trillions of parameters, poses significant hurdles for engineers.
@@ -31,11 +31,11 @@ Moreover, current differential privacy frameworks, such as the Opacus library, a
 
 DDP replicates the entire model on each GPU, which can lead to memory constraints when handling large models. This limitation made it difficult or nearly impossible to train LLMs with billions of parameters efficiently across multiple GPUs. As a result, the lack of model sharding in Opacus has hindered the scalability and practicality of differentially private training for large-scale deep learning models.
 
-![](/assets/files/dp1.png)
+![](/assets/files/dp1.webp){: width="1400" height="844" loading="lazy" decoding="async"}
 
 
 
-![](/assets/files/dp2.png)
+![](/assets/files/dp2.webp){: width="1400" height="1413" loading="lazy" decoding="async"}
 
 ## Apply differential privacy at scale with DynamoEnhance
 [Bu  _et al._](https://arxiv.org/abs/2311.11822)  developed a new approach called DP-ZeRO to enable large-scale differentially private deep learning using the DeepSpeed library. DeepSpeed, known for its Zero Redundancy Optimizer (ZeRO), enhances training speed and reduces memory usage when working with large models across multiple GPUs. The researchers have extended DeepSpeed to support differentially private training, proving that effective privacy injection is achievable with the right techniques.

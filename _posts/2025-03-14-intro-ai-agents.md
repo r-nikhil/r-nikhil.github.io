@@ -14,7 +14,7 @@ Peter Norvig in his popular [book](https://www.amazon.in/Artificial-Intelligence
 
 Interestingly, the definition of the term "AI agents" is [hotly](https://x.com/NickADobos/status/1714065139878482030) contested. Most of the common ones involve some version of putting LLMs + tools in a loop. Rather than looking at LLM systems in a binary way, it's more useful to think of them to be agent-like to a different degree. The degree of control given to the LLM in guiding an application's flow allows for varying levels of autonomy, which we shall call agentic. This helps us move away from the binary classification of systems and look at them as part of a spectrum. Ultimately, you want to give it a task and the AI is agentic enough to go and accomplish it.
 
-![](/assets/files/agentspectrum.png)
+![](/assets/files/agentspectrum.webp){: width="512" height="387" decoding="async"}
 
 ### What are the different types of AI agents?
 
@@ -30,11 +30,11 @@ Types of workflow agents:
 - **Orchestrator-workers**, where a orchestrator triggers multiple LLM calls that are then synthesized together, for example running searches against multiple sources and combining the results or in coding tools where the agent is making changes to multiple files at the same time
 - **Evaluator-optimizer**, where one model checks the work of another in a loop and starts a feedback loop. This architecture is useful in scenarios where you need a second LLM to ensure the response is complete and correct
 
-![](/assets/files/workflowagent.png)
+![](/assets/files/workflowagent.webp){: width="1400" height="466" loading="lazy" decoding="async"}
 
 Autonomous agents are systems where the LLM dynamically directs the execution path and tool usage and maintain full ownership on how they accomplish the task. They have no predefined paths to take. They start their flow from a simple command or conversation with the user, plan the task and use tools to accomplish the task. They might choose to ask humans for feedback or when encountering blockers and automatically terminate themselves when the task is completed.
 
-![](/assets/files/autoagent.png)
+![](/assets/files/autoagent.webp){: width="1400" height="461" loading="lazy" decoding="async"}
 
 They are particularly useful for open-ended tasks where it's hard to predict beforehand the number of steps required and where you can't really hard code a fixed path. Some real world applications include CX agents which, based on the user conversation, automatically decide to access customer data and perform actions like issuing refunds and updating ticket statuses. In software development, coding autonomous agents are excellent because the solutions are verifiable, agents can iterate based on feedback from automated tests and the problem space is well defined
 
@@ -49,7 +49,7 @@ Before we jump into the tooling and infrastructure world for AI agents, it’s i
 - **Memory:** Both short term memory (in context learning frameworks like MemGPT) and long term memory like a vector store
 - **Tool use:** The LLM is trained to call external tools for tasks it can't do by itself like pulling up current information or executing code
 
-![](/assets/files/archagent.png)
+![](/assets/files/archagent.webp){: width="1400" height="556" loading="lazy" decoding="async"}
 
 #### Why did they blow up in 2024?
 
@@ -75,11 +75,11 @@ The value add for agents is clear. Copilot was [40% of github revenue](https://v
 
 While we have briefly looked at which agent architecture works for which kind of flows, we should also define what makes a task agentic vs non-agentic.
 
-![](/assets/files/agenttask.png)
+![](/assets/files/agenttask.webp){: width="1400" height="1023" loading="lazy" decoding="async"}
 
 A market map from [Felicis](https://www.felicis.com/) showing some early winners in the AI agents space
 
-![](/assets/files/marketmapagents.png)
+![](/assets/files/marketmapagents.webp){: width="1400" height="900" loading="lazy" decoding="async"}
 
 - Customer service  
   - AI agents analyze call data, manage chatbots, and handle complete support workflows autonomously from greeting to resolution, including processing refunds by checking orders and updating inventory without human intervention.  

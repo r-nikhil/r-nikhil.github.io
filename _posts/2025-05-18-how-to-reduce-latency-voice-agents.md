@@ -6,12 +6,12 @@ categories: [ai]
 
 Over the last week, I have been researching and reading about different horizontal platforms like [Vapi](https://vapi.ai/), [Retell](https://www.retellai.com/) and [Bland](https://www.bland.ai/) to understand how they work behind the scenes. My main motivation was to 1) figure out the voice agent stack 2) see if there are any unsolved problems in the space and 3) look for interesting companies which I can then take up with my team at [Accel](https://www.accel.com/) for investing. Along the way, I learnt a fair bit about the importance of latency in building voice apps and how important is to achieve a sub ~800ms latency for end to end setups. It really makes or breaks the voice agent experience along with other things like interrupt and turn detection, mid-sentence redirection, etc and this posts looks at the all these considerations from a latency POV(and suggests tips) to build a kickass voice agent. To see how important is latency is in building voice applications, I vibe coded a small application to simulate how the user experience is for different latency configurations. You can play with it at [comparevoiceai.com](https://comparevoiceai.com/) .
 
-![](/assets/files/latencybreakdown.png)
+![](/assets/files/latencybreakdown.webp){: width="1400" height="794" decoding="async"}
 
 
 Most voice AI apps follow the below pattern. The user speaks into the microphone. THe audio is processed client side (noise compression, speaker isolation etc) and then piped with WebRTC (e.g., Daily) to a server, then Speed to Text (STT) models (like Deepgram) transcribes speech to text. The Dialogue/LLM layer turns that text into an appropriate reply transcript(probably calling other LLMs, function calls etc), which Text-to-Speech (TTS)—providers like ElevenLabs render as audio. A second WebRTC hop streams the audio back to the user, with each leg adding latency and failure points that orchestration must hide.
 
-![](/assets/files/voiceaiflow.png)
+![](/assets/files/voiceaiflow.webp){: width="1400" height="319" loading="lazy" decoding="async"}
 
 Achieving human-like responsiveness requires optimizations at every layer of this pipeline, especially in how we manage LLM context and system architecture. In the first section, we will look at all the methods we can use to cut latency on the central LLM block. If you want to learn more about choosing the right LLM provider for building your voice agents, you can read more on the blog post I wrote on the [comparevoiceai.com](http://comparevoiceai.com/) website. 
 
@@ -27,7 +27,7 @@ Link: [Which LLM to choose for voice agents](https://comparevoiceai.com/blog/whi
 
 - Hitting the cache is far faster than a full LLM run. A self-hosted semantic cache can answer in ~50 ms (or ~200 ms via an API call) versus an LLM which might take seconds. This translates to a snappier dialogue and lower compute cost. In practical terms, even moderate reuse can yield big savings. Each cache hit avoids LLM token generation latency and also ensures consistent answers (the same question gets the same response every time ). Doing this in a very contextual manner is not easy. You don't want to hit the cache for every related question and you want to give a personalised answer to the user. Here is the CTO of Hyperbound AI talking about choosing Vapi because of its great semantic caching abilities. (ignore the typo from the Tegus screenshot. Their STT is bad)
 
-![](/assets/files/semanticcaching.png)
+![](/assets/files/semanticcaching.webp){: width="971" height="410" loading="lazy" decoding="async"}
 
 - Semantic caching has become a standard optimisation and an "easy win" these days though. Every horizontal provider gives the capability and even agent orchestration frameworks like Langchain give OOTB tooling for adding semantic caches to your tool calls. It’s important to scope the cache to each context or persona: e.g. maintain separate caches per voice agent or client to avoid
 mixing answers between different domains. It is generally [recommended](https://canonical.chat/blog/semantic_caching_faq) to filter personal data out of cached content and implementing cache invalidation rules (e.g. time-based eviction or manual resets for stale answers)
@@ -51,7 +51,7 @@ the essential bits of prior context, reducing token count. Automated recursive s
 Traditional voice agents operated in a strictly turn-based fashion: the user speaks, the system waits for them to finish, then processes the query, and finally speaks the response. This results in noticeable dead air while the user waits for the agent’s reply. Modern real-time architectures instead use streaming at each stage, overlapping tasks to eliminate idle gaps. The goal is to make the conversation feel fluid, as if the agent is listening and formulating a response almost simultaneously.
 
 
-![](/assets/files/streamoverlap.png)
+![](/assets/files/streamoverlap.webp){: width="1000" height="429" loading="lazy" decoding="async"}
 
 - Streaming STT: Rather than buffering the entire user utterance, streaming speech-to-text transcribes audio on the fly. As the user speaks, partial text hypotheses are produced every tens of  milliseconds. This allows the system to get a head start on understanding the query. By the time the user finishes speaking (or even before they finish), the agent may already have most of the text. For example, with a capable streaming STT, an utterance might be recognized with only ~200 ms delay from speech. Real-time voice agents use this to overlap listening and thinking: the LLM can start working as soon as it has enough of the utterance to guess the intent, without waiting for a full stop. I still remember watching Google’s Duplex demo in some I/O event. They were injecting “uh-huh” while still transcribing, to show the user they’re listening and make the overall experience very natural.
 
@@ -85,7 +85,7 @@ latency.
 
 - Avoid cold starts with warm pools: In a serverless or autoscaling scenario, cold start latency (loading a large model into RAM or spinning up a new GPU container) can be 10–30 seconds – obviously unacceptable for real-time voice. To combat this, ensure at least one instance of your model service is always running (a warm pool of instances). Cloud providers and frameworks allow configuring a minimum number of warm workers. Even if load is zero, keep one hot. This way the first request doesn’t pay the full load cost. Retell for example suggest using a high- priority pool or reserved capacity for low latency if your response times are creeping us. It’s better to incur a bit more cost keeping resources alive than to have a caller wait awkwardly while a model loads.
 
-![](/assets/files/retelllatency.png)
+![](/assets/files/retelllatency.webp){: width="738" height="804" loading="lazy" decoding="async"}
 
 - Fast model loading and lightweight models: Choose models and serving frameworks that start quickly. Smaller models (or quantized models) not only run faster, but also load faster from disk. For example, a 7B parameter model can be loaded in a couple of seconds on my macbook (24GB RAM M4 Pro), whereas a 32B model takes 10+ seconds to initialize. If you require a large model for quality, one idea is to defer using it for a second or two and initially use a smaller model for the very first reply. For instance, a voice assistant might use a fast 1.3B model to say a greeting like “Hello, how can I help you today?” instantly, while in the background loading the 13B model that will handle the actual query. The user hears the greeting (which buys time), and by the time they ask their question, the heavy model is ready. This kind of staged startup can mask latency by doing useful work (like greeting or collecting the user’s name) while loading the main model.
 

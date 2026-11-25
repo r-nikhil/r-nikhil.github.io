@@ -6,7 +6,7 @@ categories: [ai]
 
 [MCP](https://modelcontextprotocol.io/introduction) is an open protocol that standardizes how applications provide context to LLMs. Think of MCP like a USB-C port for AI applications. Just as USB-C provides a standardized way to connect your devices to various peripherals and accessories, MCP provides a standardized way to connect AI models to different data sources and tools. Based on the context, AI agents can decide which tools to use, in what order, and how to chain them together to accomplish a task. MCP also introduced a human-in-the-loop capabilities for humans to provide additional data and approve execution. With the right set of MCP servers, users can turn every MCP client into an "everything app."
 
-![](/assets/files/mcp.jpg)
+![](/assets/files/mcp.webp){: width="512" height="297" decoding="async"}
 
 MCP took inspiration from the Language Server Protocol (LSP), where typing in an editor can trigger the editor to query the language server(usually an extension) for autocomplete suggestions, function definitions or linting. MCP is more LLM centric and execution focused for agents. LSP is mostly reactive(server only reacts to inputs) whereas MCP is designed for multi-step autonomous workflows (automatically decide which tools to use and the sequence of usage).
 
@@ -31,7 +31,7 @@ The biggest bull case for MCP is the adoption momentum today. The spec is evolvi
 
 - Authorization states aren't baked into the protocol. There is no concept of a permission model and access control is usually at a session level. 
 
-![](/assets/files/mcp1.jpg)
+![](/assets/files/mcp1.webp){: width="1400" height="775" loading="lazy" decoding="async"}
 
 ### Bottomline
 
