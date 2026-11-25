@@ -12,8 +12,7 @@ title: About
   <div class="body prose-s">
     <p>Prediction Markets</p>
     <ul class="grey">
-      <li>Started a company - <a href="https://arivulabs.xyz">arivulabs.xyz</a></li>
-      <li>Your local and contextual prediction market - <a href="https://agara.xyz">agara.xyz</a></li>
+      <li>Building <a href="https://app.agara.xyz">app.agara.xyz</a></li>
     </ul>
   </div>
 </section>
@@ -23,7 +22,7 @@ title: About
     <p>AI and Accel</p>
     <ul class="grey">
       <li>Invested in AI companies. Ex: Higgsfield AI and Pramaana Labs</li>
-      <li>Led product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations, compliance/goverance issues and other security vulnerabilities.</li>
+      <li>Led product for DynamoEval. An LLM evaluation suite for detecting data leakages, hallucinations, compliance/governance issues and other security vulnerabilities.</li>
     </ul>
   </div>
 </section>
@@ -44,9 +43,9 @@ title: About
   <div class="body prose-s">
     <p>Coding</p>
     <ul class="grey">
-      <li>Focus was on learning how computers work. Self taught programmer. Started with web dev but spent majority time on OS, computer security and network protocols. Contributed a ton to FOSS projects</li>
-      <li>Wrote malware shellcode obfuscators for OWASP and added packaet sniffing suport for Wolfram Mathematica</li>
-      <li>Did <ins><a href="https://summerofcode.withgoogle.com/">some</a></ins> <ins><a href="https://owasp.org/www-community/initiatives/code_sprint/">cool</a></ins> <ins><a href="https://education.wolfram.com/summer-school">internships</a></ins> with low acceptance rates</li>
+      <li>Self taught programmer. Started with web dev but spent majority time on OS, computer security and network protocols. Contributed a ton to FOSS projects</li>
+      <li>Wrote malware shellcode obfuscators for OWASP and added packet sniffing support for Wolfram Mathematica</li>
+      <li>Did <ins><a href="https://summerofcode.withgoogle.com/">some</a></ins> <ins><a href="https://owasp.org/www-community/initiatives/code_sprint/">fun</a></ins> <ins><a href="https://education.wolfram.com/summer-school">internships</a></ins></li>
     </ul>
   </div>
 </section>
