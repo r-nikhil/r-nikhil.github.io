@@ -1,9 +1,12 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TBX7XEEFQ2"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-TBX7XEEFQ2');
+  /* load the 170 KB analytics library only after the page itself has finished loading */
+  (function(){
+    function go(){var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-TBX7XEEFQ2';document.head.appendChild(s)}
+    function later(){window.requestIdleCallback?requestIdleCallback(go,{timeout:4000}):setTimeout(go,1500)}
+    document.readyState=='complete'?later():addEventListener('load',later);
+  })();
 </script>

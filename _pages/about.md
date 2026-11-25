@@ -9,7 +9,7 @@ title: About
     <a href="https://www.linkedin.com/in/rnikhilcom/">LinkedIn</a>
     <a href="https://news.ycombinator.com/user?id=whoami_nr">HN</a>
     <a href="https://github.com/r-nikhil">GitHub</a>
-    <a href="mailto:contact@rnikhil.com">Email</a>
+    <a href="mailto:contact%40rnikhil.com">Email</a>
   </nav>
 
   <p class="in" style="--i:2">Hey, I am Nikhil. I love to learn and hack around with new technologies. This site is a partial collection of stories I’ve written down, my general musings and the software I work on. There is no particular theme to this site; it’s just a place to hang random text.</p>

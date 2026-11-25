@@ -827,6 +827,72 @@ button {
 
 /* ---- small screens, motion, print ---- */
 
+/* touch screens of any width: thumb-sized switches */
+@media (any-pointer: coarse) {
+  .theme button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .filter button,
+  .era-tab {
+    height: 38px;
+  }
+}
+
+/* phones and tablets: thumb-sized controls (about 44px tall) without changing how they look */
+@media (max-width: 63.99rem) {
+  .top .me,
+  .top nav a {
+    padding: .65rem .2rem;
+    margin: -.65rem -.2rem;
+  }
+
+  /* these can wrap onto two rows, so the extra height stays in the layout and rows never overlap */
+  .foot a,
+  .elsewhere a {
+    padding: .6rem .2rem;
+    margin: 0 -.2rem;
+  }
+
+  .foot nav,
+  .elsewhere {
+    gap: 0 1.25rem;
+  }
+
+  .elsewhere {
+    margin: -.6rem 0;
+  }
+
+  .back {
+    padding: .65rem .2rem;
+    margin: 2.85rem .3rem 0;
+  }
+
+  .theme button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .filter {
+    margin-bottom: 1.5rem;
+  }
+
+  .filter button,
+  .era-tab {
+    height: 38px;
+  }
+
+  .list a {
+    padding: .5rem;
+  }
+
+  /* on a narrow screen the tallest career panel would leave a large empty gap, so panels take their own height */
+  .era-panel[hidden] {
+    display: none;
+  }
+}
+
 @media (max-width: 40rem) {
   .wrap {
     padding: 5.5rem .75rem 4rem;
