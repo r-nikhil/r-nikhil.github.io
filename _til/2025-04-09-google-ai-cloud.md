@@ -17,7 +17,7 @@ From the [blog](https://developers.googleblog.com/en/a2a-a-new-era-of-agent-inte
 Even though Google claims MCP is designed for agent-to-tools interaction and that A2A is better for agent-to-agent, there’s nothing preventing MCP from being used for agent-to-agent too, as the distinction between agents and tools is rather arbitrary. 
 
 <div align = "center">
-<img  src="/assets/files/agent1.png">
+<img  src="/assets/files/agent1.webp" width="1098" height="623" loading="lazy" decoding="async">
 </div>
 
 In terms of [comparison](https://google.github.io/A2A/#/topics/a2a_and_mcp) to MCP: 

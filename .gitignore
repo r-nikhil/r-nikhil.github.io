@@ -1,3 +1,7 @@
 _site/
 .DS_Store
 .replit
+.jekyll-cache/
+.sass-cache/
+.bundle/ruby/
+vendor/
