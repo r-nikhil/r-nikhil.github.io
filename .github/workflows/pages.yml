@@ -27,12 +27,14 @@ jobs:
         env:
           JEKYLL_ENV: production
       - uses: actions/upload-pages-artifact@v5
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main' && vars.PAGES_VIA_ACTIONS == 'true'
         with:
           path: _site
 
+  # Deploys only once the repository variable PAGES_VIA_ACTIONS is 'true' and Pages is set to build from Actions.
+  # Until then GitHub's built-in Pages build publishes the site and this workflow only checks that it builds.
   deploy:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main' && vars.PAGES_VIA_ACTIONS == 'true'
     needs: build
     runs-on: ubuntu-latest
     environment:
