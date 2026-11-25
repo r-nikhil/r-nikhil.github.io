@@ -4,7 +4,7 @@ title: Nikhil R
 description: Personal Website
 twitter:
   username: 
-  card: summary
+  card: summary_large_image
   creator: #yourusername
 author:
   twitter: 
@@ -51,6 +51,11 @@ defaults:
       path: ""
     values:
       layout: "default"
+      image:
+        path: /share-card.png
+        width: 1200
+        height: 630
+        alt: Nikhil R
   -
     scope:
       path: ""
