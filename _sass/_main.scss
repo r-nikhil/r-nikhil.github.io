@@ -62,21 +62,6 @@
   --col: 620px;
 }
 
-[data-theme="dark"] {
-  color-scheme: dark;
-  --bg: #0c0c0c;
-  --fg: #a0a0a0;
-  --body: #c6c6c6;
-  --strong: #f5f5f5;
-  --surface: #161616;
-  --faint: #7d7d7d;
-  --line: #1e1e1e;
-  --highlight: #ffffff08;
-  --accent: #8fb0ff;
-  --raised: #232323;
-  --raised-shadow: 0 .5px 0 #ffffff14 inset, 0 0 0 .5px #000, 0 2px 6px #00000080;
-}
-
 *, :after, :before {
   box-sizing: border-box;
   margin: 0;
@@ -122,7 +107,7 @@ button {
   width: 100%;
   max-width: var(--col);
   margin: 0 auto;
-  padding: 7rem 1rem 5rem;
+  padding: 4.5rem 1rem 5rem;
 }
 
 /* soft glass edge under the post list (home page only) */
@@ -170,53 +155,6 @@ button {
 .seen .in,
 .seen .rise {
   animation: none;
-}
-
-/* ---- theme switch ---- */
-
-.theme {
-  position: absolute;
-  top: 1.75rem;
-  left: 50%;
-  z-index: 50;
-  translate: -50% 0;
-  display: flex;
-  gap: 2px;
-  padding: 3px;
-  border-radius: 999px;
-  background: var(--surface);
-}
-
-.theme button {
-  display: grid;
-  place-items: center;
-  width: 2rem;
-  height: 2rem;
-  border-radius: 999px;
-  color: var(--faint);
-  transition: color .15s;
-}
-
-.theme button:hover {
-  color: var(--strong);
-}
-
-.theme svg {
-  width: 1rem;
-  height: 1rem;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-[data-theme="light"] .theme [data-t="light"],
-[data-theme="dark"] .theme [data-t="dark"] {
-  color: var(--strong);
-  background: var(--raised);
-  box-shadow: var(--raised-shadow);
-  view-transition-name: theme-pill;
 }
 
 /* ---- header ---- */
@@ -829,11 +767,6 @@ button {
 
 /* touch screens of any width: thumb-sized switches */
 @media (any-pointer: coarse) {
-  .theme button {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
   .filter button,
   .era-tab {
     height: 38px;
@@ -869,11 +802,6 @@ button {
     margin: 2.85rem .3rem 0;
   }
 
-  .theme button {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
   .filter {
     margin-bottom: 1.5rem;
   }
@@ -895,11 +823,7 @@ button {
 
 @media (max-width: 40rem) {
   .wrap {
-    padding: 5.5rem .75rem 4rem;
-  }
-
-  .theme {
-    top: 1.1rem;
+    padding: 2.75rem .75rem 4rem;
   }
 
   .top {
@@ -924,7 +848,6 @@ button {
   animation-duration: .16s;
 }
 
-::view-transition-group(theme-pill),
 ::view-transition-group(filter-pill),
 ::view-transition-group(era-pill) {
   animation-duration: .3s;
