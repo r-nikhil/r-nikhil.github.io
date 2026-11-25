@@ -2,11 +2,11 @@
 layout: default
 ---
 
-<section class="post">
-  <h2>{{ page.title }}</h2>
+<article class="post">
+  <h1 class="in" style="--i:2">{{ page.title }}</h1>
+  <span class="meta in" style="--i:2"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% for c in page.categories %} &middot; {{ c }}{% endfor %}{% for tag in page.tags %} &middot; <a href="/tag/{{tag}}">{{tag}}</a>{% endfor %}</span>
+  <div class="rise">
   {{ content }}
-  <span class="meta"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>{% if page.tags.size > 0 %} &middot; {% endif %}{% for tag in page.tags %}
-    <a href="/tag/{{tag}}">{{tag}}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>
-</section>
-
-
+  </div>
+</article>
+<a class="back no-print" href="/">&larr; All writing</a>
