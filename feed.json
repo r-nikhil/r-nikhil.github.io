@@ -10,12 +10,12 @@ layout: null
     "icon": "{{ "/apple-touch-icon.png" | absolute_url }}",
     "favicon": "{{ "/favicon.ico" | absolute_url }}",
     "expired": false,
-    {% if site.author %}
-    "author": {% if site.author.name %} {
-        "name": "{{ site.author.name }}",
-        "url": {% if site.author.url %}"{{ site.author.url }}"{% else %}null{% endif %},
-        "avatar": {% if site.author.avatar %}"{{ site.author.avatar }}"{% else %}null{% endif %}
-    },{% else %}"{{ site.author }}",{% endif %}
+    {% if site.author.name %}
+    "author": {
+        "name": {{ site.author.name | jsonify }}{% if site.author.url %},
+        "url": {{ site.author.url | jsonify }}{% endif %}{% if site.author.avatar %},
+        "avatar": {{ site.author.avatar | jsonify }}{% endif %}
+    },
     {% endif %}
 "items": [
     {% for post in site.posts %}
@@ -36,24 +36,10 @@ layout: null
               "size_in_bytes": "{{ post.enclosure_length }}"
             } ],{% endif %}
             "date_published": "{{ post.date | date_to_xmlschema }}",
-            "date_modified": "{{ post.date | date_to_xmlschema }}",
-            {% if post.author %}
-                "author": {% if post.author.name %} {
-                "name": "{{ post.author.name }}",
-                "url": {% if post.author.url %}"{{ post.author.url }}"{% else %}null{% endif %},
-                "avatar": {% if post.author.avatar %}"{{ post.author.avatar }}"{% else %}null{% endif %}
-                }
-                {% else %}"{{ post.author }}"{% endif %}
-            {% else %}
-                "author": {% if site.author.name %} {
-                "name": "{{ site.author.name }}",
-                "url": {% if site.author.url %}"{{ site.author.url }}"{% else %}null{% endif %},
-                "avatar": {% if site.author.avatar %}"{{ site.author.avatar }}"{% else %}null{% endif %}
-                }
-                {% else %}
-                "{{ site.author }}"
-                {% endif %}
-            {% endif %}
+            {% assign a = post.author | default: site.author %}{% if a.name %}
+            "author": { "name": {{ a.name | jsonify }} },{% elsif post.author %}
+            "author": { "name": {{ post.author | jsonify }} },{% endif %}
+            "date_modified": "{{ post.date | date_to_xmlschema }}"
         }{% if forloop.last == false %},{% endif %}
     {% endfor %}
     ]
